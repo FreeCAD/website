@@ -127,7 +127,8 @@ main header {
 .download-box .release,
 .download-box .date,
 .single-meta,
-.hero-button {
+.hero-button,
+#TableOfContents {
     display: inline-block;
     padding: 0.75rem 1.5rem;
     max-width: calc(var(--width) - (4 * var(--gap)));
@@ -172,15 +173,16 @@ main header {
 }
 
 .single-meta {
+    color: var(--secondary);
     position: absolute;
-    bottom: 2rem;
-    background: var(--overlay);
+    bottom: 6rem;
+    background: var(--entry);
     border-radius: var(--radius);
     font-size: var(--s);
 }
 
 .single-meta a {
-    color: var(--cover);
+    color: var(--secondary);
 }
 
 .meta-item {
@@ -210,6 +212,32 @@ main header {
 
 .meta-item .tags a:not(:last-of-type):after {
     content: ",";
+}
+
+#TableOfContents {
+    position: absolute;
+    bottom: 2rem;
+    font-size: var(--s);
+}
+
+#TableOfContents ul,
+#TableOfContents li {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#TableOfContents a {
+    color: var(--secondary);
+    background: var(--entry);
+    border-radius: var(--radius);
+    margin: 1rem;
+    padding: 0.75rem 1.5rem;
+}
+
+#TableOfContents a:hover {
+    color: var(--link-hover-color);
 }
 
 main header .entry-cover img {
@@ -282,11 +310,11 @@ main header .entry-cover img {
 }
 
 .entry-date time {
-    background: var(--overlay);
+    background: var(--entry);
     backdrop-filter: blur(0.3rem);
     padding: 0.5rem;
     border-radius: var(--radius);
-    color: var(--cover);
+    color: var(--secondary);
     font-size: var(--s);
 }
 

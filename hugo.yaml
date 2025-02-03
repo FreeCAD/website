@@ -379,6 +379,10 @@ markup:
     style: dracula # NOTE: Currently overriden by FC/assets/css/highlight.css, keep this setting for now
     lineNos: false
     noClasses: false
+  tableOfContents:
+    startLevel: 1
+    endLevel: 3
+    ordered: false
 
 module:
   mounts:

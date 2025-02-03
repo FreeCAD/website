@@ -1,6 +1,7 @@
 ---
 title: Fonctionnalités
 description: Découvrir les fonctionnalités de FreeCAD
+ToC: true
 cover:
   image: 5.png
   caption: a cover caption

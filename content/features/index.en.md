@@ -1,6 +1,7 @@
 ---
 title: Features
 description: Discover FreeCAD features
+ToC: true
 cover:
   image: 5.png
   caption: a cover caption

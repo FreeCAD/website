@@ -5,6 +5,7 @@ date: 2024-05-16T05:27:00
 author: FreeCAD
 draft: false
 categories: announcement
+ToC: true
 cover:
   image: 0.png
   caption: a cover caption
