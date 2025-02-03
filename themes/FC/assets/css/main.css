@@ -115,7 +115,7 @@ main header {
     padding: var(--gap);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     gap: var(--gap);
     text-align: center;
@@ -128,7 +128,7 @@ main header {
 .download-box .date,
 .single-meta,
 .hero-button,
-#TableOfContents {
+.header-bottom {
     display: inline-block;
     padding: 0.75rem 1.5rem;
     max-width: calc(var(--width) - (4 * var(--gap)));
@@ -172,11 +172,17 @@ main header {
     background: rgb(32, 32, 32);
 }
 
+.header-bottom {
+    position: absolute;
+    bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: calc(2*var(--gap));
+}
+
 .single-meta {
     color: var(--secondary);
-    position: absolute;
-    bottom: 6rem;
-    background: var(--entry);
+    background: var(--theme);
     border-radius: var(--radius);
     font-size: var(--s);
 }
@@ -215,9 +221,7 @@ main header {
 }
 
 #TableOfContents {
-    position: absolute;
-    bottom: 2rem;
-    font-size: var(--s);
+    font-size: var(--m);
 }
 
 #TableOfContents ul,
@@ -230,9 +234,9 @@ main header {
 
 #TableOfContents a {
     color: var(--secondary);
-    background: var(--entry);
+    background: var(--theme);
     border-radius: var(--radius);
-    margin: 1rem;
+    margin: 0.5rem;
     padding: 0.75rem 1.5rem;
 }
 
@@ -310,7 +314,7 @@ main header .entry-cover img {
 }
 
 .entry-date time {
-    background: var(--entry);
+    background: var(--theme);
     backdrop-filter: blur(0.3rem);
     padding: 0.5rem;
     border-radius: var(--radius);

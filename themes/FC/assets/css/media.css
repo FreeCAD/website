@@ -56,8 +56,37 @@
         height: calc(100vh - var(--header-height));
     }
 
+    .title,
+    .description,
+    .header-bottom {
+        padding: 0rem;
+    }
+
     .buttons {
         flex-direction: column;
+    }
+
+    .header-bottom {
+        bottom: 2rem;
+    }
+
+    #TableOfContents {
+        background: var(--theme);
+        border-radius: var(--radius);
+        padding: 1rem 0.5rem;
+    }
+
+    #TableOfContents ul,
+    #TableOfContents li {
+        display: inline-block;
+    }
+
+    #TableOfContents a {
+        background: none;
+    }
+
+    body.type-news #TableOfContents {
+        display: none;
     }
 
     .content img {

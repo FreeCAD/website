@@ -7,13 +7,15 @@
 <header>
   <h1 class="title">
     {{- .Title | .RenderString -}}
-    {{- if .Draft -}}<sup><span class="entry-isdraft">&nbsp;&nbsp;[{{- i18n "draft" | default "Draft" }}]</span></sup>{{- end -}}
+    {{- if .Draft -}}
+      <sup><span class="entry-isdraft">&nbsp;&nbsp;[{{- i18n "draft" | default "Draft" }}]</span></sup>
+    {{- end -}}
   </h1>
 
   {{- if .Description }}
-  <h2 class="description">
-    {{- .Description | .RenderString -}}
-  </h2>
+    <h2 class="description">
+      {{- .Description | .RenderString -}}
+    </h2>
   {{- end }}
 
   {{/* For Download pages, call the download partial to provide download links from the latest release. */}}
@@ -23,14 +25,18 @@
     {{ end }}
   {{- end -}}
 
-  {{- if eq .Type "news" -}}
-  <div class="single-meta">
-    {{- partial "meta.html" . -}}
-  </div>
-  {{- end -}}
+  {{- if (eq .Params.Toc true) -}}
+    <div class="header-bottom">
+      {{- if eq .Type "news" -}}
+        <div class="single-meta">
+          {{- partial "meta.html" . -}}
+        </div>
+      {{- end -}}
 
-  {{- if .Params.ToC -}}
-    {{ .TableOfContents -}}
+      {{- if .Params.ToC -}}
+        {{ .TableOfContents -}}
+      {{- end -}}
+    </div>
   {{- end -}}
 
   {{- partial "cover.html" . }}
@@ -42,13 +48,13 @@
 {{/* For Release pages, call the download partial to provide download links from the current release page. */}}
 {{- if eq .Type "releases" -}}
   <section class="download-release">
-      {{- partial "download.html" . -}}
+    {{- partial "download.html" . -}}
   </section>
 {{- end -}}
 
 <footer class="single-footer">
   {{- if (.Param "ShowPaginationLinks") }}
-  {{- partial "pagination_links.html" . }}
+    {{- partial "pagination_links.html" . }}
   {{- end }}
 </footer>
 
