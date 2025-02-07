@@ -61,7 +61,7 @@ params:
     publish_mode: editorial_workflow
     i18n:
       structure: multiple_files
-      locales: [en, fr]
+      locales: [en, fr, tr]
       default_locale: en
       save_all_locales: false
     collections:
