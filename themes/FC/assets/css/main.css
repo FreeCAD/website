@@ -132,7 +132,7 @@ main header {
 .download-box .release,
 .download-box .date,
 .hero-button,
-.header-bottom {
+.single-meta {
     display: inline-flex;
     padding: 0.75rem 1.5rem;
     max-width: calc(var(--width) - (2 * var(--gap)));
@@ -190,12 +190,10 @@ main header {
     background: rgb(32, 32, 32);
 }
 
-.header-bottom {
+.single-meta {
     position: absolute;
     bottom: 2rem;
     display: flex;
-    flex-direction: column;
-    gap: var(--gap);
 }
 
 :is(.single-meta, .single-meta a) {
@@ -205,7 +203,7 @@ main header {
 
 .meta-item {
     display: inline-block;
-    padding: 0.125rem 0.5rem;
+    padding: 0.25rem 0.5rem;
 }
 
 .meta-item svg {
@@ -221,31 +219,6 @@ main header {
 
 .meta-item .tags a:not(:last-of-type):after {
     content: " · ";
-}
-
-#TableOfContents {
-    font-size: var(--m);
-}
-
-#TableOfContents ul,
-#TableOfContents li {
-    display: inline-block;
-    list-style: none;
-    margin: 0;
-    padding: 0.125rem 0 0;
-}
-
-#TableOfContents a {
-    color: var(--cover);
-    padding: 0.5rem;
-}
-
-#TableOfContents a:hover {
-    color: var(--link-hover-color);
-}
-
-#TableOfContents a:before {
-    content: "# ";
 }
 
 main header .entry-cover img {
@@ -339,6 +312,39 @@ main header .entry-cover img {
 .entry-isdraft {
     font-size: var(--s);
     color: var(--secondary);
+}
+
+
+/* Table of Contents */
+
+#TableOfContents {
+    display: flex;
+    font-size: var(--m);
+    padding: var(--gap);
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+#TableOfContents ul,
+#TableOfContents li {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0.25rem 0 0;
+}
+
+#TableOfContents a {
+    color: var(--tertiary);
+    padding: 0.5rem;
+}
+
+#TableOfContents a:hover {
+    color: var(--link-hover-color);
+}
+
+#TableOfContents a:before {
+    content: "# ";
 }
 
 
@@ -627,11 +633,11 @@ iframe {
 }
 
 #N1.block, #N4.block, #N7.block {
-    background: var(--entry);
+    background: var(--theme);
 }
 
 #N2.block, #N5.block #N8.block {
-    background: var(--theme);
+    background: var(--entry);
 }
 
 #N3.block, #N6.block #N9.block {

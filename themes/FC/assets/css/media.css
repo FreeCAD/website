@@ -58,11 +58,15 @@
 
     .title,
     .description,
-    .header-bottom {
+    .single-meta {
         padding: 0rem;
     }
 
     .buttons {
+        flex-direction: column;
+    }
+
+    .single-meta {
         flex-direction: column;
     }
 
