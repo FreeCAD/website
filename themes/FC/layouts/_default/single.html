@@ -5,6 +5,14 @@
 {{ end }}
 
 <header>
+  {{- if eq .Type "news" -}}
+    <div class="category">
+      {{- range ($.GetTerms "categories") -}}
+        <a href="{{ .Permalink }}">{{- .LinkTitle | .RenderString -}}</a>
+      {{- end -}}
+    </div>
+  {{- end -}}
+
   <h1 class="title">
     {{- .Title | .RenderString -}}
     {{- if .Draft -}}

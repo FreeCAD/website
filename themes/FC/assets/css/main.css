@@ -126,6 +126,7 @@ main header {
     position: relative;
 }
 
+.category,
 .title,
 .description,
 .download-box .release,
@@ -138,6 +139,20 @@ main header {
     color: var(--cover);
     text-shadow: var(--shadow);
     z-index: 2;
+}
+
+.category {
+    position: absolute;
+    top: 1rem;
+    color: var(--cover);
+}
+
+.category a {
+    color: var(--cover);
+}
+
+.category a:hover {
+    color: var(--link-hover-color);
 }
 
 .title {
