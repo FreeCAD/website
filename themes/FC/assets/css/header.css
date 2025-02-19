@@ -52,6 +52,7 @@
 
 #theme-toggle svg {
     height: 1.5rem;
+    width: 2rem;
     color: var(--tertiary);
 }
 
@@ -70,8 +71,9 @@ body:not(.dark) #sun {
 /* Menu in non-media mode */
 
 .menu-toggle {
-    color: var(--tertiary);
     font-size: var(--l);
+    display: block;
+    width: 2rem;
 }
 
 .menu:has(#menu-list:popover-open) .hamburger {
