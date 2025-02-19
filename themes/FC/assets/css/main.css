@@ -163,6 +163,11 @@ main header {
     font-weight: 400;
 }
 
+.title,
+.description {
+    margin: 0;
+}
+
 .buttons {
     display: flex;
     gap: var(--gap);
