@@ -12,28 +12,49 @@
         {{ print "var is falsy" }}
     {{- end }}
     <div class="download">
-        {{- with .Params.windows }}
+        {{- if or .Params.windows_msi .Params.windows_zip }}
         <div id="windows" style="order: 1;">
-            <a href="{{ . }}" alt="WINDOWS" aria-label="Windows" title="Windows" download>
-                {{ safeHTML (index site.Data.svg "windows") }}
+            <a class="arch-icon" href="{{ .Params.windows_msi }}" alt="WINDOWS-MSI" aria-label="Windows Installer" title="Windows Installer" download>
+                {{ safeHTML (index site.Data.svg "msi") }}
+            </a>
+            <button popovertarget="windows-arch" popovertargetaction="toggle" title="{{- i18n "Windows" | default "Windows" }}">
+                <span>{{ safeHTML (index site.Data.svg "windows") }}</span>
+            </button>
+            <span popover id="windows-arch"></span>
+            <a class="arch-icon" href="{{ .Params.windows_zip }}" alt="WINDOWS-7Z" aria-label="Windows Portable" title="Windows Portable" download>
+                {{ safeHTML (index site.Data.svg "zip") }}
             </a>
         </div>
         {{ else }}
             {{ print "var is falsy" }}
         {{- end }}
-        {{- with .Params.macos }}
+        {{- if or .Params.mac_x86 .Params.mac_arm }}
         <div id="mac" style="order: 2;">
-            <a href="{{ . }}" alt="MACOS" aria-label="macOS" title="macOS" download>
-                {{ safeHTML (index site.Data.svg "macos") }}
+            <a class="arch-icon" href="{{ .Params.mac_x86 }}" alt="MACOS-X86" aria-label="Intel X86" title="Intel X86" download>
+                {{ safeHTML (index site.Data.svg "x86") }}
+            </a>
+            <button popovertarget="mac-arch" popovertargetaction="toggle" title="{{- i18n "macOS" | default "macOS" }}">
+                <span>{{ safeHTML (index site.Data.svg "mac") }}</span>
+            </button>
+            <span popover id="mac-arch"></span>
+            <a class="arch-icon" href="{{ .Params.mac_arm }}" alt="MACOS-ARM" aria-label="Apple Silicon ARM" title="Apple Silicon ARM" download>
+                {{ safeHTML (index site.Data.svg "arm") }}
             </a>
         </div>
         {{ else }}
             {{ print "var is falsy" }}
         {{- end }}
-        {{- with .Params.linux }}
+        {{- if or .Params.linux_x86 .Params.linux_aarch64 }}
         <div id="linux" style="order: 3;">
-            <a href="{{ . }}" alt="GNU/LINUX" aria-label="GNU/Linux" title="GNU/Linux" download>
-                {{ safeHTML (index site.Data.svg "linux") }}
+            <a class="arch-icon" href="{{ .Params.linux_x86 }}" alt="LINUX-X86" aria-label="X86 AppImage" title="X86 AppImage" download>
+                {{ safeHTML (index site.Data.svg "x86") }}
+            </a>
+            <button popovertarget="linux-arch" popovertargetaction="toggle" title="{{- i18n "GNU/Linux" | default "GNU/Linux" }}">
+                <span>{{ safeHTML (index site.Data.svg "linux") }}</span>
+            </button>
+            <span popover id="linux-arch"></span>
+            <a class="arch-icon" href="{{ .Params.linux_aarch64 }}" alt="LINUX-AArch64" aria-label="AArch64 AppImage" title="AArch64 AppImage" download>
+                {{ safeHTML (index site.Data.svg "arm") }}
             </a>
         </div>
         {{ else }}

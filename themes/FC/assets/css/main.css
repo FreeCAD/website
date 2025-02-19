@@ -699,10 +699,10 @@ iframe {
 }
 
 .download-box .download {
-    width: calc(var(--width) / 1.5);
+    width: calc(var(--width) - (2 * var(--gap)));
     margin: auto;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-content: space-evenly;
     gap: var(--gap);
 }
@@ -720,6 +720,36 @@ iframe {
 
 .download-box svg:active {
     transform: scale(0.90);
+}
+
+.download button {
+    width: 10.25rem;
+}
+
+.arch-icon {
+    width: 5rem;
+}
+
+:is(#windows:has(#windows-arch:popover-open),
+#mac:has(#mac-arch:popover-open),
+#linux:has(#linux-arch:popover-open)) button {
+    width: 0;
+}
+
+:is(#windows:has(#windows-arch:popover-open),
+#mac:has(#mac-arch:popover-open),
+#linux:has(#linux-arch:popover-open)) button,
+#windows-arch,
+#mac-arch,
+#linux-arch,
+.arch-icon {
+    display: none;
+}
+
+:is(#windows:has(#windows-arch:popover-open),
+#mac:has(#mac-arch:popover-open),
+#linux:has(#linux-arch:popover-open)) .arch-icon {
+    display: inline-block;
 }
 
 .download-release {

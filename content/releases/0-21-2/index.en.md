@@ -7,9 +7,12 @@ tags:
   - 0.21.2
 params:
   release: "0.21.2"
-  windows: https://github.com/FreeCAD/FreeCAD/releases/download/
-  macos: https://github.com/FreeCAD/FreeCAD/releases/download/
-  linux: https://github.com/FreeCAD/FreeCAD/releases/download/
+  windows_msi: https://github.com/FreeCAD/FreeCAD/releases/
+  windows_zip: https://github.com/FreeCAD/FreeCAD/releases/
+  mac_x86: https://github.com/FreeCAD/FreeCAD/releases/
+  mac_arm: https://github.com/FreeCAD/FreeCAD/releases/
+  linux_x86: https://github.com/FreeCAD/FreeCAD/releases/
+  linux_aarch64: https://github.com/FreeCAD/FreeCAD/releases/
 cover:
   image: 8.png
   caption: "a cover caption"
