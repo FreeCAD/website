@@ -96,15 +96,17 @@
         margin: 0 auto;
     }
 
-    .download-box .download svg {
+    .download-box svg {
         height: calc(1.5rem + (var(--width)/16));
     }
 
-    .download button {
+    .download-box button {
         width: 4.25rem;
     }
 
-    .arch-icon {
+    :is(#windows:has(#windows-arch:popover-open),
+    #mac:has(#mac-arch:popover-open),
+    #linux:has(#linux-arch:popover-open)) .arch-icon {
         width: 2rem;
     }
 

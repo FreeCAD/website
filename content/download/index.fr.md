@@ -1,4 +1,5 @@
 ---
+title: Télécharger
 description: L'aventure FreeCAD commence !
 author: FreeCAD
 type: download
@@ -6,8 +7,10 @@ cover:
   image: 4.png
   caption: a cover caption
   alt: a cover alternative title
-title: Télécharger
 date: 2024-05-22T08:04:23+12:00
+params:
+  thanksText: "Merci de télécharger FreeCAD !"
+  donateText: "♥︎ Parrainer son dévelopement"
 menus:
   main:
     weight: 2
