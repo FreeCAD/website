@@ -189,7 +189,7 @@ body:not(.dark) #sun {
 }
 
 body:is(:has(#menu-list:popover-open),:has(#lang-list:popover-open)) :is(main, .site-footer) {
-    filter: blur(2rem);
+    filter: opacity(20%);
 }
 
 body:is(:has(#menu-list:popover-open),:has(#lang-list:popover-open)) header img {
