@@ -188,6 +188,15 @@ body:not(.dark) #sun {
     color: var(--tertiary);
 }
 
+body:is(:has(#menu-list:popover-open),:has(#lang-list:popover-open)) :is(main, .site-footer) {
+    filter: blur(2rem);
+}
+
+body:is(:has(#menu-list:popover-open),:has(#lang-list:popover-open)) header img {
+    width: 110%;
+    margin: -3rem;
+}
+
 .language-list {
     list-style: none;
 }

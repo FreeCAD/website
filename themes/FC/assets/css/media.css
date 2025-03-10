@@ -56,6 +56,10 @@
         height: calc(100vh - var(--header-height));
     }
 
+    body:is(:has(#menu-list:popover-open),:has(#lang-list:popover-open)) header img {
+        width: 150%;
+    }
+
     .title,
     .description,
     .single-meta {
