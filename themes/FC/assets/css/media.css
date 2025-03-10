@@ -76,13 +76,13 @@
         flex-direction: column;
     }
 
-    .content img {
+    .content img:not([popover] img) {
         max-height: var(--width);
         width: 100%;
     }
 
     .block {
-        padding: calc(2 * var(--gap)) var(--gap);
+        padding: calc(2 * var(--gap)) var(--gap) 0;
         flex-wrap: nowrap;
         gap: calc(2 * var(--gap));
         max-height: calc(2 * var(--width));
@@ -92,11 +92,11 @@
         order: 3;
     }
 
-    .block img:has(+ h2), .block img:not(:has(+ h2)), .block h2:not(:has(+ img)), .block p:has(+ h2), .block p:not(:has(+ h2)) {
-        width: 100%;
+    .block :not([popover]) img:has(+ h2), .block :not([popover]) img:not(:has(+ h2)), .block p:has(+ h2), .block h2:not(:has(+ img)), .block p:not(:has(+ h2)) {
+        width: calc(var(--width) - (2 * var(--gap)));
     }
 
-    .block img {
+    .block img:not([popover] img) {
         margin: 0 auto;
     }
 

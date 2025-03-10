@@ -80,7 +80,7 @@ img {
     object-fit: cover;
 }
 
-img + .external-link {
+[popover] ~ a .external-link {
     display: none;
 }
 
@@ -591,7 +591,7 @@ iframe {
 
 /* Single page figures, images and videos */
 
-.content img {
+.content img:not([popover] img, li img) {
     display: block;
     max-width: 100%;
     height: calc(var(--width) / 2);
@@ -624,6 +624,35 @@ iframe {
     transform: scale(1.02);
 }
 
+.content [popover] {
+    background: none;
+    border: none;
+}
+
+.content [popover]::backdrop {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.content [popover] img {
+    height: 90vh;
+    max-width: 90vw;
+    border-radius: var(--radius);
+}
+
+.content .close {
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    padding: 1rem;
+    font-size: 1.25rem;
+    background: rgba(255, 255, 255, 0.5);
+    color: var(--cover);
+    text-align: center;
+}
+
 /* Single page Blocks (defined in-between +++ in Markdown files) */
 
 .block {
@@ -652,7 +681,7 @@ iframe {
 }
 
 /* Tricks to have 2 side-by-side columns */
-.block img:has(+ h2), .block img:not(:has(+ h2)), .block p:has(+ h2) {
+.block :not([popover]) img:has(+ h2), .block :not([popover]) img:not(:has(+ h2)), .block p:has(+ h2) {
     width: calc((var(--width) / 2) - (var(--gap) * 2));
 }
 
@@ -674,7 +703,7 @@ iframe {
     text-align-last: center;
 }
 
-.block img {
+.block img:not([popover] img) {
     max-height: calc((var(--width)/4) - (2 * var(--gap)));
     margin: calc(var(--gap) * 2) auto;
 }

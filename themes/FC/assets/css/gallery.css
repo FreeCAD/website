@@ -20,4 +20,5 @@
     margin: 0;
     width: calc(var(--width) / 5);
     height: calc(var(--width) / 5);
+    border-radius: var(--radius);
 }
