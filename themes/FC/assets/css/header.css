@@ -192,11 +192,6 @@ body:is(:has(#menu-list:popover-open),:has(#lang-list:popover-open)) :is(main, .
     filter: opacity(20%);
 }
 
-body:is(:has(#menu-list:popover-open),:has(#lang-list:popover-open)) header img {
-    width: 110%;
-    margin: -3rem;
-}
-
 .language-list {
     list-style: none;
 }
