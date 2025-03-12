@@ -189,7 +189,7 @@ body:not(.dark) #sun {
 }
 
 body:is(:has(#menu-list:popover-open),:has(#lang-list:popover-open)) :is(#menu-list,#lang-list)::backdrop {
-    background: var(--backdrop);
+    background: linear-gradient(transparent, transparent var(--header-height), var(--backdrop) var(--header-height), var(--backdrop));
 }
 
 .language-list {
