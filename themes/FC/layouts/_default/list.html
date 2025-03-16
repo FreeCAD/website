@@ -10,15 +10,29 @@
 
 {{- if not .IsHome | and .Title }}
 <header>
+  {{- if eq .Section "news" -}}
+    <ul class="category-list">
+      {{- range .Site.Taxonomies.categories }}
+        <li>
+          <a href="{{ .Page.RelPermalink }}">
+            {{- .Page.LinkTitle -}}
+          </a>
+        </li>
+      {{- end }}
+    </ul>
+  {{- end }}
+
   <h1 class="title">
     {{- if eq .Kind "term" -}}{{- .Data.Singular }}: {{ end -}}
     {{ .Title | .RenderString -}}
   </h1>
+
   {{- if .Description }}
   <h2 class="description">
     {{ .Description | .RenderString }}
   </h2>
   {{- end }}
+
   {{- partial "cover.html" . }}
 </header>
 {{- end }}

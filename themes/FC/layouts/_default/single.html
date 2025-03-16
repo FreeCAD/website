@@ -9,10 +9,9 @@
     {{- partial "category.html" . -}}
   {{- end -}}
 
-
   {{- if eq .Section "releases" -}}
     {{- with .Site.GetPage "releases" }}
-      <span class="section">
+      <span class="releases">
         <a href="{{ .RelPermalink }}">{{- .LinkTitle | .RenderString -}}</a>
       </span>
     {{- end }}

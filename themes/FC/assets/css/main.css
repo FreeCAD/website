@@ -141,7 +141,7 @@ main header {
     z-index: 2;
 }
 
-:is(.section, .category) {
+.releases, .category, .category-list {
     position: absolute;
     top: 2rem;
     right: 0;
@@ -150,15 +150,25 @@ main header {
     z-index: 2;
 }
 
+.category-list {
+    margin: 0;
+    list-style: none;
+}
+
+.category-list li {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
 article .category {
     top: 1rem;
 }
 
-:is(.section, .category) a {
+:is(.releases, .category, .category-list) a {
     color: var(--cover);
 }
 
-:is(.section, .category) a:hover {
+:is(.releases, .category, .category-list) a:hover {
     color: var(--link-hover-color);
 }
 
@@ -408,7 +418,7 @@ del {
 dl,
 ol,
 ul {
-    margin: 1rem auto 1rem;
+    margin: 1rem auto;
 }
 
 li > ol,
