@@ -141,7 +141,7 @@ main header {
     z-index: 2;
 }
 
-.category {
+:is(.section, .category) {
     position: absolute;
     top: 1rem;
     right: 0;
@@ -150,11 +150,11 @@ main header {
     z-index: 2;
 }
 
-.category a {
+:is(.section, .category) a {
     color: var(--cover);
 }
 
-.category a:hover {
+:is(.section, .category) a:hover {
     color: var(--link-hover-color);
 }
 
