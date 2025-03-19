@@ -33,14 +33,14 @@
       </figure>
     {{- else -}}
       {{- $id := delimit (shuffle (seq 1 9)) "" -}}
-      <button popovertarget="img{{- $id }}">
+      <button popovertarget="img{{- $id -}}">
         <img loading="lazy"
           srcset="{{ range $size := $sizes -}}
                     {{- if (ge $img.Width $size) -}}
                       {{- printf "%s %s" (($img.Resize (printf "%sx" $size)).RelPermalink | safeURL) (printf "%sw ," $size) -}}
                     {{- end -}}
                   {{- end -}}
-                  {{$img.Permalink -}} {{printf "%dw" ($img.Width)}}"
+                  {{ $img.Permalink }} {{ printf "%dw" ($img.Width) }}"
           sizes="(min-width: 1024px) 1312px, 100vw" src="{{ $img.RelPermalink | safeURL }}"
           width="{{ $img.Width }}" height="{{ $img.Height }}"
           type="" alt="{{ $.Text }}"
@@ -48,9 +48,9 @@
             title="{{ . | plainify }}"
           {{- end -}} >
       </button>
-      <div id="img{{- $id }}" popover>
+      <div id="img{{- $id -}}" popover>
         <img loading="lazy" src="{{ $img.RelPermalink | safeURL }}">
-        <button class="close" popovertarget="img{{- $id }}" popovertargetaction="hide">
+        <button class="close" popovertarget="img{{- $id -}}" popovertargetaction="hide">
           ✕
         </button>
       </div>

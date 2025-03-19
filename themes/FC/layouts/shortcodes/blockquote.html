@@ -29,7 +29,7 @@
     {{- range last 1 (split ($.Scratch.Get "bl_link" ) "://") -}}  <!-- split by :// and then only take the items after it to remove protocol:// -->
       {{- $.Scratch.Set "title_without_protocol" . -}}
     {{- end -}}
-    {{- range last 1 (split ($.Scratch.Get "title_without_protocol" ) "www.")  -}} <!-- also remove the www. at the start if any. we are using a second split because all URLS may not start with it -->
+    {{- range last 1 (split ($.Scratch.Get "title_without_protocol" ) "www.") -}} <!-- also remove the www. at the start if any. we are using a second split because all URLS may not start with it -->
       {{- $.Scratch.Set "title_without_protocol" . -}}
     {{- end -}}
     {{- $.Scratch.Set "bl_title" ($.Scratch.Get "title_without_protocol") -}}
@@ -41,7 +41,7 @@
       {{- $count := (sub (len $split_by_fw_slash) 1) -}}   <!-- we want everything but the last part so we adjust the count accordingly -->
 
       {{- $.Scratch.Set "tempstring" "" -}}   <!-- temp variable to hold the concatinated string -->
-      {{- range first $count $split_by_fw_slash  -}}  <!-- loop through all parts except last and concat them (add / between halves) -->
+      {{- range first $count $split_by_fw_slash -}}  <!-- loop through all parts except last and concat them (add / between halves) -->
         {{- $.Scratch.Set "tempstring" ( . | printf "%s%s/" ($.Scratch.Get "tempstring") | printf "%s" ) -}}
       {{- end -}}
       {{- $.Scratch.Set "bl_title" ( printf "%s..." ($.Scratch.Get "tempstring") | printf "%s" ) -}}

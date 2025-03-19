@@ -1,6 +1,6 @@
 {{/* allows to open external links in a new browser tab */}}
 <a href="{{ .Destination | safeURL }}"
-  {{- with .Title}}
+  {{- with .Title -}}
     title="{{ . | plainify }}"
   {{- end -}}
   {{- if strings.HasPrefix .Destination "http" -}}

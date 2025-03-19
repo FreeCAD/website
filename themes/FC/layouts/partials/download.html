@@ -1,8 +1,8 @@
 <div class="download-box">
   {{- if .Params.release -}}
   <a class="hero-button download" href="{{ .RelPermalink }}" alt="{{ upper site.Title -}} {{ .Params.release }} RELEASE"
-    aria-label="{{ site.Title -}} {{ .Params.release }} {{- i18n "release_notes" | default "Release Notes" }}">
-    {{ site.Title -}} {{ .Params.release }} {{- i18n "release_notes" | default "Release Notes" }}
+    aria-label="{{ site.Title }} {{ .Params.release }} {{ i18n "release_notes" | default "Release Notes" }}">
+    {{ site.Title }} {{ .Params.release }} {{ i18n "release_notes" | default "Release Notes" }}
   </a>
   {{- else -}}
     {{- print "var is falsy" -}}
@@ -67,7 +67,7 @@
     {{- end -}}
   </form>
   {{- with .Site.GetPage "download" -}}
-    {{- if or .Params.thanksText .Params.donateText}}
+    {{- if or .Params.thanksText .Params.donateText -}}
     <div class="thanks">
       <p>
         {{- with .Params.thanksText -}}

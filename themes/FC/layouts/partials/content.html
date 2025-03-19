@@ -6,7 +6,7 @@
     {{- $blocks := split .RawContent "+++" -}}
     {{- range $blocks -}}
       {{- $count = add $count 1 -}}
-      <section class="block" id="N{{- $count }}">
+      <section class="block" id="N{{- $count -}}">
         {{ . | $.Page.RenderString }}
       </section>
     {{- end -}}
