@@ -34,7 +34,13 @@
   </h2>
   {{- end -}}
 
-  {{- partial "cover.html" . -}}
+  {{- if eq .Kind "term" -}}
+    {{- with .Site.GetPage "news" -}}
+      {{- partial "cover.html" . -}}
+    {{- end -}}
+  {{- else -}}
+    {{- partial "cover.html" . -}}
+  {{- end -}}
 </header>
 {{- end -}}
 
