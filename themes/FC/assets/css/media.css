@@ -49,6 +49,10 @@
         margin: auto 0;
     }
 
+    .menu-list .button {
+        line-height: normal;
+    }
+
 
     /* List and Single pages */
 

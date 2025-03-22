@@ -50,14 +50,19 @@
     color: var(--link-hover-color);
 }
 
-#theme-toggle svg {
-    height: 1.5rem;
-    width: 2rem;
+.menu-toggle,
+.lang-toggle,
+#theme-toggle {
+    padding: 0.25rem;
     color: var(--tertiary);
 }
 
-#theme-toggle svg:hover {
+:is(.menu-toggle, .lang-toggle, #theme-toggle):hover  {
     color: var(--link-hover-color);
+}
+
+:is(.lang-toggle, #theme-toggle) svg {
+    height: 1.5rem;
 }
 
 body.dark #moon {
@@ -129,7 +134,7 @@ body:not(.dark) #sun {
 
 .menu-list .button {
     padding: 0.75rem 1.5rem;
-    line-height: 2rem;
+    line-height: 2.5rem;
     box-shadow: none;
     color: var(--cover);
     background: var(--link-color);
@@ -150,21 +155,6 @@ body:not(.dark) #sun {
 }
 
 /* Languages switcher and Menu in media mode */
-
-.menu-toggle,
-.lang-toggle {
-    padding: 0.5rem;
-    color: var(--tertiary);
-}
-
-.menu-toggle:hover,
-.lang-toggle:hover  {
-    color: var(--link-hover-color);
-}
-
-.language-dropdown svg {
-    height: 1.25rem;
-}
 
 #lang-list {
     display: none;
