@@ -29,6 +29,10 @@
     list-style: none;
 }
 
+.logo a {
+    color: var(--secondary);
+}
+
 .logo :is(img, svg) {
     float: left;
     height: 2rem;
