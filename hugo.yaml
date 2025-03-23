@@ -30,7 +30,6 @@ params:
   ShowCopyCodeButton: true
 
   EnableInstantClick: false # NOTE: Disabled for now, as it's conflicting with other JS features.
-  EnableImageZoom: false
   EnableLightbox: false # NOTE: Does not work for now if EnableInstantClick is true, because of JavaScript conflicts.
   EnableUA: true # NOTE: Enables User Agent sniffing, useful e.g. to provide corresponding download options.
 

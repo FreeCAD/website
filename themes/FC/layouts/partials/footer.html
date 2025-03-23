@@ -72,18 +72,6 @@
   })();
 </script>
 
-{{/* Load mediumZoom script */}}
-{{/* It has to be loaded here because of the data-no-instant attribute */}}
-{{- if (.Param "EnableImageZoom") -}}
-  {{- $imagezoom := resources.Get "js/medium-zoom.js" -}}
-  {{- if hugo.IsProduction -}}
-    {{- $imagezoom = minify $imagezoom -}}
-  {{- end -}}
-  <script src="{{ $imagezoom.RelPermalink }}" data-no-instant
-    {{- if site.Params.assets.disableFingerprinting -}}integrity="{{ $imagezoom.Data.Integrity }}"{{- end -}}>
-  </script>
-{{- end -}}
-
 {{- /* Script to detect User Agent and provide corresponding download options. */}}
 {{- if or (eq .Type "download") (eq .Type "releases") -}}
   {{- if (.Param "EnableUA") -}}
@@ -150,12 +138,6 @@
   {{- end -}}
 
   {{- end -}}
-
-{{- if (.Param "EnableImageZoom") -}}
-  <script>
-  mediumZoom('.content :not(:is(a)) > img:not(:is([no-zoom]))');
-  </script>
-{{- end -}}
 
 {{- /* InstantClick.js */}}
 {{- if (.Param "EnableInstantClick") -}}
