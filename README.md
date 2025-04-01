@@ -43,7 +43,7 @@ When working on new features, keep in mind this website only supports *evergreen
 
 To build the website locally, follow these steps :
 
-1. Install [Hugo standard edition](https://gohugo.io/installation/). **⚠ This temporary repo is developed with Hugo ≥ 0.129 for now ⚠**
+1. Install [Hugo standard edition](https://gohugo.io/installation/). **⚠ This temporary repo is developed with Hugo ≥ 0.145 for now ⚠**
 2. Install [Git](https://git-scm.com/).
 3. Optionally, if developing Hugo modules, install [Go](https://go.dev/doc/install).
 3. Clone this repository or download the Code Zip and unzip it.

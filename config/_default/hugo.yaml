@@ -6,13 +6,15 @@ title: "FreeCAD"
 defaultContentLanguage: en
 
 theme: FC
-paginate: 6 # Sets the max number of listed posts (split) on home, section, taxonomy, and term pages
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
+
+pagination:
+  pagerSize: 6 # Sets the max number of listed posts (split) on home, section, taxonomy, and term pages
 
 permalinks:
   page:

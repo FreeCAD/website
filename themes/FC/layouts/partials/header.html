@@ -79,7 +79,7 @@
       </ul>
     </nav>
 
-    {{- if .Site.IsMultiLingual -}}
+    {{- if hugo.IsMultilingual -}}
     <div class="language-dropdown">
       <button popovertarget="lang-list" popovertargetaction="toggle" class="lang-toggle" accesskey="l" title="{{ i18n "choose_language" | default "Choose language" }} (Alt + L)">
         {{- safeHTML (index site.Data.svg "language") -}}

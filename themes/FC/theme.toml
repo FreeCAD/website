@@ -32,7 +32,7 @@ features = [
   "menu-location-indicator",
   "scroll-to-top",
 ]
-min_version = "0.129.0"
+min_version = "0.145.0"
 
 [author]
   name = "FreeCAD contributors"

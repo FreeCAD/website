@@ -3,10 +3,10 @@
 {{- if $url.Scheme -}}
 
   {{/* third party image */}}
-  {{- with resources.GetRemote .Destination -}}
+  {{- with try (resources.GetRemote .Destination) -}}
     {{- with .Err -}}
       {{- errorf "%s" . -}}
-    {{- else -}}
+    {{- else with .Value -}}
       <img loading="lazy" src="{{ .RelPermalink | safeURL }}" alt="{{ $.Text }}"
         {{- with $.Title -}}
           title="{{ . | plainify }}"
