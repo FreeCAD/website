@@ -1,0 +1,217 @@
+# FC Theme parameters
+
+env: production # Enables google analytics, opengraph and schema.
+description: "Your free and open-source parametric modeler"
+author: "FreeCAD"
+DateFormat: 2006-01-02
+logo: /FreeCAD-wordmark.svg
+mainSections: news
+defaultTheme: auto
+ShowAuthor: true
+ShowReadingTime: true
+ShowWordCount: false
+ShowShareButtons: true
+displayFullLangName: true
+ShowPaginationLinks: true
+ShowCopyCodeButton: true
+
+EnableInstantClick: true # NOTE: Disabled for now, as it's conflicting with other JS features.
+EnableLightbox: false # NOTE: Does not work for now if EnableInstantClick is true, because of JavaScript conflicts.
+EnableUA: true # NOTE: Enables User Agent sniffing, useful e.g. to provide corresponding download options.
+
+socialIcons:
+  - name: github-simple
+    url: https://github.com/FreeCAD
+
+# Headless CMS parameters
+
+headless_cms:
+  engine: "sveltia"
+  site_url: "https://marcuspollio.github.io/FreeCAD-website/"
+  logo_url: "https://marcuspollio.github.io/FreeCAD-website/FreeCAD-symbol.svg"
+  backend:
+    name: "github"
+    repo: "marcuspollio/FreeCAD-website"
+    branch: testing
+    base_url: https://sveltia-github-auth.marcus-pollio.workers.dev/
+    commit_messages:
+      create: "{{collection}}: create {{slug}}"
+      update: "{{collection}}: update {{slug}}"
+      delete: "{{collection}}: delete {{slug}}"
+      uploadMedia: "Media: upload {{path}}"
+      deleteMedia: "Media: delete {{path}}"
+      openAuthoring: "{{message}}"
+  publish_mode: editorial_workflow
+  i18n:
+    structure: multiple_files
+    locales: [en, fr, tr]
+    default_locale: en
+    initial_locales: default
+  collections:
+    - name: news
+      label: News
+      description: This is the News blog collection with FreeCAD articles
+      icon: brand_awareness
+      thumbnail: cover.image
+      create: true
+      folder: content/news
+      media_folder: "/content/news/{{categories}}"
+      public_folder: ""
+      format: frontmatter
+      slug: "{{categories}}/{{slug}}"
+      i18n:
+        structure: multiple_files
+      fields:
+        - {label: "Article Title", name: "title", widget: "string", i18n: true, required: [en], hint: "Use a similar structure as existing articles for coherence"}
+        - {label: "Article Description", name: "description", i18n: true, required: [en], widget: "string"}
+        - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate}
+        - {label: "Article Author", name: "author", widget: "string", i18n: duplicate, hint: "Use a similar author name as existing ones for coherence", pattern: ['.{3,}', "Must have at least 3 characters"]}
+        - {label: "Draft", name: "draft", widget: "boolean", default: true, i18n: duplicate}
+        - {label: "Article Category", name: "categories", widget: "select", options: ["announcement", "event", "highlight", "showcase", "tutorial", "update"], i18n: duplicate}
+        - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
+        - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
+        - label: "Hero"
+          name: "params.hero"
+          widget: "object"
+          default: false
+          i18n: duplicate
+          required: false
+          fields:
+          - {label: "Link to article on homepage hero", name: "articleLink", widget: "boolean", default: false, i18n: duplicate}
+          - {label: "Link to custom page on homepage hero", name: "customLink", widget: "string", default: "", i18n: duplicate}
+          - {label: "Text for custom page on homepage hero", name: "customText", widget: "string", default: "", i18n: true, required: [en]}
+          - {label: "Link to download page on homepage hero", name: "downloadLink", widget: "boolean", default: true, i18n: duplicate}
+        - {label: "Content", name: "body", widget: "markdown", i18n: true, required: [en], hint: "Use +++ between blocks"}
+    - divider: true
+      name: 1
+      files: []
+    - name: homepage
+      label: Homepage
+      icon: home
+      folder: content/homepage
+      media_folder: ''
+      public_folder: ''
+      format: frontmatter
+      slug: "{{slug}}"
+      i18n:
+        structure: multiple_files
+      fields:
+        - {label: "Homepage Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
+        - {label: "Homepage Description", name: "description", widget: "string", i18n: true}
+        - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
+    - name: features
+      label: Features
+      icon: bolt
+      thumbnail: cover.image
+      folder: content/features
+      media_folder: ''
+      public_folder: ''
+      format: frontmatter
+      slug: "{{slug}}"
+      i18n:
+        structure: multiple_files
+      fields:
+        - {label: "Features Page Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
+        - {label: "Features Page Description", name: "description", widget: "string", i18n: true}
+        - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
+        - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
+        - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
+    - name: download
+      label: Download
+      icon: downloading
+      thumbnail: cover.image
+      folder: content/download
+      media_folder: /content/download
+      public_folder: /download
+      format: frontmatter
+      slug: "{{slug}}"
+      i18n:
+        structure: multiple_files
+      fields:
+        - {label: "Download Page Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
+        - {label: "Download Page Description", name: "description", widget: "string", i18n: true}
+        - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
+        - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
+    - name: releases
+      label: Releases
+      icon: celebration
+      thumbnail: cover.image
+      create: true
+      folder: content/releases
+      media_folder: ''
+      public_folder: ''
+      format: frontmatter
+      slug: "{{slug}}"
+      i18n:
+        structure: multiple_files
+      fields:
+        - {label: "Release Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
+        - {label: "Release Description", name: "description", widget: "string", i18n: true}
+        - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
+        - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
+        - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
+    - name: community
+      label: Community
+      icon: hub
+      thumbnail: cover.image
+      folder: content/community
+      media_folder: ''
+      public_folder: ''
+      format: frontmatter
+      slug: "{{slug}}"
+      i18n:
+        structure: multiple_files
+      fields:
+        - {label: "Community Page Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
+        - {label: "Community Page Description", name: "description", widget: "string", i18n: true}
+        - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
+        - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
+        - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
+    - name: documentation
+      label: Documentation
+      icon: local_library
+      thumbnail: cover.image
+      folder: content/documentation
+      media_folder: ''
+      public_folder: ''
+      format: frontmatter
+      slug: "{{slug}}"
+      i18n:
+        structure: multiple_files
+      fields:
+        - {label: "Documentation Page Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
+        - {label: "Documentation Page Description", name: "description", widget: "string", i18n: true}
+        - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
+        - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
+        - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
+    - name: contribute
+      label: Contribute
+      icon: code_blocks
+      thumbnail: cover.image
+      folder: content/contribute
+      media_folder: ''
+      public_folder: ''
+      format: frontmatter
+      slug: "{{slug}}"
+      i18n:
+        structure: multiple_files
+      fields:
+        - {label: "Contribute Page Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
+        - {label: "Contribute Page Description", name: "description", widget: "string", i18n: true}
+        - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
+        - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
+        - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
+    - name: donate
+      label: Donate
+      icon: volunteer_activism
+      thumbnail: cover.image
+      folder: content/donate
+      media_folder: ''
+      public_folder: ''
+      format: frontmatter
+      slug: "{{slug}}"
+      fields:
+        - {label: "Donate Page Title", name: "title", widget: "string", pattern: ['.{3,}', "Must have at least 3 characters"]}
+        - {label: "Donate Page Description", name: "description", widget: "string"}
+        - {label: "Featured Image", name: "cover.image", widget: "image"}
+        - {label: "Content", name: "body", widget: "markdown", hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}

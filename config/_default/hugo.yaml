@@ -1,0 +1,86 @@
+# General Hugo configuration. For Theme or CMS, go to params.yaml
+
+baseURL: https://marcuspollio.github.io/FreeCAD-website/
+title: "FreeCAD"
+
+defaultContentLanguage: en
+
+theme: FC
+paginate: 6 # Sets the max number of listed posts (split) on home, section, taxonomy, and term pages
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+permalinks:
+  page:
+    news: /news/:slugorfilename/
+
+minify:
+  disableXML: true
+  # minifyOutput: true
+
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
+
+markup:
+  goldmark:
+    duplicateResourceFiles: false # NOTE: False by default for Markdown files since Hugo 0.123, keep this setting for now
+    renderHooks:
+      link:
+        enableDefault: true
+      image:
+        enableDefault: true
+    renderer:
+      unsafe: true
+  highlight:
+    style: dracula # NOTE: Currently overriden by FC/assets/css/highlight.css, keep this setting for now
+    lineNos: false
+    noClasses: false
+  tableOfContents:
+    startLevel: 1
+    endLevel: 3
+    ordered: false
+
+module:
+  mounts:
+    - source: assets
+      target: assets
+    - source: static # Allows to perform modifications via pipes on files in static folder
+      target: assets
+  imports:
+    - path: github.com/privatemaker/headless-cms
+      disable: false
+
+outputs:
+  home:
+    - HTML
+    - HeadlessCMSConfig
+
+services:
+  googleAnalytics:
+    id: # Sets Google Analytics G-MEASUREMENT_ID
+
+privacy: # See https://gohugo.io/about/privacy/
+  googleAnalytics:
+    disable: true
+    respectDoNotTrack: true
+  vimeo:
+    disabled: false
+    enableDNT: false
+    simple: true
+  youtube:
+    disabled: false
+    privacyEnhanced: true
+
+caches:
+  getresource:
+    dir: :cacheDir/:project
+    maxAge: 24h
+  modules:
+    dir: :cacheDir/modules
+    maxAge: 24h
