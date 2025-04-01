@@ -21,7 +21,7 @@
           {{- end -}}
           {{ $cover.Permalink }} {{ printf "%dw" ($cover.Width) }}"
         sizes="
-          {{- if .Scratch.Get "articles" -}}
+          {{- if .Store.Get "articles" -}}
             {{ index $sizes 0 }}px
           {{- else -}}
             (max-width: {{ index $sizes 0 }}px) {{ index $sizes 0 }}px, (max-width: {{ index $sizes 1 }}px) {{ index $sizes 1 }}px, 100vw

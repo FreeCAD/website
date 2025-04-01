@@ -71,7 +71,7 @@
 <article>
   {{- partial "category.html" . -}}
   <a href="{{ .Permalink }}" alt="ARTICLE" aria-label="{{ .Title | plainify }}" title="{{ .Title | plainify }}">
-    {{ .Scratch.Set "articles" true }}
+    {{ .Store.Set "articles" true }}
     {{- partial "cover.html" . -}}
     {{- if not .Date.IsZero -}}
       <span class="entry-date">
