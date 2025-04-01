@@ -13,13 +13,19 @@
     {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) -}}
     {{- if (and (in $processableFormats $cover.MediaType.SubType) ($responsiveImages) (eq $prod true)) -}}
       <img
-        srcset="{{ range $size := $sizes -}}
-                  {{- if (ge $cover.Width $size) -}}
-                    {{- printf "%s %s" (($cover.Resize (printf "%sx" $size)).Permalink) (printf "%sw ," $size) -}}
-                  {{- end -}}
-                {{- end -}}
-                {{ $cover.Permalink }} {{ printf "%dw" ($cover.Width) }}"
-        sizes="(max-width: 500px) 500px, (max-width: 1000px) 1000px, 100vw"
+        srcset="
+          {{ range $size := $sizes -}}
+            {{- if (ge $cover.Width $size) -}}
+              {{- printf "%s %s" (($cover.Resize (printf "%sx" $size)).Permalink) (printf "%sw ," $size) -}}
+            {{- end -}}
+          {{- end -}}
+          {{ $cover.Permalink }} {{ printf "%dw" ($cover.Width) }}"
+        sizes="
+          {{- if .Scratch.Get "articles" -}}
+            {{ index $sizes 0 }}px
+          {{- else -}}
+            (max-width: {{ index $sizes 0 }}px) {{ index $sizes 0 }}px, (max-width: {{ index $sizes 1 }}px) {{ index $sizes 1 }}px, 100vw
+          {{- end -}}"
         src="{{ $cover.Permalink }}"
         alt="{{ $alt }}"
         width="{{ $cover.Width }}"
