@@ -99,6 +99,10 @@ body:not(.dark) #sun {
     background: none;
 }
 
+.menu-list li {
+    margin: 0;
+}
+
 .menu-list a {
     font-size: var(--m);
     color: var(--secondary);
@@ -172,7 +176,7 @@ body:not(.dark) #sun {
     background: var(--theme);
     border: none;
     border-radius: var(--radius);
-    padding: 1rem;
+    padding: 1.5rem 1rem 1rem;
     color: var(--tertiary);
 }
 
