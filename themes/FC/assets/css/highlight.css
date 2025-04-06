@@ -6,7 +6,7 @@
 
 /* Background */
 .chroma {
-    background: #fff6eb;
+    background: var(--entry);
     color: var(--primary);
 }
 
@@ -177,11 +177,6 @@ LiteralStringDouble, LiteralStringEscape, LiteralStringHeredoc, LiteralStringInt
 
 /* For Dark chroma, see the second half below, for Light chroma, go to the first half above */
 
-
-/* Background */
-.dark .chroma {
-    background: #21242c;
-}
 
 /* Keyword, KeywordConstant, KeywordDeclaration, KeywordNamespace, KeywordPseudo, KeywordReserved,
 NameTag, Bracket, Operator, OperatorWord, CommentPreproc, CommentPreprocFile */
