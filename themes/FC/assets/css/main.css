@@ -140,7 +140,7 @@ article .category {
     color: var(--link-hover-color);
 }
 
-.meta-item .tags a:not(:last-of-type):after {
+.meta-item :is(.categories, .tags) a:not(:last-of-type):after {
     content: " · ";
 }
 

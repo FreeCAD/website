@@ -7,6 +7,21 @@
   </span>
 {{- end -}}
 
+{{- if .Page.Store.Get "archives" -}}
+  {{- if .Params.categories -}}
+    <span class="meta-item">
+      {{- safeHTML (index site.Data.svg "categories") -}}
+      <span class="categories">
+        {{- range ($.GetTerms "categories") -}}
+          <a href="{{ .Permalink }}">
+            {{ .LinkTitle | .RenderString }}
+          </a>
+        {{- end -}}
+      </span>
+    </span>
+  {{- end -}}
+{{- end -}}
+
 {{- if .Params.tags -}}
   <span class="meta-item">
     {{- safeHTML (index site.Data.svg "tags") -}}

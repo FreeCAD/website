@@ -52,6 +52,10 @@
     color: var(--link-hover-color);
 }
 
+.archive-entry h3 {
+    margin: 1.25rem auto 0.5rem;
+}
+
 .archive-count,
 .archive-meta {
     color: var(--secondary);

@@ -58,6 +58,7 @@
           </h3>
         </a>
         <div class="archive-meta">
+          {{ .Store.Set "archives" true }}
           {{- partial "meta.html" . -}}
         </div>
       </article>
