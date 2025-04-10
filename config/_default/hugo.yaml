@@ -32,6 +32,12 @@ taxonomies:
 markup:
   goldmark:
     duplicateResourceFiles: false # NOTE: False by default for Markdown files since Hugo 0.123, keep this setting for now
+    parser:
+      attribute:
+        block: true
+        title: true
+      autoDefinitionTermID: true
+      wrapStandAloneImageWithinParagraph: false
     renderHooks:
       link:
         enableDefault: true
@@ -39,6 +45,18 @@ markup:
         enableDefault: true
     renderer:
       unsafe: true
+    extensions:
+      extras:
+        delete:
+          enable: true
+        insert:
+          enable: true
+        mark:
+          enable: true
+        subscript:
+          enable: true
+        superscript:
+          enable: true
   highlight:
     style: dracula # NOTE: Currently overriden by FC/assets/css/highlight.css, keep this setting for now
     lineNos: false
