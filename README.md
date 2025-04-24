@@ -87,7 +87,7 @@ Testing builds deployment to GitHub Pages is done automatically by GitHub Action
 
 ### Use and navigation overview
 
-The website is structured following a tree logic (directory), where each branch (folders) contains sub-branches (sub-folders) and/or leafs (files) where content is stored. The Homepage is the trunk giving access to the various main branches (called `sections` in Hugo lingo) of the navigation menu (e.g. `features`,`download`, `news`, etc). Some of these main branches give access to further sub-branches (e.g. news articles categories). To keep the site simple, only three branch levels are used for the moment, making the navigation easier to understand and maintain, limiting the necessity of a search function.
+The website uses a simple folder-based structure. The homepage links to main sections (e.g. Features, Download, News) which may contain sub-sections (e.g. News articles, Categories, Release notes). All content is stored in files and the structure is kept to three levels for clarity, making a search function unnecessary.
 
 The website is multilingual, with English being the default language. That means that available translated content in any enabled language is accessible using the language dropdown in the header.
 
