@@ -1,5 +1,5 @@
 > [!NOTE]
-> This is a temporary development repository : the [official repository](https://github.com/FreeCAD) will be available at a later time
+> This is a temporary development repository : the [official repository](https://github.com/FreeCAD) will be available at a later time. More documentation will be added later as well.
 
 [Contributing](#contributing) • [Development](#development) • [Structure](#structure) • [Guidelines](#guidelines) • [Theme](#theme) • [Resources](#resources) • [License](#license)
 
@@ -109,40 +109,40 @@ To understand how Hugo works, read its [Official documentation](https://gohugo.i
 
 To simply change or create content, such as news articles, read first the [Guidelines](#guidelines), then read about the [Content Management System](#content-management-system) or [Archetypes](#archetypes). If curious how content is organized, carry on reading below.
 
-There are two main types of content files : single (`index.md`) and list (`_index.md`) pages. The former are where most changes will be made. The latter gathers content from single pages to form a list and should not be changed in most cases. All linked resources for a specific page (e.g. images, translations, download assets) can be stored in the same folder as the page itself ([leaf bundle](https://gohugo.io/content-management/page-bundles/) method), making relative links easy and content tidy.
+There are two main types of content files : **Single** (`index.md`) and **List** (`_index.md`) pages. The former are where most changes will be made. The latter gathers content from **Single** pages to form a **List** and should not be changed in most cases. All linked resources for a specific page (e.g. images, translations, download assets) can be stored in the same folder as the page itself ([leaf bundle](https://gohugo.io/content-management/page-bundles/) method), making relative links easy and content tidy.
 
-These files are mostly written with Markdown and contain a metadata header called the Front Matter, at the top of the file in-between the YAML `---` characters. How content from single and list pages generated into HTML is defined by templates actions used by the [Theme](#theme).
+These files are mostly written with Markdown and contain a metadata header called the Front Matter, at the top of the file in-between the YAML `---` characters. How content from **Single** and **List** pages generated into HTML is defined by templates actions used by the [Theme](#theme).
 
-The content is structured as following :
+The content is structured as follows :
 
-- `content/_index.md` : the Homepage file. This is a list gathering content from other pages, mainly in the News and Homepage sections.
+- `content/_index.md` : the Homepage file. This is a **List** gathering content from other pages, mainly in the News and Homepage sections.
 
-- `content/homepage` : single with overview and features displayed on the Homepage and used by the previous list.
+- `content/homepage` : **Single** with overview and features displayed on the Homepage and used by the previous **List**.
 
-- `content/features` : single showcasing FreeCAD features.
+- `content/features` : **Single** showcasing FreeCAD features.
 
-- `content/download` : single allowing to download FreeCAD latest release per platform, links to development, previous versions and other useful resources. Read how to [update the Releases builds](#releases).
+- `content/download` : **Single** allowing to download FreeCAD latest release per platform, links to development, previous versions and other useful resources. Read how to [update the Releases builds](#releases).
 
-- `content/releases` : list gathering the release notes. Each release is organized in sub-folders. The following metadata fields are required for the release notes to be correctly displayed throughout the website : `title` (version of the release), `description`, `date`, `params` and `cover` (splashscreen of the release). Read how to [update the Releases builds](#releases).
+- `content/releases` : **List** gathering the release notes. Each release is organized in sub-folders. The following metadata fields are required for the release notes to be correctly displayed throughout the website : `title` (version of the release), `description`, `date`, `params` and `cover` (splashscreen of the release). Read how to [update the Releases builds](#releases).
 
-- `content/news` : list gathering articles for the news blog. Articles are organized in `categories` sub-folders. The following metadata fields are required for the article to be correctly displayed throughout the website: `title`, `description`, `date`, `author`, `categories`,`tags` and `cover image`. The name of the folder acts as a slug in the generated URL. `Draft` articles or articles with a `date` in the future are not published in the production environment. To have an article featured at the top of the Homepage, the `hero` Params have to be set.
+- `content/news` : **List** gathering articles for the news blog. Articles are organized in `categories` sub-folders. The following metadata fields are required for the article to be correctly displayed throughout the website: `title`, `description`, `date`, `author`, `categories`,`tags` and `cover image`. The name of the folder acts as a slug in the generated URL. `Draft` articles or articles with a `date` in the future are not published in the production environment. To have an article featured at the top of the Homepage, the `hero` Params have to be set.
 
-- `content/documentation` : single helping users to get started with FreeCAD (wiki, manual, tutorials, learning network).
+- `content/documentation` : **Single** helping users to get started with FreeCAD (wiki, manual, tutorials, learning network).
 
-- `content/community` : single to get involved with the FreeCAD community (events, online groups, association).
+- `content/community` : **Single** to get involved with the FreeCAD community (events, online groups, association).
 
-- `content/contribute` : single to start contributing to FreeCAD development (bug reports, translations, code, grants).
+- `content/contribute` : **Single** to start contributing to FreeCAD development (bug reports, translations, code, grants).
 
-- `content/donate` : list gathering donations to the FreeCAD Project Association. The following metadata fields are required for the sponsors to be correctly displayed throughout the website: `title` (name of the sponsor), `link` (link of the sponsor if applicable) `type` (sponsor level e.g. bronze, silver or gold), `date` (start of the sponsorship).
+- `content/donate` : **List** gathering donations to the FreeCAD Project Association. The following metadata fields are required for the sponsors to be correctly displayed throughout the website: `title` (name of the sponsor), `link` (link of the sponsor if applicable) `type` (sponsor level e.g. bronze, silver or gold), `date` (start of the sponsorship).
 
-- `content/about` : single with info about the website (credits, term of use, etc).
+- `content/about` : **Single** with info about the website (credits, term of use, etc).
 
 > [!NOTE]
 > `content/theme-docs` : only temporary for the website development.
 
 ### Root folders skeleton
 
-```shell
+```
 FreeCAD-website/
 ├── .github/
 ├── archetypes/
@@ -255,6 +255,13 @@ Translations of the theme are handled by translations tables in `themes/FC/i18n`
 
 Before a new language is enabled, the main navigation pages (homepage, features, download, news, community, documentation, contribute and donate) and the theme strings have to be translated. If willing to add a new language, please use the provided GitHub issue template indicating who will translate and who will proofread.
 
+### Content Management System
+
+> [!NOTE]
+> Currently the CMS is work-in-progress and its structure and content may change in the near future. More documentation will be added later as well.
+
+A server-less Content Management System is available to manage content easily. It is based on the [Sveltia CMS](https://github.com/sveltia/sveltia-cms) project. It's a single JavaScript that interacts with the Git repository of the website. It can be used locally on supported web browsers (currently only Chromium-based) or via GitHub login. Pages, translations and resources such as illustrations can be added, edited or deleted directly from the content panel of available collections.
+
 ### Archetypes
 
 > [!NOTE]
@@ -271,7 +278,7 @@ Some fields in the Front Matter or page content will be pre-filled or pre-popula
 ## Theme
 
 > [!NOTE]
-> The FC Theme is work-in-progress and its structure and methods may change in the near future. The code is also pretty messy and YOLO. It will gradually be cleaned up, simplified and refactored so it can _live more than once_...
+> The FC Theme is work-in-progress and its structure and methods may change in the near future. The code is also pretty messy and YOLO. It will gradually be cleaned up, simplified and refactored so it can _live more than once_... More documentation will be added later as well.
 
 Currently the FC Theme is used. It is included directly in the `themes/FC` folder. Read its [own documentation](themes/FC/README.md) to find out more.
 
