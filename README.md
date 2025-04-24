@@ -288,11 +288,11 @@ Currently the FC Theme is used. It is included directly in the `themes/FC` folde
 
 - Please consider [website usage stats](https://caniuse.com/) when relying on modern web technologies (web standards support, file type support, etc).
 
-- Before submitting changes, please test thoroughly, ideally on several devices, using browser built-in web tools/extensions, such as Firefox Inspector that displays Responsive Design Mode (Ctrl+Shift+M).
+- Before submitting changes, please test thoroughly, ideally on several devices, using browser built-in web tools/extensions, such as Firefox Web Developer Tools and Chromium DevTools (Ctrl+Shift+I) to display Responsive Design Mode (Ctrl+Shift+M).
 
 - Have a look at [Recommended Accessibility Evaluation Tools](https://www.w3.org/WAI/test-evaluate/tools/list/) and use online tools when evaluating the website performance and compliance.
 
-- If developing with the IDE `VSCodium`, the extension `Hugo Language and Syntax Support` is handy.
+- If developing with the IDE VSCode/VSCodium, the extension `Hugo Language and Syntax Support` is handy.
 
 ## License
 
