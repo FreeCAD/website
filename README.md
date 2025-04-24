@@ -262,6 +262,8 @@ Before a new language is enabled, the main navigation pages (homepage, features,
 
 A server-less Content Management System is available to manage content easily. It is based on the [Sveltia CMS](https://github.com/sveltia/sveltia-cms) project. It's a single JavaScript that interacts with the Git repository of the website. It can be used locally on supported web browsers (currently only Chromium-based) or via GitHub login. Pages, translations and resources such as illustrations can be added, edited or deleted directly from the content panel of available collections.
 
+Configuration for the CMS is defined in `config/params.yaml` in the `headless_cms` portion.
+
 ### Archetypes
 
 > [!NOTE]
