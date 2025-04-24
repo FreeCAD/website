@@ -1,5 +1,5 @@
 > [!NOTE]
-> This is a temporary development repository : the [official repository](https://github.com/FreeCAD) will be available at a later time. More documentation will be added later as well.
+> This is a temporary development repository: the [official repository](https://github.com/FreeCAD) will be available at a later time. More documentation will be added later as well.
 
 [Contributing](#contributing) • [Development](#development) • [Structure](#structure) • [Guidelines](#guidelines) • [Theme](#theme) • [Resources](#resources) • [License](#license)
 
@@ -9,7 +9,7 @@ Welcome to the source code of [FreeCAD website](https://www.freecad.org). The co
 
 The site is statically generated thanks to [Hugo](https://gohugo.io/), a fast and flexible static site generator written in Golang.
 
-For other parts of FreeCAD web ecosystem, head to :
+For other parts of FreeCAD web ecosystem, head to:
 
 - [FreeCAD software source](https://github.com/FreeCAD/FreeCAD)
 - [FreeCAD user documentation `Wiki`](https://wiki.freecad.org/)
@@ -19,17 +19,17 @@ For other parts of FreeCAD web ecosystem, head to :
 
 ## Contributing
 
-Contributions are always welcome ! FreeCAD website is free and open source just like FreeCAD.
+Contributions are always welcome! FreeCAD website is free and open source just like FreeCAD.
 
 When contributing to the website, keep in mind that it acts as the public face of the FreeCAD organization and community. Thus, substantial changes have to be discussed beforehand via its usual communication channels (e.g. GitHub issues, [Matrix chat](https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im), [Forum](https://forum.freecad.org/), [Discord](https://discord.com/invite/F4hdxzYZfc)). [FreeCAD's code of conduct](https://github.com/FreeCAD/FreeCAD/blob/main/CODE_OF_CONDUCT.md) have to be observed at any time. Read the [Guidelines](#guidelines) below.
 
-Contributions of all kind can be accepted : content, translations, bug fixes and theme improvements. Depending on the scope, some basic know-how of Git, YAML, Markdown, HTML, CSS, Javascript and Hugo template syntax is recommended. Create appropriate issues discussing your changes before submitting Pull Requests.
+Contributions of all kind can be accepted: content, translations, bug fixes and theme improvements. Depending on the scope, some basic know-how of Git, YAML, Markdown, HTML, CSS, Javascript and Hugo template syntax is recommended. Create appropriate issues discussing your changes before submitting Pull Requests.
 
 For bug report, please use the provided GitHub issue template.
 
 ### Browser support
 
-When using and making changes, keep in mind this website only supports *evergreen browsers* :
+When using and making changes, keep in mind this website only supports *evergreen browsers*:
 
 - Firefox (latest version, N-1 version, and latest ESR version)
 - Chrome (latest version and N-1 version)
@@ -44,20 +44,20 @@ When using and making changes, keep in mind this website only supports *evergree
 
 ### Building
 
-To build the website locally :
+To build the website locally:
 
 1. Install [Hugo](https://gohugo.io/installation/).
 2. Install [Git](https://git-scm.com/).
 3. Optionally if developing Hugo modules, install [Go](https://go.dev/doc/install).
 4. `Git` clone this repository or download the Code Zip and unzip it.
 5. Open the terminal at your cloned or downloaded repository location.
-6. Build the site locally and launch the [live server](https://gohugo.io/commands/hugo_server/) : within the root directory of the site, run
+6. Build the site locally and launch the [live server](https://gohugo.io/commands/hugo_server/): within the root directory of the site, run:
 
 ```shell
 hugo server
 ```
 
-To build with [Draft pages](https://gohugo.io/methods/page/draft/), run
+To build with [Draft pages](https://gohugo.io/methods/page/draft/), run:
 
 ```shell
 hugo server -D
@@ -72,7 +72,7 @@ To view the website locally, open your web browser at the indicated address, by 
 
 ### Deployment
 
-This project uses a `development` > `testing` > `production` environments logic :
+This project uses a `development` > `testing` > `production` environments logic:
 
 - The `development` environment is your local clone. The result can be seen on your web browser after following the [Building instructions above](#building).
 - The `testing` environment is this current repository. The result can be seen on [GitHub Pages](https://marcuspollio.github.io/FreeCAD-website/).
@@ -109,36 +109,36 @@ To understand how Hugo works, read its [Official documentation](https://gohugo.i
 
 To simply change or create content, such as news articles, read first the [Guidelines](#guidelines), then read about the [Content Management System](#content-management-system) or [Archetypes](#archetypes). If curious how content is organized, carry on reading below.
 
-There are two main types of content files : **Single** (`index.md`) and **List** (`_index.md`) pages. **Single** pages are where most changes will be made.**List** pages gathers content from **Single** pages and should not be changed in most cases. All linked resources for a specific page (e.g. illustrations, translations, assets) can be stored in the same folder as the page itself ([leaf bundle](https://gohugo.io/content-management/page-bundles/) method), making relative links easy and content tidy.
+There are two main types of content files: **Single** (`index.md`) and **List** (`_index.md`) pages. **Single** pages are where most changes will be made.**List** pages gathers content from **Single** pages and should not be changed in most cases. All linked resources for a specific page (e.g. illustrations, translations, assets) can be stored in the same folder as the page itself ([leaf bundle](https://gohugo.io/content-management/page-bundles/) method), making relative links easy and content tidy.
 
 These files are mostly written with Markdown and contain a metadata header called the Front Matter, at the top of the file in-between the YAML `---` characters. How content from **Single** and **List** pages generated into HTML is defined by templates actions used by the [Theme](#theme).
 
-The content is structured as follows :
+The content is structured as follows:
 
-- `content/_index.md` : the Homepage file. This is a **List** gathering content from other pages, mainly in the News and Homepage sections.
+- `content/_index.md`: the Homepage file. This is a **List** gathering content from other pages, mainly in the News and Homepage sections.
 
-- `content/homepage` : **Single** with overview and features displayed on the Homepage and used by the previous **List**.
+- `content/homepage`: **Single** with overview and features displayed on the Homepage and used by the previous **List**.
 
-- `content/features` : **Single** showcasing FreeCAD features.
+- `content/features`: **Single** showcasing FreeCAD features.
 
-- `content/download` : **Single** allowing to download FreeCAD latest release per platform, links to development, previous versions and other useful resources. Read how to [update the Releases builds](#releases).
+- `content/download`: **Single** allowing to download FreeCAD latest release per platform, links to development, previous versions and other useful resources. Read how to [update the Releases builds](#releases).
 
-- `content/releases` : **List** gathering the release notes. Each release is organized in sub-folders. The following metadata fields are required for the release notes to be correctly displayed throughout the website : `title` (version of the release), `description`, `date`, `params` and `cover` (splashscreen of the release). Read how to [update the Releases builds](#releases).
+- `content/releases`: **List** gathering the release notes. Each release is organized in sub-folders. The following metadata fields are required for the release notes to be correctly displayed throughout the website: `title` (version of the release), `description`, `date`, `params` and `cover` (splashscreen of the release). Read how to [update the Releases builds](#releases).
 
-- `content/news` : **List** gathering articles for the news blog. Articles are organized in `categories` sub-folders. The following metadata fields are required for the article to be correctly displayed throughout the website: `title`, `description`, `date`, `author`, `categories`,`tags` and `cover image`. The name of the folder acts as a slug in the generated URL. `Draft` articles or articles with a `date` in the future are not published in the production environment. To have an article featured at the top of the Homepage, the `hero` Params have to be set.
+- `content/news`: **List** gathering articles for the news blog. Articles are organized in `categories` sub-folders. The following metadata fields are required for the article to be correctly displayed throughout the website: `title`, `description`, `date`, `author`, `categories`, `tags` and `cover image`. The name of the folder acts as a slug in the generated URL. `Draft` articles or articles with a `date` in the future are not published in the production environment. To have an article featured at the top of the Homepage, the `hero` Params have to be set.
 
-- `content/documentation` : **Single** helping users to get started with FreeCAD (wiki, manual, tutorials, learning network).
+- `content/documentation`: **Single** helping users to get started with FreeCAD (wiki, manual, tutorials, learning network).
 
-- `content/community` : **Single** to get involved with the FreeCAD community (events, online groups, association).
+- `content/community`: **Single** to get involved with the FreeCAD community (events, online groups, association).
 
-- `content/contribute` : **Single** to start contributing to FreeCAD development (bug reports, translations, code, grants).
+- `content/contribute`: **Single** to start contributing to FreeCAD development (bug reports, translations, code, grants).
 
-- `content/donate` : **List** gathering donations to the FreeCAD Project Association. The following metadata fields are required for the sponsors to be correctly displayed throughout the website: `title` (name of the sponsor), `link` (link of the sponsor if applicable) `type` (sponsor level e.g. bronze, silver or gold), `date` (start of the sponsorship).
+- `content/donate`: **List** gathering donations to the FreeCAD Project Association. The following metadata fields are required for the sponsors to be correctly displayed throughout the website: `title` (name of the sponsor), `link` (link of the sponsor if applicable) `type` (sponsor level e.g. bronze, silver or gold), `date` (start of the sponsorship).
 
-- `content/about` : **Single** with info about the website (credits, term of use, etc).
+- `content/about`: **Single** with info about the website (credits, term of use, etc).
 
 > [!NOTE]
-> `content/theme-docs` : only temporary for the website development.
+> `content/theme-docs`: only temporary for the website development.
 
 ### Root folders skeleton
 
@@ -163,29 +163,29 @@ FreeCAD-website/
 
 Hugo [Lookup order](https://gohugo.io/templates/lookup-order/) and [Union file system](https://gohugo.io/getting-started/directory-structure/#union-file-system) logic allows to resolve duplicate file and folder names, using their different paths to take precedence. When two files have the same filename, the file in the root project directory takes precedence. This allows to override a `theme` template by placing a copy of the same name within the project root.
 
-- `.github` : configuration and template files for GitHub.
+- `.github`: configuration and template files for GitHub.
 
-- `archetypes` : pre-made template files to easily add new content. Read below about [Archetypes](#archetypes).
+- `archetypes`: pre-made template files to easily add new content. Read below about [Archetypes](#archetypes).
 
-- `assets` : global resources used throughout the website that can be modified using pipes. This includes CSS, JS and images. For media content used in articles and other pages check their respective folders.
+- `assets`: global resources used throughout the website that can be modified using pipes. This includes CSS, JS and images. For media content used in articles and other pages check their respective folders.
 
-- `config` : configuration files for the site generator, languages, the [Theme](#theme) and the [Content Management System](#content-management-system).
+- `config`: configuration files for the site generator, languages, the [Theme](#theme) and the [Content Management System](#content-management-system).
 
-- `content` : [Content](#content-and-metadata) files.
+- `content`: [Content](#content-and-metadata) files.
 
-- `data` : local data resources (e.g. JSON, YAML, XML) to augment or create content. Currently empty, it may be used in the future to store e.g. authors data.
+- `data`: local data resources (e.g. JSON, YAML, XML) to augment or create content. Currently empty, it may be used in the future to store e.g. authors data.
 
-- `i18n` : translation tables for the theme in a multilingual website.
+- `i18n`: translation tables for the theme in a multilingual website.
 
-- `layouts` : wrapping templates actions to transform content, data and resources into a complete set of HTML pages.
+- `layouts`: wrapping templates actions to transform content, data and resources into a complete set of HTML pages.
 
-- `public` : website generated by the `hugo` and `hugo server` commands. It does not have to be version-controlled by git. When creating a Pull Request, please do not include it.
+- `public`: website generated by the `hugo` and `hugo server` commands. It does not have to be version-controlled by git. When creating a Pull Request, please do not include it.
 
-- `resources` : cached output from Hugo pipelines generated by the `hugo` and `hugo server` commands, e.g. CSS and images. It does not have to be version-controlled by git. When creating a Pull Request, please do not include it.
+- `resources`: cached output from Hugo pipelines generated by the `hugo` and `hugo server` commands, e.g. CSS and images. It does not have to be version-controlled by git. When creating a Pull Request, please do not include it.
 
-- `static` : global static resources used throughout the website. This includes favicons and fonts.
+- `static`: global static resources used throughout the website. This includes favicons and fonts.
 
-- `theme` : [Theme](#theme) files with its specific templates actions, layouts, assets and translation tables. It is currently called `FC` theme.
+- `theme`: [Theme](#theme) files with its specific templates actions, layouts, assets and translation tables. It is currently called `FC` theme.
 
 ## Guidelines
 
@@ -218,7 +218,7 @@ Template actions in the FC Theme resize and crop images at build time depending 
 
 All download information for the current stable version and future new release you may add is stored in the front matter of release notes pages in `content/releases`. The download box on top of the download page uses the latest release notes page info.
 
-To create a new release, use the following Front Matter :
+To create a new release, use the following Front Matter:
 
 ```yaml
 ---
@@ -269,7 +269,7 @@ Configuration for the CMS is defined in `config/params.yaml` in the `headless_cm
 > [!NOTE]
 > Currently archetypes are only partially set up and not really useful for now, only the basic `default.md` and `news/index.md` can be used. It is recommended to use the [Content Management System](#content-management-system) instead.
 
-Archetypes are templates for new content, making creation of new content easier and consistent. The following command creates a new content file named Base-Name.md with the specified PATH :
+Archetypes are templates for new content, making creation of new content easier and consistent. The following command creates a new content file named Base-Name.md with the specified PATH:
 
 ```shell
 hugo new content PATH/Base-Name.md
