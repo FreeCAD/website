@@ -23,11 +23,14 @@ Contributions are always welcome! FreeCAD website is free and open source just l
 
 When contributing to the website, keep in mind that it acts as the public face of the FreeCAD organization and community. Thus, substantial changes have to be discussed beforehand via its usual communication channels (e.g. [GitHub issues](https://github.com/marcuspollio/FreeCAD-website/issues), [Matrix chat](https://matrix.to/#/#FreeCAD_FreeCAD:gitter.im), [Forum](https://forum.freecad.org/), [Discord](https://discord.com/invite/F4hdxzYZfc)). [FreeCAD's code of conduct](https://github.com/FreeCAD/FreeCAD/blob/main/CODE_OF_CONDUCT.md) have to be observed at any time. Please also read the [Guidelines](#guidelines) below.
 
-Contributions of all kind can be accepted: content, translations, bug fixes and theme improvements. Depending on the scope, some basic know-how of Git, YAML, Markdown, HTML, CSS, Javascript and Hugo template syntax is recommended. Create appropriate [GitHub issues](https://github.com/marcuspollio/FreeCAD-website/issues) discussing your changes before submitting Pull Requests.
+Contributions of all kind can be accepted: content, translations, bug fixes and theme improvements. Depending on the scope, some basic know-how of Git, YAML, Markdown, HTML, CSS, Javascript and Hugo template syntax is recommended. Create appropriate [repository issues](https://github.com/marcuspollio/FreeCAD-website/issues) discussing your changes before submitting Pull Requests.
 
-For bug report, please use the provided [GitHub issue](https://github.com/marcuspollio/FreeCAD-website/issues) template.
+For bug report, please use the provided [repository issue](https://github.com/marcuspollio/FreeCAD-website/issues) template.
 
 ### Browser support
+
+> [!IMPORTANT]
+> Internet Explorer isn't supported.
 
 When using and making changes, keep in mind this website only supports *evergreen browsers*:
 
@@ -37,12 +40,12 @@ When using and making changes, keep in mind this website only supports *evergree
 - Opera (latest version and N-1 version)
 - Safari (latest version and N-1 version)
 
-> [!IMPORTANT]
-> Internet Explorer isn't supported.
-
 ## Development
 
 ### Building
+
+> [!IMPORTANT]
+> This temporary repo is currently compatible with Hugo 0.145
 
 To build the website locally:
 
@@ -67,10 +70,10 @@ Building should be relatively fast (about 10 seconds) and without errors.
 
 To view the website locally, open your web browser at the indicated address, by default `https://localhost:1313/`.
 
-> [!IMPORTANT]
-> This temporary repo is currently compatible with Hugo 0.145
-
 ### Deployment
+
+> [!NOTE]
+> Currently no `production` branch. Will be added when migrated to the official FreeCAD repository.
 
 This project uses a `development` > `testing` > `production` environments logic:
 
@@ -80,10 +83,10 @@ This project uses a `development` > `testing` > `production` environments logic:
 
 Testing builds deployment to GitHub Pages is done automatically by GitHub Actions whenever the `testing` branch receives a new commit. The `testing` branch itself should not be deployed, as it only contains the source files. The built version of the website is in the `public` folder, generated from the `hugo` command. The official website version is built from the `production` branch instead.
 
-> [!NOTE]
-> Currently no `production` branch. Will be added when migrated to the official FreeCAD repository.
-
 ## Structure
+
+> [!NOTE]
+> This temporary development version does not have all features available yet.
 
 ### Use and navigation overview
 
@@ -96,9 +99,6 @@ The website is multilingual, with English being the default language. That means
 
 A light and dark version of the theme is available on the sun/moon icon on the top header.
 
-> [!NOTE]
-> This temporary development version does not have all features available yet.
-
 ### Technical overview
 
 [Hugo](https://gohugo.io), the static site generator used, takes the plain-text content (typically Markdown) and data files (typically CSV, JSON, XML and YAML), marries them to an appropriate set of templates and produces a complete set of HTML pages (with CSS and Javascript) that can be served by any generic stand-alone web server.
@@ -109,7 +109,7 @@ To understand how Hugo works, read its [Official documentation](https://gohugo.i
 
 To simply change or create content, such as news articles, read first the [Guidelines](#guidelines), then read about the [Content Management System](#content-management-system) or [Archetypes](#archetypes). If curious how content is organized, carry on reading below.
 
-There are two main types of content files: **Single** (`index.md`) and **List** (`_index.md`) pages. **Single** pages are where most changes will be made. **List** pages gathers content from **Single** pages and should not be changed in most cases. All linked resources for a specific page (e.g. illustrations, translations, assets) can be stored in the same folder as the page itself ([leaf bundle](https://gohugo.io/content-management/page-bundles/) method), making relative links easy and content tidy.
+There are two main types of content files: **Single** (`index.md`) and **List** (`_index.md`) pages. **Single** pages are where most changes will be made. **List** pages gather content from **Single** pages and should not be changed in most cases. All linked resources for a specific page (e.g. illustrations, translations, assets) can be stored in the same folder as the page itself ([leaf bundle](https://gohugo.io/content-management/page-bundles/) method), making relative links easy and content tidy.
 
 These files are mostly written with Markdown and contain a metadata header called the Front Matter, at the top of the file in-between the YAML `---` characters. How content from **Single** and **List** pages is generated into HTML is defined by templates actions used by the [theme](#theme).
 
@@ -121,11 +121,11 @@ The content is structured as follows:
 
 - `content/features`: **Single** showcasing FreeCAD features.
 
-- `content/download`: **Single** allowing to download FreeCAD latest release per platform, links to development, previous versions and other useful resources. Read how to [update the Releases builds](#releases).
+- `content/download`: **Single** allowing to download FreeCAD latest builds per platform, links to development, previous versions and other useful resources. Read how to [update the Releases](#releases).
 
-- `content/releases`: **List** gathering the release notes. Each release is organized in sub-folders. The following metadata fields are required for the release notes to be correctly displayed throughout the website: `title` (version of the release), `description`, `date`, `params` and `cover` (splashscreen of the release). Read how to [update the Releases builds](#releases).
+- `content/releases`: **List** gathering the Release notes. Each Release is organized in sub-folders. The following metadata fields are required for Releases to be correctly displayed throughout the website: `title` (version of the Release), `description`, `date`, `params` and `cover` (splashscreen of the Release). Read how to [update Releases](#releases).
 
-- `content/news`: **List** gathering articles for the news blog. Articles are organized in `categories` sub-folders. The following metadata fields are required for the article to be correctly displayed throughout the website: `title`, `description`, `date`, `author`, `categories`, `tags` and `cover image`. The name of the folder acts as a slug in the generated URL. `Draft` articles or articles with a `date` in the future are not published in the production environment. To have an article featured at the top of the Homepage, the `hero` Params have to be set.
+- `content/news`: **List** gathering articles for the News blog. Articles are organized in `categories` sub-folders. The following metadata fields are required for the article to be correctly displayed throughout the website: `title`, `description`, `date`, `author`, `categories`, `tags` and `cover image`. The name of the folder acts as a slug in the generated URL. `Draft` articles or articles with a `date` in the future are not published in the production environment. To have an article featured at the top of the Homepage, the `hero` Params have to be set.
 
 - `content/documentation`: **Single** helping users to get started with FreeCAD (wiki, manual, tutorials, learning network).
 
@@ -189,8 +189,6 @@ Hugo [Lookup order](https://gohugo.io/templates/lookup-order/) and [Union file s
 
 ## Guidelines
 
-### Overview
-
 > [!NOTE]
 > Guidelines are currently work-in-progress.
 
@@ -216,14 +214,14 @@ Template actions in the FC Theme resize and crop images at build time depending 
 
 ### Releases
 
-All download information for the current stable version and future new release you may add is stored in the Front Matter of release notes pages in `content/releases`. The download box on top of the download page uses the latest release notes page info.
+All download information for the current stable version and future new Releases you may add is stored in the Front Matter of Release notes pages in `content/releases`. The download box on top of the download page uses the latest Release notes page info.
 
-To create a new release, use the following Front Matter:
+To create a new Release, use the following Front Matter:
 
 ```yaml
 ---
 title: "FreeCAD X.Y Release"        <-- X is the major version number and Y minor
-description: "The release description"
+description: "The Release description"
 date: yyyy-mm-dd
 author: "FreeCAD"
 tags:
@@ -243,7 +241,7 @@ params:
 ---
 ```
 
-Use a similar release notes page content structure as previous ones for consistency.
+Use a similar Release notes page content structure as previous ones for consistency.
 
 ### Translations
 
@@ -253,7 +251,7 @@ Translations of the content are stored in the same folder ([leaf bundle](https:/
 
 Translations of the theme are handled by translations tables in `themes/FC/i18n`.
 
-Before a new language is enabled, the main navigation pages (Homepage, features, download, news, community, documentation, contribute and donate) and the theme strings have to be translated. If willing to add a new language, please use the provided GitHub issue template indicating who will translate and who will proofread.
+Before a new language is enabled, the main navigation pages (Homepage, features, download, news, community, documentation, contribute and donate) and the theme strings have to be translated. If willing to add a new language, please use the provided repository issue template indicating who will translate and who will proofread.
 
 ### Content Management System
 
