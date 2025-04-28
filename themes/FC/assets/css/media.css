@@ -84,25 +84,6 @@
         width: 100%;
     }
 
-    .block {
-        padding: calc(2 * var(--gap)) var(--gap) 0;
-        flex-wrap: nowrap;
-        gap: calc(2 * var(--gap));
-        max-height: calc(2 * var(--width));
-    }
-
-    .block p:has(+ h2) {
-        order: 3;
-    }
-
-    .block :not([popover]) img:has(+ h2), .block :not([popover]) img:not(:has(+ h2)), .block p:has(+ h2), .block h2:not(:has(+ img)), .block p:not(:has(+ h2)) {
-        width: calc(var(--width) - (2 * var(--gap)));
-    }
-
-    .block img:not([popover] img) {
-        margin: 0 auto;
-    }
-
     .content div[popover] {
         padding: 0;
     }
@@ -117,6 +98,28 @@
     .content .close {
         width: 3rem;
         height: 3rem;
+    }
+
+    .block {
+        padding: calc(2 * var(--gap)) var(--gap);
+        flex-wrap: nowrap;
+        max-height: calc(2 * var(--width));
+    }
+
+    .block h2,
+    .block p,
+    .block a:not(:has(svg)) {
+        max-height: var(--width);
+        width: calc(var(--width) - (2 * var(--gap)));
+    }
+
+    .block img:not([popover] img) {
+        max-height: calc((var(--width)/2) - (1 * var(--gap)));
+        width: calc(var(--width) - (2 * var(--gap)));
+    }
+
+    .block button {
+        order: -1;
     }
 
     .download-box svg {

@@ -220,7 +220,8 @@ main header .entry-cover img {
 }
 
 .entry-title {
-    margin: 1rem auto 0;
+    margin-top: 0;
+    padding-top: var(--gap);
     transition: var(--link-transition);
 }
 
@@ -229,6 +230,8 @@ main header .entry-cover img {
     overflow: hidden;
     text-overflow: ellipsis;
     transition: var(--link-transition);
+    margin-bottom: 0;
+    padding-bottom: var(--gap);
 }
 
 .entry-isdraft {
@@ -464,7 +467,7 @@ sup:target {
     max-width: 100%;
     height: calc(var(--width) / 2);
     border-radius: var(--radius);
-    margin: var(--gap) auto;
+    margin: calc(var(--gap) * 2) auto;
     transition: var(--link-transition);
 }
 
@@ -535,7 +538,7 @@ sup:target {
 /* Single page Blocks (defined in-between +++ in Markdown files) */
 
 .block {
-    padding: var(--gap) var(--side);
+    padding: calc(4 * var(--gap)) var(--side);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -560,21 +563,13 @@ sup:target {
 }
 
 /* Tricks to have 2 side-by-side columns */
-.block :not([popover]) img:has(+ h2), .block :not([popover]) img:not(:has(+ h2)), .block p:has(+ h2) {
-    width: calc((var(--width) / 2) - (2 * var(--gap)));
-}
-
-.block h2:not(:has(+ img)), .block p:not(:has(+ h2)) {
-    width: calc((var(--width) / 2) - (2 * var(--gap)));
-}
-
-.column {
-    background: crimson;
-}
-
+.block h2,
 .block p,
-.block h2 {
+.block a:not(:has(svg)),
+.block img:not([popover] img) {
     margin: 0 auto;
+    max-height: calc((var(--width)/4) - (2 * var(--gap)));
+    width: calc((var(--width) / 2) - (4 * var(--gap)));
 }
 
 .block p {
@@ -582,9 +577,8 @@ sup:target {
     text-align-last: center;
 }
 
-.block img:not([popover] img) {
-    max-height: calc((var(--width)/4) - var(--gap));
-    margin: calc(var(--gap) * 2) auto;
+.column {
+    background: crimson;
 }
 
 
