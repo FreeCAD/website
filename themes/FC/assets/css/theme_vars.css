@@ -8,7 +8,7 @@
     --radius: 0.5rem;
     --gap: 1rem;
     --line: 0.125rem;
-    --side: calc(((100vw - var(--width)) / 2) + var(--gap));
+    --side: calc(((100vw - var(--width)) * 0.5) + var(--gap));
     --monospace: "Lucida Console", Monaco, "Consolas", monospace;
 
     --cover: rgb(255, 255, 255);

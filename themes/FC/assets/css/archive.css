@@ -32,7 +32,7 @@
 
 .archive-month-header {
     margin: var(--gap) auto;
-    width: calc(var(--width) / 4);
+    width: calc(var(--width) * 0.25);
 }
 
 .archive-month:not(:last-of-type) {

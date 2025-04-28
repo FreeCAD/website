@@ -5,7 +5,7 @@
     background: var(--theme);
     min-height: var(--footer-height);
     margin: auto;
-    padding: calc((var(--footer-height) - var(--gap)) / 2) var(--gap);
+    padding: calc((var(--footer-height) - var(--gap)) * 0.5) var(--gap);
     font-size: var(--s);
     color: var(--tertiary);
     text-align: center;

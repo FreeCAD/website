@@ -41,7 +41,7 @@
     #menu-list:popover-open,
     #lang-list:popover-open {
         right: var(--gap);
-        width: calc(100vw - (2 * var(--gap)));
+        width: calc(100vw - (var(--gap) * 2));
     }
 
     .theme-switch {
@@ -101,21 +101,21 @@
     }
 
     .block {
-        padding: calc(2 * var(--gap)) var(--gap);
+        padding: calc(var(--gap) * 2) var(--gap);
         flex-wrap: nowrap;
-        max-height: calc(2 * var(--width));
+        max-height: calc(var(--width) * 2);
     }
 
     .block h2,
     .block p,
     .block a:not(:has(svg)) {
         max-height: var(--width);
-        width: calc(var(--width) - (2 * var(--gap)));
+        width: calc(var(--width) - (var(--gap) * 2));
     }
 
     .block img:not([popover] img) {
-        max-height: calc((var(--width)/2) - (1 * var(--gap)));
-        width: calc(var(--width) - (2 * var(--gap)));
+        max-height: calc((var(--width) * 0.5) - var(--gap));
+        width: calc(var(--width) - (var(--gap) * 2));
     }
 
     .block button {
@@ -123,7 +123,7 @@
     }
 
     .download-box svg {
-        height: calc(1.5rem + (var(--width)/16));
+        height: calc(var(--width) * 0.125);
     }
 
     .download-box button {

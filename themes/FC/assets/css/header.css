@@ -169,9 +169,9 @@ body:not(.dark) #sun {
     inset: auto;
     flex-direction: column;
     min-width: 15rem;
-    max-height: calc(100vh - (var(--header-height) + (4 * var(--gap))));
+    max-height: calc(100vh - (var(--header-height) + (var(--gap) * 4)));
     top: calc(var(--header-height) + var(--gap));
-    right: calc(var(--side) - (3*var(--gap)));
+    right: calc(var(--side) - (var(--gap) * 3));
     text-align: center;
     background: var(--theme);
     border: none;

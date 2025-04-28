@@ -8,7 +8,7 @@
     text-align: center;
     justify-content: space-between;
     align-content: space-evenly;
-    gap: calc((var(--width) / 15) - (1 * var(--gap)));
+    gap: calc((var(--width) * 0.05) - var(--gap));
     list-style-type: none;
 }
 
@@ -18,7 +18,7 @@
 
 .gallery li img {
     margin: 0;
-    width: calc(var(--width) / 5);
-    height: calc(var(--width) / 5);
+    width: calc(var(--width) * 0.2);
+    height: calc(var(--width) * 0.2);
     border-radius: var(--radius);
 }
