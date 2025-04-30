@@ -5,7 +5,7 @@
 {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) -}}
 {{- $responsiveImages := (.Params.cover.responsiveImages | default site.Params.cover.responsiveImages) | default true -}}
 {{- $sizes := (slice "500" "1000") -}}
-{{- $resizeQuality := "webp q90 drawing lanczos" -}}
+{{- $resizeFormat := "webp" -}}
 
 <figure class="entry-cover">
   {{- if $cover -}}{{/* i.e it is present in page bundle */}}
@@ -16,10 +16,10 @@
       <img
         srcset="
           {{- if (ge $cover.Width (index $sizes 0)) -}}
-            {{- printf "%s %s" (($cover.Crop (printf "%sx%s center %s" (index $sizes 0) (index $sizes 0) $resizeQuality)).RelPermalink) (printf "%sw, " (index $sizes 0)) -}}
+            {{- printf "%s %s" (($cover.Crop (printf "%sx%s center %s" (index $sizes 0) (index $sizes 0) $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 0)) -}}
           {{- end -}}
           {{- if (ge $cover.Width (index $sizes 1)) -}}
-            {{- printf "%s %s" (($cover.Resize (printf "%sx %s" (index $sizes 1) $resizeQuality)).RelPermalink) (printf "%sw, " (index $sizes 1)) -}}
+            {{- printf "%s %s" (($cover.Resize (printf "%sx %s" (index $sizes 1) $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 1)) -}}
           {{- end -}}
           {{ $cover.RelPermalink }} {{ printf "%dw" ($cover.Width) }}"
         sizes="

@@ -1,6 +1,6 @@
 {{- $url := urls.Parse .Destination -}}
 {{- $sizes := (slice "500" "1000") -}}
-{{- $resizeQuality := "webp q90 drawing lanczos" -}}
+{{- $resizeFormat := "webp" -}}
 {{- $id := delimit (shuffle (seq 1 9)) "" -}}
 
 {{- if $url.Scheme -}}
@@ -39,7 +39,7 @@
           srcset="
             {{ range $sizeImage := $sizes -}}
               {{- if (ge $img.Width $sizeImage) -}}
-                {{- printf "%s %s" (($img.Resize (printf "%sx %s" $sizeImage $resizeQuality)).RelPermalink | safeURL) (printf "%sw, " $sizeImage) -}}
+                {{- printf "%s %s" (($img.Resize (printf "%sx %s" $sizeImage $resizeFormat)).RelPermalink | safeURL) (printf "%sw, " $sizeImage) -}}
               {{- end -}}
             {{- end -}}
             {{ $img.RelPermalink }} {{ printf "%dw" ($img.Width) }}"

@@ -106,3 +106,8 @@ caches:
     maxAge: 24h
   images:
     dir: :cacheDir/images
+
+imaging:
+  hint: drawing
+  quality: 90
+  resampleFilter: lanczos
