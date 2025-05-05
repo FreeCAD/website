@@ -10,9 +10,9 @@ cover:
   alt: "a cover alternative title"
 menus:
   main:
-    weight: 3
+    weight: 5
   footer:
-    weight: 3
+    weight: 5
 ---
 
 [comment]: # (Please do not add content in this News _index file. The layout of the News page is generated from template rules by the theme.)

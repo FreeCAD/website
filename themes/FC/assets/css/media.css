@@ -169,7 +169,7 @@
         display: inline-block;
     }
 
-    .menu-list #menu-active:not(.button) {
+    .menu-list .menu-active:not(.button) {
         margin: 0.5rem;
         padding: 0;
         color: var(--primary);
@@ -177,7 +177,7 @@
         box-shadow: 0 var(--line)0 var(--primary);
     }
 
-    .menu-list #menu-active:hover {
+    .menu-list .menu-active:hover {
         color: var(--link-hover-color);
         box-shadow: var(--link-hover-underline-shadow);
     }

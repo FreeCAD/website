@@ -1,9 +1,12 @@
 ---
-title: "FreeCAD Homepage highlights"
+title: "Homepage"
 description: "FreeCAD highlights on the Homepage"
 date: 2024-05-22T08:04:23+12:00
 author: "FreeCAD"
 type: homepage
+menus:
+  footer:
+    weight: 1
 ---
 
 [![LINK TO GITHUB](assembly2.webp "Link to GitHub")](https://github.com/freecad)

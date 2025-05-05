@@ -10,9 +10,9 @@ cover:
   alt: "a cover alternative title"
 menus:
   main:
-    weight: 2
+    weight: 3
   footer:
-    weight: 2
+    weight: 3
 params:
   thanksText: "Merci de télécharger FreeCAD !"
   donateText: "♥︎ Parrainer son dévelopement"

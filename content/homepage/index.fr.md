@@ -1,49 +1,40 @@
 ---
-title: "Download"
-description: "Let the FreeCAD adventure unfold!"
+title: "Accueil"
+description: "FreeCAD points forts sur la page d'accueil"
 date: 2024-05-22T08:04:23+12:00
 author: "FreeCAD"
-type: download
-cover:
-  image: 4.webp
-  caption: "a cover caption"
-  alt: "a cover alternative title"
+type: homepage
 menus:
-  main:
-    weight: 3
   footer:
-    weight: 3
-params:
-  thanksText: "Thank you for downloading FreeCAD!"
-  donateText: "♥︎ Sponsor its development"
+    weight: 1
 ---
 
-[![LINK TO GITHUB](4.webp "Link to GitHub")](https://github.com/freecad)
+[![LINK TO GITHUB](assembly2.webp "Link to GitHub")](https://github.com/freecad)
 
-## First Download Block
+## First Highlight Block
 
 This is a text in the first block to go in the right. This is a text in the first block. This is a text in the first block to go in the right. This is a text in the first block to go in the right. This is a text in the first block to go in the right.
 
 +++
 
-## Second Download Block
+## Second Highlight Block
 
 This is a text in the second block to go in the left. This is a text in the second block. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block.
 
-![](4.webp)
+![](bulb.webp)
 
 +++
 
-![](4.webp)
+![](assembly1.webp)
 
-## Third Download Block
+## Third Highlight Block
 
 This is a text in the third block to go in the right. This is a text in the third block. This is a text in the third block to go in the right. This is a text in the third block to go in the right. This is a text in the third block to go in the right. This is a text in the third block.
 
 +++
 
-## Fourth Download Block
+## Fourth Highlight Block
 
 This is a text in the fourth block to go in the left. This is a text in the fourth block. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block.
 
-![](4.webp)
+![](fem.webp)

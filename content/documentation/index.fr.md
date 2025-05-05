@@ -9,9 +9,9 @@ cover:
   alt: "a cover alternative title"
 menus:
   main:
-    weight: 5
+    weight: 7
   footer:
-    weight: 5
+    weight: 7
 ---
 
 [![LINK TO GITHUB](0.webp "Link to GitHub")](https://github.com/freecad)
