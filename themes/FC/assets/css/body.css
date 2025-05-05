@@ -20,6 +20,7 @@ body {
     color: var(--secondary);
     margin: 0;
     overflow-x: clip;
+    background: var(--theme);
 }
 
 h1 {
@@ -101,7 +102,7 @@ del {
 
 ins {
     text-decoration: none;
-    background-color: #d4fcbc;
+    background: #d4fcbc;
 }
 
 dl, ol, ul {
