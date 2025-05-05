@@ -16,15 +16,19 @@ menus:
 
 [![LINK TO GITHUB](0.webp "Link to GitHub")](https://github.com/freecad)
 
-## First Documentation Block
+## User Manual
 
-This is a text in the first block to go in the right. This is a text in the first block. This is a text in the first block to go in the right. This is a text in the first block to go in the right. This is a text in the first block to go in the right.
+Get started with FreeCAD's tools and workflows. This manual guides users through modeling basics, workbenches, and essential features.
+
+[Browse User Manual](https://wiki.freecad.org/User_hub)
 
 +++
 
-## Second Documentation Block
+## Developer Documentation
 
-This is a text in the second block to go in the left. This is a text in the second block. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block to go in the left. This is a text in the second block.
+Dive into FreeCAD's architecture and codebase. This section is for contributors building features, fixing bugs, or extending functionality.
+
+[Browse Developer Documentation](https://wiki.freecad.org/Developer_hub)
 
 ![](0.webp)
 
@@ -32,14 +36,8 @@ This is a text in the second block to go in the left. This is a text in the seco
 
 ![](0.webp)
 
-## Third Documentation Block
+## Python API
 
-This is a text in the third block to go in the right. This is a text in the third block. This is a text in the third block to go in the right. This is a text in the third block to go in the right. This is a text in the third block to go in the right. This is a text in the third block.
+Automate and customize FreeCAD with Python. Explore scripting capabilities, object manipulation, and advanced workflows using the built-in API.
 
-+++
-
-## Fourth Documentation Block
-
-This is a text in the fourth block to go in the left. This is a text in the fourth block. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block to go in the left. This is a text in the fourth block.
-
-![](0.webp)
+[Browse Python API](https://wiki.freecad.org/Power_users_hub)
