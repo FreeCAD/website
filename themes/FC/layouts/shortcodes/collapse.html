@@ -1,5 +1,5 @@
 <p>
-  <details {{- if (eq (.Get "openByDefault") true) -}} open=true {{- end -}}>
+  <details{{ if (eq (.Get "openByDefault") true) }} open{{ end }}>
     <summary markdown="span">
       {{ .Get 0 | $.Page.RenderString }}
     </summary>
