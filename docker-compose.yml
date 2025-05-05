@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  hugo:
+    build: .
+    container_name: hugo_dev
+    volumes:
+      - .:/src
+    ports:
+      - "1313:1313"
+    working_dir: /src
+    command: hugo server --bind 0.0.0.0 --baseURL=http://localhost --watch
