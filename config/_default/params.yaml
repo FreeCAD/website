@@ -22,6 +22,21 @@ socialIcons:
   - name: github-simple
     url: https://github.com/FreeCAD
 
+# Bundle all required CSS, order is important
+assets:
+  stylesheets:
+    - css/theme_vars.css
+    - css/body.css
+    - css/404.css
+    - css/archive.css
+    - css/footer.css
+    - css/header.css
+    - css/main.css
+    - css/gallery.css
+    - css/terms.css
+    - css/highlight.css
+    - css/media.css
+
 # Headless CMS parameters
 
 headless_cms:
