@@ -192,7 +192,7 @@
   {{- if hugo.IsProduction -}}
     {{- $instantClick = minify $instantClick -}}
   {{- end -}}
-  <script type="text/javascript" src="{{ $instantClick.RelPermalink }}" data-no-instant
+  <script defer type="text/javascript" src="{{ $instantClick.RelPermalink }}" data-no-instant
     {{- if site.Params.assets.disableFingerprinting -}}
       integrity="{{ $instantClick.Data.Integrity }}"
     {{- end -}}>

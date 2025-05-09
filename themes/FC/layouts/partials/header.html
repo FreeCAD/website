@@ -3,7 +3,7 @@
 {{- if hugo.IsProduction -}}
   {{- $switchTheme = minify $switchTheme -}}
 {{- end -}}
-<script type="text/javascript" data-no-instant src="{{ $switchTheme.RelPermalink }}">
+<script async type="text/javascript" data-no-instant src="{{ $switchTheme.RelPermalink }}">
 </script>
 
 <script>

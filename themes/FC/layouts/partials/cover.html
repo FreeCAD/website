@@ -31,7 +31,8 @@
         src="{{ $cover.RelPermalink }}"
         alt="{{ $alt }}"
         width="{{ $cover.Width }}"
-        height="{{ $cover.Height }}">
+        height="{{ $cover.Height }}"
+        fetchpriority="high">
     {{- else -}}{{/* Unprocessable image or responsive images disabled */}}
       <img src="{{ (path.Join .RelPermalink .Params.cover.image) }}" alt="{{ $alt }}">
     {{- end -}}
