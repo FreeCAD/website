@@ -28,7 +28,11 @@
         alt="{{ $alt }}"
         width="{{ $cover.Width }}"
         height="{{ $cover.Height }}"
-        fetchpriority="high">
+          {{- if .Store.Get "articles" -}}
+            loading="lazy"
+          {{- else -}}
+            fetchpriority="high"
+          {{- end -}}>
     {{- else -}}{{/* Unprocessable image or responsive images disabled */}}
       <img src="{{ (path.Join .RelPermalink .Params.cover.image) }}" alt="{{ $alt }}">
     {{- end -}}
