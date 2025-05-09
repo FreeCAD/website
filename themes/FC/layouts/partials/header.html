@@ -56,17 +56,24 @@
       </button>
       <ul popover id="menu-list" class="menu-list">
         {{- range $menuMain -}}
-        {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL)) -}}
-        {{- $page_url := $currentPage.RelPermalink -}}
-        <li>
-            <a href="{{ $menu_item_url }}" title="{{ .Title | default .Name | plainify }}"
-            {{- with .Params.style -}} class="{{ . }}" {{- end -}}
-            {{- if strings.HasPrefix $page_url $menu_item_url -}}
-              class="menu-active" aria-current="page"
-            {{- end -}} >
-              {{ .Title | $.Page.RenderString }}
-            </a>
-        </li>
+          {{- $page_url := $currentPage.RelPermalink -}}
+          {{- $classes := slice -}}
+          {{- with .Params.style -}}
+            {{- $classes = $classes | append . -}}
+          {{- end -}}
+          {{- if strings.HasPrefix $page_url .URL -}}
+            {{- $classes = $classes | append "menu-active" -}}
+          {{- end -}}
+          <li>
+              <a href="{{ .URL }}"
+                title="{{ .Title | default .Name | plainify }}"
+                class="{{ delimit $classes " " }}"
+                {{- if strings.HasPrefix $page_url .URL -}}
+                  aria-current="page"
+                {{- end -}}>
+                {{ .Title | $.Page.RenderString }}
+              </a>
+          </li>
         {{- end -}}
       </ul>
     </nav>
