@@ -1,5 +1,4 @@
 {{- $cover := (.Resources.ByType "image").GetMatch (printf "*%s*" (.Params.cover.image)) -}}
-{{- $addLink := (and site.Params.cover.linkFullImages (not $.IsHome)) -}}
 {{- $alt := (.Params.cover.alt | default .Params.cover.caption | plainify) -}}
 {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif" "webp") -}}
 {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) -}}
@@ -9,9 +8,6 @@
 
 <figure class="entry-cover">
   {{- if $cover -}}{{/* i.e it is present in page bundle */}}
-    {{- if $addLink }}
-      <a href="{{ (path.Join .RelPermalink .Params.cover.image) }}" target="_blank" rel="noopener noreferrer">
-    {{- end -}}
     {{- if (and (in $processableFormats $cover.MediaType.SubType) ($responsiveImages) (eq $prod true)) -}}
       <img
         srcset="
@@ -38,13 +34,7 @@
     {{- end -}}
 
   {{- else -}}{{/* For absolute urls and external links, no img processing here */}}
-    {{- if $addLink }}
-      <a href="{{ (.Params.cover.image) | absURL }}" target="_blank" rel="noopener noreferrer">
-    {{- end -}}
     <img src="{{ (.Params.cover.image) | absURL }}" alt="{{ $alt }}">
-  {{- end -}}
-  {{- if $addLink }}
-    </a>
   {{- end -}}
 
   {{/*  Display Caption  */}}
