@@ -3,7 +3,7 @@
 {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif" "webp") -}}
 {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) -}}
 {{- $responsiveImages := (.Params.cover.responsiveImages | default site.Params.cover.responsiveImages) | default true -}}
-{{- $sizes := (slice "500" "1000") -}}
+{{- $sizes := (slice "250" "500" "1000" "2000") -}}
 {{- $resizeFormat := "webp" -}}
 
 <figure class="entry-cover">
@@ -11,18 +11,23 @@
     {{- if (and (in $processableFormats $cover.MediaType.SubType) ($responsiveImages) (eq $prod true)) -}}
       <img
         srcset="
-          {{- if (ge $cover.Width (index $sizes 0)) -}}
-            {{- printf "%s %s" (($cover.Crop (printf "%sx%s center %s" (index $sizes 0) (index $sizes 0) $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 0)) -}}
-          {{- end -}}
           {{- if (ge $cover.Width (index $sizes 1)) -}}
-            {{- printf "%s %s" (($cover.Resize (printf "%sx %s" (index $sizes 1) $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 1)) -}}
+            {{- printf "%s %s" (($cover.Crop (printf "%sx%s center %s" (index $sizes 1) (index $sizes 0) $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 0)) -}}
+          {{- end -}}
+          {{- if (ge $cover.Width (index $sizes 2)) -}}
+            {{- printf "%s %s" (($cover.Crop (printf "%sx%s center %s" (index $sizes 1) (index $sizes 2) $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 1)) -}}
+            {{- printf "%s %s" (($cover.Crop (printf "%sx%s center %s" (index $sizes 2) (index $sizes 1) $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 2)) -}}
+            {{- printf "%s %s" (($cover.Crop (printf "%sx%s center %s" (index $sizes 3) (index $sizes 2) $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 3)) -}}
           {{- end -}}
           {{ $cover.RelPermalink }} {{ printf "%dw" ($cover.Width) }}"
         sizes="
           {{- if .Store.Get "articles" -}}
             {{ index $sizes 0 }}px
           {{- else -}}
-            (max-width: {{ index $sizes 1 }}px) {{ index $sizes 1 }}px, 100vw
+            (max-width: {{ index $sizes 1 }}px) {{ index $sizes 1 }}px,
+            ((min-width: {{ index $sizes 1 }}px) and (max-width: {{ index $sizes 2 }}px)) {{ index $sizes 2 }}px,
+            ((min-width: {{ index $sizes 2 }}px) and (max-width: {{ index $sizes 3 }}px)) {{ index $sizes 3 }}px,
+            100vw
           {{- end -}}"
         src="{{ $cover.RelPermalink }}"
         alt="{{ $alt }}"
