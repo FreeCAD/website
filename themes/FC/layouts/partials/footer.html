@@ -4,9 +4,8 @@
   {{- $menuFooter = site.Sites.Default.Menus.footer -}}
 {{- end -}}
 
-<footer class="site-footer">
+<footer>
   <div class="footer-row">
-    <div class="footer-sitemap">
       {{- range $menuFooter -}}
         {{- $pageUrl := $currentPage.RelPermalink -}}
         {{- $classes := slice -}}
@@ -50,7 +49,6 @@
           {{- end -}}
         </div>
       {{- end -}}
-    </div>
   </div>
 
   <div class="footer-row">

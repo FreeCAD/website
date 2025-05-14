@@ -136,6 +136,18 @@
         width: 2rem;
     }
 
+    .footer-row,
+    .footer-column h4 {
+        font-size: var(--s);
+    }
+
+    .footer-column {
+        flex: 1 1 calc(var(--width)/3);
+    }
+    .footer-column:last-child {
+        flex: auto;
+    }
+
 
     /* Archive */
 
