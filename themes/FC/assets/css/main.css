@@ -30,8 +30,10 @@ main header {
 .description,
 .download-box .date,
 .hero-button,
-.single-meta {
+.single-meta,
+.docs-box {
     display: inline-flex;
+    gap: var(--gap);
     padding: 0.75rem 1.5rem;
     max-width: calc(var(--width) - (var(--gap) * 2));
     color: var(--cover);
@@ -574,7 +576,7 @@ sup:target {
 
 .block p {
     text-align: justify;
-    text-align-last: center;
+    text-align-last: auto;
 }
 
 .column {
@@ -682,6 +684,42 @@ sup:target {
 
 .download-release .thanks p {
     color: var(--secondary);
+}
+
+
+/* Documentation box */
+
+.docs-column {
+    display: inline-flex;
+    flex-direction: column;
+    flex: 1 1 8rem;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--gap);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.docs-column :is(button, svg, h3, p) {
+    color: var(--cover);
+    margin: 0 auto;
+}
+
+.docs-box svg {
+    height: calc(var(--width) * 0.1);
+    transition: var(--link-transition);
+}
+
+.docs-box a:hover svg {
+    transform: scale(1.05);
+}
+
+.docs-box a:hover :is(h3, svg) {
+    color: var(--link-hover-color);
+}
+
+.docs-box svg:active {
+    transform: scale(0.90);
 }
 
 

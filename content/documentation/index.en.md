@@ -3,6 +3,7 @@ title: "Documentation"
 description: "Get started with FreeCAD"
 date: 2024-05-22T08:04:23+12:00
 author: "FreeCAD"
+type: "documentation"
 cover:
   image: 0.webp
   caption: "a cover caption"
@@ -12,32 +13,35 @@ menus:
     weight: 7
   footer:
     weight: 7
+params:
+  docs:
+    manual:
+      text: "User manual"
+      description: "Explore FreeCAD workbenches, workflows and essential features available in several languages."
+      link: "https://wiki.freecad.org/User_hub"
+      weight: 1
+    dev:
+      text: "Developer handbook"
+      description: "Dive into FreeCAD's architecture and codebase to build new features, fix bugs and extend functionality."
+      link: "https://wiki.freecad.org/Developer_hub"
+      weight: 2
+    api:
+      text: "Python API"
+      description: "Automate workflows and customize FreeCAD with its built-in Python scripting API."
+      link: "https://wiki.freecad.org/Power_users_hub"
+      weight: 3
 ---
 
-[![LINK TO GITHUB](0.webp "Link to GitHub")](https://github.com/freecad)
+![](0.webp)
 
-## User Manual
+## Tutorials
 
-Get started with FreeCAD's tools and workflows. This manual guides users through modeling basics, workbenches, and essential features.
-
-[Browse User Manual](https://wiki.freecad.org/User_hub)
+Find recommended tutorials to get started with FreeCAD:
 
 +++
 
-## Developer Documentation
+## Publications
 
-Dive into FreeCAD's architecture and codebase. This section is for contributors building features, fixing bugs, or extending functionality.
-
-[Browse Developer Documentation](https://wiki.freecad.org/Developer_hub)
+Find recommended publications to get started with FreeCAD:
 
 ![](0.webp)
-
-+++
-
-![](0.webp)
-
-## Python API
-
-Automate and customize FreeCAD with Python. Explore scripting capabilities, object manipulation, and advanced workflows using the built-in API.
-
-[Browse Python API](https://wiki.freecad.org/Power_users_hub)

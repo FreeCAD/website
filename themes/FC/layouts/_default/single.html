@@ -39,6 +39,10 @@
     {{- end -}}
   {{- end -}}
 
+  {{- if eq .Type "documentation" -}}
+    {{- partial "documentation.html" . -}}
+  {{- end -}}
+
   {{- if eq .Type "news" -}}
     <div class="single-meta">
       {{- partial "meta.html" . -}}

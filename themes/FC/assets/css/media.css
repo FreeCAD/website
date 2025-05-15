@@ -66,13 +66,10 @@
         padding: 0rem;
     }
 
-    .buttons {
-        flex-direction: column;
-        gap: 0;
-    }
-
+    .buttons,
     .single-meta {
         flex-direction: column;
+        gap: 0;
     }
 
     .content > :not(.block, .column) {
@@ -134,6 +131,19 @@
     #mac:has(#mac-arch:popover-open),
     #linux:has(#linux-arch:popover-open)) .arch-icon {
         width: 2rem;
+    }
+
+    .docs-box {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .docs-box svg {
+        height: calc(var(--width) * 0.2);
+    }
+
+    .docs-column p {
+        font-size: var(--s);
     }
 
     .footer-row,
