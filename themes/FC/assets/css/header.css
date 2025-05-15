@@ -34,7 +34,7 @@
 }
 
 .logo :is(img, svg) {
-    float: left;
+    float: inline-start;
     height: 2rem;
     margin-inline-end: 1rem;
 }

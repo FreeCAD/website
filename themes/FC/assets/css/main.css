@@ -293,7 +293,7 @@ main header .entry-cover img {
 
 .heading-anchor {
     position: absolute;
-    margin-left: 0.25rem;
+    margin: 0.25rem;
     width: 0.75em;
     min-width: 0.75rem;
     opacity: 0;
@@ -305,7 +305,6 @@ main header .entry-cover img {
 
 .external-link svg {
     display: inline-block;
-    margin-left: 0.25rem;
     width: 0.75em; /* NOTE: use size relative to parent (instead of root html), so it also scales with headers. */
     min-width: 0.75rem;
 }
@@ -432,7 +431,7 @@ pre code {
 
 blockquote {
     margin: 1rem 0;
-    padding-left: 1rem;
+    padding-inline-start: 1rem;
     border-inline-start: var(--border);
 }
 
@@ -798,12 +797,12 @@ sup:target {
     font-size: var(--s);
 }
 
-.single-pagination .next, [dir="rtl"] .single-pagination .prev {
-    text-align: right;
+.single-pagination .next {
+    text-align: end;
 }
 
-[dir="rtl"] .single-pagination .next, .single-pagination .prev {
-    text-align: left;
+.single-pagination .prev {
+    text-align: start;
 }
 
 .single-pagination :is(.prev, .next) a {
