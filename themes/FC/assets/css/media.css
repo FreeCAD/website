@@ -10,7 +10,6 @@
 
 
     /* Theme-vars */
-
     :root {
         --width: 100vw;
         --header-height: 4rem;
@@ -24,8 +23,9 @@
         --xxl: 2rem;
     }
 
-
-    /* Navigation header */
+    main {
+        min-height: calc(var(--width) * 1.5);
+    }
 
     .site-nav {
     }
@@ -55,7 +55,6 @@
 
 
     /* List and Single pages */
-
     main header {
         height: calc(100vh - var(--header-height));
     }
@@ -157,7 +156,6 @@
 
 
     /* Archive */
-
     .archive-month {
         flex-direction: column;
     }

@@ -2,6 +2,7 @@
 
 
 main {
+    min-height: calc(var(--width) * 0.5);
     white-space: normal;
     background: var(--theme);
     overflow-wrap: break-word;
