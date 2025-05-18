@@ -622,8 +622,8 @@ sup:target {
     transform: scale(0.90);
 }
 
-.download-box button {
-    width: 10.25rem;
+.download-box [id] {
+    flex: 0 1 12rem;
 }
 
 :is(#windows:has(#windows-arch:popover-open),

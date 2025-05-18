@@ -63,7 +63,7 @@
     .title,
     .description,
     .single-meta {
-        padding: 0rem;
+        padding: 0;
     }
 
     .buttons,
@@ -74,7 +74,7 @@
     }
 
     .content > :not(.block, .column) {
-        padding: var(--gap) var(--side);
+        padding: var(--gap);
     }
 
     .content img:not([popover] img) {
@@ -124,8 +124,8 @@
         height: calc(var(--width) * 0.125);
     }
 
-    .download-box button {
-        width: 4.25rem;
+    .download-box [id] {
+        flex: 0 1 5rem;
     }
 
     :is(#windows:has(#windows-arch:popover-open),
