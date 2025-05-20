@@ -7,7 +7,7 @@
 {{- $url := urls.Parse .Destination -}}
 {{- $sizes := slice "500" "1000" -}}
 {{- $format := "webp" -}}
-{{- $id := printf "img-%s" (sha1 .Destination) -}}
+{{- $id := printf "img-%s" (delimit (shuffle (seq 1 9)) "") -}}
 {{- $alt := .Text | default (i18n "image_fallback" | default "Image") -}}
 {{- $title := .Title | plainify -}}
 {{- $video_fallback := i18n "video_fallback" | default "A video should have been here, but your browser does not support it." -}}
