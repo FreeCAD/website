@@ -1,5 +1,7 @@
 ---
-layout: default
+title: "Translations"
+description: "Translations."
+type: technical
 ---
 
 #  Writing Code for Translation

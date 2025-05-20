@@ -1,5 +1,7 @@
 ---
-layout: default
+title: "Release packages"
+description: "Release packages."
+type: technical
 ---
 
 # Building release packages

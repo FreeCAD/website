@@ -1,5 +1,7 @@
 ---
-layout: default
+title: "Property Changes"
+description: "Property Changes."
+type: technical
 ---
 
 

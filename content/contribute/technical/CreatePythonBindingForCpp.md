@@ -1,5 +1,7 @@
 ---
-layout: default
+title: "Python Binding"
+description: "Python Binding."
+type: technical
 ---
 
 # Create a Python Binding for C++

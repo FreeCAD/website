@@ -1,5 +1,7 @@
 ---
-layout: default
+title: "LibPack"
+description: "LibPack."
+type: technical
 ---
 
 # Maintaining the FreeCAD LibPack for Windows

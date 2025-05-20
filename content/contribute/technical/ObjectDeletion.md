@@ -1,5 +1,7 @@
 ---
-layout: default
+title: "Object deletion"
+description: "Object deletion."
+type: technical
 ---
 
 # How to control object deletion

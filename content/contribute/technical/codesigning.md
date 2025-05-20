@@ -1,5 +1,7 @@
 ---
-layout: default
+title: "Code signing"
+description: "Code signing."
+type: technical
 ---
 
 # Signing the FreeCAD executables and installers

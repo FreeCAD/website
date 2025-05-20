@@ -1,5 +1,7 @@
 ---
-layout: default
+title: "Release Process"
+description: "Release Process."
+type: technical
 ---
 
 #  Release Process

@@ -1,5 +1,7 @@
 ---
-layout: default
+title: "Automated Testing"
+description: "Automated Testing."
+type: technical
 ---
 
 # Automated Testing

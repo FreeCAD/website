@@ -1,5 +1,7 @@
 ---
-layout: default
+title: "Checklist"
+description: "Checklist."
+type: technical
 ---
 
 # Checklist for adding a new feature to an existing workbench in C++

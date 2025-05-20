@@ -1,5 +1,7 @@
 ---
-layout: default
+title: "Preferences"
+description: "Preferences."
+type: technical
 ---
 
 #  Handling Preferences

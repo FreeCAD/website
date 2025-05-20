@@ -71,11 +71,11 @@ The Visual Studio Installer may be used to install Visual Studio Community 2019 
 1. Open the Visual Studio Installer
 2. Click `modify` for Visual Studio 2019.
 
-    ![Visual Studio 2019](resources/vs2019-modify.png)
+    ![Visual Studio 2019](vs2019-modify.png)
 
 3. Make sure to select `Desktop development with C++` under the `Desktop & Mobile` section.  Ensure that the necessary optional items are selected on the right.
 
-    ![vs2019-dev-C++](resources/vs2019-cpp.png)
+    ![vs2019-dev-C++](vs2019-cpp.png)
 
 ## Setting up for Development
 

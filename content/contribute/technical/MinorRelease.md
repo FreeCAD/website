@@ -1,5 +1,7 @@
 ---
-layout: default
+title: "Minor Releases"
+description: "Minor Releases."
+type: technical
 ---
 
 # Minor Releases

@@ -1,5 +1,7 @@
 ---
-layout: default
+title: "Developer's Glossary"
+description: "Developer's Glossary."
+type: technical
 ---
 
 # Developer's Glossary

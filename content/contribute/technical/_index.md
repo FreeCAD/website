@@ -2,6 +2,7 @@
 title: "Technical guide"
 description: "Technical information of interest to Contributors."
 type: guide
+paginate: 24
 cover:
   image: 0.webp
   caption: "a cover caption"
@@ -14,19 +15,19 @@ Technical information of interest to Contributors.
 
 ## The Basics
 
-- [Developer's Glossary](./developerglossary)
+- [Developer's Glossary](developerglossary)
 
-- [Source Tree Basics](./SourceTreeBasics)
+- [Source Tree Basics](sourcetreebasics)
 
-- [The Application Module](./TheApplicationModule)
+- [The Application Module](applicationmodule)
 
 - [The Source Code in More Depth](https://wiki.freecad.org/The_FreeCAD_source_code)
 
-- [Writing Code for Translation](./translation)
+- [Writing Code for Translation](translation)
 
-- [Automated Testing](./automated_testing)
+- [Automated Testing](automated_testing)
 
-- [Dealing with Property Changes](./PropertyChanges)
+- [Dealing with Property Changes](propertychanges)
 
 - The FreeCAD developer's tool set:
 
@@ -36,9 +37,7 @@ Technical information of interest to Contributors.
     - [Coin3d](https://www.coin3d.org/): a [scenegraph](https://wiki.freecad.org/Scenegraph) manager based on OpenInventor that handles drawing in the 3d window.
     - [Pivy](https://wiki.freecad.org/Pivy): a Python binding for Coin3d
 
-- [Contributing to FreeCAD websites](./Websites)
-
-- [Reference Library](./ReferenceLibrary)
+- [Reference Library](referencelibrary)
 
 ## Modifying FreeCAD
 
@@ -51,23 +50,23 @@ Technical information of interest to Contributors.
 
 - The [PowerUser's hub](https://wiki.freecad.org/Power_users_hub) in the FreeCAD wiki contains good information about Python scripting and workbench creation
 
-- [Python stubs package](./PythonStubsPackage)
+- [Python stubs package](pythonstubspackage)
 
-- [Accessing User Preferences](./preferences)
+- [Accessing User Preferences](preferences)
 
-- [Controlling Object Deletion](./ObjectDeletion)
+- [Controlling Object Deletion](objectdeletion)
 
-- [Create a Python Binding for C++ Class](./CreatePythonBindingForCpp)
+- [Create a Python Binding for C++ Class](createpythonbindingforcpp)
 
-- [Checklist for Adding a Feature to a Workbench in C++](./ChecklistForNewFeatureC++)
+- [Checklist for Adding a Feature to a Workbench in C++](checklistfornewfeaturec++)
 
 ## Release Management
 
-- [Overview](./ReleaseProcess)
+- [Overview](releaseprocess)
 
-    - [Major Releases](./MajorRelease)
-    - [Minor Releases](./MinorRelease)
-    - [Building Release Packages](./ReleasePackages)
+    - [Major Releases](majorrelease)
+    - [Minor Releases](minorrelease)
+    - [Building Release Packages](releasepackages)
 
 ## See Also
 

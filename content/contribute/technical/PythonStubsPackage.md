@@ -1,5 +1,7 @@
 ---
-layout: default
+title: "Python stubs"
+description: "Python stubs."
+type: technical
 ---
 
 # Python stubs

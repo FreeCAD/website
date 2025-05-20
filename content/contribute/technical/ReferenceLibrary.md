@@ -1,5 +1,7 @@
 ---
-layout: default
+title: "Reference Library"
+description: "Reference Library."
+type: technical
 ---
 
 # Reference Library

@@ -1,5 +1,7 @@
 ---
-layout: default
+title: "Major Releases"
+description: "Major Releases."
+type: technical
 ---
 
 # Major Releases

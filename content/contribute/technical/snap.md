@@ -1,5 +1,7 @@
 ---
-layout: default
+title: "Snap package"
+description: "Snap package."
+type: technical
 ---
 
 # Maintaining the Snap package
