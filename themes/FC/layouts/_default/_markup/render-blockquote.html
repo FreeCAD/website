@@ -4,30 +4,30 @@
   - Add alert callouts.
 */}}
 
-{{ $emojis := dict
-  "caution" "☢ "
-  "important" "🛈 "
-  "note" "♫ "
-  "tip" "★ "
-  "warning" "⚠ "
-}}
+{{- $type := .AlertType | safeHTML -}}
+{{- $icon := index site.Data.svg .AlertType | safeHTML -}}
+{{- $text := .Text | safeHTML -}}
+{{- $quote := site.Data.svg.quote | safeHTML -}}
 
 {{- if eq .Type "alert" -}}
-  <blockquote class="alert-{{ .AlertType }}">
-    <p class="alert-heading">
-      {{ transform.Emojify (index $emojis .AlertType) }}
-      {{- with .AlertTitle -}}
-        {{ . }}
-      {{- else -}}
-        {{ or (i18n .AlertType) (title .AlertType) }}
-      {{- end -}}
-    </p>
-    {{ .Text }}
+  <blockquote class="alert-{{ $type }}">
+    <span>
+      {{ $icon }}
+    </span>
+    {{- with .AlertTitle -}}
+      {{ . }}
+    {{- else -}}
+      {{ or (i18n $type) (title $type) }}
+    {{- end -}}
+    {{ $text }}
   </blockquote>
 {{- else -}}
   <figure>
     <blockquote {{- with .Attributes.cite -}}cite="{{ . }}"{{- end -}}>
-      {{ .Text }}
+      <span>
+      {{ $quote }}
+      </span>
+      {{ $text }}
     </blockquote>
     {{- with .Attributes.caption -}}
       <figcaption class="blockquote-caption">

@@ -309,6 +309,24 @@ main header .entry-cover img {
     min-width: 0.75rem;
 }
 
+blockquote {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-inline-start: var(--border);
+    background: var(--entry);
+}
+
+blockquote svg {
+    display: inline-block;
+    margin-inline-end: 0.25rem;
+    width: 1rem;
+    height: 1rem;
+}
+
+blockquote p {
+    margin: 0.5rem 0 0;
+}
+
 [popover] ~ a .external {
     display: none;
 }
@@ -427,13 +445,6 @@ pre code {
 .chroma code {
     background: inherit;
     font-family: var(--monospace);
-}
-
-blockquote {
-    margin: 1rem 0;
-    padding: 0.1rem 1rem;
-    border-inline-start: var(--border);
-    background: var(--entry);
 }
 
 sup a {
