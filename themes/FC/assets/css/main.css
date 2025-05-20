@@ -475,7 +475,7 @@ sup:target {
 
 /* Single page figures, images and videos */
 
-.content img:not([popover] img, li img) {
+.content img:not([popover] img) {
     display: block;
     width: 100%;
     height: auto;
