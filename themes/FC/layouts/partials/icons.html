@@ -1,0 +1,17 @@
+{{/* Only for Debug purposes in not prod environment. See red collapsible block in footer. */}}
+
+<div class="footer-row">
+  <details title="Click to display info" style="text-align: center; border: 4px solid crimson; min-width: 20rem; margin:auto; color: crimson; font-size: small; line-height: 0.75rem;">
+    <summary style="list-style: none;">
+      <h2 style="color: crimson;">
+        ICONS
+      </h2>
+    </summary>
+    {{- range $key, $icons := site.Data.svg -}}
+      <span class="meta">
+        {{ . | safeHTML }}
+        {{ $key }}
+      </span>
+    {{- end -}}
+  </details>
+</div>

@@ -69,3 +69,11 @@ footer {
 .footer-column a:hover {
     text-decoration: none;
 }
+
+.footer-row .meta :is(svg, #sun, #moon) {
+    color: var(--tertiary);
+    margin: 0.6rem;
+    display: block;
+    width: 4rem;
+    height: 4rem;
+}

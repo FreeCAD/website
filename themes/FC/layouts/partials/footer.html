@@ -121,6 +121,10 @@
     {{- end -}}
   </div>
 
+  {{- if not hugo.IsProduction -}}
+    {{- partial "icons" . -}}
+  {{- end -}}
+
   <div class="footer-row">
     {{- if site.Copyright -}}
       <span>
