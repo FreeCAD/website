@@ -46,7 +46,7 @@ h5,
 h6,
 p {
     font-size: var(--m);
-    margin: 1rem auto;
+    margin: var(--gap) auto;
     scroll-margin-top: 25vh;
 }
 
@@ -106,8 +106,8 @@ ins {
 }
 
 dl, ol, ul {
-    margin: 1rem auto;
-    padding-left: 1rem;
+    margin: var(--gap) auto;
+    padding-left: var(--gap);
 }
 
 li,
@@ -133,7 +133,7 @@ dd {
 
 dd ~ dd,
 dt ~ dt {
-    margin-top: 1rem;
+    margin-top: var(--gap);
 }
 
 hr {

@@ -34,7 +34,7 @@ main header {
 .docs-box {
     display: inline-flex;
     gap: var(--gap);
-    padding: 0.75rem 1.5rem;
+    padding: var(--padding);
     max-width: var(--width);
     color: var(--cover);
     text-shadow: var(--shadow);
@@ -64,7 +64,7 @@ main header {
 }
 
 article .category {
-    top: 1rem;
+    top: var(--gap);
 }
 
 :is(.releases, .category, .category-list) a {
@@ -310,8 +310,8 @@ main header .entry-cover img {
 }
 
 blockquote {
-    margin: 1rem 0;
-    padding: 1rem;
+    margin: var(--gap) 0;
+    padding: var(--gap);
     border-inline-start: var(--border);
     background: var(--entry);
 }
@@ -334,7 +334,7 @@ blockquote p {
 table th,
 table:not(.highlighttable, .highlight table, .gist .highlight) td {
     min-width: 5rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem var(--gap);
     border-bottom: var(--border);
 }
 
@@ -352,7 +352,7 @@ table:not(.highlighttable) td code:only-child {
 }
 
 .highlight:not(table) {
-    margin: 1rem auto;
+    margin: var(--gap) auto;
     border-radius: var(--radius);
 }
 
@@ -391,8 +391,8 @@ ul pre {
 .copy-code {
     display: none;
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0.75rem;
+    right: 0.75rem;
     color: var(--entry);
     background: var(--tertiary);
     border-radius: var(--radius);
@@ -435,7 +435,7 @@ pre code {
     /* reset inline code */
     display: block;
     margin: auto 0;
-    padding: 1rem;
+    padding: var(--gap);
     overflow-x: auto;
     border-radius: var(--radius);
     word-break: break-all;
@@ -495,9 +495,9 @@ sup:target {
 
 .content figure > figcaption {
     position: absolute;
-    bottom: 1rem;
+    bottom: var(--gap);
     width: 100%;
-    padding: 0 1rem;
+    padding: 0 var(--gap);
     color: var(--cover);
     text-align: center;
     z-index: 2;
@@ -525,8 +525,8 @@ sup:target {
 
 .content .close {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: var(--gap);
+    right: var(--gap);
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
@@ -602,7 +602,7 @@ sup:target {
 }
 
 .download-box p {
-    margin: 0 auto 1rem;
+    margin: 0 auto var(--gap);
 }
 
 .download-box .date {
@@ -664,7 +664,7 @@ sup:target {
 
 .donate {
     color: var(--cover);
-    padding: 0.75rem 1.5rem;
+    padding: var(--padding);
     background: var(--link-color);
     border-radius: var(--radius);
     transition: var(--link-transition);
@@ -744,7 +744,7 @@ sup:target {
 }
 
 .list-pagination a {
-    padding: 0.75rem 1.5rem;
+    padding: var(--padding);
     color: var(--cover);
     background: var(--link-color);
     border-radius: 2rem;
@@ -767,7 +767,7 @@ sup:target {
 }
 
 .share-buttons {
-    margin: 1rem 0;
+    margin: var(--gap) 0;
     padding-inline-start: var(--radius);
     display: flex;
     justify-content: center;
@@ -775,7 +775,7 @@ sup:target {
 }
 
 .share-buttons a:not(:last-of-type) {
-    margin-inline-end: 1rem;
+    margin-inline-end: var(--gap);
 }
 
 .share-buttons a svg {
@@ -818,7 +818,7 @@ sup:target {
 }
 
 .single-pagination :is(.prev, .next) a {
-    padding: 0.75rem 1.5rem;
+    padding: var(--padding);
     color: var(--cover);
     background: var(--link-color);
     border-radius: 2rem;
@@ -861,7 +861,7 @@ sup:target {
 /* Footnotes */
 
 .footnotes {
-    padding: 1rem;
+    padding: var(--gap);
     background: var(--entry);
     border-radius: var(--radius);
     color: var(--tertiary);

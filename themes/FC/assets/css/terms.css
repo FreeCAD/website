@@ -15,7 +15,7 @@
 
 .terms a {
     display: block;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem var(--gap);
     color: var(--cover);
     background: var(--link-color);
     border-radius: var(--radius);

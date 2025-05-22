@@ -9,6 +9,7 @@
     --radius: 0.5rem;
     --gap: 1rem;
     --line: 0.125rem;
+    --padding: 0.75rem 1.5rem;
     --article: clamp(16rem, 4rem + 17.5vw, 32rem);
     --monospace: "Lucida Console", Monaco, "Consolas", monospace;
 

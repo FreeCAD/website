@@ -162,7 +162,7 @@
     }
 
     .archive-year {
-        margin-top: 1rem;
+        margin-top: var(--gap);
     }
 }
 
