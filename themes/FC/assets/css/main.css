@@ -489,19 +489,18 @@ sup:target {
     width: 100%;
 }
 
-.content figure.align-center {
-    text-align: center;
+.content figure {
+    position: relative;
 }
 
 .content figure > figcaption {
-    color: var(--primary);
-    font-size: var(--m);
-    margin: 0.5rem 0 1rem;
-}
-
-.content figure > figcaption > p {
-    color: var(--secondary);
-    font-size: var(--m);
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    padding: 0 1rem;
+    color: var(--cover);
+    text-align: center;
+    z-index: 2;
 }
 
 .content a img:hover {
