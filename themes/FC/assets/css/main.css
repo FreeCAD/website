@@ -641,7 +641,7 @@ sup:target {
 #mac:has(#mac-arch:popover-open),
 #linux:has(#linux-arch:popover-open)) .arch-icon {
     display: inline-block;
-    width: 5rem;
+    width: 4rem;
 }
 
 :is(#windows:has(#windows-arch:popover-open),
