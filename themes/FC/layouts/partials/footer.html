@@ -73,7 +73,7 @@
                 title="{{ .Title | plainify }}"
                 class="{{ if $active }}menu-active{{ end }}"
                 {{- if $isExternal -}}
-                  target="_blank" rel="noopener"
+                  target="_blank" rel="external noreferrer"
                 {{- end -}}>
                 {{ .title }}
                 {{- if $isExternal -}}
@@ -106,7 +106,7 @@
               title="{{ .Title | plainify }}"
               class="{{ delimit $classes " " }}"
               {{- if $isExternal -}}
-                target="_blank" rel="noopener"
+                target="_blank" rel="external noreferrer"
               {{- end -}}>
               {{ .title }}
               {{- if $isExternal -}}
@@ -143,7 +143,7 @@
       </a>
     </span>
     <span>
-      Made with ♥︎ thanks to <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">
+      Made with ♥︎ thanks to <a href="https://gohugo.io/" rel="external noreferrer noreferrer" target="_blank">
         Hugo
       </a>
     </span>
