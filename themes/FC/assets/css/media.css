@@ -131,7 +131,7 @@
     :is(#windows:has(#windows-arch:popover-open),
     #mac:has(#mac-arch:popover-open),
     #linux:has(#linux-arch:popover-open)) .arch-icon {
-        width: 2rem;
+        width: 2.5rem;
     }
 
     .docs-box {
