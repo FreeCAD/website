@@ -1,0 +1,54 @@
+.chart {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  gap: calc(var(--gap) * 4);
+}
+
+.donut,
+.donut-legend {
+  flex: 1;
+  align-self: center;
+}
+
+.donut-segment {
+  pointer-events: stroke;
+}
+
+.donut-text {
+  fill: #000;
+  transform: translateY(0.2rem);
+}
+
+.donut-number {
+  font-size: 0.3rem;
+  line-height: 1;
+  text-anchor: middle;
+  transform: translateY(-0.2rem);
+}
+
+.donut-label {
+  font-size: 0.15rem;
+  text-transform: uppercase;
+  text-anchor: middle;
+  transform: translateY(0.1rem);
+}
+
+.donut-legend {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.donut-legend li {
+  padding: 0.25rem;
+}
+
+.donut-legend span {
+  margin-right: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}

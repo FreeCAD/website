@@ -67,6 +67,13 @@
   </section>
 {{- end -}}
 
+{{/* For Telemetry page, call the telemetry partial to transform and parse serialized data. */}}
+{{- if eq .Type "telemetry" -}}
+  <section class="telemetry">
+    {{- partial "telemetry.html" . -}}
+  </section>
+{{- end -}}
+
 <footer class="single-footer">
   {{- if (.Param "ShowPaginationLinks") -}}
     {{- partial "pagination_links.html" . -}}

@@ -30,6 +30,7 @@ assets:
     - css/body.css
     - css/404.css
     - css/archive.css
+    - css/telemetry.css
     - css/footer.css
     - css/header.css
     - css/main.css
