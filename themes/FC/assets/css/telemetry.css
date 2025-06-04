@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  gap: calc(var(--gap) * 4);
+  gap: calc(var(--gap) * 2);
 }
 
 .donut,
@@ -16,7 +16,7 @@
 }
 
 .donut-text {
-  fill: #000;
+  fill: var(--secondary);
   transform: translateY(0.2rem);
 }
 

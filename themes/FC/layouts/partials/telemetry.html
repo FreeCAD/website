@@ -86,8 +86,8 @@
         <title>
           {{- strings.Title $cleanKey -}}
         </title>
-        <circle class="donut-hole" cx="20" cy="20" r="15.9" fill="#fff" role="presentation"></circle>
-        <circle class="donut-ring" cx="20" cy="20" r="15.9" fill="transparent" stroke="#d2d3d4" stroke-width="4" role="presentation"></circle>
+        <circle class="donut-hole" cx="20" cy="20" r="15.9" fill="var(--theme)" role="presentation"></circle>
+        <circle class="donut-ring" cx="20" cy="20" r="15.9" fill="transparent" stroke="var(--entry)" stroke-width="4" role="presentation"></circle>
         {{- $offset := 0 -}}
         {{- range $i, $entry2 := $coloredEntries -}}
           <circle class="donut-segment segment-{{ $i }}" cx="20" cy="20" r="15.9" fill="transparent" transform="rotate(-90 20 20)"

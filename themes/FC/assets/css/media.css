@@ -143,6 +143,16 @@
     height: calc(var(--width) * 0.2);
   }
 
+  .chart {
+    flex-direction: column;
+    gap: var(--gap);
+  }
+
+  .donut,
+  .donut-legend {
+    align-self: auto;
+  }
+
   .footer-row,
   .footer-column h4 {
     font-size: var(--s);
