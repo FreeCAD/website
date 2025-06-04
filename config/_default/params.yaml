@@ -84,10 +84,11 @@ headless_cms:
       thumbnail: cover.image
       create: true
       folder: content/news
-      media_folder: "/content/news/{{categories}}"
+      path: "{{categories}}/{{slug}}/index"
+      media_folder: ""
       public_folder: ""
       format: frontmatter
-      slug: "{{categories}}/{{slug}}"
+      slug: "{{slug}}"
       i18n:
         structure: multiple_files
       fields:
@@ -126,7 +127,6 @@ headless_cms:
         - name: homepage
           label: Homepage
           file: content/homepage/index.{{locale}}.md
-          thumbnail: cover.image
           media_folder: ""
           public_folder: ""
           i18n: true
@@ -134,7 +134,6 @@ headless_cms:
             - {label: "Homepage Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
             - {label: "Homepage Description", name: "description", widget: "string", i18n: true}
             - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
-            - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
             - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
     - name: features
       label: Features
@@ -184,6 +183,7 @@ headless_cms:
       thumbnail: cover.image
       create: true
       folder: content/releases
+      path: "{{slug}}/index"
       media_folder: ""
       public_folder: ""
       format: frontmatter
@@ -264,6 +264,7 @@ headless_cms:
       icon: volunteer_activism
       thumbnail: cover.image
       folder: content/donate
+      path: "{{slug}}/index"
       media_folder: ""
       public_folder: ""
       format: frontmatter
