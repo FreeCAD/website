@@ -124,7 +124,6 @@ headless_cms:
       label: Homepage
       icon: home
       format: frontmatter
-      slug: "{{slug}}"
       i18n:
         structure: multiple_files
       files:
@@ -143,7 +142,6 @@ headless_cms:
       label: Features
       icon: bolt
       format: frontmatter
-      slug: "{{slug}}"
       i18n:
         structure: multiple_files
       files:
@@ -164,7 +162,6 @@ headless_cms:
       label: Download
       icon: downloading
       format: frontmatter
-      slug: "{{slug}}"
       i18n:
         structure: multiple_files
       files:
@@ -204,7 +201,6 @@ headless_cms:
       label: Community
       icon: hub
       format: frontmatter
-      slug: "{{slug}}"
       i18n:
         structure: multiple_files
       files:
@@ -225,7 +221,6 @@ headless_cms:
       label: Documentation
       icon: local_library
       format: frontmatter
-      slug: "{{slug}}"
       i18n:
         structure: multiple_files
       files:
