@@ -64,6 +64,10 @@ headless_cms:
     locales: [en, fr, tr]
     default_locale: en
     initial_locales: default
+  slug:
+    encoding: ascii
+    clean_accents: true
+    sanitize_replacement: "-"
   media_libraries:
     default:
       config:
