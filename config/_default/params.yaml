@@ -118,7 +118,7 @@ headless_cms:
           - {label: "Link to custom page on homepage hero", name: "customLink", widget: "string", default: "", i18n: duplicate}
           - {label: "Text for custom page on homepage hero", name: "customText", widget: "string", default: "", i18n: true, required: [en]}
           - {label: "Link to download page on homepage hero", name: "downloadLink", widget: "boolean", default: true, i18n: duplicate}
-        - {label: "Content", name: "body", widget: "markdown", i18n: true, required: [en], hint: "Use +++ between blocks"}
+        - {label: "Content", name: "body", widget: "markdown", i18n: true, required: [en], hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
     - divider: true
       name: 1
       files: []
@@ -139,7 +139,7 @@ headless_cms:
             - {label: "Homepage Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
             - {label: "Homepage Description", name: "description", widget: "string", i18n: true}
             - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
-            - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
+            - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
     - name: features
       label: Features
       icon: bolt
@@ -159,7 +159,7 @@ headless_cms:
             - {label: "Features Page Description", name: "description", widget: "string", i18n: true}
             - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
             - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
-            - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
+            - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
     - name: download
       label: Download
       icon: downloading
@@ -179,7 +179,7 @@ headless_cms:
             - {label: "Download Page Description", name: "description", widget: "string", i18n: true}
             - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
             - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
-            - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
+            - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
     - name: releases
       label: Releases
       icon: celebration
@@ -198,7 +198,7 @@ headless_cms:
         - {label: "Release Description", name: "description", widget: "string", i18n: true}
         - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
         - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
-        - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
+        - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
     - name: community
       label: Community
       icon: hub
@@ -218,7 +218,7 @@ headless_cms:
             - {label: "Community Page Description", name: "description", widget: "string", i18n: true}
             - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
             - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
-            - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
+            - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
     - name: documentation
       label: Documentation
       icon: local_library
@@ -238,7 +238,7 @@ headless_cms:
             - {label: "Documentation Page Description", name: "description", widget: "string", i18n: true}
             - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
             - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
-            - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
+            - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
     - name: contribute
       label: Contribute
       icon: code_blocks
@@ -259,7 +259,7 @@ headless_cms:
             - {label: "Contribute Page Description", name: "description", widget: "string", i18n: true}
             - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
             - {label: "Featured Image", name: "cover.image", widget: "image", i18n: duplicate}
-            - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
+            - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
     - name: donate
       label: Donate
       icon: volunteer_activism
@@ -274,4 +274,4 @@ headless_cms:
         - {label: "Donate Page Title", name: "title", widget: "string", pattern: ['.{3,}', "Must have at least 3 characters"]}
         - {label: "Donate Page Description", name: "description", widget: "string"}
         - {label: "Featured Image", name: "cover.image", widget: "image"}
-        - {label: "Content", name: "body", widget: "markdown", hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"]}
+        - {label: "Content", name: "body", widget: "markdown", hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
