@@ -18,6 +18,16 @@
 {{- end -}}
 
 <div class="content">
+  {{/* Get total user number */}}
+  {{- $totalUsers := 0 -}}
+  {{- with index $data "freecad_version" -}}
+    {{- range $k, $v := . -}}
+      {{- $totalUsers = add $totalUsers $v -}}
+    {{- end -}}
+  {{- else -}}
+    {{- errorf "Missing 'freecad_version' in Telemetry data" -}}
+  {{- end -}}
+
   {{/* Set array of data keys for legend. */}}
   {{- range $key, $slice := $data -}}
     {{- $cleanKey := replaceRE "[^a-zA-Z0-9]+" " " (replace $key "$" "") -}}
@@ -33,9 +43,14 @@
 
     {{/* Set entries with names, values and percentages. */}}
     {{- $entries := slice -}}
+    {{- $percentage := 0 -}}
+    {{- $percentage2 := 0 -}}
     {{- range $k2, $v2 := $slice -}}
-      {{- $percentage := div (math.Round (mul (div $v2 $total) 1000)) 10 -}}
-      {{- $entries = $entries | append (dict "name" $k2 "value" $v2 "percentage" $percentage) -}}
+      {{- $percentage = div (math.Round (mul (div $v2 $total) 1000)) 10 -}}
+      {{- if gt $total $totalUsers -}}
+        {{- $percentage2 = div (math.Round (mul (div $v2 $totalUsers) 1000)) 10 -}}
+      {{- end -}}
+      {{- $entries = $entries | append (dict "name" $k2 "value" $v2 "percentage" $percentage "percentage2" $percentage2) -}}
     {{- end -}}
 
     {{/* Sort by percentage and limit entries shown. */}}
@@ -44,12 +59,12 @@
 
     {{/* Aggregate other entries. */}}
     {{- $value2 := 0 -}}
-    {{- $percentage2 := 0 -}}
+    {{- $percentage3 := 0 -}}
     {{- range $k3, $v3 := after $maxEntries $entries -}}
       {{- $value2 = add $value2 $v3.value -}}
-      {{- $percentage2 = div (math.Round (mul (add $percentage2 $v3.percentage) 10)) 10 -}}
+      {{- $percentage3 = div (math.Round (mul (add $percentage3 $v3.percentage) 10)) 10 -}}
     {{- end -}}
-    {{- $others := slice | append (dict "name" "Others" "value" $value2 "percentage" $percentage2 "color" "hsl(0, 0%, 70%)") -}}
+    {{- $others := slice | append (dict "name" "Others" "value" $value2 "percentage" $percentage3 "percentage2" 0 "color" "hsl(0, 0%, 70%)") -}}
 
 
     {{/* Assign colors to chart segments using hue gradient. */}}
@@ -94,7 +109,7 @@
             stroke="{{ $entry2.color }}"
             stroke-width="4" stroke-dasharray="{{ $entry2.percentage }} 100" stroke-dashoffset="{{ $offset }}">
             <title>
-              {{- printf "%s: %v users (%v %%)" $entry2.name $entry2.value $entry2.percentage -}}
+              {{- printf "%s: %v users (%v %%)" $entry2.name $entry2.value (cond (ne $entry2.percentage2 0) $entry2.percentage2 $entry2.percentage) -}}
             </title>
           </circle>
           {{- $offset = sub $offset $entry2.percentage -}}
@@ -120,7 +135,7 @@
         {{- range $i, $entry3 := $coloredEntries -}}
           <li class="legend-item segment-{{ $i }}">
             <span class="circle" style="background:{{ $entry3.color | safeCSS }}"></span>
-            {{- printf "%s: %v users (%v %%)" $entry3.name $entry3.value $entry3.percentage -}}
+            {{- printf "%s: %v users (%v %%)" $entry3.name $entry3.value (cond (ne $entry3.percentage2 0) $entry3.percentage2 $entry3.percentage) -}}
           </li>
         {{- end -}}
           <li>
@@ -128,6 +143,66 @@
             Total: {{ $total }} users
           </li>
       </ul>
+    </figure>
+
+    <figure class="chart">
+      <style>
+        {{/* Generate inline CSS for chart and legend hover. */}}
+        {{- range $i, $_ := $coloredEntries -}}
+          .chart:has(:is(.donut-segment.segment-{{ $i }}:hover, .legend.segment-{{ $i }}:hover)) .legend.segment-{{ $i }} {
+            font-weight: bold;
+          }
+          .chart:has(:is(.legend.segment-{{ $i }}:hover), .donut-segment.segment-{{ $i }}:hover) .donut-segment.segment-{{ $i }} {
+            stroke-width: 4;
+          }
+        {{- end -}}
+      </style>
+
+      <svg class="donut"
+        width="100%"
+        height="100%"
+        viewBox="0 0 160 {{ add 25 (mul 6 (cond (gt (len $slice) 21) 21 (len $slice))) }}"
+        style="background: var(--cover); border-radius: 1rem; overflow: hidden;"
+        role="img" xmlns="http://www.w3.org/2000/svg">
+        <title>
+          {{- strings.Title $cleanKey -}}
+        </title>
+        <g class="donut-text">
+          <text class="donut-label"
+            x="33" y="5"
+            style="font-size: 5px; font-weight: bold; text-anchor: start">
+            {{- printf "%v %s" (len $entries) $cleanKey -}}
+          </text>
+          <text class="donut-label"
+            x="33" y="10"
+            style="font-size: 3px; text-anchor: start">
+          {{- printf "from %v user data" $total -}}
+          </text>
+        </g>
+        {{- $offset := 0 -}}
+        {{- range $i, $entry2 := $coloredEntries -}}
+          <text class="legend segment-{{ $i }}"
+            x="32"
+            y="{{ add 25 (mul 6 $i) }}"
+            style="font-size: 3px; text-anchor: end">
+            {{- printf "%s" $entry2.name -}}
+          </text>
+          <line class="donut-segment segment-{{ $i }}"
+            x1="35"
+            y1="{{ add 24 (mul 6 $i) }}"
+            x2="{{ add 35 (cond (ne $entry2.percentage2 0) $entry2.percentage2 $entry2.percentage) }}"
+            y2="{{ add 24 (mul 6 $i) }}"
+            stroke="{{ $entry2.color }}"
+            stroke-linecap="round"
+            stroke-width="2" />
+          <text class="legend segment-{{ $i }}"
+            x="{{ add 38 (cond (ne $entry2.percentage2 0) $entry2.percentage2 $entry2.percentage) }}"
+            y="{{ add 25 (mul 6 $i) }}"
+            style="font-size: 3px; text-anchor: start">
+            {{- printf "%v users (%v %%)" $entry2.value (cond (ne $entry2.percentage2 0) $entry2.percentage2 $entry2.percentage) -}}
+          </text>
+        {{- end -}}
+      </svg>
     </figure>
   {{- end -}}
 </div>
