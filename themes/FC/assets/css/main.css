@@ -713,7 +713,7 @@ sup:target {
 }
 
 .docs-box svg {
-  height: calc(var(--width) * 0.1);
+  height: calc(var(--width) * 0.075);
   transition: var(--link-transition);
 }
 
