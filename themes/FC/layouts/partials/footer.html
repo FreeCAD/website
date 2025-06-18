@@ -150,21 +150,21 @@
   </div>
 </footer>
 
-<script>
-  (function() {
-    /* theme toggle */
-    const disableThemeToggle = '{{- if site.Params.disableThemeToggle -}}1{{- end -}}' == '1';
-    if (disableThemeToggle) {
-      return;
-    }
 
-    let button = document.getElementById("theme-toggle")
-    // remove the listeners first to prevent adding duplicated listener when history goes back and forth
-    button.removeEventListener('click', toggleThemeListener)
-    // listen to toggle button
-    button.addEventListener('click', toggleThemeListener)
-  })();
-</script>
+{{/* theme toggle */}}
+{{- if (not site.Params.disableThemeToggle) }}
+  <script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+      if (document.body.className.includes("dark")) {
+        document.body.classList.remove('dark');
+        localStorage.setItem("pref-theme", 'light');
+      } else {
+        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
+      }
+    })
+  </script>
+{{- end }}
 
 {{- /* Script to detect User Agent and provide corresponding download options. */}}
 {{- if or (eq .Type "download") (eq .Type "releases") -}}
