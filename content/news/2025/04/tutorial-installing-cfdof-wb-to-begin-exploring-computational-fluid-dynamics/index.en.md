@@ -76,5 +76,3 @@ If you are new at CFD then be prepared for quite a lot of learning to even get a
 ![Tutorial: Installing CfdOF WB to begin exploring Computational Fluid Dynamics 7](ballute_6ms_U_Magnitude_1744835954345_0.png "Tutorial: Installing CfdOF WB to begin exploring Computational Fluid Dynamics 7")
 
 Finally, the CfdOF workbench has an excellent devoted section on the[ FreeCAD forum](https://forum.freecad.org/viewforum.php?f=37). It's definitely worth reading through as many posts there as you can as it's a great source of valuable information by other people on the CFD path!
-
-<pre class="wp-block-preformatted"></pre>

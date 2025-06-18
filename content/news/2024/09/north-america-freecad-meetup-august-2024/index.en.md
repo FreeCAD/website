@@ -11,7 +11,7 @@ cover:
   alt:
 ---
 
-<figure class="wp-block-gallery has-nested-images columns-default is-cropped">![Fcna 24](FCNA24.webp "Fcna 24")</figure>
+![Fcna 24](FCNA24.webp "Fcna 24")
 
 Between August the 15<sup>th</sup> and 18<sup>th</sup> Springfield Illinois played host to a North American FreeCAD meetup. This excellent event drew together a group of active FreeCAD contributors for a 4 day hackathon, incorporating various meetings, presentations and, of course, social activities.
 

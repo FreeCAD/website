@@ -27,11 +27,7 @@ The second place that is definitely worth pointing newcomers is the [official do
 
 Outside of the official FreeCAD resources there are lots of resources to learn FreeCAD from. Looking around all the different community areas recommendations for online video tutorials are common. There are lots of people creating great video tutorials across a range of services. Whilst Youtube is by far the most common, there are increasing amounts of FreeCAD video tutorial content on Peertube and other non proprietary platforms. Searching Peertube we came across this German language video tutorial which also has a sign language interpretation, excellent work.
 
-<!-- wp:embed {"url":"https://peertube.tv/w/8PP9C5LKL6UZyWYb8Jh4qp","type":"wp-embed","providerNameSlug":"peertube"} -->
-<figure class="wp-block-embed is-type-wp-embed is-provider-peertube wp-block-embed-peertube"><div class="wp-block-embed__wrapper">
-https://peertube.tv/w/8PP9C5LKL6UZyWYb8Jh4qp
-</div></figure>
-<!-- /wp:embed -->
+[CAD, CAM & CNC-Workshop mit ripper - Teil 2: FreeCAD Part Design, TechDraw on PeerTube](https://peertube.tv/w/8PP9C5LKL6UZyWYb8Jh4qp "CAD, CAM & CNC-Workshop mit ripper - Teil 2: FreeCAD Part Design, TechDraw on PeerTube")
 
 We'd be remis not to mention the two most commonly reccomended youtube channels serving excellent FreeCAD and general CAD content. [Joko Engineering](https://www.youtube.com/watch?v=Odr5viqPwkc) and [Mango Jelly.](https://www.youtube.com/watch?v=dyU1U6oN0Yk) Both these channels have playlists specifically for FreeCAD for those absolutely new to CAD as well as an astonishing array of more advanced tutorials.
 

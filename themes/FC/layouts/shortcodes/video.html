@@ -1,6 +1,30 @@
+{{- $src := .Get 0 -}}
+{{- $video := .Page.Resources.GetMatch $src -}}
+{{- $poster := "" -}}
+{{- if ge (len .Params) 2 -}}
+  {{- $poster = .Page.Resources.GetMatch (.Get 1) -}}
+{{- else -}}
+  {{- $name := replace $src (printf ".%s" (path.Ext $src)) "" -}}
+  {{- range $extension := slice "jpg" "jpeg" "png" "webp" -}}
+    {{- with .Page.Resources.Match (printf "%s-*.%s" $name $extension) | first -}}
+      {{- $poster = . -}}
+      {{- break -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
 <figure>
-<video class="video-shortcode" preload="{{ .Get "preload" }}" controls>
-  <source src="{{ .Get "src" }}" type="{{ .Get "type" }}">
-  There should have been a video here but your browser does not seem to support it.
-</video>
+  <video class="video-shortcode" preload="metadata" controls
+    {{- with $poster -}}
+      poster="{{ .RelPermalink }}"
+    {{- end -}}>
+    {{- if $video -}}
+      <source src="{{ $video.RelPermalink }}" type="video/{{ $video.MediaType.SubType }}">
+    {{- else -}}
+      <p>
+        Video resource '{{ $src }}' not found.
+      </p>
+    {{- end -}}
+    There should have been a video here but your browser does not seem to support it.
+  </video>
 </figure>

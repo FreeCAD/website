@@ -23,7 +23,7 @@ Much of FreeCAD scripting consists of creating objects and then placing them som
     doc.recompute()
 ```
 
-The resulting cube has its origin at (0, 0, 0) and is in its default orientation. To locate it elsewhere, without other modification, we can change its _Placement_ property. _Placement_ has two sub-properties: _Placement.Base_ and _Placement.Rotation_. _Placement.Base_ is the location of the cube's origin and _Placement.Rotation_ rotates the cube (with its origin fixed) into its orientation. If we examine the cube's current Placement in the Data panel, we see
+The resulting cube has its origin at (0, 0, 0) and is in its default orientation. To locate it elsewhere, without other modification, we can change its `Placement` property. `Placement` has two sub-properties: `Placement.Base` and `Placement.Rotation`. `Placement.Base` is the location of the cube's origin and `Placement.Rotation` rotates the cube (with its origin fixed) into its orientation. If we examine the cube's current Placement in the Data panel, we see
 
 ![Ewproperty Placement](EWPropertyPlacement.png "Ewproperty Placement")
 
@@ -46,13 +46,13 @@ Of the various ways of constructing rotations, perhaps the simplest to understan
     rot = App.Rotation(Axis, Angle)
 ```
 
-where Axis, the axis of rotation, is an _App.Vector_ and _Angle_ is the angle in Degrees. The (non-zero!) length of the Axis vector has no effect on its direction, so axes _App.Vector(1, 1, 1)_ and _App.Vector(2, 2, 2)_ represent the same direction. The axis argument of _rot_ is stored as the property _rot.RawAxis_ The Raw Axis is normalized to unit length by FreeCAD and is available as the property _rot.Axis_.
+where Axis, the axis of rotation, is an `App.Vector` and `Angle` is the angle in Degrees. The (non-zero!) length of the Axis vector has no effect on its direction, so axes `App.Vector(1, 1, 1)` and `App.Vector(2, 2, 2)` represent the same direction. The axis argument of `rot` is stored as the property `rot.RawAxis` The Raw Axis is normalized to unit length by FreeCAD and is available as the property `rot.Axis`.
 
-We see that in order to specify a rotation there are three degrees of freedom - two for the normalized direction and one for the rotation angle. However, the axis/angle representation is not unique. _App.Rotation(App.Vector(0, 0, 1), 30)_, _App.Rotation(App.Vector(0, 0, -1), 330)_ and _App.Rotation(App.Vector(0, 0, 1), -330)_ all represent the same rotation. To test if two rotations are the same use _rot.isSame(rot1, tolerance)_.
+We see that in order to specify a rotation there are three degrees of freedom - two for the normalized direction and one for the rotation angle. However, the axis/angle representation is not unique. `App.Rotation(App.Vector(0, 0, 1), 30)`, `App.Rotation(App.Vector(0, 0, -1), 330)` and `App.Rotation(App.Vector(0, 0, 1), -330)` all represent the same rotation. To test if two rotations are the same use `rot.isSame(rot1, tolerance)`.
 
 ##### App.Rotation(vec1, vec2)
 
-This represents a rotation that takes the direction defined by _vec1_ and rotates it into the direction _vec2_
+This represents a rotation that takes the direction defined by `vec1` and rotates it into the direction `vec2`.
 
 The axis of this rotation is normal to the plane defined by the two vectors and the angle is the angle between them.
 
@@ -64,27 +64,19 @@ The axis of this rotation is normal to the plane defined by the two vectors and 
     rot1.isSame(rot2, 1e-14) #=> True
 ```
 
-The _rot1_ form is more convenient than the equivalent, first principles, _rot2_ calculation, which assumes familiarity withe vector cross-product operation. The _Radian_ keyword is used because the default angle argument is _Degree_.
+The `rot1` form is more convenient than the equivalent, first principles, `rot2` calculation, which assumes familiarity withe vector cross-product operation. The `Radian` keyword is used because the default angle argument is `Degree`.
 
 Below we show this rotation acting on an object from the front and top views.
 
-<div class="wp-block-group"><!-- wp:video {"guid":"8n6Xz0W8","id":361,"videoPressTracks":[],"videoPressClassNames":"wp-block-embed is-type-video is-provider-videopress"} -->
-<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><div class="wp-block-embed__wrapper">
-https://videopress.com/v/8n6Xz0W8?resizeToParent=true&cover=true&preloadContent=metadata&useAverageColor=true
-</div></figure>
-<!-- /wp:video -->
+{{< video "output.mp4" >}}
 
-###### Fig (1) The _App.Rotation(vec1, vec2)_ rotation front view.
+###### Fig (1) The `App.Rotation(vec1, vec2)` rotation front view.
 
-<!-- wp:video {"guid":"bolRiSjg","id":370,"poster":"https://videos.files.wordpress.com/bolRiSjg/rot2output_mp4.scrubthumb.jpg","videoPressTracks":[],"videoPressClassNames":"wp-block-embed is-type-video is-provider-videopress"} -->
-<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><div class="wp-block-embed__wrapper">
-https://videopress.com/v/bolRiSjg?resizeToParent=true&cover=true&posterUrl=https%3A%2F%2Fvideos.files.wordpress.com%2FbolRiSjg%2Frot2output_mp4.scrubthumb.jpg&preloadContent=metadata&useAverageColor=true
-</div></figure>
-<!-- /wp:video --></div>
+{{< video "rot2output.mp4" >}}
 
-###### Fig (2) The _App.Rotation(vec1, vec2)_ rotation top view.
+###### Fig (2) The `App.Rotation(vec1, vec2)` rotation top view.
 
-When we specify the final direction _vec2_ into which _vec1_ is rotated, we have only constrained two degrees of freedom, those of the direction specified by _vec2_, yet a general rotation has three degrees of freedom. What happened to the third? Suppose after our _App.Rotation(vec1, vec2)_ rotation, we then spun our object around the _vec2_ axis. The resulting composite rotation would still have rotated _vec1_ into _vec2_, but the axes perpendicular to _vec1_ will end up in a different directions. This particular constructor therefore cannot create the most general possible rotation.
+When we specify the final direction `vec2` into which `vec1` is rotated, we have only constrained two degrees of freedom, those of the direction specified by `vec2`, yet a general rotation has three degrees of freedom. What happened to the third? Suppose after our `App.Rotation(vec1, vec2)` rotation, we then spun our object around the `vec2` axis. The resulting composite rotation would still have rotated `vec1` into `vec2`, but the axes perpendicular to `vec1` will end up in a different directions. This particular constructor therefore cannot create the most general possible rotation.
 
 ##### App.Rotation(vecx, vecy, vecz, string)
 
@@ -97,21 +89,17 @@ A natural way to define a rotation is by its effect on the three coordinate dire
     rot = App.Rotation(V(1,0,0), V(0,0,0), V(1,0,1), 'ZXY')
 ```
 
-What does this represent? _string_ is the priority order of the axes.
+What does this represent? `string` is the priority order of the axes.
 
-- Z is first: the Z-axis is rotated into the direction vecz: _V(1,0,1)_.  (Two degrees of freedom used.)
+- Z is first: the Z-axis is rotated into the direction vecz: `V(1,0,1)`.  (Two degrees of freedom used.)
 
-- X is second: the rotated X-axis is placed in the plane defined by the _vecx_ and _vecz_ arguments, orthogonal to _vecz_. That is, the **component** of _vecx_ orthogonal to _vecz_ defines the rotated X direction.  (Uses one more degree of freedom.)
+- X is second: the rotated X-axis is placed in the plane defined by the `vecx` and `vecz` arguments, orthogonal to `vecz`. That is, the **component** of `vecx` orthogonal to `vecz` defines the rotated X direction.  (Uses one more degree of freedom.)
 
-- Y is third: the _vecy_ argument is completely ignored. The new Y-axis is created forming an orthogonal triad with the new Z and X axes, constructed from the above by the right hand rule (in the direction Z x X, for those familiar with the vector cross-product).
+- Y is third: the `vecy` argument is completely ignored. The new Y-axis is created forming an orthogonal triad with the new Z and X axes, constructed from the above by the right hand rule (in the direction Z x X, for those familiar with the vector cross-product).
 
 Our example generates the same rotation illustrated in Figs. (1) and (2) above. Note how the (blue) z-axis and (red) x-axis in Fig. (1) change. The mapping from (xvec, yvec, zvec) to normalized direction vectors, in the second listed step above, is illustrated in Fig (3), the movie below.
 
-<!-- wp:video {"guid":"4MV3LUL9","id":389,"poster":"https://videos.files.wordpress.com/4MV3LUL9/rottriad-1_mp4.scrubthumb-1.jpg","videoPressTracks":[],"videoPressClassNames":"wp-block-embed is-type-video is-provider-videopress"} -->
-<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><div class="wp-block-embed__wrapper">
-https://videopress.com/v/4MV3LUL9?resizeToParent=true&cover=true&posterUrl=https%3A%2F%2Fvideos.files.wordpress.com%2F4MV3LUL9%2Frottriad-1_mp4.scrubthumb-1.jpg&preloadContent=metadata&useAverageColor=true
-</div></figure>
-<!-- /wp:video -->
+{{< video "rottriad.mp4" >}}
 
 ###### Fig. (3) zvec and xvec inputs create the zdir xdir rotated normalized directions.
 
@@ -137,7 +125,7 @@ to compute the vector resulting from the transformation. For successive transfor
     rot2 * rot1 * vector rot2.multVec(rot1.multVec(vector)) rot2.multiply(rot1).multVec(vector)
 ```
 
-all compute the effect of first rotating _vector_ by _rot1_, then rotating the result by _rot2_. The result of applying two rotations is itself a rotation, likewise that of applying two placements is a placement. So the compound rotation or placement is just
+all compute the effect of first rotating `vector` by `rot1`, then rotating the result by `rot2`. The result of applying two rotations is itself a rotation, likewise that of applying two placements is a placement. So the compound rotation or placement is just
 
 ```py
     rot_compound = rot2 * rot1
@@ -151,11 +139,11 @@ and
 
 There are three important things to note:
 
-- Both placements/rotations reference the _same_ coordinate system.
+- Both placements/rotations reference the `same` coordinate system.
 
 - Unlike when multiplying numbers, the order matters! If you rotate an object around two different axes, you'll generally get a different result if you reverse the order of operations.
 
-- The rotation _rot2*rot1_ means first rot1, then rot2. Think of them as function applications to understand the order.
+- The rotation `rot2*rot1` means first rot1, then rot2. Think of them as function applications to understand the order.
 
 To illustrate the second point, let us consider two easily visualized rotations R and S and apply them in opposite orders.
 
@@ -171,13 +159,13 @@ In the top row of the figure, we perform the rotation S*R . We rotate 90<sup>o</
 
 In the second row, we perform the rotation R*S and note that the result differs from that of S*R.
 
-The third row illustrates another important property of rotations. First we do the S rotation (90<sup>o</sup> around z), then we perform R'. R' is again defined as 90<sup>o</sup> around x - BUT around the (already rotated) _body_ x-axis, not the _coordinate_ x-axis. This is as in the yaw-pitch-roll section above.
+The third row illustrates another important property of rotations. First we do the S rotation (90<sup>o</sup> around z), then we perform R'. R' is again defined as 90<sup>o</sup> around x - BUT around the (already rotated) `body` x-axis, not the `coordinate` x-axis. This is as in the yaw-pitch-roll section above.
 
 We see the result of R'*S is the same as S*R. This is in fact a general result that I will not attempt to prove here.
 
 _To perform a series of rotations in body coordinates instead of fixed coordinates, reverse the order of multiplications._
 
-As an example, we can construct a rotation with a yaw-pitch-roll of 20, 30, 40 degrees, respectively, by _post_-multiplying the individual rotations.
+As an example, we can construct a rotation with a yaw-pitch-roll of 20, 30, 40 degrees, respectively, by post-multiplying the individual rotations.
 
 ```py
     from FreeCAD import Vector as V
@@ -199,19 +187,19 @@ If we want to rotate an object about an axis that is offset from the origin, we 
 
 This means
 
-- Rotate by _rotation_ about an axis through _center_
+- Rotate by `rotation` about an axis through `center`
 
-- Translate the result by _base_
+- Translate the result by `base`
 
 As an exercise, how could we have done this from first principles?
 
-- Translate by -_center_
+- Translate by -`center`
 
-- Rotate by _rotation_
+- Rotate by `rotation`
 
-- Translate back by _center_
+- Translate back by `center`
 
-- Translate by _base_
+- Translate by `base`
 
 ```py
     #sample data
@@ -234,15 +222,15 @@ As an exercise, how could we have done this from first principles?
 
 ##### Inverse
 
-Both rotations (_rot_) and placements (_pl_) have inverses, _rot<sup>-1</sup>_ and _pl<sup>-1</sup>_ which reverse their effect. These satisfy
+Both rotations (`rot`) and placements (`pl`) have inverses, `rot<sup>-1</sup>` and `pl<sup>-1</sup>` which reverse their effect. These satisfy
 
 ![Equationsinverse](equationsinverse.png "Equationsinverse")
 
-where _I _is the identity rotation or placement, respectively.
+where `I `is the identity rotation or placement, respectively.
 
-Recall from the compound placement section, we found that _R' * S = S * R_. We could use the algebra of rotations to compute _R'_ explicitly. Multiply both sides of the equation on the right by _S<sup>-1</sup>_, obtaining:
+Recall from the compound placement section, we found that `R' * S = S * R`. We could use the algebra of rotations to compute `R'` explicitly. Multiply both sides of the equation on the right by `S<sup>-1</sup>`, obtaining:
 
-_R' * S * S<sup>-1</sup> = <em>R' _</em> = _S * R_ * _S<sup>-1</sup>_ In code, this becomes:
+`R' * S * S<sup>-1</sup> = <em>R' </em> = S * R * S<sup>-1</sup>` In code, this becomes:
 
 ```py
     from FreeCAD import Vector as V
@@ -263,8 +251,8 @@ Being able to manipulate rotations (and placements) symbolically in this manner 
 
 ![Nestedplacements 1](nestedplacements-1.png "Nestedplacements 1")
 
-The global placement of the Cube is the product of the placements that contain it. Referring to the Placements of Part, Part001, Part002, Part003 and Cube as _pl<sub>0</sub>, pl<sub>1</sub>, pl<sub>2</sub>, pl<sub>3</sub>_ and _pl<sub>4</sub>_ respectively, the global placement of the Cube is _pl<sub>0</sub> * pl<sub>1</sub> * pl<sub>2</sub> * pl<sub>3</sub> * pl<sub>4</sub>_. Suppose we want to change the global Placement of the cube to _gpl_ by altering the placement of the Part001 sub-assembly, say by changing _pl<sub>1</sub>_ to _pl<sub>1</sub>'_. Then we know that
+The global placement of the Cube is the product of the placements that contain it. Referring to the Placements of Part, Part001, Part002, Part003 and Cube as `pl<sub>0</sub>, pl<sub>1</sub>, pl<sub>2</sub>, pl<sub>3</sub>` and `pl<sub>4</sub>` respectively, the global placement of the Cube is `pl<sub>0</sub> * pl<sub>1</sub> * pl<sub>2</sub> * pl<sub>3</sub> * pl<sub>4</sub>`. Suppose we want to change the global Placement of the cube to `gpl` by altering the placement of the Part001 sub-assembly, say by changing `pl<sub>1</sub>` to `pl<sub>1</sub>'`. Then we know that
 
 ![Solveforplacement](solveforplacement.png "Solveforplacement")
 
-solving for the unknown placement _pl<sub>1</sub>'_ by pre- and post-multiplying by the appropriate inverses.
+solving for the unknown placement `pl<sub>1</sub>'` by pre- and post-multiplying by the appropriate inverses.
