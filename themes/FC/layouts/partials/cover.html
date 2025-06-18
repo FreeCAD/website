@@ -18,18 +18,16 @@
   {{- $category := .Params.categories -}}
   {{- if $category -}}
     {{- with $sectionPage -}}
-      {{- $cover = ($sectionPage.Resources.ByType "image").GetMatch (printf "*%s*" $category) -}}
+      {{- $cover = (.Resources.ByType "image").GetMatch (printf "*%s*" $category) -}}
     {{- end -}}
     {{- if $cover -}}
       {{- $alt = printf "%s cover" $category -}}
     {{- end -}}
   {{- end -}}
   {{- if not $cover -}}
-    {{- if $sectionPage -}}
-      {{- with $sectionPage.Params.cover.image -}}
-        {{- $cover = ($sectionPage.Resources.ByType "image").GetMatch (printf "*%s*" .) -}}
-      {{- end -}}
-      {{- $alt = ($sectionPage.Params.cover.alt | default $alt) -}}
+    {{- with $sectionPage -}}
+      {{- $cover = (.Resources.ByType "image").GetMatch (printf "*%s*" .Params.cover.image) -}}
+      {{- $alt = (.Params.cover.alt | default $alt) -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
