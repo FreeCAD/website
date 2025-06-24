@@ -100,7 +100,7 @@ headless_cms:
         structure: multiple_files
       fields:
         - {label: "Article Title", name: "title", widget: "string", i18n: true, required: [en], hint: "Use a similar title structure as existing articles for coherence"}
-        - {label: "Article Description", name: "description", i18n: true, required: [en], widget: "string"}
+        - {label: "Article Description", name: "description", i18n: true, widget: "string"}
         - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate}
         - {label: "Article Author", name: "author", widget: "string", default: "FreeCAD", i18n: duplicate, hint: "Use a similar author name as existing ones for coherence", pattern: ['.{3,}', "Must have at least 3 characters"]}
         - {label: "Draft", name: "draft", widget: "boolean", default: true, i18n: duplicate}
@@ -117,7 +117,7 @@ headless_cms:
           fields:
           - {label: "Link to article on homepage hero", name: "articleLink", widget: "boolean", default: false, i18n: duplicate}
           - {label: "Link to custom page on homepage hero", name: "customLink", widget: "string", default: "", i18n: duplicate}
-          - {label: "Text for custom page on homepage hero", name: "customText", widget: "string", default: "", i18n: true, required: [en]}
+          - {label: "Text for custom page on homepage hero", name: "customText", widget: "string", default: "", i18n: true}
           - {label: "Link to download page on homepage hero", name: "downloadLink", widget: "boolean", default: true, i18n: duplicate}
         - {label: "Content", name: "body", widget: "markdown", i18n: true, required: [en], hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
     - divider: true
