@@ -1,14 +1,13 @@
 ---
-title: "Homepage"
-description: "FreeCAD highlights on the Homepage"
-date: 2024-05-22T08:04:23+12:00
-author: "FreeCAD"
+title: Homepage
+description: FreeCAD highlights on the Homepage
+author: FreeCAD
 type: homepage
 menus:
   footer:
     weight: 1
+date: 2024-05-22T08:04:23+12:00
 ---
-
 ![An assembly text](assembly2.webp "An assembly caption")
 
 ## First Highlight Block
