@@ -6,9 +6,9 @@ draft: false
 categories: announcement
 tags: []
 cover:
-  image:
-  caption:
-  alt:
+  image: rocket_WB.png
+  caption: Rocket WB
+  alt: Rocket WB
 ---
 
 ![Dave saturn](dave_saturn.jpg "Dave saturn")

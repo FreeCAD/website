@@ -9,12 +9,12 @@ tags:
 - research
 - microscope
 cover:
-  image:
-  caption:
-  alt:
+  image: PUMA_Frontice.png
+  caption: Puma Microscope
+  alt: Puma Microscope
 ---
 
-![Puma Frontice](PUMA_Frontice.png "Puma Frontice")
+![Puma Microscope](PUMA_Frontice.png "Puma Microscope")
 
 The PUMA microscope is a low cost, modular, 3D printed, open source microscope designed in FreeCAD. Its modular nature allows re-use of many components to reconfigure the scope into a multitude of possible forms, from a basic mirror-illuminated simple microscope (middle) to a complex scope for serious research applications (right) - while still being fully portable!
 

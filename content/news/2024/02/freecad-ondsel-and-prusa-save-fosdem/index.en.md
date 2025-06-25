@@ -6,9 +6,9 @@ draft: false
 categories: announcement
 tags: []
 cover:
-  image:
-  caption:
-  alt:
+  image: IMG_20240204_110440.jpg
+  caption: FreeCAD, Ondsel and Prusa Save FOSDEM!
+  alt: FreeCAD, Ondsel and Prusa Save FOSDEM!
 ---
 
 ![FreeCAD, Ondsel and Prusa Save FOSDEM! 1](IMG_20240204_110457.jpg "FreeCAD, Ondsel and Prusa Save FOSDEM! 1")

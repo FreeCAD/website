@@ -8,12 +8,12 @@ tags:
 - addon
 - 3D printing
 cover:
-  image:
-  caption:
-  alt:
+  image: fused_filament_addon_rahix.png
+  caption: Fused Filament Addon
+  alt: Fused Filament Addon
 ---
 
-![Fused filament addon rahix](fused_filament_addon_rahix.png "Fused filament addon rahix")
+![Fused Filament Addon](fused_filament_addon_rahix.png "Fused Filament Addon")
 
 A short while ago we posted here about an [excellent article by Rahix describing some really interesting and useful design approaches for fused filament style 3D printing](https://blog.freecad.org/2025/05/08/design-for-3d-printing-an-excellent-article/). If you haven't checked out that article it's really worth a read.
 

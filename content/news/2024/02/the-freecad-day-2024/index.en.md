@@ -9,9 +9,9 @@ tags:
 - FPA
 - hackathon
 cover:
-  image:
-  caption:
-  alt:
+  image: photo1707816694.jpeg
+  caption: The FreeCAD day 2024
+  alt: The FreeCAD day 2024
 ---
 
 ![The FreeCAD day 2024 1](photo1707816694.jpeg "The FreeCAD day 2024 1")

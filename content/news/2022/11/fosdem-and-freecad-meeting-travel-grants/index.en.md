@@ -6,9 +6,9 @@ draft: false
 categories: announcement
 tags: []
 cover:
-  image:
-  caption:
-  alt:
+  image: Brussels_view_from_Mont_des_Arts.jpg
+  caption: Brussels view from Mont des Arts
+  alt: Brussels view from Mont des Arts
 ---
 
 ![Brussels view from Mont des Arts](Brussels_view_from_Mont_des_Arts.jpg "Brussels view from Mont des Arts")

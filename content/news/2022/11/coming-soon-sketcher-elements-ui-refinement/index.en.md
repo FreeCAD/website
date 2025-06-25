@@ -7,9 +7,9 @@ categories: feature
 tags:
 - sketcher
 cover:
-  image:
-  caption:
-  alt:
+  image: SketcherElementsStaticShot.png
+  caption: Sketcher Elements Static Shot
+  alt: Sketcher Elements Static Shot
 ---
 
 ![Sketcher Elements Static Shot](SketcherElementsStaticShot.png "Sketcher Elements Static Shot")

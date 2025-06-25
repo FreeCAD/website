@@ -8,9 +8,9 @@ tags:
 - user story
 - research
 cover:
-  image:
-  caption:
-  alt:
+  image: General-Arrangement.png
+  caption: General Arrangement
+  alt: General Arrangement
 ---
 
 ![General Arrangement](General-Arrangement.png "General Arrangement")

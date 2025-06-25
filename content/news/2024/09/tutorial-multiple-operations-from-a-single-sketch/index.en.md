@@ -8,9 +8,9 @@ tags:
 - part
 - sketcher
 cover:
-  image:
-  caption:
-  alt:
+  image: multi_extruded_sketch.png
+  caption: Multi extruded sketch
+  alt: Multi extruded sketch
 ---
 
 ![Multi extruded sketch](multi_extruded_sketch.png "Multi extruded sketch")

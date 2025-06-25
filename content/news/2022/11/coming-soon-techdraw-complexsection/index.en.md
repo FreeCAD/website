@@ -7,9 +7,9 @@ categories: feature
 tags:
 - TechDraw
 cover:
-  image:
-  caption:
-  alt:
+  image: TechDraw_AlignedSection_example.png
+  caption: Tech Draw Aligned Section example
+  alt: Tech Draw Aligned Section example
 ---
 
 ![Tech Draw Aligned Section example](TechDraw_AlignedSection_example.png "Tech Draw Aligned Section example")

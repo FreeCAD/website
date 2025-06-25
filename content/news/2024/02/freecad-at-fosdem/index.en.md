@@ -6,12 +6,12 @@ draft: false
 categories: announcement
 tags: []
 cover:
-  image:
-  caption:
-  alt:
+  image: K_Level_One.png
+  caption: FreeCAD at FOSDEM
+  alt: FreeCAD at FOSDEM
 ---
 
-![K Level One](K_Level_One.png "K Level One")
+![FreeCAD at FOSDEM](K_Level_One.png "FreeCAD at FOSDEM")
 
 This weekend in Brussels lots of members of the FreeCAD community will be at [FOSDEM](https://fosdem.org/2024/), the amazing free event for all things opensource. If you are attending FOSDEM please come and spend some time at the FreeCAD stand which will be in the K Building. We have some excellent neighbours, [Pine64](https://pine64.org/) and [Prusa](https://www.prusa3d.com/) and we hope that FreeCAD sponsors [Libre Space Foundation](https://libre.space/) should also have a presence in this space.
 

@@ -6,9 +6,9 @@ draft: false
 categories: announcement
 tags: []
 cover:
-  image:
-  caption:
-  alt:
+  image: pre_post_anubis.png
+  caption: Pre post anubis
+  alt: Pre post anubis
 ---
 
 ![Pre post anubis](pre_post_anubis.png "Pre post anubis")

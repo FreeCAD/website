@@ -7,12 +7,12 @@ categories: announcement
 tags:
 - FPA
 cover:
-  image:
-  caption:
-  alt:
+  image: Screenshot-from-2022-10-07-12-45-06.png
+  caption: Registration certificate
+  alt: Registration certificate
 ---
 
-![Screenshot from 2022 10 07 12 45 06](Screenshot-from-2022-10-07-12-45-06.png "Screenshot from 2022 10 07 12 45 06")
+![Registration certificate](Screenshot-from-2022-10-07-12-45-06.png "Registration certificate")
 
 The [FreeCAD Project Association](https://github.com/FreeCAD/FPA) (FPA) has registered a trademark on the FreeCAD logo! The trademark is public and can be seen [here](https://www.boip.int/en/trademarks-register?app=%2Fitem%2Fbx1466186).
 

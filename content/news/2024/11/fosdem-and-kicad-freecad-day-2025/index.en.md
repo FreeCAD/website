@@ -9,9 +9,9 @@ tags:
 - FPA
 - hackathon
 cover:
-  image:
-  caption:
-  alt:
+  image: freecad-day-2025.jpg
+  caption: Freecad day 2025
+  alt: Freecad day 2025
 ---
 
 ![Freecad day 2025](freecad-day-2025.jpg "Freecad day 2025")

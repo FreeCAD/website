@@ -7,9 +7,9 @@ categories: announcement
 tags:
 - FPA
 cover:
-  image:
-  caption:
-  alt:
+  image: Monedas_Varias.jpg
+  caption: Monedas Varias
+  alt: Monedas Varias
 ---
 
 ![Monedas Varias](Monedas_Varias.jpg "Monedas Varias")

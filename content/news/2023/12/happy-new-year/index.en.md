@@ -6,9 +6,9 @@ draft: false
 categories: announcement
 tags: []
 cover:
-  image:
-  caption:
-  alt:
+  image: Freecad_2024.png
+  caption: Freecad 2024
+  alt: Freecad 2024
 ---
 
 ![Freecad 2024](Freecad_2024.png "Freecad 2024")

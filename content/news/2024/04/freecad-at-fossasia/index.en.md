@@ -6,9 +6,9 @@ draft: false
 categories: announcement
 tags: []
 cover:
-  image:
-  caption:
-  alt:
+  image: 437958995_965986825530504_8094539299392487996_n.jpg
+  caption: FreeCAD at FOSSASIA
+  alt: FreeCAD at FOSSASIA
 ---
 
 ![FreeCAD at FOSSASIA 1](437958995_965986825530504_8094539299392487996_n.jpg "FreeCAD at FOSSASIA 1")

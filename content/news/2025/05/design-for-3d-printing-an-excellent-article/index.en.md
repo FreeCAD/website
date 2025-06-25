@@ -6,12 +6,12 @@ draft: false
 categories: tutorial
 tags: []
 cover:
-  image:
-  caption:
-  alt:
+  image: rahix_design_header.png
+  caption: Rahix design
+  alt: Rahix design
 ---
 
-![Rahix design header](rahix_design_header.png "Rahix design header")
+![Rahix design](rahix_design_header.png "Rahix design")
 
 It's wonderful when people take the time to share the expertise they've developed. Even more so when the resulting article is filled with FreeCAD screenshots.
 

@@ -6,9 +6,9 @@ draft: false
 categories: announcement
 tags: []
 cover:
-  image:
-  caption:
-  alt:
+  image: clip_mount.png
+  caption: Clip mount
+  alt: Clip mount
 ---
 
 ![Clip mount](clip_mount.png "Clip mount")

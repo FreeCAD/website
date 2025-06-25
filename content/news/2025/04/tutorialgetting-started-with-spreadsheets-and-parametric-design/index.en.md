@@ -7,9 +7,9 @@ categories: tutorial
 tags:
 - spreadsheet
 cover:
-  image:
-  caption:
-  alt:
+  image: expression_editor.png
+  caption: Expression editor
+  alt: Expression editor
 ---
 
 ![Freecad spreadsheet](freecad_spreadsheet.png "Freecad spreadsheet")

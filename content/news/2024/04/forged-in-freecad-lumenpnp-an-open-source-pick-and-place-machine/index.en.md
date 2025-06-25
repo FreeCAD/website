@@ -6,12 +6,12 @@ draft: false
 categories: announcement
 tags: []
 cover:
-  image:
-  caption:
+  image: lumenpnp.webp
+  caption: LumenPnP Open Source Pick and Place Machine
   alt:
 ---
 
-![3 1 22e 12ea 8 cf 13 41c 4 9d 84 b 98fcfaac 425 1080x](3_1_22e12ea8-cf13-41c4-9d84-b98fcfaac425_1080x.webp "3 1 22e 12ea 8 cf 13 41c 4 9d 84 b 98fcfaac 425 1080x")
+![LumenPnP Open Source Pick and Place Machine](lumenpnp.webp "LumenPnP Open Source Pick and Place Machine")
 
 It's an amazing age for making things, and an even greater age for making things using open source solutions. At our recent [FOSDEM](https://blog.freecad.org/2024/02/16/fosdem-and-freecad-2024/) stand we shared the booth with [KiCad](https://www.kicad.org/), the open source electronics environment. It was fabulous at the event to see items and machines made using KiCad and [FreeCAD](https://www.freecad.org/) in combination. It's also quite amazing to consider the complex printed circuit boards (PCB's) KiCad can create with the tiny component packages placed and soldered into highly accurate positions.
 

@@ -6,9 +6,9 @@ draft: false
 categories: tutorial
 tags: []
 cover:
-  image:
-  caption:
-  alt:
+  image: path_header.png
+  caption: Path header
+  alt: Path header
 ---
 
 ![Path header](path_header.png "Path header")

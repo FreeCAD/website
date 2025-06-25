@@ -8,9 +8,9 @@ tags:
 - FPA
 - website
 cover:
-  image:
-  caption:
-  alt:
+  image: RoyalDecree.png
+  caption: Royal Decree
+  alt: Royal Decree
 ---
 
 ![Royal Decree](RoyalDecree.png "Royal Decree")

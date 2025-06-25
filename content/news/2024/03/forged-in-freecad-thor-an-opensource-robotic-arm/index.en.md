@@ -6,12 +6,12 @@ draft: false
 categories: announcement
 tags: []
 cover:
-  image:
-  caption:
-  alt:
+  image: thor_header.png
+  caption: Thor Opensource Robotic Arm
+  alt: Thor Opensource Robotic Arm
 ---
 
-![Thor header](thor_header.png "Thor header")
+![Thor Opensource Robotic Arm](thor_header.png "Thor Opensource Robotic Arm")
 
 We imagine most visitors to this blog will already know that amazing things can be achieved or designed using opensource tools like FreeCAD. [The Thor opensource robotic arm](http://thor.angel-lm.com/) is a great example of a complex opensource project built using a totally opensource tool chain.
 

@@ -7,9 +7,9 @@ categories: tutorial
 tags:
 - UI
 cover:
-  image:
-  caption:
-  alt:
+  image: freecad_lite_theme.png
+  caption: Freecad lite theme
+  alt: Freecad lite theme
 ---
 
 ![Freecad lite theme](freecad_lite_theme.png "Freecad lite theme")

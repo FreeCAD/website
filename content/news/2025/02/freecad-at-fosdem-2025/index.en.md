@@ -6,9 +6,9 @@ draft: false
 categories: event
 tags: []
 cover:
-  image:
-  caption:
-  alt:
+  image: IMG_20250202_115245.jpg
+  caption: FOSDEM 2025
+  alt: FOSDEM 2025
 ---
 
 ![FreeCAD at FOSDEM 2025 1](IMG_20250202_163750.jpg "FreeCAD at FOSDEM 2025 1")

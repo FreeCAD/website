@@ -48,6 +48,7 @@ p {
   font-size: var(--m);
   margin: var(--gap) auto;
   scroll-margin-top: 25vh;
+  text-align-last: auto;
 }
 
 a {

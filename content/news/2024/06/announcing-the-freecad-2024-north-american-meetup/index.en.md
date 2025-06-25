@@ -6,12 +6,12 @@ draft: false
 categories: announcement
 tags: []
 cover:
-  image:
-  caption:
-  alt:
+  image: FCNA24.webp
+  caption: FreeCAD 2024 North American Meetup
+  alt: FreeCAD 2024 North American Meetup
 ---
 
-![Fcna 24](FCNA24.webp "Fcna 24")
+![FreeCAD 2024 North American Meetup](FCNA24.webp "FreeCAD 2024 North American Meetup")
 
 In case you don't read [the forum](https://forum.freecad.org/viewtopic.php?t=85180), I'd like to announce FreeCAD's 2024 North American Meetup!
 

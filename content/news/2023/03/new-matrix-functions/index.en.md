@@ -13,7 +13,7 @@ cover:
   alt:
 ---
 
-![Matrix](MatrixLabelled.svg)
+![Matrix](MatrixLabelled.svg "Matrix")
 
 Matrix image courtesy of [mavaddat](https://commons.wikimedia.org/wiki/File:MatrixLabelled.svg).
 

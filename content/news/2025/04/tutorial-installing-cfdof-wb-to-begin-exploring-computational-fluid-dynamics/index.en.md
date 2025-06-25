@@ -6,12 +6,12 @@ draft: false
 categories: tutorial
 tags: []
 cover:
-  image:
-  caption:
-  alt:
+  image: cfdof_header.png
+  caption: CfdOF WB
+  alt: CfdOF WB
 ---
 
-![Cfdof header](cfdof_header.png "Cfdof header")
+![CfdOF WB](cfdof_header.png "CfdOF WB")
 
 FreeCAD does many amazing things, allows us to create all kinds of geometries and assemblies, but we can also use FreeCAD for analysis of the things we make. One fascinating approach is Computational Fluid Dynamics or CFD.
 

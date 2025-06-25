@@ -6,12 +6,12 @@ draft: false
 categories: tutorial
 tags: []
 cover:
-  image:
-  caption:
-  alt:
+  image: main.png
+  caption: Festive Tree Decoration
+  alt: Festive Tree Decoration
 ---
 
-![Main](main.png "Main")
+![Festive Tree Decoration](main.png "Festive Tree Decoration")
 
 The FreeCAD community is a wonderful diverse place and certainly not everyone in the community will be involved in traditions of bringing trees into their homes and then decorating them! However a festive tree decoration, in the shape of a tree, can be a good mini project for playing with the Revolution tool.
 

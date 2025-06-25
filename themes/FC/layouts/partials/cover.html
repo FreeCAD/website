@@ -39,12 +39,12 @@
       <img
         srcset="
           {{- if (ge $cover.Width (index $sizes 1)) -}}
-            {{- printf "%s %s" (($cover.Crop (printf "%sx%s center %s" (index $sizes 1) (index $sizes 0) $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 0)) -}}
+            {{- printf "%s %s" (($cover.Crop (printf "%sx%s Smart %s" (index $sizes 1) (index $sizes 0) $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 0)) -}}
           {{- end -}}
           {{- if (ge $cover.Width (index $sizes 2)) -}}
-            {{- printf "%s %s" (($cover.Crop (printf "%sx%s center %s" (index $sizes 1) (index $sizes 2) $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 1)) -}}
-            {{- printf "%s %s" (($cover.Crop (printf "%sx%s center %s" (index $sizes 2) (index $sizes 1) $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 2)) -}}
-            {{- printf "%s %s" (($cover.Crop (printf "%sx%s center %s" (index $sizes 3) (index $sizes 2) $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 3)) -}}
+            {{- printf "%s %s" (($cover.Crop (printf "%sx%s Smart %s" (index $sizes 1) (index $sizes 2) $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 1)) -}}
+            {{- printf "%s %s" (($cover.Crop (printf "%sx%s Smart %s" (index $sizes 2) (index $sizes 1) $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 2)) -}}
+            {{- printf "%s %s" (($cover.Crop (printf "%sx%s Smart %s" (index $sizes 3) (index $sizes 2) $resizeFormat)).RelPermalink) (printf "%sw, " (index $sizes 3)) -}}
           {{- end -}}
           {{ $cover.RelPermalink }} {{ printf "%dw" ($cover.Width) }}"
         sizes="

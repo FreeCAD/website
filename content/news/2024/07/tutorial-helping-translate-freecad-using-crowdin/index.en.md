@@ -6,12 +6,12 @@ draft: false
 categories: tutorial
 tags: []
 cover:
-  image:
-  caption:
-  alt:
+  image: fc_language_dropdown.png
+  caption: FreeCAD language dropdown
+  alt: FreeCAD language dropdown
 ---
 
-![Fc language dropdown](fc_language_dropdown.png "Fc language dropdown")
+![FreeCAD language dropdown](fc_language_dropdown.png "FreeCAD language dropdown")
 
 In case you didn't know FreeCAD is available in lots of different languages. If you want to check out the list, launch FreeCAD and click "edit - preferences" and you'll see a language dropdown at the top of the window and you can scroll to see lots of different language packs that FreeCAD contains. So how do these translations happen?
 
@@ -19,7 +19,7 @@ In case you didn't know FreeCAD is available in lots of different languages. If 
 
 FreeCAD uses an online platform called [Crowdin](https://crowdin.com/) to crowd source it's language translations. All the language strings are uploaded to the Crowdin platform and then anyone can contribute and attempt to translate as much or as little as they like in whatever language or languages they choose.
 
-![Crowdin freecad dashboard](crowdin_freecad_dashboard.png "Crowdin freecad dashboard")
+![Crowdin FreeCAD dashboard](crowdin_freecad_dashboard.png "Crowdin FreeCAD dashboard")
 
 It's reasonably straightforward. You need to supply and email account to sign up for a Crowdin account once logged in you can navigate to the [FreeCAD project dashboard](https://crowdin.com/project/freecad). From here you can select a language you are interested in and click on it. The FreeCAD strings are loaded and the Crowdin page is populated with the collections of phrases for translation.
 

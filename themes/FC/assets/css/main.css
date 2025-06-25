@@ -289,6 +289,7 @@ main header .entry-cover img {
 .content > :not(.block, .column) {
   padding: var(--gap) calc(var(--side) + (var(--gap) * 16));
   text-align: justify;
+  text-align-last: center;
 }
 
 .heading-anchor {
