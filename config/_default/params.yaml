@@ -40,6 +40,7 @@ assets:
     - css/highlight.css
     - css/media.css
 
+
 # Headless CMS parameters
 
 headless_cms:
@@ -83,6 +84,7 @@ headless_cms:
             height: 2000
           svg:
             optimize: true
+
   collections:
     - name: news
       label: News
@@ -122,6 +124,20 @@ headless_cms:
           - {label: "Text for custom page on homepage hero", name: "customText", widget: "string", default: "", i18n: true}
           - {label: "Link to download page on homepage hero", name: "downloadLink", widget: "boolean", default: true, i18n: duplicate}
         - {label: "Content", name: "body", widget: "markdown", i18n: true, required: [en], hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+      index_file:
+        name: _index
+        label: News Index
+        icon: brand_awareness
+        editor:
+          preview: true
+        fields:
+          - {label: "Title", name: "title", widget: "string", i18n: true, required: [en], pattern: ['.{3,}', "Must have at least 3 characters"]}
+          - {label: "Description", name: "description", widget: "string", i18n: true}
+          - {label: "Pagination", name: "paginate", widget: "number", default: 12, value_type: "int", min: 1, max: 30, i18n: duplicate, hint: "Integer between 1 and 30"}
+          - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
+          - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
+          - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
+
     - divider: true
       name: 1
       files: []
@@ -144,6 +160,7 @@ headless_cms:
             - {label: "Description", name: "description", widget: "string", i18n: true}
             - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
             - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+
     - name: features
       label: Features
       icon: bolt
@@ -166,6 +183,7 @@ headless_cms:
             - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
             - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
             - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+
     - name: download
       label: Download
       icon: downloading
@@ -188,6 +206,7 @@ headless_cms:
             - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
             - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
             - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+
     - name: releases
       label: Releases
       icon: celebration
@@ -209,6 +228,20 @@ headless_cms:
         - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
         - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
         - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+      index_file:
+        name: _index
+        label: Releases Index
+        icon: celebration
+        editor:
+          preview: true
+        fields:
+          - {label: "Title", name: "title", widget: "string", i18n: true, required: [en], pattern: ['.{3,}', "Must have at least 3 characters"]}
+          - {label: "Description", name: "description", widget: "string", i18n: true}
+          - {label: "Pagination", name: "paginate", widget: "number", default: 6, value_type: "int", min: 1, max: 30, i18n: duplicate, hint: "Integer between 1 and 30"}
+          - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
+          - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
+          - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
+
     - name: community
       label: Community
       icon: hub
@@ -231,6 +264,7 @@ headless_cms:
             - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
             - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
             - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+
     - name: documentation
       label: Documentation
       icon: local_library
@@ -253,6 +287,7 @@ headless_cms:
             - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
             - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
             - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+
     - name: contribute
       label: Contribute
       icon: code_blocks
@@ -276,6 +311,7 @@ headless_cms:
             - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
             - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
             - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+
     - name: donate
       label: Donate
       icon: volunteer_activism

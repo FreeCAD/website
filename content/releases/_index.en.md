@@ -3,6 +3,7 @@ title: "Releases"
 description: "Read the release notes"
 date: 2024-05-22T08:04:23+12:00
 author: "FreeCAD"
+paginate: 6
 cover:
   image: 7.webp
   caption: "a cover caption"
