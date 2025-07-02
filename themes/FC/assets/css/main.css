@@ -328,7 +328,7 @@ blockquote p {
   margin: 0.5rem 0 0;
 }
 
-blockquote :is(code, blockquote, .chroma) {
+blockquote :is(code, blockquote, .chroma, details, mark) {
   background: var(--theme);
 }
 
