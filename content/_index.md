@@ -1,5 +1,6 @@
 ---
 title: "FreeCAD HomePage _Index"
+paginate: 6
 ---
 
 ## Hello world!

@@ -48,7 +48,6 @@
   {{- partial "content.html" . -}}
 {{- end -}}
 
-<section class="articles">
 {{/* get the latest pages from the current section, and fill in the missing translated pages from the first site (currently English) */}}
 {{- $pages := where (.RegularPages | lang.Merge .Sites.Default.RegularPages) "Section" .Section -}}
 
@@ -60,7 +59,8 @@
       {{- $homePages = $homePages | append . -}}
     {{- end -}}
   {{- end -}}
-  {{- $pages = $homePages -}}
+  {{- $paginateLimit := .Params.paginate | default 6 -}}
+  {{- $pages = first $paginateLimit $homePages -}}
 {{- end -}}
 
 {{- if eq .Type "contribute" }}
@@ -84,49 +84,50 @@
   {{- $paginator = .Paginate $pages -}}
 {{- end -}}
 
-{{- $term := .Data.Term -}}
-{{- range $index, $page := $paginator.Pages -}}
-
-<article>
-  {{- partial "category.html" . -}}
-  <a href="{{ .Permalink }}" alt="ARTICLE" aria-label="{{ .Title | plainify }}" title="{{ .Title | plainify }}">
-    {{- with .Store -}}
-      {{- .Set "articles" true -}}
-    {{- end -}}
-    {{- partial "cover.html" . -}}
-    {{- with .Store -}}
-      {{- .Delete "articles" -}}
-    {{- end -}}
-    {{- if not .Date.IsZero -}}
-      <span class="entry-date">
-        <time datetime="{{ .Date }}">
-          {{ .Date | time.Format ":date_long" }}
-        </time>
-      </span>
-    {{- end -}}
-    <h3 class="entry-title">
-      <span>
-        {{ .Title | .RenderString }}
-      </span>
-      {{- if .Draft }}
-        <sup>
-          <span class="entry-isdraft">
-            [{{- i18n "draft" | default "Draft" -}}]
+<section class="articles">
+  {{- range $index, $page := $paginator.Pages -}}
+    <article>
+      {{- partial "category.html" . -}}
+      <a href="{{ .Permalink }}"
+        alt="ARTICLE"
+        aria-label="{{ .Title | plainify }}"
+        title="{{ .Title | plainify }}">
+        {{- with .Store -}}
+          {{- .Set "articles" true -}}
+        {{- end -}}
+        {{- partial "cover.html" . -}}
+        {{- with .Store -}}
+          {{- .Delete "articles" -}}
+        {{- end -}}
+        {{- if not .Date.IsZero -}}
+          <span class="entry-date">
+            <time datetime="{{ .Date }}">
+              {{ .Date | time.Format ":date_long" }}
+            </time>
           </span>
-        </sup>
-      {{- end -}}
-    </h3>
-    {{- if (ne (.Param "hideSummary") true) -}}
-    <p class="entry-description">
-      {{- if .Description -}}
-        {{ .Description | .RenderString }}
-      {{- end -}}
-    </p>
-    {{- end -}}
-  </a>
-</article>
-
-{{- end -}}
+        {{- end -}}
+        <h3 class="entry-title">
+          <span>
+            {{ .Title | .RenderString }}
+          </span>
+          {{- if .Draft }}
+            <sup>
+              <span class="entry-isdraft">
+                [{{- i18n "draft" | default "Draft" -}}]
+              </span>
+            </sup>
+          {{- end -}}
+        </h3>
+        {{- if (ne (.Param "hideSummary") true) -}}
+        <p class="entry-description">
+          {{- if .Description -}}
+            {{ .Description | .RenderString }}
+          {{- end -}}
+        </p>
+        {{- end -}}
+      </a>
+    </article>
+  {{- end -}}
 </section>
 
 {{/* Get the content for the Homepage. */}}
@@ -137,20 +138,28 @@
 {{- end -}}
 
 {{- if gt $paginator.TotalPages 1 -}}
-<footer class="list-footer">
-  <nav class="list-pagination">
-    {{- if $paginator.HasPrev -}}
-    <a class="prev" href="{{ $paginator.Prev.URL }}" alt="PREVIOUS" aria-label="{{ i18n "prev_page" | default "Prev Page" }}" title="{{ i18n "prev_page" | default "Prev Page" }}">
-      ◀ {{ i18n "prev_page" | default "Prev Page" }}
-    </a>
-    {{- end -}}
-    {{- if $paginator.HasNext -}}
-    <a class="next" href="{{ $paginator.Next.URL }}" alt="NEXT" aria-label="{{ i18n "next_page" | default "Next Page" }}" title="{{ i18n "next_page" | default "Next Page" }}">
-      {{ i18n "next_page" | default "Next Page" }} ▶
-    </a>
-    {{- end -}}
-  </nav>
-</footer>
+  <footer class="list-footer">
+    <nav class="list-pagination">
+      {{- if $paginator.HasPrev -}}
+        <a class="prev"
+          href="{{ $paginator.Prev.URL }}"
+          alt="PREVIOUS"
+          aria-label="{{ i18n "prev_page" | default "Prev Page" }}"
+          title="{{ i18n "prev_page" | default "Prev Page" }}">
+          ◀ {{ i18n "prev_page" | default "Prev Page" }}
+        </a>
+      {{- end -}}
+      {{- if $paginator.HasNext -}}
+        <a class="next"
+          href="{{ $paginator.Next.URL }}"
+          alt="NEXT"
+          aria-label="{{ i18n "next_page" | default "Next Page" }}"
+          title="{{ i18n "next_page" | default "Next Page" }}">
+          {{ i18n "next_page" | default "Next Page" }} ▶
+        </a>
+      {{- end -}}
+    </nav>
+  </footer>
 {{- end -}}
 
 {{- end -}}
