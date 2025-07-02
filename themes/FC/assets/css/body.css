@@ -173,6 +173,6 @@ details p {
   margin-bottom: 0;
 }
 
-details :is(code, blockquote, .chroma, details, mark) {
+details :is(code, blockquote, .chroma, details) {
   background: var(--theme);
 }
