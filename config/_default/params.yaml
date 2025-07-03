@@ -1,12 +1,14 @@
 # FC Theme parameters
 
 env: production # Enables google analytics, opengraph and schema.
+
 description: "Your free and open-source parametric modeler"
 author: "FreeCAD"
-DateFormat: 2006-01-02
 logo: /FreeCAD-wordmark.svg
+DateFormat: 2006-01-02
 mainSections: news
 defaultTheme: auto
+
 ShowAuthor: true
 ShowReadingTime: true
 ShowWordCount: false
@@ -17,6 +19,7 @@ ShowCopyCodeButton: true
 footerSectionLinks: 5
 telemetryMaxEntries: 20
 
+#JS scripts
 EnableInstantClick: true # NOTE: Allows fast loading of linked pages, see assets/js/InstantClick.js.
 EnableUA: true # NOTE: Enables User Agent sniffing, useful e.g. to provide corresponding download options.
 
@@ -47,6 +50,7 @@ headless_cms:
   engine: "sveltia"
   site_url: "https://marcuspollio.github.io/FreeCAD-website/"
   logo_url: "https://marcuspollio.github.io/FreeCAD-website/FreeCAD-symbol.svg"
+
   backend:
     name: "github"
     repo: "marcuspollio/FreeCAD-website"
@@ -59,16 +63,22 @@ headless_cms:
       uploadMedia: "Media: upload {{path}}"
       deleteMedia: "Media: delete {{path}}"
       openAuthoring: "{{message}}"
-  publish_mode: editorial_workflow
+
+  # publish_mode: editorial_workflow # NOTE: not supported yet, see
+  # https://github.com/sveltia/sveltia-cms?tab=readme-ov-file#current-limitations
+  # https://decapcms.org/docs/editorial-workflows/
+
   i18n:
     structure: multiple_files
     locales: [en, fr, tr]
     default_locale: en
     initial_locales: default
+
   slug:
     encoding: ascii
     clean_accents: true
     sanitize_replacement: "-"
+
   media_folder: "static"
   public_folder: "/"
   media_libraries:
@@ -141,6 +151,7 @@ headless_cms:
     - divider: true
       name: 1
       files: []
+
     - name: homepage
       label: Homepage
       icon: home
