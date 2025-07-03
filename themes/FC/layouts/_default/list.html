@@ -24,7 +24,7 @@
 
     <h1 class="title">
       {{- if eq .Kind "term" -}}
-        {{ .Data.Singular }}: {{ end }}
+        {{ .Data.Singular | title }}: {{ end }}
       {{ .Title | .RenderString }}
     </h1>
 
