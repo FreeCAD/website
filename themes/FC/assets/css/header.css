@@ -22,7 +22,7 @@
 .logo,
 .menu-list,
 .language-dropdown,
-.theme-switch {
+.theme-toggle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,7 +144,7 @@ body:not(.dark) #sun {
   background: black;
 }
 
-/* Languages switcher and Menu in media mode */
+/* Languages and Menu in media mode */
 
 #lang-list {
   display: none;

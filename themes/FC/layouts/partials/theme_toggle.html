@@ -1,0 +1,42 @@
+{{/* Theme Toggle Script, sets theme based on:
+     - User preference in localStorage (pref-theme)
+     - Default theme defined in config (light, dark, auto)
+     - System theme preference (prefers-color-scheme) */}}
+
+{{- $disableToggle := site.Params.disableThemeToggle | default false -}}
+{{- $defaultTheme := site.Params.defaultTheme | default "auto" -}}
+
+{{/* Theme-toggle is enabled */}}
+{{- if not $disableToggle -}}
+  {{- if eq $defaultTheme "light" -}}
+    <script>
+      if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+      }
+    </script>
+  {{- else if eq $defaultTheme "dark" -}}
+    <script>
+      if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+      }
+    </script>
+  {{- else -}}
+    {{/* Theme is auto */}}
+    <script>
+      if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+      } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+      }
+    </script>
+  {{- end -}}
+{{/* Theme-toggle is disabled and Theme is auto */}}
+{{- else if and (ne $defaultTheme "light") (ne $defaultTheme "dark") -}}
+  <script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.body.classList.add('dark');
+    }
+  </script>
+{{- end -}}

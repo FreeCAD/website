@@ -1,92 +1,70 @@
-{{/* Theme-toggle is enabled */}}
-{{- if (not site.Params.disableThemeToggle) -}}
-  {{/* Theme is light */}}
-  {{- if (eq site.Params.defaultTheme "light") -}}
-    <script>
-      if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-      }
-    </script>
-  {{/* Theme is dark */}}
-  {{- else if (eq site.Params.defaultTheme "dark") -}}
-    <script>
-      if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-      }
-    </script>
-  {{- else -}}
-    {{/* Theme is auto */}}
-    <script>
-      if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-      } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-      }
-    </script>
-  {{- end -}}
-{{/* Theme-toggle is disabled and Theme is auto */}}
-{{- else if (and (ne site.Params.defaultTheme "light") (ne site.Params.defaultTheme "dark")) -}}
-  <script>
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.body.classList.add('dark');
-    }
-  </script>
-{{- end -}}
+{{/* Site Header with:
+     - Logo and Site Title
+     - Navigation menu, horizontal list on desktop, dropdown hamburger on mobile
+     - Languages dropdown
+     - Theme chroma toggle */}}
+
+{{- $logo := resources.Get site.Params.logo -}}
+{{- $logoType := $logo.MediaType.SubType -}}
+{{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
+{{- $logoText := site.Title | .RenderString -}}
+{{- $menuMain := site.Menus.main | default site.Sites.Default.Menus.main -}}
+{{- $pageLang := .Page.Lang -}}
 
 <header class="site-header" role="banner">
+
   <div class="logo">
-    {{- if site.Title -}}
-    {{- $logoText := site.Title | .RenderString -}}
-    <a href="{{ "" | relLangURL }}" {{- if .IsHome -}}class="active"{{- end -}} accesskey="h" title="{{ $logoText }} {{ i18n "home" | default "Home" }} (Alt + H)">
-      {{- if site.Params.logo -}}
-        {{- $img := resources.Get site.Params.logo -}}
-        {{- if $img -}}
-          {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
-            {{- if (in $processableFormats $img.MediaType.SubType) -}}
-              {{- $img = $img.Resize "x32" -}}
-              <img src="{{ $img.RelPermalink }}" alt="LOGO" aria-label="logo">
-            {{- else if (eq $img.MediaType.SubType "svg") -}}
-              {{- $img.Content | safeHTML -}}
-            {{- else -}}
-              {{- $logoText | plainify -}}
-              {{- errorf "Unable to get logo file" -}}
-            {{- end -}}
+    <a href="{{ "" | relLangURL }}"
+      {{- if .IsHome -}}class="active"{{- end -}}
+      accesskey="h"
+      title="{{ $logoText }} {{ i18n "home" | default "Home" }} (Alt + H)"
+      aria-label="{{ $logoText }} {{ i18n "home" | default "Home" }}">
+
+      {{- with $logo -}}
+        {{- if in $processableFormats $logoType -}}
+          {{- $logo = $logo.Resize "x32" -}}
+          <img src="{{ $logo.RelPermalink }}"
+            alt="LOGO"
+            aria-label="logo">
+        {{- else if eq $logoType "svg" -}}
+          {{- .Content | safeHTML -}}
+        {{- else -}}
+          {{- $logoText | plainify -}}
+          {{- errorf "Unsupported logo format: %s" $logoType -}}
         {{- end -}}
       {{- else -}}
         {{- $logoText | plainify -}}
+        {{- errorf "Unable to get logo file" -}}
       {{- end -}}
     </a>
-    {{- end -}}
   </div>
 
   <div class="site-nav">
-    {{- $currentPage := . -}}
-    {{- $menuMain := site.Menus.main -}}
-    {{- if not $menuMain -}}
-      {{- $menuMain = site.Sites.Default.Menus.main -}}
-    {{- end -}}
-
     <nav class="menu">
-      <button popovertarget="menu-list" popovertargetaction="toggle" class="menu-toggle" title="{{ i18n "menu" | default "Menu" }}"><span class="hamburger">☰</span>
+      <button popovertarget="menu-list"
+        popovertargetaction="toggle"
+        class="menu-toggle"
+        title="{{ i18n "menu" | default "Menu" }}"
+        aria-label="{{ i18n "menu" | default "Menu" }}">
+        <span class="hamburger">☰</span>
         <span class="cross">✕</span>
       </button>
+
       <ul popover id="menu-list" class="menu-list">
         {{- range $menuMain -}}
-          {{- $pageUrl := $currentPage.RelPermalink -}}
           {{- $classes := slice -}}
           {{- with .Params.style -}}
             {{- $classes = $classes | append . -}}
           {{- end -}}
-          {{- if strings.HasPrefix $pageUrl .URL -}}
+          {{- if strings.HasPrefix $.RelPermalink .URL -}}
             {{- $classes = $classes | append "menu-active" -}}
           {{- end -}}
           <li>
               <a href="{{ .URL }}"
                 title="{{ .Title | default .Name | plainify }}"
+                aria-label="{{ .Title | default .Name | plainify }}"
                 class="{{ delimit $classes " " }}"
-                {{- if strings.HasPrefix $pageUrl .URL -}}
+                {{- if strings.HasPrefix $.RelPermalink .URL -}}
                   aria-current="page"
                 {{- end -}}>
                 {{ .Title | $.Page.RenderString }}
@@ -98,15 +76,19 @@
 
     {{- if hugo.IsMultilingual -}}
     <div class="language-dropdown">
-      <button popovertarget="lang-list" popovertargetaction="toggle" class="lang-toggle" accesskey="l" title="{{ i18n "choose_language" | default "Choose language" }} (Alt + L)">
+      <button popovertarget="lang-list"
+        popovertargetaction="toggle"
+        class="lang-toggle"
+        accesskey="l"
+        title="{{ i18n "choose_language" | default "Choose language" }} (Alt + L)"
+        aria-label="{{ i18n "choose_language" | default "Choose language" }} (Alt + L)">
         {{- safeHTML (index site.Data.svg "language") -}}
       </button>
+
       <ul popover id="lang-list" class="language-list">
-        {{- $siteLanguages := site.Languages -}}
-        {{- $pageLang := .Page.Lang -}}
         {{- range .Page.AllTranslations -}}
           {{- $translation := . -}}
-          {{- range sort $siteLanguages "Weight" "asc" -}}
+          {{- range sort site.Languages "Weight" "asc" -}}
             {{- if eq $translation.Lang .Lang -}}
               {{- if eq $pageLang .Lang -}}
                 <li>
@@ -128,8 +110,11 @@
     </div>
     {{- end -}}
 
-    <div class="theme-switch">
-      <button id="theme-toggle" accesskey="t" title="{{ i18n "switch_theme" | default "Switch theme chroma" }} (Alt + T)">
+    <div class="theme-toggle">
+      <button id="theme-toggle"
+        accesskey="t"
+        title="{{ i18n "toggle_theme" | default "Switch theme chroma" }} (Alt + T)"
+        aria-label="{{ i18n "toggle_theme" | default "Switch theme chroma" }}">
         {{- safeHTML (index site.Data.svg "moon") -}}
         {{- safeHTML (index site.Data.svg "sun") -}}
       </button>

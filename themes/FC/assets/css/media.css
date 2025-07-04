@@ -46,7 +46,7 @@
     width: var(--width);
   }
 
-  .theme-switch {
+  .theme-toggle {
     order: 1;
     margin: auto 0;
   }

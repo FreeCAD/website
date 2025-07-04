@@ -47,7 +47,7 @@
 - id: choose_language
   translation: "Choose language"
 
-- id: switch_theme
+- id: toggle_theme
   translation: "Switch theme chroma"
 
 - id: go_top
