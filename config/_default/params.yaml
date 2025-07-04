@@ -108,8 +108,7 @@ headless_cms:
       public_folder: ""
       format: frontmatter
       slug: "{{slug}}"
-      i18n:
-        structure: multiple_files
+      i18n: true
       fields:
         - {label: "Article Title", name: "title", widget: "string", i18n: true, required: [en], hint: "Use a similar title structure as existing articles for coherence"}
         - {label: "Article Description", name: "description", i18n: true, widget: "string"}
@@ -149,15 +148,14 @@ headless_cms:
           - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
 
     - divider: true
-      name: 1
+      name: d1
       files: []
 
     - name: homepage
       label: Homepage
       icon: home
       format: frontmatter
-      i18n:
-        structure: multiple_files
+      i18n: true
       files:
         - name: homepage
           label: Homepage
@@ -176,8 +174,7 @@ headless_cms:
       label: Features
       icon: bolt
       format: frontmatter
-      i18n:
-        structure: multiple_files
+      i18n: true
       files:
         - name: features
           label: Features
@@ -199,8 +196,7 @@ headless_cms:
       label: Download
       icon: downloading
       format: frontmatter
-      i18n:
-        structure: multiple_files
+      i18n: true
       files:
         - name: download
           label: Download
@@ -229,8 +225,7 @@ headless_cms:
       public_folder: ""
       format: frontmatter
       slug: "{{slug}}"
-      i18n:
-        structure: multiple_files
+      i18n: true
       fields:
         - {label: "Release Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
         - {label: "Release Description", name: "description", widget: "string", i18n: true}
@@ -257,8 +252,7 @@ headless_cms:
       label: Community
       icon: hub
       format: frontmatter
-      i18n:
-        structure: multiple_files
+      i18n: true
       files:
         - name: community
           label: Community
@@ -280,8 +274,7 @@ headless_cms:
       label: Documentation
       icon: local_library
       format: frontmatter
-      i18n:
-        structure: multiple_files
+      i18n: true
       files:
         - name: documentation
           label: Documentation
@@ -304,8 +297,7 @@ headless_cms:
       icon: code_blocks
       format: frontmatter
       slug: "{{slug}}"
-      i18n:
-        structure: multiple_files
+      i18n: true
       files:
         - name: contribute
           label: Contribute
@@ -333,6 +325,7 @@ headless_cms:
       public_folder: ""
       format: frontmatter
       slug: "{{slug}}"
+      i18n: true
       fields:
         - {label: "Donate Page Title", name: "title", widget: "string", pattern: ['.{3,}', "Must have at least 3 characters"]}
         - {label: "Donate Page Description", name: "description", widget: "string"}
