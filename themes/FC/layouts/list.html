@@ -4,45 +4,39 @@
   {{- partial "debug.html" . -}}
 {{- end -}}
 
-{{- if .IsHome | and .Title -}}
-  {{- partial "hero.html" . -}}
-{{- end -}}
-
-{{- if not .IsHome | and .Title -}}
-  <header>
-    {{- if or (eq .Section "news") (eq .Kind "term") -}}
-      <ul class="category-list">
-        {{- range .Sites.Default.Taxonomies.categories -}}
-          <li>
-            <a href="{{ .Page.RelPermalink }}">
-              {{ .Page.LinkTitle }}
-            </a>
-          </li>
-        {{- end -}}
-      </ul>
-    {{- end -}}
-
-    <h1 class="title">
-      {{- if eq .Kind "term" -}}
-        {{ .Data.Singular | title }}: {{ end }}
-      {{ .Title | .RenderString }}
-    </h1>
-
-    {{- if .Description -}}
-      <h2 class="description">
-        {{ .Description | .RenderString }}
-      </h2>
-    {{- end -}}
-
-    {{- if eq .Kind "term" -}}
-      {{- with .Site.GetPage "news" -}}
-        {{- partial "cover.html" . -}}
+<header>
+  {{- if or (eq .Section "news") (eq .Kind "term") -}}
+    <ul class="category-list">
+      {{- range .Sites.Default.Taxonomies.categories -}}
+        <li>
+          <a href="{{ .Page.RelPermalink }}">
+            {{ .Page.LinkTitle }}
+          </a>
+        </li>
       {{- end -}}
-    {{- else -}}
+    </ul>
+  {{- end -}}
+
+  <h1 class="title">
+    {{- if eq .Kind "term" -}}
+      {{ .Data.Singular | title }}: {{ end }}
+    {{ .Title | .RenderString }}
+  </h1>
+
+  {{- if .Description -}}
+    <h2 class="description">
+      {{ .Description | .RenderString }}
+    </h2>
+  {{- end -}}
+
+  {{- if eq .Kind "term" -}}
+    {{- with .Site.GetPage "news" -}}
       {{- partial "cover.html" . -}}
     {{- end -}}
-  </header>
-{{- end -}}
+  {{- else -}}
+    {{- partial "cover.html" . -}}
+  {{- end -}}
+</header>
 
 {{- if eq .Type "guide" }}
   {{- partial "content.html" . -}}
@@ -50,18 +44,6 @@
 
 {{/* get the latest pages from the current section, and fill in the missing translated pages from the first site (currently English) */}}
 {{- $pages := where (.RegularPages | lang.Merge .Sites.Default.RegularPages) "Section" .Section -}}
-
-{{- if .IsHome -}}
-  {{/* get the latest news articles by category except the ones with "hero" parameters in front matter */}}
-  {{- $homePages := slice -}}
-  {{- range .Site.Taxonomies.categories.ByCount -}}
-    {{- range first 1 (where .Pages "Params.hero" "ne" true) -}}
-      {{- $homePages = $homePages | append . -}}
-    {{- end -}}
-  {{- end -}}
-  {{- $paginateLimit := .Params.paginate | default 6 -}}
-  {{- $pages = first $paginateLimit $homePages -}}
-{{- end -}}
 
 {{- if eq .Type "contribute" }}
   {{- $lang := slice -}}
@@ -129,13 +111,6 @@
     </article>
   {{- end -}}
 </section>
-
-{{/* Get the content for the Homepage. */}}
-{{- if .IsHome -}}
-  {{- with (index (where (.RegularPages | lang.Merge .Sites.Default.RegularPages) "Type" "homepage") 0) -}}
-    {{- partial "content.html" . -}}
-  {{- end -}}
-{{- end -}}
 
 {{- if gt $paginator.TotalPages 1 -}}
   <footer class="list-footer">

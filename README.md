@@ -45,7 +45,7 @@ When using and making changes, keep in mind this website only supports *evergree
 ### Building
 
 > [!IMPORTANT]
-> This temporary repo is currently compatible with Hugo 0.145
+> This temporary repo is currently compatible with Hugo 0.148.1
 
 To build the website locally:
 

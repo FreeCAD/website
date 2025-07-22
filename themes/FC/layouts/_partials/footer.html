@@ -1,5 +1,4 @@
-{{/*
-  Footer Partial, used by 'baseof.html'
+{{/* Footer Partial, used by 'baseof.html'
   - Render footer menu with section links
   - Add active class and handle external links
 */}}
@@ -7,7 +6,7 @@
 {{- $currentPage := . -}}
 {{- $menuFooter := site.Menus.footer | default site.Sites.Default.Menus.footer -}}
 {{- $pageUrl := $currentPage.RelPermalink -}}
-{{- $links := site.Params.footerSectionLinks | default 6 -}}
+{{- $linksMax := site.Params.footerSectionLinksMax | default 6 -}}
 {{- $customLinks := site.Data.footer | default slice -}}
 {{- $icon := site.Data.svg.external | safeHTML -}}
 
@@ -50,8 +49,8 @@
         <ul>
         {{- with .Page.CurrentSection -}}
           {{- if not .IsHome -}}
-            {{- range first $links .RegularPages -}}
-            {{- $active := eq .RelPermalink $currentPage.RelPermalink -}}
+            {{- range first $linksMax .RegularPages -}}
+              {{- $active := eq .RelPermalink $currentPage.RelPermalink -}}
               <li>
                 <a href="{{ .RelPermalink }}"
                   title="{{ .Title | default .Name | plainify }}"

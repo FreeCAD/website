@@ -21,7 +21,7 @@ Please fill the template below
  - Device/Os: [e.g. Android 14, iOS 17]
  - Type: [e.g. Desktop/Mobile]
  - Browser and version [e.g. Chrome 127.0, Firefox 128.0]:
- - Hugo Version [ >=0.145.0 expected]:
+ - Hugo Version [ >=0.148.1 expected]:
  - Theme Version [e.g. v4.0, branch, or commit-id ]:
 
 **Steps to reproduce the behavior:**

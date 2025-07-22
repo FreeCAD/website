@@ -1,7 +1,7 @@
 FROM --platform=$BUILDPLATFORM golang:1.22-bookworm
 
 # Set versions
-ENV HUGO_VERSION=0.145.0
+ENV HUGO_VERSION=0.148.1
 ENV SASS_VERSION=1.69.5
 
 # Install base deps

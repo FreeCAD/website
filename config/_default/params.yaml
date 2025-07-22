@@ -16,7 +16,7 @@ ShowShareButtons: true
 displayFullLangName: true
 ShowPaginationLinks: true
 ShowCopyCodeButton: true
-footerSectionLinks: 5
+footerSectionLinksMax: 5
 telemetryMaxEntries: 20
 
 #JS scripts

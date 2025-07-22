@@ -27,7 +27,7 @@ features:
   - theme-toggle
   - menu-location-indicator
   - scroll-to-top
-min_version: 0.145.0
+min_version: 0.148.1
 author:
   name: FreeCAD contributors
   homepage: https://github.com/FreeCAD/FreeCAD-website/
