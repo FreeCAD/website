@@ -1,11 +1,15 @@
 {{/* Original code from https://github.com/mandaris/stoot */}}
 
-{{- $masIns := .Get "instance" -}}
-{{- $id := .Get "id" -}}
+{{- $url := .Get 0 | default "" | lower -}}
+{{- $url = cond (gt (len (findRE "^https?://" $url)) 0) $url (print "https://" $url) -}}
+{{- $url = replace (replace $url "://www." "://") "/$" "" -}}
+{{- $parts := split $url "/" -}}
+{{- $host := (urls.Parse $url).Host -}}
+{{- $id := index $parts (sub (len $parts) 1) -}}
+{{- $apiURL := printf "https://%s/api/v1/statuses/%s" $host $id -}}
 {{- $enableOGCard := .Get "enableOGCard" | default "true" -}}
-{{- $urlToGet := print "https://" $masIns "/api/v1/statuses/" $id -}}
 
-{{- with try (resources.GetRemote $urlToGet) -}}
+{{- with try (resources.GetRemote $apiURL) -}}
   {{- with .Err -}}
     <blockquote class="toot-blockquote">
       <p class="ctr legal">[Source not online at time of site build.]</p>
@@ -13,13 +17,13 @@
   {{- else  with .Value -}}
     {{- $json := unmarshal .Content -}}
     {{- $acct := $json.account.acct -}}
-    {{- $tootLink := printf "https://%s/@%s/status/%s" $masIns $acct $id -}}
-    {{- $handleInst := printf "@%s@%s" $acct $masIns -}}
+    {{- $tootLink := printf "https://%s/@%s/status/%s" $host $acct $id -}}
+    {{- $handleInst := printf "@%s@%s" $acct $host -}}
 
     <blockquote class="toot-blockquote" cite="{{ $tootLink }}">
       <div class="toot-header">
         <a class="toot-profile"
-          href="https://{{ $masIns }}/@{{ $acct }}"
+          href="https://{{ $host }}/@{{ $acct }}"
           rel="noopener">
           <img
             src="{{ $json.account.avatar }}"
@@ -30,12 +34,12 @@
         </a>
         <div class="toot-author">
           <a class="toot-author-name"
-            href="https://{{ $masIns }}/@{{ $acct }}"
+            href="https://{{ $host }}/@{{ $acct }}"
             rel="noopener">
             {{ $json.account.display_name }}
           </a>
           <a class="toot-author-handle"
-            href="https://{{ $masIns }}/@{{ $acct }}"
+            href="https://{{ $host }}/@{{ $acct }}"
             rel="noopener">
             {{ $handleInst }}
           </a>
@@ -57,7 +61,7 @@
             {{- range $img := $images -}}
               <img
                 src="{{ $img.url }}"
-                alt="Image {{ $img.id }} from toot {{ $id }} on {{ $masIns }}"
+                alt="Image {{ $img.id }} from toot {{ $id }} on {{ $host }}"
                 class="toot-media-img {{ if $json.sensitive }}toot-sens-blur{{ end }}"
                 loading="lazy"
                 {{- if $json.sensitive }}onclick="this.classList.toggle('toot-sens-blur-no')"{{- end }}
@@ -102,7 +106,7 @@
               <div class="toot-card">
                 <div class="toot-card-image">
                   <img src="{{ . }}"
-                    alt="Card image from {{ $masIns }} toot {{ $id }}"
+                    alt="Card image from {{ $host }} toot {{ $id }}"
                     loading="lazy"
                     class="toot-card-image-image" />
                 </div>
@@ -147,7 +151,7 @@
       {{- end -}}
 
       <div class="toot-footer">
-        <a href="https://{{ $masIns }}/@{{ $acct }}/{{ $json.id }}"
+        <a href="https://{{ $host }}/@{{ $acct }}/{{ $json.id }}"
           class="toot-date"
           rel="noopener">
           {{ dateFormat "3:04 PM • January 2, 2006" $json.created_at }} (UTC)
