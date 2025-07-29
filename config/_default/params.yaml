@@ -115,24 +115,13 @@ headless_cms:
         - {label: "Article Description", name: "description", i18n: true, widget: "string"}
         - {label: "Publication Date", name: "date", widget: "datetime", i18n: duplicate}
         - {label: "Article Author", name: "author", widget: "string", default: "FreeCAD", i18n: duplicate, hint: "Use a similar author name as existing ones for coherence", pattern: ['.{3,}', "Must have at least 3 characters"]}
-        - {label: "Draft", name: "draft", widget: "boolean", default: true, i18n: duplicate}
+        - {label: "Draft", name: "draft", widget: "boolean", default: true, i18n: duplicate, required: false}
         - {label: "Article Category", name: "categories", widget: "select", options: ["announcement", "event", "feature", "showcase", "tutorial", "update"], i18n: duplicate}
         - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
         - {label: "Cover image", name: "cover.image", widget: "image", i18n: duplicate}
         - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
         - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
-        - label: "Hero"
-          name: "params.hero"
-          widget: "object"
-          hint: "If added, the article is featured on top of the Homepage"
-          default: false
-          i18n: duplicate
-          required: false
-          fields:
-          - {label: "Link to article on homepage hero", name: "articleLink", widget: "boolean", default: false, i18n: duplicate}
-          - {label: "Link to custom page on homepage hero", name: "customLink", widget: "string", default: "", i18n: duplicate}
-          - {label: "Text for custom page on homepage hero", name: "customText", widget: "string", default: "", i18n: true}
-          - {label: "Link to download page on homepage hero", name: "downloadLink", widget: "boolean", default: true, i18n: duplicate}
+        - {label: "Hero", name: "params.hero", widget: "boolean", default: false, i18n: duplicate, required: false, hint: "Article featured on top of the Homepage"}
         - {label: "Content", name: "body", widget: "markdown", i18n: true, required: [en], hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
       index_file:
         name: _index
@@ -169,6 +158,20 @@ headless_cms:
             - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "Must have at least 3 characters"]}
             - {label: "Description", name: "description", widget: "string", i18n: true}
             - {label: "Show Table of Contents", name: "params.ToC", widget: "boolean", default: false, i18n: duplicate, required: false}
+            - label: "Params"
+              name: "params"
+              widget: "object"
+              i18n: true
+              summary: "{{fields.buttons}}"
+              fields:
+                - label: "Buttons"
+                  name: "buttons"
+                  widget: "list"
+                  i18n: true
+                  summary: "{{fields.label}}"
+                  fields:
+                    - {label: "Label", name: "label", widget: "string", i18n: true}
+                    - {label: "URL", name: "url", widget: "string", i18n: duplicate}
             - {label: "Content", name: "body", widget: "markdown", i18n: true, hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
 
     - name: features
