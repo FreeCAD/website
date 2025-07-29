@@ -125,7 +125,7 @@ Other useful extensions, recommended but not necessary are
 - ```donjayamanne.githistory```: Adds two buttons to the right-click menu: `git: view file history` and `git: view line history`
 
 
-![](extensions.png)
+![VSCode extensions](extensions.png "VSCode extensions")
 
 - On the very left you can see the `Todo-Tree` extension reporting `TODO`s and `FIXME`
 - On the left half you can see the `git graph` extension showing all the commits on different branches. You can click a commit to see exactly what was modified by it.
