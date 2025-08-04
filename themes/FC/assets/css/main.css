@@ -13,10 +13,12 @@ main {
 For the Site header, see header.css stylesheet. */
 
 main header {
-  height: calc(var(--width) * 0.5);
+  min-height: calc(var(--width) * 0.5);
+  height: auto;
+  overflow: visible;
   width: 100vw;
   margin: auto;
-  padding: var(--gap);
+  padding: calc(var(--gap) * 4) var(--gap) calc(var(--gap) * 2);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,8 +31,7 @@ main header {
 .title,
 .description,
 .hero-button,
-.single-meta,
-.cards-box {
+.single-meta {
   display: inline-flex;
   gap: var(--gap);
   max-width: var(--width);
@@ -152,7 +153,13 @@ article .category {
 }
 
 .cards-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(var(--width) * 0.25), 1fr));
+  gap: var(--gap);
+  max-width: var(--width);
   margin-top: calc(var(--gap) * 2);
+  color: var(--cover);
+  z-index: 2;
 }
 
 main header .entry-cover img {
@@ -161,7 +168,7 @@ main header .entry-cover img {
   top: 0;
   margin: auto;
   width: 100%;
-  height: 100%;
+  height: calc(var(--width) * 0.5);
   z-index: 1;
 }
 
@@ -574,15 +581,15 @@ sup:target {
 }
 
 #N1.block, #N4.block, #N7.block {
-  background: var(--entry);
-}
-
-#N2.block, #N5.block #N8.block {
   background: var(--theme);
 }
 
-#N3.block, #N6.block #N9.block {
+#N2.block, #N5.block #N8.block {
   background: var(--bg-grid-s);
+}
+
+#N3.block, #N6.block #N9.block {
+  background: var(--entry);
 }
 
 /* Tricks to have 2 side-by-side columns */
@@ -687,9 +694,8 @@ sup:target {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-evenly;
   gap: var(--gap);
-  flex: 1 1;
-  margin: 0 auto;
   padding: var(--padding);
   text-align: center;
   background: var(--entry);

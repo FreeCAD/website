@@ -29,6 +29,10 @@
     </h3>
   {{- end -}}
 
+  {{- with .Params.cards -}}
+    {{- partial "hero_cards.html" . -}}
+  {{- end -}}
+
   {{- if eq .Kind "term" -}}
     {{- with .Site.GetPage "news" -}}
       {{- partial "cover.html" . -}}

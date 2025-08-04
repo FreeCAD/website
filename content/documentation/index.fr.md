@@ -25,14 +25,9 @@ params:
       description: "Améliorez votre flux de travail avec des tutoriels spécialisés et une sélection de guides."
       link: "https://wiki.freecad.org/Power_users_hub"
       weight: 2
-    dev:
-      text: "Guide du développeur"
-      description: "Plongez dans le code de FreeCAD pour créer des nouvelles fonctions et corriger des erreurs."
-      link: "https://wiki.freecad.org/Developer_hub"
-      weight: 3
     api:
       text: "Python API"
       description: "Automatisez les flux de travail et personnalisez FreeCAD grâce à son API de script Python intégrée."
       link: "https://wiki.freecad.org/Power_users_hub"
-      weight: 4
+      weight: 3
 ---

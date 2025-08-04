@@ -3,6 +3,7 @@
 
 footer {
   padding-top: var(--gap);
+  background: var(--entry);
 }
 
 .footer-row {
@@ -17,7 +18,6 @@ footer {
   padding: var(--gap) var(--side);
   font-size: var(--m);
   color: var(--tertiary);
-  background: var(--theme);
 }
 
 .footer-row span {

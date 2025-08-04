@@ -25,14 +25,9 @@ params:
       description: "Improve your workflow with specialized tutorials and curated guides provided by the community."
       link: "https://wiki.freecad.org/Power_users_hub"
       weight: 2
-    dev:
-      text: "Developer handbook"
-      description: "Dive into FreeCAD's architecture and codebase to build new features and fix bugs."
-      link: "https://wiki.freecad.org/Developer_hub"
-      weight: 3
     api:
       text: "Python API"
       description: "Automate workflows and customize FreeCAD with its built-in Python scripting API."
       link: "https://wiki.freecad.org/Power_users_hub"
-      weight: 4
+      weight: 3
 ---

@@ -59,9 +59,6 @@
   /* List and Single pages */
   main header {
     min-height: calc(100vh - var(--header-height));
-    height: auto;
-    overflow: visible;
-    padding-top: calc(var(--gap) * 3);
   }
 
   .title,
@@ -74,6 +71,10 @@
   .single-meta,
   .cards-column {
     flex-direction: column;
+  }
+
+  .cards-column {
+    min-height: calc(var(--width) * 0.25);
   }
 
   main header .entry-cover img {
@@ -143,7 +144,7 @@
   }
 
   .cards-box {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   .cards-box svg {
