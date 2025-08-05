@@ -70,11 +70,13 @@
   {{- $paginator = .Paginate $pages -}}
 {{- end -}}
 
-<section class="articles">
-  {{- range $index, $page := $paginator.Pages -}}
-    {{- partial "article_card.html" . -}}
-  {{- end -}}
-</section>
+{{- with $paginator.Pages -}}
+  <section class="articles">
+    {{- range $index, $page := . -}}
+      {{- partial "article_card.html" . -}}
+    {{- end -}}
+  </section>
+{{- end -}}
 
 {{- if gt $paginator.TotalPages 1 -}}
   <footer class="list-footer">
