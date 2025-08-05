@@ -5,9 +5,7 @@
   translation: "Rûpela Bê"
 
 - id: read_time
-  translation:
-    one: "1 xulek"
-    other: "{{ .Count }} xulek"
+  translation: "{{ .Count }} xulek"
 
 - id: toc
   translation: "Pêrist"

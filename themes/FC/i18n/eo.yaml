@@ -5,9 +5,7 @@
   translation: "sekva paĝo"
 
 - id: read_time
-  translation:
-    one: "1 min"
-    other: "{{ .Count }} min"
+  translation: "{{ .Count }} min"
 
 - id: toc
   translation: "Enhavo"

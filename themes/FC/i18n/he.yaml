@@ -5,9 +5,7 @@
   translation: "לעמוד הבא"
 
 - id: read_time
-  translation:
-    one: "דקה אחת"
-    other: "{{ .Count }} דקות"
+  translation: "{{ .Count }} דקות"
 
 - id: toc
   translation: "תוכן עניינים"

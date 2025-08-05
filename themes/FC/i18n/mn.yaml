@@ -5,9 +5,7 @@
   translation: "Дараах"
 
 - id: read_time
-  translation:
-    one: "1 МИН"
-    other: "{{ .Count }} МИН"
+  translation: "{{ .Count }} МИН"
 
 - id: toc
   translation: "Агуулга"

@@ -5,9 +5,7 @@
   translation: "পরবর্তী পাতা"
 
 - id: read_time
-  translation:
-    one: "১ মিনিট"
-    other: "{{ .Count }} মিনিট"
+  translation: "{{ .Count }} মিনিট"
 
 - id: toc
   translation: "সূচিপত্র"

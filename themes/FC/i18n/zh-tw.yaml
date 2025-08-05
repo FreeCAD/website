@@ -5,14 +5,10 @@
   translation: "下一篇"
 
 - id: read_time
-  translation:
-    one: "1 分鐘"
-    other: "{{ .Count }} 分鐘"
+  translation: "{{ .Count }} 分鐘"
 
 - id: words
-  translation:
-    one: "字"
-    other: "{{ .Count }} 字"
+  translation: "{{ .Count }} 字"
 
 - id: toc
   translation: "目錄"

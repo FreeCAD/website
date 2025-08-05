@@ -289,3 +289,35 @@ collections:
       - {label: "Cover caption", name: "cover.caption", widget: "string", i18n: true}
       - {label: "Cover alternative text", name: "cover.alt", widget: "string", i18n: true}
       - {label: "Content", name: "body", widget: "markdown", hint: "Use +++ between blocks", pattern: ['.{3,}', "Must have at least 3 characters"], linked_images: false}
+
+singletons:
+    - name: footer
+      label: Footer
+      file: themes/FC/data/footer.yaml
+      icon: bottom_navigation
+      fields:
+        - name: footer
+          label: Footer links
+          widget: list
+          root: true
+          fields:
+            - {label: "Title", name: "title", widget: "string"}
+            - {label: "URL", name: "url", widget: "string"}
+            - {label: "Parent", name: "parent", widget: "select", options: ["features", "download", "releases", "news", "community", "documentation", "contribute", "donate"], required: false}
+
+    - name: theme
+      label: Theme strings translations
+      file: themes/FC/i18n/{{locale}}.yaml
+      icon: translate
+      i18n: true
+      fields:
+        - name: i18n
+          label: Theme i18n strings
+          widget: list
+          summary: "{{fields.id}}"
+          root: true
+          i18n: true
+          allow_add: false
+          fields:
+            - {label: "String ID", name: "id", widget: "string", i18n: duplicate}
+            - {label: "Translation", name: "translation", widget: "string", i18n: true, required: false}

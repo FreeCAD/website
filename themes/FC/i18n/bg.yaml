@@ -5,9 +5,7 @@
   translation: "Следваща страница"
 
 - id: read_time
-  translation:
-    one: "1 мин"
-    other: "{{ .Count }} мин"
+  translation: "{{ .Count }} мин"
 
 - id: toc
   translation: "Съдържание"

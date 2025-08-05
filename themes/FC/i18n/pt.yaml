@@ -5,14 +5,10 @@
   translation: "Próxima Página"
 
 - id: read_time
-  translation:
-    one: "1 minuto"
-    other: "{{ .Count }} minutos"
+  translation: "{{ .Count }} minutos"
 
 - id: words
-  translation:
-    one: "palavra"
-    other: "{{ .Count }} palavras"
+  translation: "{{ .Count }} palavras"
 
 - id: toc
   translation: "Conteúdo"

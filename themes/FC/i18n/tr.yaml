@@ -5,14 +5,10 @@
   translation: "Sonraki Sayfa"
 
 - id: read_time
-  translation:
-    one: "1 dk"
-    other: "{{ .Count }} dk"
+  translation: "{{ .Count }} dk"
 
 - id: words
-  translation:
-    one: "kelime"
-    other: "{{ .Count }} kelime"
+  translation: "{{ .Count }} kelime"
 
 - id: toc
   translation: "İçindekiler"

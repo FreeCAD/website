@@ -5,14 +5,10 @@
   translation: "Pag Succ"
 
 - id: read_time
-  translation:
-    one: "1 minuto"
-    other: "{{ .Count }} minuti"
+  translation: "{{ .Count }} minuti"
 
 - id: words
-  translation:
-    one: "parola"
-    other: "{{ .Count }} parole"
+  translation: "{{ .Count }} parole"
 
 - id: toc
   translation: "Tabella dei Contenuti"

@@ -5,9 +5,7 @@
   translation: "Trang tiếp theo"
 
 - id: read_time
-  translation:
-    one: "1 phút"
-    other: "{{ .Count }} phút"
+  translation: "{{ .Count }} phút"
 
 - id: toc
   translation: "Mục lục"

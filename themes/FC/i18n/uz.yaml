@@ -5,9 +5,7 @@
   translation: "Keyingi sahifa"
 
 - id: read_time
-  translation:
-    one: "Bir daqiqa"
-    other: "{{ .Count }} daqiqa"
+  translation: "{{ .Count }} daqiqa"
 
 - id: toc
   translation: "Mundarija"
