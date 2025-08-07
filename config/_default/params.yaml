@@ -5,17 +5,15 @@ env: production # Enables google analytics, opengraph and schema.
 description: "Your free and open-source parametric modeler"
 author: "FreeCAD"
 logo: /FreeCAD-wordmark.svg
-DateFormat: 2006-01-02
-mainSections: news
-defaultTheme: auto
 
-ShowAuthor: true
-ShowReadingTime: true
-ShowWordCount: false
-ShowShareButtons: true
+defaultTheme: auto
+showAuthor: true
+showReadingTime: true
+showWordCount: false
+showShareButtons: true
+showPaginationLinks: true
+showCopyCodeButton: true
 displayFullLangName: true
-ShowPaginationLinks: true
-ShowCopyCodeButton: true
 footerSectionLinksMax: 5
 telemetryMaxEntries: 20
 
@@ -25,8 +23,8 @@ resizeFormat: "webp"
 resizeSizes: [250, 500, 1000, 2000]
 
 #JS scripts
-EnableInstantClick: true # NOTE: Allows fast loading of linked pages, see assets/js/InstantClick.js.
-EnableUA: true # NOTE: Enables User Agent sniffing, useful e.g. to provide corresponding download options.
+enableInstantClick: true # NOTE: Allows fast loading of linked pages, see assets/js/InstantClick.js.
+enableUA: true # NOTE: Enables User Agent sniffing, useful e.g. to provide corresponding download options.
 
 socialIcons:
   - name: github-simple

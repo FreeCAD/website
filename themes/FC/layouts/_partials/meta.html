@@ -35,7 +35,7 @@
   </span>
 {{- end -}}
 
-{{- if (.Param "ShowWordCount") -}}
+{{- if (.Param "showWordCount") -}}
   <span class="meta">
     {{- safeHTML (index site.Data.svg "words-count") -}}
     <span>
@@ -44,7 +44,7 @@
   </span>
 {{- end -}}
 
-{{- if (.Param "ShowReadingTime") -}}
+{{- if (.Param "showReadingTime") -}}
   <span class="meta">
     {{- safeHTML (index site.Data.svg "reading-time") -}}
     <span>
@@ -53,7 +53,7 @@
   </span>
 {{- end -}}
 
-{{- if (.Param "ShowAuthor") -}}
+{{- if (.Param "showAuthor") -}}
   <span class="meta">
     {{- safeHTML (index site.Data.svg "author") -}}
     <span>

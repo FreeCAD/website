@@ -133,10 +133,10 @@ params:
     defaultTheme: auto # dark, light
     disableThemeToggle: false
 
-    ShowReadingTime: true
-    ShowShareButtons: true
-    ShowPaginationLinks: true
-    ShowCopyCodeButton: false
+    showReadingTime: true
+    showShareButtons: true
+    showPaginationLinks: true
+    showCopyCodeButton: false
     hideSummary: false
 
     label:
@@ -167,8 +167,8 @@ draft: false
 description: "Desc Text."
 disableShare: false
 hideSummary: false
-ShowReadingTime: true
-ShowPaginationLinks: true
+showReadingTime: true
+showPaginationLinks: true
 cover:
     image: <image path/url> # image path/url
     alt: <alt text> # alt text

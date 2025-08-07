@@ -27,13 +27,13 @@ cover:
 | `keywords`                             | list          | [blog, page]             | Add keywords for Home page                                                                |
 | `DateFormat`                           | string        | January 2, 2006        | The format of date strings in the website. [Details](https://gohugo.io/functions/format/) |
 | `languageAltTitle`                     | string        | English                | Alternate title in Multilingual Mode                                                      |
-| `ShowReadingTime`                      | boolean       | true \| false            | To show read time in post meta                                                            |
-| `ShowShareButtons`                     | boolean       | true \| false            | To show/hide share buttons under post                                                     |
-| `ShowCopyCodeButton`                  | boolean       | true \| false            | To show/hide Code Copy button                                                             |
+| `showReadingTime`                      | boolean       | true \| false            | To show read time in post meta                                                            |
+| `showShareButtons`                     | boolean       | true \| false            | To show/hide share buttons under post                                                     |
+| `showCopyCodeButton`                  | boolean       | true \| false            | To show/hide Code Copy button                                                             |
 | `defaultTheme`                         | string        | light \| dark \| auto    | To set default theme                                                                      |
 | `disableThemeToggle`                   | boolean       | true \| false            | To disable theme toggle icon shown besides label                                          |
 | `hideSummary`                          | boolean       | true \| false            | To Hide summary being shown in list pages                                                 |
-| `ShowPaginationLinks`                     | boolean       | true \| false            | Show Previous and Next Posts below a Post                                                 |
+| `showPaginationLinks`                     | boolean       | true \| false            | Show Previous and Next Posts below a Post                                                 |
 | `analytics.google.SiteVerificationTag` | string        | XYZabc                 | Site Verification Tag for Google Analytics                                                |
 | `schema`                               | -             | -                        | [Details](#schema)                                                                        |
 | `label`                                | -             | -                        | [Details](#label)                                                                         |
@@ -77,8 +77,8 @@ cover:
 | `description`             | string        | "description text"              | Show Post Description under Title                                                   |
 | `disableShare`            | boolean       | true \| false                   | To hide/show share icons under a page                                               |
 | `hideSummary`             | boolean       | true \| false                   | To Hide summary being shown in list pages                                           |
-| `ShowReadingTime`         | boolean       | true \| false                   | To show read time in post meta                                                      |
-| `ShowPaginationLinks`        | boolean       | true \| false                   | Show Previous and Next Posts below a Post                                           |
+| `showReadingTime`         | boolean       | true \| false                   | To show read time in post meta                                                      |
+| `showPaginationLinks`        | boolean       | true \| false                   | Show Previous and Next Posts below a Post                                           |
 | `author`                  | string \|list | "Me" \| ["Me","You"]            | To show multiple Authors                                                            |
 | `cover.image`             | string        | "featured.jpg"                  | To add a cover image                                                                |
 | `cover.caption `          | string        | "caption for image"             | To add caption to cover image                                                       |

@@ -1,5 +1,5 @@
 {{- if .IsTranslated -}}
-  {{- if or .Params.author site.Params.author (.Param "ShowReadingTime") (not .Date.IsZero) -}}
+  {{- if or .Params.author site.Params.author (.Param "showReadingTime") (not .Date.IsZero) -}}
     |
   {{- end -}}
   <ul class="i18n_list">

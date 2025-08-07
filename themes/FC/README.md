@@ -48,7 +48,7 @@ TODO
 
 ```yaml
 params:
-  EnableInstantClick: true
+  enableInstantClick: true
 ```
 
 ## Customize pagniator size
