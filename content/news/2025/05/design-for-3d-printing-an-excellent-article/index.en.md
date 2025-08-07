@@ -7,7 +7,7 @@ categories: tutorial
 tags:
 - 3D printing
 cover:
-  image: rahix_design_header.png
+  image: rahix_cover.jpg
   caption: Rahix design
   alt: Rahix design
 ---

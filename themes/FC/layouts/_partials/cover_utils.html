@@ -1,0 +1,49 @@
+{{- $cover := false -}}
+{{- $alt := "" -}}
+{{- $anchor := "" -}}
+
+{{- $processableFormats := site.Params.processableFormats -}}
+{{- $sizes := site.Params.resizeSizes -}}
+{{- $w0 := index $sizes 0 -}}
+{{- $w1 := index $sizes 1 -}}
+{{- $w2 := index $sizes 2 -}}
+{{- $w3 := index $sizes 3 -}}
+{{- $resizeFormat := site.Params.resizeFormat -}}
+
+{{- $pageCover := .Params.cover.image -}}
+{{- if $pageCover -}}
+  {{- $cover = (.Resources.ByType "image").GetMatch (printf "*%s*" $pageCover) -}}
+  {{- $anchor = .Params.cover.anchor | default "Smart" | plainify -}}
+  {{- $alt = .Params.cover.alt | default .Params.cover.caption | plainify -}}
+{{- end -}}
+
+{{- if not $cover -}}
+  {{- $sectionPage := site.Sites.Default.GetPage (printf "/%s" .Section) -}}
+  {{- $category := .Params.categories -}}
+  {{- if $category -}}
+    {{- with $sectionPage -}}
+      {{- $cover = (.Resources.ByType "image").GetMatch (printf "*%s*" $category) -}}
+    {{- end -}}
+    {{- if $cover -}}
+      {{- $alt = printf "%s cover" $category -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not $cover -}}
+    {{- with $sectionPage -}}
+      {{- $cover = (.Resources.ByType "image").GetMatch (printf "*%s*" .Params.cover.image) -}}
+      {{- $alt = (.Params.cover.alt | default $alt) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return dict
+  "cover" $cover
+  "alt" $alt
+  "anchor" $anchor
+  "processableFormats" $processableFormats
+  "w0" $w0
+  "w1" $w1
+  "w2" $w2
+  "w3" $w3
+  "resizeFormat" $resizeFormat
+-}}

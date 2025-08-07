@@ -4,13 +4,7 @@
   alt="ARTICLE"
   aria-label="{{ .Title | plainify }}"
   title="{{ .Title | plainify }}">
-    {{- with .Store -}}
-      {{- .Set "articles" true -}}
-    {{- end -}}
-    {{- partial "cover.html" . -}}
-    {{- with .Store -}}
-      {{- .Delete "articles" -}}
-    {{- end -}}
+    {{- partial "article_cover.html" . -}}
     {{- if not .Date.IsZero -}}
       <span class="entry-date">
         <time datetime="{{ .Date }}">

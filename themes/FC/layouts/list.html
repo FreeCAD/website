@@ -35,10 +35,10 @@
 
   {{- if eq .Kind "term" -}}
     {{- with .Site.GetPage "news" -}}
-      {{- partial "cover.html" . -}}
+      {{- partial "hero_cover.html" . -}}
     {{- end -}}
   {{- else -}}
-    {{- partial "cover.html" . -}}
+    {{- partial "hero_cover.html" . -}}
   {{- end -}}
 </header>
 

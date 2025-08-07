@@ -19,6 +19,11 @@ ShowCopyCodeButton: true
 footerSectionLinksMax: 5
 telemetryMaxEntries: 20
 
+#Image processing
+processableFormats: ["jpg", "jpeg", "png", "tif", "bmp", "gif", "webp"]
+resizeFormat: "webp"
+resizeSizes: [250, 500, 1000, 2000]
+
 #JS scripts
 EnableInstantClick: true # NOTE: Allows fast loading of linked pages, see assets/js/InstantClick.js.
 EnableUA: true # NOTE: Enables User Agent sniffing, useful e.g. to provide corresponding download options.
