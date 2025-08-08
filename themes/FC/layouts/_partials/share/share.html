@@ -1,6 +1,6 @@
 {{/* Share on Social medias. */}}
 
-<section class="share-buttons">
+<section class="share-links">
   {{- with site.Params.socials -}}
     {{- range $social, $url := . -}}
       <a href="{{ $url }}" title="{{ i18n "shareOn" | default "Share on" }} {{ i18n $social | default $social | title }}" target="_blank" rel="noopener">

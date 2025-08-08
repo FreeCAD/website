@@ -766,7 +766,7 @@ sup:target {
   padding: 0;
 }
 
-.share-buttons {
+.share-links {
   margin: var(--gap) 0;
   padding-inline-start: var(--radius);
   display: flex;
@@ -774,17 +774,17 @@ sup:target {
   overflow-x: auto;
 }
 
-.share-buttons a:not(:last-of-type) {
+.share-links a:not(:last-of-type) {
   margin-inline-end: var(--gap);
 }
 
-.share-buttons a svg {
+.share-links a svg {
   height: 2rem;
   width: 2rem;
   fill: currentColor;
 }
 
-.share-buttons svg:active {
+.share-links svg:active {
   transform: scale(0.95);
   transition: var(--link-transition);
 }
@@ -964,7 +964,7 @@ sup:target {
 }
 
 
-/* Ratio System */
+/* Share form */
 
 .share {
   margin: auto;
