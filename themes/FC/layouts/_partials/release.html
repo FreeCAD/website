@@ -1,15 +1,8 @@
 {{- $params := .Params -}}
 {{- $platforms := slice -}}
-{{- $thanks := "" | default "Thank you for downloading FreeCAD!" -}}
-{{- $donate := "" | default "Donate for its development" -}}
 {{- $downloadPage := site.GetPage "download" | default (site.Sites.Default.GetPage "download") -}}
-{{- with $downloadPage -}}
-  {{- with .Params.platforms -}}
-    {{- $platforms = . -}}
-  {{- end -}}
-  {{- with .Params.thanksText -}}
-    {{- $thanks = . -}}
-  {{- end -}}
+{{- with $downloadPage.Params.platforms -}}
+  {{- $platforms = . -}}
 {{- end -}}
 
 <div class="download-box">
@@ -26,10 +19,11 @@
             target="_blank"
             rel="noopener noreferrer"
             >
-            {{- safeHTML (index site.Data.svg $download.key) -}}<br>
             <span>
-              {{ $download.label }}
+              {{ $platform.label }}
             </span>
+            <br>
+            {{- safeHTML (index site.Data.svg $download.key) -}}
           </a>
         {{- end -}}
       {{- end -}}

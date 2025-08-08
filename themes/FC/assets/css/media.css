@@ -136,7 +136,7 @@
   }
 
   .download-box svg {
-    height: calc(var(--width) * 0.15);
+    height: calc(var(--width) * 0.2);
   }
 
   .cards-box {

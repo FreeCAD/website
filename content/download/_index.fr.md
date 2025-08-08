@@ -1,9 +1,8 @@
 ---
-title: "Download"
-description: "Launch Into Design!"
+title: "Télécharger"
+description: "Donnez vie à vos projets !"
 date: 2024-05-22T08:04:23+12:00
 author: "FreeCAD"
-type: download
 cover:
   image: 4.webp
   caption: "a cover caption"
@@ -14,36 +13,37 @@ menus:
   footer:
     weight: 3
 params:
+  subtitle: "Version stable actuelle"
   platforms:
     - id: windows
       label: Windows
       order: 1
       downloads:
         - key: msi
-          label: Windows Installer
+          label: x86_64 Installer
           alt: WINDOWS-MSI
         - key: zip
-          label: Windows Portable
+          label: x86_64 Portable
           alt: WINDOWS-ZIP
     - id: mac
       label: macOS
       order: 2
       downloads:
         - key: x86
-          label: Apple Intel X86
+          label: Intel x86
           alt: MACOS-X86
         - key: arm
-          label: Apple Silicon ARM
+          label: Apple Silicon
           alt: MACOS-ARM
     - id: linux
       label: GNU/Linux
       order: 3
       downloads:
         - key: x86
-          label: Linux X86
+          label: x86_64 AppImage
           alt: LINUX-X86
         - key: arm
-          label: Linux AArch64
+          label: AArch64 AppImage
           alt: LINUX-AARCH64
 ---
 

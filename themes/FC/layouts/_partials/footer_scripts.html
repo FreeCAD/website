@@ -15,7 +15,7 @@
 {{- end }}
 
 {{- /* Script to detect User Agent and provide corresponding download options. */}}
-{{- if or (eq .Type "download") (eq .Type "releases") -}}
+{{- if or (eq .Section "download") (eq .Section "releases") -}}
   {{- if site.Params.enableUA -}}
     {{- $downloadUA := resources.Get "js/DownloadUACheck.js" -}}
     {{- if hugo.IsProduction -}}

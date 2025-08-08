@@ -92,6 +92,7 @@ article .category {
 }
 
 .hero-button, .release-button {
+  margin-top: var(--gap);
   padding: var(--padding);
   color: var(--cover);
   font-size: var(--m);
@@ -642,14 +643,24 @@ sup:target {
   color: var(--secondary);
 }
 
-.download-box .cards-column:has([popovertarget]):hover :not(.arch-icon) svg,
-.download-box .arch-icon:hover svg {
+.download-box .cards-column:has([popovertarget]):hover :not(.arch-icon) svg {
   color: var(--link-hover-color);
   transform: scale(1.05);
 }
 
+.download-box .arch-icon svg {
+  padding: calc(var(--gap) * 0.75);
+  background: var(--secondary);
+  color: var(--entry);
+  border-radius: calc(var(--radius) * 2);
+}
+
 .download-box .arch-icon:hover span {
   color: var(--link-hover-color);
+}
+
+.download-box .arch-icon:hover svg {
+  background: var(--link-hover-color);
 }
 
 .download-box svg:active {
