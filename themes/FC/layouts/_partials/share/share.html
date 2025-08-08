@@ -3,7 +3,7 @@
 <section class="share-links">
   {{- with site.Params.socials -}}
     {{- range $social, $url := . -}}
-      <a href="{{ $url }}" title="{{ i18n "shareOn" | default "Share on" }} {{ i18n $social | default $social | title }}" target="_blank" rel="noopener">
+      <a href="{{ $url }}" title="{{ i18n $social | default $social | title }}" target="_blank" rel="noopener">
         {{- safeHTML (index site.Data.svg $social) -}}
       </a>
     {{- end -}}

@@ -966,7 +966,7 @@ sup:target {
 
 /* Share form */
 
-.share {
+.fedishare {
   margin: auto;
   padding: calc(var(--gap) * 2) var(--side);
   display: flex;
@@ -1011,7 +1011,7 @@ sup:target {
   color: var(--tertiary);
 }
 
-#shareForm :is(.share-instance-container, [for="rememberInstance"]) {
+#shareForm :is(.fedishare-instance-container, [for="rememberInstance"]) {
   width: 100%;
   display: inline-flex;
   flex-direction: row;
@@ -1023,7 +1023,7 @@ sup:target {
   padding: 0 var(--gap);
 }
 
-#shareForm .share-instance {
+#shareForm .fedishare-instance {
   flex-grow: 1;
 }
 

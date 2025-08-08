@@ -19,7 +19,7 @@
     {{- partial "theme_toggle.html" . -}}
     {{- partial "header.html" . -}}
 
-    <main class="share">
+    <main class="fedishare">
       <noscript>
         <div class="warning">
           {{ i18n "javascriptRequired" | default "Javascript Required" }}
@@ -33,7 +33,7 @@
           <strong>
             {{ i18n "title" | default "Title" }}
           </strong>
-          <input type="text" id="title" class="share-title" readonly>
+          <input type="text" id="title" class="fedishare-title" readonly>
           <small>
             This field is readonly.
           </small>
@@ -42,13 +42,13 @@
           <strong>
             {{ i18n "description" | default "Description" }}
           </strong>
-          <textarea id="description" class="share-description" rows="5"></textarea>
+          <textarea id="description" class="fedishare-description" rows="5"></textarea>
         </label>
         <label>
           <strong>
             {{ i18n "url" | default "URL" }}
           </strong>
-          <input type="url" id="url" class="share-url" readonly>
+          <input type="url" id="url" class="fedishare-url" readonly>
           <small>
             This field is readonly.
           </small>
@@ -57,11 +57,11 @@
           <strong>
             {{ i18n "instance" | default "Instance" }}
           </strong>
-          <span class="share-instance-container">
+          <span class="fedishare-instance-container">
             https://
             <input type="text"
               id="instance"
-              class="share-instance"
+              class="fedishare-instance"
               inputmode="url"
               autocomplete="url"
               placeholder="e.g. mastodon.social"
