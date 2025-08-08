@@ -547,7 +547,7 @@ sup:target {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--link-color);
   color: var(--cover);
   cursor: zoom-out;
 }
@@ -961,4 +961,86 @@ sup:target {
 
 .ratio-21x9 {
   --aspect-ratio: 42.86%;
+}
+
+
+/* Ratio System */
+
+.share {
+  margin: auto;
+  padding: calc(var(--gap) * 2) var(--side);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap);
+  text-align: center;
+}
+
+#shareForm {
+  width: 80%;
+  padding: var(--gap);
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: calc(var(--gap) * 0.5);
+  border-radius: var(--radius);
+  background: var(--entry);
+}
+
+#shareForm label {
+  width: 100%;
+  margin: 0;
+  padding: var(--gap);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(var(--gap) * 0.5);
+}
+
+#shareForm :is(input:not([type="checkbox"]), textarea) {
+  width: 100%;
+  padding: var(--gap);
+  border-radius: var(--radius);
+  color: var(--secondary);
+  background: var(--theme);
+}
+
+#shareForm [readonly] {
+  color: var(--tertiary);
+}
+
+#shareForm :is(.share-instance-container, [for="rememberInstance"]) {
+  width: 100%;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: var(--gap);
+}
+
+#shareForm [for="rememberInstance"] {
+  padding: 0 var(--gap);
+}
+
+#shareForm .share-instance {
+  flex-grow: 1;
+}
+
+#shareForm #rememberInstance {
+  margin-inline-end: calc(var(--gap) * 2);
+}
+
+#shareForm #submit {
+  width: 100%;
+  margin-top: var(--gap);
+  padding: var(--padding);
+  color: var(--cover);
+  font-weight: bold;
+  background: var(--link-color);
+  border-radius: var(--radius);
+}
+
+#shareForm #submit:hover {
+  background: var(--link-hover-color);
 }

@@ -1,0 +1,84 @@
+{{- $projects := dict
+    "lemmy" "create_post?url={url}&title={title}&body={description}"
+    "mastodon" "share?text={text}"
+    "misskey" "share?text={text}"
+-}}
+{{- $domains := site.Data.fediverse_instances | default slice -}}
+
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  {{- partial "head.html" . -}}
+  {{- partial "share/fedishare-script.html" . -}}
+
+  <body data-projects="{{ $projects | jsonify }}">
+    <datalist id="fediverse-domains">
+      {{- range $domains -}}
+        <option value="{{ . }}">{{ . }}</option>
+      {{- end -}}
+    </datalist>
+    {{- partial "theme_toggle.html" . -}}
+    {{- partial "header.html" . -}}
+
+    <main class="share">
+      <noscript>
+        <div class="warning">
+          {{ i18n "javascriptRequired" | default "Javascript Required" }}
+        </div>
+      </noscript>
+      <h2>
+        {{ i18n "shareOn" | default "Share on" }} {{ i18n "fediverse" | default "Fediverse" }}
+      </h2>
+      <form id="shareForm">
+        <label>
+          <strong>
+            {{ i18n "title" | default "Title" }}
+          </strong>
+          <input type="text" id="title" class="share-title" readonly>
+          <small>
+            This field is readonly.
+          </small>
+        </label>
+        <label>
+          <strong>
+            {{ i18n "description" | default "Description" }}
+          </strong>
+          <textarea id="description" class="share-description" rows="5"></textarea>
+        </label>
+        <label>
+          <strong>
+            {{ i18n "url" | default "URL" }}
+          </strong>
+          <input type="url" id="url" class="share-url" readonly>
+          <small>
+            This field is readonly.
+          </small>
+        </label>
+        <label for="instance">
+          <strong>
+            {{ i18n "instance" | default "Instance" }}
+          </strong>
+          <span class="share-instance-container">
+            https://
+            <input type="text"
+              id="instance"
+              class="share-instance"
+              inputmode="url"
+              autocomplete="url"
+              placeholder="e.g. mastodon.social"
+              autofocus
+              required
+              list="fediverse-domains">
+          </span>
+        </label>
+        <label for="rememberInstance">
+          <input type="checkbox" id="rememberInstance">
+          {{ i18n "rememberInstance" | default "Remember Instance" }}
+        </label>
+        <button type="submit" id="submit">
+          {{ i18n "shareOn" | default "Share on" }} {{ i18n "fediverse" | default "Fediverse" }}
+        </button>
+      </form>
+    </main>
+    {{- partial "footer.html" . -}}
+  </body>
+</html>

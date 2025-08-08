@@ -89,6 +89,10 @@ textarea {
   outline: 0;
 }
 
+textarea {
+  resize: vertical;
+}
+
 button,
 input[type=button],
 input[type=submit] {

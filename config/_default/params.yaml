@@ -26,9 +26,15 @@ resizeSizes: [250, 500, 1000, 2000]
 enableInstantClick: true # NOTE: Allows fast loading of linked pages, see assets/js/InstantClick.js.
 enableUA: true # NOTE: Enables User Agent sniffing, useful e.g. to provide corresponding download options.
 
-socialIcons:
-  - name: github-simple
-    url: https://github.com/FreeCAD
+socials:
+  github: https://github.com/FreeCAD
+  mastodon: https://fosstodon.org/@FreeCAD
+  reddit: https://www.reddit.com/r/FreeCAD/
+  discord: https://discord.gg/w2cTKGzccC
+  facebook: https://www.facebook.com/FreeCAD
+  linkedin: https://www.linkedin.com/groups/4295230
+
+shareOnFediverse: true
 
 # Bundle all required CSS, order is important
 assets:
