@@ -1,6 +1,16 @@
+{{- $icons := dict -}}
+{{- $iconsNames := slice "date" "categories" "tags" "words-count" "reading-time" "author" "translations" -}}
+{{- range $iconsNames -}}
+  {{- $name := . -}}
+  {{- with printf "svg/%s.svg" $name | resources.Get | resources.Minify -}}
+    {{- $svg := .Content | safeHTML -}}
+    {{- $icons = merge $icons (dict $name $svg) -}}
+  {{- end -}}
+{{- end -}}
+
 {{- if not .Date.IsZero -}}
   <span class="meta">
-    {{- safeHTML (index site.Data.svg "date") -}}
+    {{- index $icons "date" -}}
     <time datetime="{{ .Date }}">
       {{ .Date | time.Format ":date_long" }}
     </time>
@@ -10,7 +20,7 @@
 {{- if .Page.Store.Get "archives" -}}
   {{- if .Params.categories -}}
     <span class="meta">
-      {{- safeHTML (index site.Data.svg "categories") -}}
+      {{- index $icons "categories" -}}
       <span class="categories">
         {{- range (.GetTerms "categories") -}}
           <a href="{{ .Permalink }}">
@@ -24,7 +34,7 @@
 
 {{- if .Params.tags -}}
   <span class="meta">
-    {{- safeHTML (index site.Data.svg "tags") -}}
+    {{- index $icons "tags" -}}
     <span class="tags">
       {{- range (.GetTerms "tags") -}}
         <a href="{{ .Permalink }}">
@@ -37,7 +47,7 @@
 
 {{- if (.Param "showWordCount") -}}
   <span class="meta">
-    {{- safeHTML (index site.Data.svg "words-count") -}}
+    {{- index $icons "words-count" -}}
     <span>
       {{- i18n "words" .WordCount | default (printf "%d words" .WordCount) -}}
     </span>
@@ -46,7 +56,7 @@
 
 {{- if (.Param "showReadingTime") -}}
   <span class="meta">
-    {{- safeHTML (index site.Data.svg "reading-time") -}}
+    {{- index $icons "reading-time" -}}
     <span>
       {{- i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime) -}}
     </span>
@@ -55,7 +65,7 @@
 
 {{- if (.Param "showAuthor") -}}
   <span class="meta">
-    {{- safeHTML (index site.Data.svg "author") -}}
+    {{- index $icons "author" -}}
     <span>
       {{- partial "author.html" . -}}
     </span>
@@ -64,7 +74,7 @@
 
 {{- if .IsTranslated -}}
   <span class="meta">
-    {{- safeHTML (index site.Data.svg "translations") -}}
+    {{- index $icons "translations" -}}
     <span class="i18n-links">
       {{- range $i, $e := .Translations -}}
         {{- if $i -}}

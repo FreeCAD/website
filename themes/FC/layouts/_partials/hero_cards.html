@@ -7,8 +7,8 @@
       {{ with $value.weight }}
         style="order: {{ . }}"
       {{ end }}>
-      {{- with (index site.Data.svg (printf "%s" $key)) -}}
-          {{- safeHTML . -}}
+      {{- with (printf "svg/%s.svg" $key | resources.Get | resources.Minify) -}}
+        {{- .Content | safeHTML -}}
       {{- end -}}
       {{- with $value.text -}}
         <h3>

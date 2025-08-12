@@ -10,6 +10,15 @@
 {{- $logoText := site.Title | .RenderString -}}
 {{- $menuMain := site.Menus.main | default site.Sites.Default.Menus.main -}}
 {{- $pageLang := .Page.Lang -}}
+{{- $icons := dict -}}
+{{- $iconsNames := slice "language" "moon" "sun" -}}
+{{- range $iconsNames -}}
+  {{- $name := . -}}
+  {{- with printf "svg/%s.svg" $name | resources.Get | resources.Minify -}}
+    {{- $svg := .Content | safeHTML -}}
+    {{- $icons = merge $icons (dict $name $svg) -}}
+  {{- end -}}
+{{- end -}}
 
 <header class="site-header" role="banner">
 
@@ -82,7 +91,7 @@
         accesskey="l"
         title="{{ i18n "choose_language" | default "Choose language" }} (Alt + L)"
         aria-label="{{ i18n "choose_language" | default "Choose language" }} (Alt + L)">
-        {{- safeHTML (index site.Data.svg "language") -}}
+        {{- index $icons "language" -}}
       </button>
 
       <ul popover id="lang-list" class="language-list">
@@ -115,8 +124,8 @@
         accesskey="t"
         title="{{ i18n "toggle_theme" | default "Switch theme chroma" }} (Alt + T)"
         aria-label="{{ i18n "toggle_theme" | default "Switch theme chroma" }}">
-        {{- safeHTML (index site.Data.svg "moon") -}}
-        {{- safeHTML (index site.Data.svg "sun") -}}
+        {{- index $icons "moon" -}}
+        {{- index $icons "sun" -}}
       </button>
     </div>
   </div>

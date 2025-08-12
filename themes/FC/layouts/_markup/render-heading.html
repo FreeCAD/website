@@ -9,7 +9,10 @@
 {{- $level := .Level -}}
 {{- $anchor := .Anchor | safeURL -}}
 {{- $text := .Text | safeHTML -}}
-{{- $icon := site.Data.svg.anchor | safeHTML -}}
+{{- $icon := "" -}}
+{{- with printf "svg/%s.svg" "anchor" | resources.Get | resources.Minify -}}
+  {{- $icon = .Content | safeHTML -}}
+{{- end -}}
 
 <h{{ $level }}
   id="{{ $anchor }}"

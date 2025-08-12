@@ -3,8 +3,12 @@
 <section class="share-links">
   {{- with site.Params.socials -}}
     {{- range $social, $url := . -}}
-      <a href="{{ $url }}" title="{{ i18n $social | default $social | title }}" target="_blank" rel="noopener">
-        {{- safeHTML (index site.Data.svg $social) -}}
+      <a href="{{ $url }}"
+        title="{{ i18n $social | default $social | title }}"
+        target="_blank" rel="noopener">
+        {{- with printf "svg/%s.svg" $social | resources.Get | resources.Minify -}}
+          {{ .Content | safeHTML }}
+        {{- end -}}
       </a>
     {{- end -}}
   {{- end -}}
@@ -31,10 +35,18 @@
       {{- $desc = printf "%s%s" $desc $tags | urlquery -}}
     {{- end -}}
 
-    {{- $url := printf "%s#title=%s&description=%s&url=%s" $page.RelPermalink (.Title | urlquery | safeURL) ($desc | safeURL) (.Permalink | safeURL) -}}
+    {{- $url := printf "%s#title=%s&description=%s&url=%s"
+      $page.RelPermalink
+      (.Title | urlquery | safeURL)
+      ($desc | safeURL)
+      (.Permalink | safeURL) -}}
 
-    <a href="{{ $url }}" title="{{ i18n "shareOn" | default "Share on" }} {{ i18n "fediverse" | default "Fediverse" }}" target="_blank" rel="noopener">
-      {{- safeHTML (index site.Data.svg "fediverse") -}}
+    <a href="{{ $url }}"
+      title="{{ i18n "shareOn" | default "Share on" }} {{ i18n "fediverse" | default "Fediverse" }}"
+      target="_blank" rel="noopener">
+      {{- with printf "svg/%s.svg" "fediverse" | resources.Get | resources.Minify -}}
+        {{ .Content | safeHTML }}
+      {{- end -}}
     </a>
   {{- end -}}
 </section>

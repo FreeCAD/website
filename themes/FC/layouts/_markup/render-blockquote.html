@@ -5,15 +5,15 @@
   - Add icons for quote and alerts.
 */}}
 
-{{- $type := .AlertType | safeHTML -}}
-{{- $icon := index site.Data.svg .AlertType | safeHTML -}}
 {{- $text := .Text | safeHTML -}}
-{{- $quote := site.Data.svg.quote | safeHTML -}}
 
 {{- if eq .Type "alert" -}}
+  {{- $type := .AlertType -}}
   <blockquote class="alert-{{ $type }}">
     <span>
-      {{ $icon }}
+      {{- with printf "svg/%s.svg" $type | resources.Get | resources.Minify -}}
+        {{ .Content | safeHTML }}
+      {{- end -}}
     </span>
     {{- with .AlertTitle -}}
       {{ . }}
@@ -26,7 +26,9 @@
   <figure>
     <blockquote {{- with .Attributes.cite -}}cite="{{ . }}"{{- end -}}>
       <span>
-      {{ $quote }}
+        {{- with printf "svg/%s.svg" "quote" | resources.Get | resources.Minify -}}
+          {{ .Content | safeHTML }}
+        {{- end -}}
       </span>
       {{ $text }}
     </blockquote>
