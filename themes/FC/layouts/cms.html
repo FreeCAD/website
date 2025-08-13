@@ -18,7 +18,6 @@
   <body>
     {{- if and site.Data.cms_config.cms site.Data.cms_config.cms_url -}}
       {{- $cms := site.Data.cms_config.cms -}}
-      {{ printf "%s.start()" (upper $cms) }}
       {{- $cms_url := site.Data.cms_config.cms_url -}}
       {{- with try (resources.GetRemote $cms_url (dict "key" (printf "%s-cms.css" $cms))) -}}
         {{- warnf "Fetching remote resource: %q" $cms_url -}}

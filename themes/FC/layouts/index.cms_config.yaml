@@ -1,21 +1,16 @@
-{{- $params := site.Data.cms_config | default dict -}}
-{{- $config := newScratch -}}
+{{- $defaults := dict "site_url" site.BaseURL "locale" site.Language.LanguageCode -}}
 {{- $excluded := slice "cms" "cms_url" "site_url" -}}
+{{- $params := site.Data.cms_config | default dict -}}
 
-{{/* Reading settings from configuration but skip excluded. */}}
-{{- range $key, $value := $params -}}
+{{/* Get config from cms_config.yaml but skip excluded. */}}
+{{- $config := dict -}}
+{{- range $key, $val := $params -}}
   {{- if not (in $excluded $key) -}}
-    {{- $config.Set $key $value -}}
+    {{- $config = merge $config (dict $key $val) -}}
   {{- end -}}
 {{- end -}}
 
-{{/* Set the site URL. */}}
-{{- $config.Set "site_url" site.BaseURL -}}
-
-{{/* Use site language as the locale if not set. */}}
-{{- if not ($config.Get "locale") -}}
-  {{- $config.Set "locale" site.Language.LanguageCode -}}
-{{- end -}}
+{{- $config = merge $defaults $config -}}
 
 {{/* Output config. */}}
-{{- transform.Remarshal "yaml" $config.Values | safeHTML -}}
+{{- transform.Remarshal "yaml" $config | safeHTML -}}
