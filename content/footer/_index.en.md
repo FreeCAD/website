@@ -1,0 +1,37 @@
+---
+title: "Footer Links"
+customLinks:
+  - title: "Archives"
+    url: "news/archives"
+    parent: "news"
+
+  - title: "User manual"
+    url: "https://wiki.freecad.org/User_hub"
+    parent: "documentation"
+
+  - title: "Developer handbook"
+    url: "https://wiki.freecad.org/Developer_hub"
+    parent: "documentation"
+
+  - title: "Python API"
+    url: "https://wiki.freecad.org/Power_users_hub"
+    parent: "documentation"
+
+  - title: "Report bugs"
+    url: "https://github.com/FreeCAD/FreeCAD/issues"
+    parent: "contribute"
+
+  - title: "Test feature and fixes"
+    url: "https://github.com/FreeCAD/FreeCAD/pulls"
+    parent: "contribute"
+
+  - title: "Translations"
+    url: "https://wiki.freecad.org"
+    parent: "contribute"
+
+  - title: "Privacy Policy"
+    url: "privacy"
+
+  - title: "Terms of Use"
+    url: "terms"
+---

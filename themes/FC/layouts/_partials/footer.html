@@ -7,7 +7,10 @@
 {{- $menuFooter := site.Menus.footer | default site.Sites.Default.Menus.footer -}}
 {{- $pageUrl := $currentPage.RelPermalink -}}
 {{- $linksMax := site.Params.footerSectionLinksMax | default 6 -}}
-{{- $customLinks := site.Data.footer | default slice -}}
+{{- $customLinks := slice -}}
+{{- with (site.GetPage "footer") -}}
+  {{- $customLinks = .Params.customLinks -}}
+{{- end -}}
 {{- $icon := "" -}}
 {{- with printf "svg/%s.svg" "external" | resources.Get | resources.Minify -}}
   {{- $icon = .Content | safeHTML -}}
@@ -16,13 +19,18 @@
 <footer class="site-footer">
   <div class="footer-row">
     {{- range $menuFooter }}
-      {{- $isActive := or (strings.HasPrefix $pageUrl .URL) (and $currentPage.IsHome (in .URL "homepage")) -}}
       {{- $isExternal := and (strings.HasPrefix $pageUrl "http") (not (strings.HasPrefix $pageUrl site.BaseURL)) -}}
       {{- $sectionKey := path.Base .Page.File.Dir -}}
       {{- $classes := slice -}}
       {{- with .Params.style -}}
         {{ $classes = $classes | append . }}
       {{- end -}}
+      {{- $isActive := or
+        (strings.HasPrefix $pageUrl .URL)
+        (and $currentPage.IsHome (in .URL "homepage"))
+        (and (eq $sectionKey "news") (or
+          (eq $currentPage.Kind "term")
+          (gt (len (default slice $currentPage.Params.categories)) 0))) -}}
       {{- if $isActive -}}
         {{ $classes = $classes | append "menu-active" }}
       {{- end -}}
@@ -50,17 +58,39 @@
 
         {{/* Children in section */}}
         <ul>
-        {{- with .Page.CurrentSection -}}
-          {{- if not .IsHome -}}
-            {{- range first $linksMax .RegularPages -}}
-              {{- $active := eq .RelPermalink $currentPage.RelPermalink -}}
-              <li>
-                <a href="{{ .RelPermalink }}"
-                  title="{{ .Title | default .Name | plainify }}"
-                  class="{{ if $active }}menu-active{{ end }}">
-                  {{ .Title | $.Page.RenderString }}
-                </a>
-              </li>
+        {{- if eq $sectionKey "news" }}
+        {{/* List Categories instead of RegularPages */}}
+          {{- range $category, $taxonomyTerm := site.Taxonomies.categories -}}
+            {{- $isActive = false -}}
+            {{- if eq $currentPage.RelPermalink $taxonomyTerm.Page.RelPermalink -}}
+              {{- $isActive = true -}}
+            {{- else if eq $currentPage.Kind "page" -}}
+              {{- if in $currentPage.Params.categories $category -}}
+                {{- $isActive = true -}}
+              {{- end -}}
+            {{- end }}
+            <li>
+              <a href="{{ $taxonomyTerm.Page.RelPermalink }}"
+                title="{{ title $category | plainify }}"
+                class="{{- if $isActive -}}menu-active{{- end -}}">
+                {{ title $category }} ({{ len $taxonomyTerm.Pages }})
+              </a>
+            </li>
+          {{- end -}}
+
+        {{- else -}}
+          {{- with .Page.CurrentSection -}}
+            {{- if not .IsHome -}}
+              {{- range first $linksMax .RegularPages -}}
+                {{- $active := eq .RelPermalink $currentPage.RelPermalink -}}
+                <li>
+                  <a href="{{ .RelPermalink }}"
+                    title="{{ .Title | default .Name | plainify }}"
+                    class="{{ if $active }}menu-active{{ end }}">
+                    {{ .Title | $.Page.RenderString }}
+                  </a>
+                </li>
+              {{- end -}}
             {{- end -}}
           {{- end -}}
         {{- end -}}
@@ -72,7 +102,7 @@
             {{- $active := eq (urls.Parse .url).Path $currentPage.RelPermalink -}}
             <li>
               <a href="{{ cond $isExternal .url (.url | relURL) }}"
-                title="{{ .Title | plainify }}"
+                title="{{ .title | plainify }}"
                 class="{{ if $active }}menu-active{{ end }}"
                 {{- if $isExternal -}}
                   target="_blank" rel="external noreferrer"
@@ -105,7 +135,7 @@
           <h4>
             <a
               href="{{ .url }}"
-              title="{{ .Title | plainify }}"
+              title="{{ .title | plainify }}"
               class="{{ delimit $classes " " }}"
               {{- if $isExternal -}}
                 target="_blank" rel="external noreferrer"

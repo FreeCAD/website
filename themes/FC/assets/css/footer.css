@@ -59,6 +59,7 @@
 
 .footer-column li {
   margin: 0.25rem auto;
+  font-size: var(--s);
 }
 
 .footer-column a {

@@ -216,7 +216,7 @@
     padding: 0;
     color: var(--primary);
     font-weight: 700;
-    box-shadow: 0 var(--line)0 var(--primary);
+    box-shadow: 0 var(--line) 0 var(--primary);
   }
 
   .menu-list .menu-active:hover {
