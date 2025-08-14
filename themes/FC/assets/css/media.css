@@ -157,6 +157,10 @@
     align-self: auto;
   }
 
+  .toot-card {
+    margin: var(--gap) 0;
+  }
+
   .footer-column {
     flex: 1 1 calc(var(--width)/3);
   }

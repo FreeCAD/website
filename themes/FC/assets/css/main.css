@@ -768,7 +768,7 @@ sup:target {
 
 .share-links {
   margin: auto;
-  padding: calc(var(--gap) * 2);
+  padding: calc(var(--gap) * 2) var(--gap);
   display: flex;
   justify-content: center;
   gap: var(--gap);
