@@ -49,7 +49,7 @@
   <span class="meta">
     {{- index $icons "words-count" -}}
     <span>
-      {{- i18n "words" .WordCount | default (printf "%d words" .WordCount) -}}
+      {{ i18n "words" .WordCount | default (printf "%d words" .WordCount) }}
     </span>
   </span>
 {{- end -}}
@@ -58,7 +58,7 @@
   <span class="meta">
     {{- index $icons "reading-time" -}}
     <span>
-      {{- i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime) -}}
+      {{ i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime) }}
     </span>
   </span>
 {{- end -}}
@@ -67,7 +67,7 @@
   <span class="meta">
     {{- index $icons "author" -}}
     <span>
-      {{- partial "author.html" . -}}
+      {{ partial "author.html" . }}
     </span>
   </span>
 {{- end -}}
