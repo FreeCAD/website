@@ -53,7 +53,7 @@ main header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: var(--gap);
+  gap: calc(var(--gap) * 0.25);
   text-align: center;
   flex-wrap: wrap;
   margin: 0;
@@ -66,7 +66,7 @@ article .category {
 }
 
 :is(.releases, .category, .categories-list) a {
-  padding: var(--padding);
+  padding: calc(var(--gap) * 0.5);
   color: var(--cover);
 }
 
