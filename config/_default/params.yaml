@@ -26,7 +26,6 @@ resizeFormat: "webp"
 resizeSizes: [250, 500, 1000, 2000]
 
 #JS scripts
-enableInstantClick: true # NOTE: Allows fast loading of linked pages, see assets/js/InstantClick.js.
 enableUA: true # NOTE: Enables User Agent sniffing, useful e.g. to provide corresponding download options.
 
 socials:

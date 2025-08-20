@@ -61,28 +61,4 @@
 
 {{- partial "opengraph.html" . -}}
 
-<noscript>
-  <style>
-    #theme-toggle {
-      display: none;
-    }
-  </style>
-  {{- if (and (ne site.Params.defaultTheme "light") (ne site.Params.defaultTheme "dark")) -}}
-    <style>
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --theme: rgb(32, 32, 32);
-          --entry: rgb(64, 64, 64);
-          --primary: rgb(240, 240, 240);
-          --secondary: rgb(224, 224, 224);
-          --tertiary: rgb(208, 208, 208);
-          --link-color: rgb(65, 143, 222);
-        }
-
-        main {
-          background: var(--theme);
-        }
-      }
-    </style>
-  {{- end -}}
-</noscript>
+{{- partial "theme_toggle.html" . -}}

@@ -15,7 +15,6 @@
     {{- end -}}
   </head>
   <body class="{{ delimit $classes " " }}" id="top">
-    {{- partial "theme_toggle.html" . -}}
     {{- partial "header.html" . -}}
     <main class="{{ .Kind }}" role="main">
       {{- block "main" . -}}

@@ -80,21 +80,3 @@
   {{- end -}}
 
 {{- end -}}
-
-{{- /* InstantClick.js */}}
-
-{{- if site.Params.enableInstantClick -}}
-  {{- $instantClick := resources.Get "js/InstantClick.js" -}}
-  {{- if hugo.IsProduction -}}
-    {{- $instantClick = minify $instantClick -}}
-  {{- end -}}
-  <script defer type="text/javascript" src="{{ $instantClick.RelPermalink }}" data-no-instant
-    {{- if site.Params.assets.disableFingerprinting -}}
-      integrity="{{ $instantClick.Data.Integrity }}"
-    {{- end -}}>
-  </script>
-
-  <script data-no-instant>
-    InstantClick.init();
-  </script>
-{{- end -}}

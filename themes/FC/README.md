@@ -42,15 +42,6 @@ TODO
 
 TODO
 
-## InstantClick integration
-
-[InstantClick](http://instantclick.io/) makes navigation behaves like Single Page Application. It is enabled in the `params.yaml` config:
-
-```yaml
-params:
-  enableInstantClick: true
-```
-
 ## Customize pagniator size
 
 In section or list pages, the paginator size be different from the [global config](https://gohugo.io/templates/pagination/#configure-pagination). Add the `paginate` field in the Front Matter to customize:
