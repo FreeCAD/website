@@ -17,17 +17,28 @@ displayFullLangName: true
 footerSectionLinksMax: 5
 telemetryMaxEntries: 20
 
-#CMS Theme param (for CMS config, see data/cms_config.yaml)
+# CMS Theme param (for CMS config, see data/cms_config.yaml)
 enableCMS: true
 
-#Image processing
+# Image processing
 processableFormats: ["jpg", "jpeg", "png", "tif", "bmp", "gif", "webp"]
 resizeFormat: "webp"
 resizeSizes: [250, 500, 1000, 2000]
 
-#JS scripts
+# JS scripts
 enableUA: true # NOTE: Enables User Agent sniffing, useful e.g. to provide corresponding download options.
 
+# Calendar on Community Page
+calendar:
+  host: "https://open-web-calendar.hosted.quelltext.eu/calendar.html"
+  url: "https://calendar.google.com/calendar/ical/6e6cc81260051a3c49fdf915c472f2d62576820129f0e0b2cacb7025ed62f960%40group.calendar.google.com/public/basic.ics"
+  title: "FreeCAD Calendar"
+  tabs: ["month", "week", "agenda"]
+  skin: "terrace"
+  menu: false
+  target: "_blank"
+
+# Social Media links
 socials:
   github: https://github.com/FreeCAD
   mastodon: https://fosstodon.org/@FreeCAD

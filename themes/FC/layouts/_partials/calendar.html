@@ -1,4 +1,11 @@
-{{- with .Params.calendar -}}
+{{/* Public Calendar on Community page:
+  - Get ICS Calendar from hosted service (currently open-web-calendar).
+  - Set some attributes from site config and others directly here.
+  - Render iframe with nicer layout.
+  - Display link to ICS Calendar or file.
+  - Script to allow Calendar skin switch based on site chroma. */}}
+
+{{- with site.Params.calendar -}}
 
   {{- $cal := . -}}
   {{- $host := .host | safeURL -}}
@@ -34,44 +41,52 @@
     src="{{ printf "%s?%s" $host $query }}"
     sandbox="allow-scripts allow-same-origin allow-top-navigation"
     allowTransparency="true"
-    scrolling="no"
-    frameborder="0">
+    frameborder="0"
+    loading="lazy">
   </iframe>
 
   {{- $url := .url -}}
   {{- $base_url := "https://calendar.google.com/calendar/embed?src=" -}}
   {{- with findRE `/ical/([^/]+)/` $url -}}
     {{- $id := index . 0 | replaceRE `/ical/([^/]+)/` "${1}" -}}
-    <a href="{{ printf "%s%s" $base_url $id }}" target="_blank">Open ICS Calendar</a>
+    <a href="{{ printf "%s%s" $base_url $id }}"
+      title="{{ i18n "ics_calendar" | default "ICS Calendar" }}"
+      target="_blank">
+      {{ i18n "ics_calendar" | default "ICS Calendar" }}
+    </a>
   {{- else -}}
-    <a href="{{ $url }}" target="_blank" download>Save ICS Calendar</a>
+    <a href="{{ $url }}"
+      title="{{ i18n "ics_calendar" | default "ICS Calendar" }}"
+      target="_blank"
+      download>
+      {{ i18n "ics_calendar" | default "ICS Calendar" }}
+    </a>
   {{- end -}}
 
-{{- end -}}
+  <script>
+    function updateCalendarSkin() {
+      const iframe = document.getElementById('open-web-calendar');
+      if (!iframe) return;
 
+      const isDark = document.body.classList.contains('dark');
+      const skin = isDark ? 'dark' : 'terrace';
 
-<script>
-  function updateCalendarSkin() {
-    const iframe = document.getElementById('open-web-calendar');
-    if (!iframe) return;
+      const url = new URL(iframe.src);
+      url.searchParams.set('skin', skin);
 
-    const isDark = document.body.classList.contains('dark');
-    const skin = isDark ? 'dark' : 'terrace';
-
-    const url = new URL(iframe.src);
-    url.searchParams.set('skin', skin);
-
-    const newSrc = url.toString();
-    if (iframe.src !== newSrc) {
-      iframe.src = newSrc;
+      const newSrc = url.toString();
+      if (iframe.src !== newSrc) {
+        iframe.src = newSrc;
+      }
     }
-  }
 
-  document.addEventListener('DOMContentLoaded', updateCalendarSkin);
+    document.addEventListener('DOMContentLoaded', updateCalendarSkin);
 
-  const observer = new MutationObserver(updateCalendarSkin);
-  observer.observe(document.body, {
-    attributes: true,
-    attributeFilter: ['class']
-  });
-</script>
+    const observer = new MutationObserver(updateCalendarSkin);
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  </script>
+
+{{- end -}}

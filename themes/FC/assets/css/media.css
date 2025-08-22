@@ -180,6 +180,10 @@
     padding: var(--gap);
   }
 
+  .calendar {
+    height: calc(var(--width) * 1.8);
+  }
+
   /* Archive */
   .archive-month {
     flex-direction: column;
