@@ -1043,3 +1043,15 @@ sup:target {
 #shareForm #submit:hover {
   background: var(--link-hover-color);
 }
+
+
+/* Calendar on Community page */
+
+.calendar {
+  margin: var(--gap) var(--side);
+  width: var(--width);
+  height: calc(var(--width) * 0.5);
+  border: none;
+  border-radius: var(--radius);
+  z-index: 3;
+}
