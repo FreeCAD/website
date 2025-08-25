@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
   {{- partial "head.html" . -}}
-  {{- partial "share/fedishare-script.html" . -}}
+  {{- partial "share/fedishare_script.html" . -}}
 
   <body data-projects="{{ $projects | jsonify }}">
     <datalist id="fediverse-domains">
@@ -79,6 +79,6 @@
         </button>
       </form>
     </main>
-    {{- partial "footer.html" . -}}
+    {{- partial "footer/footer.html" . -}}
   </body>
 </html>

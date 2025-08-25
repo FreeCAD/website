@@ -6,7 +6,7 @@
   background: var(--entry);
 }
 
-.footer-row {
+.footer-menu {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -20,62 +20,85 @@
   color: var(--tertiary);
 }
 
-.footer-row span {
+.footer-menu span {
   font-size: var(--s);
 }
 
-.footer-row span:last-child {
+.footer-menu span:last-child {
   white-space: nowrap;
 }
 
-.footer-row a {
+.footer-menu a {
   color: var(--link-color);
 }
 
-.footer-row a:hover {
+.footer-menu a:hover {
   color: var(--link-hover-color);
 }
 
-.footer-column {
+.footer-section {
   flex: 1 1 calc(var(--width) * 0.05);
   margin: 0 auto;
   text-align: start;
 }
 
-.footer-column:last-child {
+.footer-section:last-child {
   flex: 0 auto;
 }
 
-.footer-column h4 {
+.footer-section h4 {
   color: var(--tertiary);
   margin: 0 auto;
 }
 
-.footer-column ul {
+.footer-section ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-column li {
+.footer-section li {
   margin: 0.25rem auto;
   font-size: var(--s);
 }
 
-.footer-column a {
+.footer-section a {
   color: var(--tertiary);
 }
 
-.footer-column .menu-active {
+.footer-section .menu-active {
   color: var(--primary);
   font-weight: 700;
   text-decoration: var(--underline);
 }
 
-.footer-row .meta :is(svg, #sun, #moon) {
+.footer-menu .meta :is(svg, #sun, #moon) {
   color: var(--tertiary);
   margin: 0.6rem;
   display: block;
   width: 4rem;
   height: 4rem;
+}
+
+.footer-custom {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: var(--gap);
+  margin: 0 auto;
+  padding: var(--gap) var(--side);
+  font-size: var(--m);
+  color: var(--tertiary);
+}
+
+.footer-custom a {
+  margin: 0;
+  padding: calc(var(--gap) * 0.5);
+  color: var(--tertiary);
+}
+
+.footer-custom a:hover {
+  color: var(--link-hover-color);
 }

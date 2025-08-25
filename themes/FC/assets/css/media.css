@@ -161,11 +161,11 @@
     margin: var(--gap) 0;
   }
 
-  .footer-column {
+  .footer-section {
     flex: 1 1 calc(var(--width)/3);
   }
 
-  .footer-column:last-child {
+  .footer-section:last-child {
     flex: 2 0 auto
   }
 

@@ -1,0 +1,17 @@
+{{/* Copyright notice at the bottom of the site footer. */}}
+
+<section class="footer-menu">
+  {{- if site.Copyright -}}
+    <span>{{- site.Copyright | .RenderString -}}</span>
+  {{- else -}}
+    <span>
+      &copy; {{ now.Year }} <a href="{{ "" | relLangURL }}">{{ site.Title | .RenderString }}</a>
+    </span>
+  {{- end -}}
+  <span>
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+  </span>
+  <span>
+    Made with ♥︎ thanks to <a href="https://gohugo.io/" rel="external noreferrer" target="_blank">Hugo</a>
+  </span>
+</section>

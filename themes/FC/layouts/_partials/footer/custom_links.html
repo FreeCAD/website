@@ -1,0 +1,19 @@
+{{/* Custom Footer links from 'data/footer_links.yaml' without parent sections. */}}
+
+<section class="footer-custom">
+  {{- range . -}}
+    {{- if not .parent -}}
+      {{- $isExternal := strings.HasPrefix .url "http" -}}
+      <a href="{{ .url }}"
+        title="{{ .title | plainify }}"
+        {{ if $isExternal }}target="_blank" rel="external noreferrer"{{ end }}>
+        {{ .title }}
+        {{- if $isExternal -}}
+          <span class="external">
+          {{- partial "icon.html" "external" -}}
+        </span>
+        {{- end -}}
+      </a>
+    {{- end -}}
+  {{- end -}}
+</section>
