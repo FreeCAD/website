@@ -494,7 +494,7 @@ sup:target {
   height: auto;
   max-height: calc(var(--width) * 0.5);
   border-radius: var(--radius);
-  margin: calc(var(--gap) * 2) auto;
+  margin: var(--gap) auto;
   transition: var(--link-transition);
 }
 
