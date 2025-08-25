@@ -4,7 +4,7 @@
   {{- range . -}}
     {{- if not .parent -}}
       {{- $isExternal := strings.HasPrefix .url "http" -}}
-      <a href="{{ .url }}"
+      <a href="{{ if $isExternal }}{{ .url }}{{ else }}{{ .url | relURL }}{{ end }}"
         title="{{ .title | plainify }}"
         {{ if $isExternal }}target="_blank" rel="external noreferrer"{{ end }}>
         {{ .title }}
