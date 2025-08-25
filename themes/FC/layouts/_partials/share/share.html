@@ -2,12 +2,14 @@
 
 <section class="share-links">
   {{- with site.Params.socials -}}
-    {{- range $social, $url := . -}}
-      <a href="{{ $url }}"
-        title="{{ i18n $social | default $social | title }}"
-        target="_blank" rel="noopener">
-        {{- partial "icon.html" $social -}}
-      </a>
+    {{- range . -}}
+      {{- range $social, $url := . -}}
+        <a href="{{ $url }}"
+          title="{{ i18n $social | default $social | title }}"
+          target="_blank" rel="noopener">
+          {{- partial "icon.html" $social -}}
+        </a>
+      {{- end -}}
     {{- end -}}
   {{- end -}}
 
