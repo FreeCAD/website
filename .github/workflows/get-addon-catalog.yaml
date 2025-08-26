@@ -114,12 +114,24 @@ jobs:
               except ET.ParseError:
                   return {}
 
+              namespace = {}
+              if root.tag.startswith('{'):
+                  uri = root.tag.split('}')[0][1:]
+                  namespace['namespace'] = uri
+
+                  def namespace_tag(tag):
+                      return f"namespace:{tag}"
+              else:
+                  def namespace_tag(tag):
+                      return tag
+
               def find_text(tag):
-                  elem = root.find(tag)
+                  elem = root.find(namespace_tag(tag), namespace)
                   return elem.text.strip() if elem is not None and elem.text else None
 
               def find_attr_text(tag, attr=None, attr_value=None):
-                  for elem in root.findall(tag):
+                  elems = root.findall(namespace_tag(tag), namespace)
+                  for elem in elems:
                       if attr and attr_value:
                           if elem.attrib.get(attr) == attr_value:
                               return elem.text.strip() if elem.text else None
@@ -127,13 +139,15 @@ jobs:
                           return elem.text.strip() if elem.text else None
                   return None
 
+              icon = root.findtext(".//namespace:icon", namespaces=namespace) if namespace else root.findtext(".//icon")
+
               return {
                   "name": find_text("name"),
                   "description": find_text("description"),
                   "version": find_text("version"),
                   "maintainer": find_text("maintainer"),
                   "license": find_text("license"),
-                  "icon": root.findtext(".//icon") or None
+                  "icon": icon.strip() if icon else None
               }
 
           try:
