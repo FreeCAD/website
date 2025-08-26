@@ -122,7 +122,7 @@ jobs:
                       "repository": entry.get("repository"),
                       "last_update_time": entry.get("last_update_time"),
                       "metadata": {
-                          "package_xml": entry.get("metadata", {}).get("package_xml")
+                          "package_xml": (entry.get("metadata") or {}).get("package_xml")
                       }
                   }
                   cleaned_entries.append(cleaned_entry)
