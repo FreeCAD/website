@@ -149,7 +149,6 @@ jobs:
             exit 0
           fi
 
-          git pull --rebase
           DATE=$(date -u +"%Y-%m-%d")
           git commit -m "Action: update Addon catalog - $DATE"
           git push
