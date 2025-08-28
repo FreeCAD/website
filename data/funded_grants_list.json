@@ -1,0 +1,312 @@
+[
+  {
+    "title": "Update OSH Automated Documentation for FreeCAD 1.0",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/48",
+    "labels": [
+      "funded",
+      "2025 Q2"
+    ],
+    "created_at": "2025-05-31T13:05:40Z",
+    "author": "pieterhijma"
+  },
+  {
+    "title": "Assembly Solver Interface Abstraction and Alternative Solver Implementation",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/47",
+    "labels": [
+      "funded",
+      "2025 Q2"
+    ],
+    "created_at": "2025-05-31T05:49:34Z",
+    "author": "oursland"
+  },
+  {
+    "title": "CAM improvements for machining metals",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/46",
+    "labels": [
+      "funded",
+      "2025 Q2"
+    ],
+    "created_at": "2025-05-30T20:01:01Z",
+    "author": "davidgilkaufman"
+  },
+  {
+    "title": "Research ISO GPS / GD&T for an overall concept as implementation in FreeCAD",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/45",
+    "labels": [
+      "funded",
+      "2025 Q2"
+    ],
+    "created_at": "2025-05-29T19:41:06Z",
+    "author": "maxwxyz"
+  },
+  {
+    "title": "CAM/BIM:  2D Nesting Tool for FreeCAD",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/44",
+    "labels": [
+      "funded",
+      "2025 Q2"
+    ],
+    "created_at": "2025-05-29T16:44:34Z",
+    "author": "AbhiramMasna"
+  },
+  {
+    "title": "Maintenance, improvement and development of new features on the Sketcher workbench",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/43",
+    "labels": [
+      "funded",
+      "2025 Q2"
+    ],
+    "created_at": "2025-05-28T09:39:23Z",
+    "author": "PaddleStroke"
+  },
+  {
+    "title": "Maintenance, improvement and development of new features on the Assembly workbench",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/42",
+    "labels": [
+      "funded",
+      "2025 Q2"
+    ],
+    "created_at": "2025-05-28T09:37:19Z",
+    "author": "PaddleStroke"
+  },
+  {
+    "title": "PartDesign: Extrude Two directions",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/41",
+    "labels": [
+      "funded",
+      "2025 Q2"
+    ],
+    "created_at": "2025-05-28T09:11:37Z",
+    "author": "PaddleStroke"
+  },
+  {
+    "title": "Websites improvements initiative - Step 1",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/40",
+    "labels": [
+      "funded",
+      "2025 Q2"
+    ],
+    "created_at": "2025-05-26T12:08:21Z",
+    "author": "marcuspollio"
+  },
+  {
+    "title": "Configuration Space Visualization for Computer-Aided Geometric Design",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/39",
+    "labels": [
+      "funded",
+      "2025 Q2"
+    ],
+    "created_at": "2025-05-23T23:03:02Z",
+    "author": "behollister"
+  },
+  {
+    "title": "Pattern tools refactor, unification and additional functionality.",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/38",
+    "labels": [
+      "funded",
+      "2025 Q2"
+    ],
+    "created_at": "2025-04-15T10:10:07Z",
+    "author": "PaddleStroke"
+  },
+  {
+    "title": "CAD Working Group rewards",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/37",
+    "labels": [
+      "funded"
+    ],
+    "created_at": "2025-04-12T12:44:43Z",
+    "author": "pierreporte"
+  },
+  {
+    "title": "Multithreading Architecture Improvements in FreeCAD",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/36",
+    "labels": [
+      "funded",
+      "2025 Q1"
+    ],
+    "created_at": "2025-02-28T23:01:21Z",
+    "author": "tritao"
+  },
+  {
+    "title": "Modernizing FreeCAD's Rendering and Selection Systems",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/35",
+    "labels": [
+      "funded",
+      "2025 Q1"
+    ],
+    "created_at": "2025-02-28T22:42:28Z",
+    "author": "tritao"
+  },
+  {
+    "title": "Maintenance, improvement and development of new features on the FEM workbench",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/34",
+    "labels": [
+      "funded",
+      "2025 Q1"
+    ],
+    "created_at": "2025-02-28T16:52:03Z",
+    "author": "marioalexis84"
+  },
+  {
+    "title": "New curves for Sketcher",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/33",
+    "labels": [
+      "funded",
+      "2025 Q1"
+    ],
+    "created_at": "2025-02-28T10:53:56Z",
+    "author": "AjinkyaDahale"
+  },
+  {
+    "title": "[Lens] Make Lens Platform Self-Deployable and Cloud-Agnostic",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/29",
+    "labels": [
+      "funded",
+      "completed",
+      "Ondsel Onwards Fund"
+    ],
+    "created_at": "2025-01-25T10:29:40Z",
+    "author": "amrit3701"
+  },
+  {
+    "title": "homebrew-freecad fix building a mac app bundle using deps based around homebrew",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/28",
+    "labels": [
+      "funded",
+      "2025 Q1"
+    ],
+    "created_at": "2025-01-13T18:46:56Z",
+    "author": "ipatch"
+  },
+  {
+    "title": "Refactoring Sketcher 2",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/23",
+    "labels": [
+      "funded",
+      "2025 Q1"
+    ],
+    "created_at": "2024-12-06T21:30:16Z",
+    "author": "AjinkyaDahale"
+  },
+  {
+    "title": "Unified Transparent Previews",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/22",
+    "labels": [
+      "funded",
+      "2024"
+    ],
+    "created_at": "2024-11-09T16:57:27Z",
+    "author": "kadet1090"
+  },
+  {
+    "title": "Modernize, revise FreeCAD Art Guidelines and Icons (Fixed-Goal Grant Proposal)",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/19",
+    "labels": [
+      "funded",
+      "2024"
+    ],
+    "created_at": "2024-10-26T04:39:41Z",
+    "author": "obelisk79"
+  },
+  {
+    "title": "Improve User Experience VarSets",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/17",
+    "labels": [
+      "funded",
+      "2024"
+    ],
+    "created_at": "2024-10-09T06:58:41Z",
+    "author": "pieterhijma"
+  },
+  {
+    "title": "CI Hosting Research Proposal",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/16",
+    "labels": [
+      "funded",
+      "2024"
+    ],
+    "created_at": "2024-09-24T07:19:33Z",
+    "author": "oursland"
+  },
+  {
+    "title": "Recommendations and my proposal for the improvement of documentation",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/15",
+    "labels": [
+      "funded",
+      "completed"
+    ],
+    "created_at": "2024-09-21T13:52:16Z",
+    "author": "Reqrefusion"
+  },
+  {
+    "title": "update homebrew-freecad tap with a freecad formula that uses python v3.12 and qt v6",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/11",
+    "labels": [
+      "funded",
+      "completed"
+    ],
+    "created_at": "2024-07-27T18:55:41Z",
+    "author": "ipatch"
+  },
+  {
+    "title": "Research Variant Parts",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/10",
+    "labels": [
+      "funded",
+      "completed"
+    ],
+    "created_at": "2024-06-13T08:52:08Z",
+    "author": "pieterhijma"
+  },
+  {
+    "title": "Time Commitment Grant Proposal",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/8",
+    "labels": [
+      "funded",
+      "completed"
+    ],
+    "created_at": "2024-05-31T13:13:34Z",
+    "author": "bgbsww"
+  },
+  {
+    "title": "Time Commitment Grant Proposal: Refactoring Sketcher",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/6",
+    "labels": [
+      "funded",
+      "completed"
+    ],
+    "created_at": "2024-03-30T05:06:09Z",
+    "author": "AjinkyaDahale"
+  },
+  {
+    "title": "Creation of furniture and parametric components for the FreeCAD library - Time Commitment Grant Proposal",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/5",
+    "labels": [
+      "funded",
+      "completed"
+    ],
+    "created_at": "2024-03-29T23:31:35Z",
+    "author": "Francisco-Rosa"
+  },
+  {
+    "title": "Improve C++ API Documentation",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/4",
+    "labels": [
+      "funded",
+      "2024"
+    ],
+    "created_at": "2024-03-28T19:38:16Z",
+    "author": "pieterhijma"
+  },
+  {
+    "title": "Complete Toponaming project code transfer",
+    "url": "https://github.com/FreeCAD/FPA-grant-proposals/issues/2",
+    "labels": [
+      "funded",
+      "completed"
+    ],
+    "created_at": "2024-03-14T20:44:00Z",
+    "author": "bgbsww"
+  }
+]
