@@ -8,8 +8,9 @@
 {{- with $catalog -}}
   {{- $entries := slice -}}
 
-  {{- range $key, $value := $catalog -}}
-    {{- $item := index $value 0 -}}
+  {{- range $key, $versions := $catalog -}}
+    {{- $match := where $versions "git_ref" "in" (slice "main" "master") -}}
+    {{- $item := (index $match 0) | default (index $versions 0) -}}
     {{- $entries = $entries | append (dict "key" $key "item" $item) -}}
   {{- end -}}
 
