@@ -56,7 +56,7 @@
     {
       "repository": "https://github.com/FreeCAD/AddonManager",
       "git_ref": "main",
-      "last_update_time": "2025-08-27T15:56:33-05:00",
+      "last_update_time": "2025-08-28T22:54:00-05:00",
       "metadata": {
         "name": "Addon Manager",
         "description": "Tool to install workbenches, macros, themes, etc.",
@@ -69,7 +69,7 @@
     {
       "repository": "https://github.com/FreeCAD/AddonManager",
       "git_ref": "dev",
-      "last_update_time": "2025-08-27T15:49:25-05:00",
+      "last_update_time": "2025-08-28T22:42:18-05:00",
       "metadata": {
         "name": "Addon Manager",
         "description": "Development branch of a tool to install workbenches, macros, themes, etc.",
@@ -294,14 +294,14 @@
     {
       "repository": "https://github.com/knipknap/better-tool-library",
       "git_ref": "main",
-      "last_update_time": "2025-06-06T19:32:09+02:00",
+      "last_update_time": "2025-08-28T07:51:06-03:00",
       "metadata": {
         "name": "Better Tool Library",
         "description": "A FreeCAD Path Addon to manage your tool library.",
         "version": "0.9.9",
         "maintainer": "Samuel Abels",
         "license": "MIT",
-        "icon": "resources/icons/tool-library.svg"
+        "icon": "btl/resources/icons/tool-library.svg"
       }
     }
   ],
@@ -469,11 +469,11 @@
     {
       "repository": "https://github.com/altangarts/FreeCAD-Themes-ColorPalette",
       "git_ref": "main",
-      "last_update_time": "2025-08-26T15:35:38+03:00",
+      "last_update_time": "2025-08-29T03:32:49+03:00",
       "metadata": {
         "name": "ColorPaletteTheme",
         "description": "2D-3D ColorPalette theme",
-        "version": "1.2.3",
+        "version": "1.2.7",
         "maintainer": "altangarts@gmail",
         "license": "LGPL-2.1-or-later",
         "icon": "resources/icons/ColorPaletteTheme.svg"
@@ -621,11 +621,11 @@
     {
       "repository": "https://github.com/mwganson/DynamicData",
       "git_ref": "master",
-      "last_update_time": "2025-04-12T18:35:27-05:00",
+      "last_update_time": "2025-08-28T16:57:32-05:00",
       "metadata": {
         "name": "DynamicData",
         "description": "Container object for holding custom properties, alternative to spreadsheet",
-        "version": "2.74",
+        "version": "2.75",
         "maintainer": "TheMarkster",
         "license": "LGPL-2.1",
         "icon": "Resources/icons/DynamicDataLogo.svg"
@@ -802,7 +802,7 @@
     {
       "repository": "https://github.com/Reqrefusion/FreeCAD-Documentation-html",
       "git_ref": "main",
-      "last_update_time": "2025-08-28T08:00:05+03:00",
+      "last_update_time": "2025-08-29T09:00:03+03:00",
       "metadata": {
         "name": "FreeCAD HTML documentation",
         "description": "The FreeCAD documentation for offline use",
@@ -1104,14 +1104,14 @@
     {
       "repository": "https://github.com/KeithSloan/ImportNURBS",
       "git_ref": "master",
-      "last_update_time": "2025-03-20T06:30:54+00:00",
+      "last_update_time": "2025-08-28T13:47:45+01:00",
       "metadata": {
         "name": "ImportNurbs workbench",
         "description": "An external workbench for add importer for 3dm>",
         "version": "1.1 Beta",
         "maintainer": "Keith Sloan",
         "license": "LGPL-2.1",
-        "icon": "freecad/ImportNURBS/Resources/icons/ImportNURBSworkbench.svg"
+        "icon": "freecad/importNURBS/Resources/icons/ImportNURBSworkbench.svg"
       }
     }
   ],
@@ -1917,14 +1917,14 @@
     {
       "repository": "https://github.com/APEbbers/TitleBlock-WB",
       "git_ref": "main",
-      "last_update_time": "2024-08-01T19:59:40+02:00",
+      "last_update_time": "2025-08-28T08:42:39+02:00",
       "metadata": {
         "name": "Titleblock Workbench",
         "description": "An extension for the TechDraw workbench to fill a TitleBlock with the aid of the Spreadsheet workbench.",
         "version": "0.5.2.2",
         "maintainer": "Paul Ebbers",
         "license": "LGPL-2.1-or-later",
-        "icon": "Resources/icons/TitleBlockWB.svg"
+        "icon": "Resources/Icons/TitleBlockWB.svg"
       }
     }
   ],
@@ -2008,7 +2008,7 @@
     {
       "repository": "https://github.com/yorikvanhavre/WebTools",
       "git_ref": "master",
-      "last_update_time": "2025-08-25T12:00:20+02:00",
+      "last_update_time": "2025-08-28T16:17:23+02:00",
       "metadata": {
         "name": "WebTools",
         "description": "A collection of tools to work with web services",
@@ -2038,11 +2038,11 @@
     {
       "repository": "https://github.com/dprojects/Woodworking",
       "git_ref": "master",
-      "last_update_time": "2025-08-26T22:17:53+02:00",
+      "last_update_time": "2025-08-28T19:57:30+02:00",
       "metadata": {
         "name": "Woodworking",
         "description": "FreeCAD workbench for woodworking purposes.",
-        "version": "1.1.0.dev.1.1.1.2025.08.26",
+        "version": "1.1.0.dev.1.1.1.2025.08.28",
         "maintainer": "FreeCAD updates appear every week. Unfortunately, I do not have the ability to consistently follow the changes and wonder if something has been broken.",
         "license": "MIT, keep author tag without change.",
         "icon": "Icons/Woodworking.png"
