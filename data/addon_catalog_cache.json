@@ -56,7 +56,7 @@
     {
       "repository": "https://github.com/FreeCAD/AddonManager",
       "git_ref": "main",
-      "last_update_time": "2025-08-28T22:54:00-05:00",
+      "last_update_time": "2025-09-01T22:58:05-05:00",
       "metadata": {
         "name": "Addon Manager",
         "description": "Tool to install workbenches, macros, themes, etc.",
@@ -69,7 +69,7 @@
     {
       "repository": "https://github.com/FreeCAD/AddonManager",
       "git_ref": "dev",
-      "last_update_time": "2025-08-28T22:42:18-05:00",
+      "last_update_time": "2025-09-01T22:21:31-05:00",
       "metadata": {
         "name": "Addon Manager",
         "description": "Development branch of a tool to install workbenches, macros, themes, etc.",
@@ -423,11 +423,11 @@
     {
       "repository": "https://github.com/jaheyns/CfdOF",
       "git_ref": "master",
-      "last_update_time": "2025-08-26T07:38:40+02:00",
+      "last_update_time": "2025-09-02T21:55:03+02:00",
       "metadata": {
         "name": "CfdOF",
         "description": "Computational Fluid Dynamics (CFD) for FreeCAD based on OpenFOAM",
-        "version": "1.31.9",
+        "version": "1.31.10",
         "maintainer": "Oliver Oxtoby",
         "license": "LGPL-2.0-or-later",
         "icon": "Gui/Icons/cfd.svg"
@@ -465,15 +465,30 @@
       "metadata": {}
     }
   ],
+  "ConstraintDesign": [
+    {
+      "repository": "https://github.com/drwho495/ConstraintDesign-wb",
+      "git_ref": "main",
+      "last_update_time": "2025-09-01T23:00:47-05:00",
+      "metadata": {
+        "name": "Constraint Design",
+        "description": "This addon adds a design workbench that is specially designed to be as flexible and stable as possible.",
+        "version": "beta-0.1",
+        "maintainer": "drwho495",
+        "license": "LGPL-2.1-only",
+        "icon": "icons/ConstraintPart.svg"
+      }
+    }
+  ],
   "Color-Palette-Theme": [
     {
       "repository": "https://github.com/altangarts/FreeCAD-Themes-ColorPalette",
       "git_ref": "main",
-      "last_update_time": "2025-08-29T03:32:49+03:00",
+      "last_update_time": "2025-09-01T13:37:19+03:00",
       "metadata": {
         "name": "ColorPaletteTheme",
         "description": "2D-3D ColorPalette theme",
-        "version": "1.2.7",
+        "version": "1.3.2",
         "maintainer": "altangarts@gmail",
         "license": "LGPL-2.1-or-later",
         "icon": "resources/icons/ColorPaletteTheme.svg"
@@ -802,7 +817,7 @@
     {
       "repository": "https://github.com/Reqrefusion/FreeCAD-Documentation-html",
       "git_ref": "main",
-      "last_update_time": "2025-08-29T09:00:03+03:00",
+      "last_update_time": "2025-09-03T00:00:04+03:00",
       "metadata": {
         "name": "FreeCAD HTML documentation",
         "description": "The FreeCAD documentation for offline use",
@@ -975,7 +990,7 @@
     {
       "repository": "https://github.com/lukh/frameforge",
       "git_ref": "main",
-      "last_update_time": "2025-07-14T10:13:08+02:00",
+      "last_update_time": "2025-09-01T21:08:22+02:00",
       "metadata": {
         "name": "FrameForge",
         "description": "FrameForge is dedicated for creating Frames and Beams, and apply operations (miter cuts, trim cuts) on these profiles.",
@@ -1020,11 +1035,11 @@
     {
       "repository": "https://github.com/rahix/FusedFilamentDesign.git",
       "git_ref": "release",
-      "last_update_time": "2025-06-17T14:04:25+02:00",
+      "last_update_time": "2025-08-30T14:33:19+02:00",
       "metadata": {
         "name": "FusedFilamentDesign",
         "description": "PartDesign addon for FFF/FDM 3D-printing design",
-        "version": "0.25.250",
+        "version": "0.25.350",
         "maintainer": "rahix",
         "license": "LGPL-2.1-or-later",
         "icon": "Resources/icons/ffDesign_Logo.svg"
@@ -1393,7 +1408,7 @@
     {
       "repository": "https://github.com/obelisk79/OpenTheme",
       "git_ref": "main",
-      "last_update_time": "2025-05-22T15:11:55-04:00",
+      "last_update_time": "2025-09-01T18:27:44-04:00",
       "metadata": {
         "name": "OpenTheme",
         "description": "An accessible and coordinated set of Light and Dark themes for FreeCAD",
@@ -1764,7 +1779,7 @@
     {
       "repository": "https://github.com/shaise/FreeCAD_SheetMetal",
       "git_ref": "master",
-      "last_update_time": "2025-08-18T09:50:19+03:00",
+      "last_update_time": "2025-09-02T13:14:17+03:00",
       "metadata": {
         "name": "SheetMetal Workbench",
         "description": "A simple sheet metal tools workbench for FreeCAD.",
@@ -1887,7 +1902,7 @@
     {
       "repository": "https://github.com/FreeCAD/FreeCAD-Telemetry",
       "git_ref": "main",
-      "last_update_time": "2025-08-11T17:43:02-05:00",
+      "last_update_time": "2025-09-02T08:27:51-05:00",
       "metadata": {
         "name": "Telemetry",
         "description": "Help improve FreeCAD by sending basic metrics to the development team.",
@@ -1902,11 +1917,11 @@
     {
       "repository": "https://github.com/mwganson/ThreadProfile",
       "git_ref": "master",
-      "last_update_time": "2025-05-04T11:36:30-05:00",
+      "last_update_time": "2025-09-02T11:44:09-05:00",
       "metadata": {
         "name": "ThreadProfile",
         "description": "ThreadProfile object for creating internal/external threads",
-        "version": "1.96",
+        "version": "1.97",
         "maintainer": "TheMarkster",
         "license": "LGPL-2.1",
         "icon": "Resources/icons/ThreadProfileLogo.svg"
@@ -1940,7 +1955,7 @@
     {
       "repository": "https://github.com/KeithSloan/toSketch",
       "git_ref": "main",
-      "last_update_time": "2025-04-27T07:36:43+01:00",
+      "last_update_time": "2025-09-01T12:24:20+01:00",
       "metadata": {
         "name": "toSketch",
         "description": "Add toSketch facility for FreeCAD. This WB help with remodelling of existing models.",
@@ -1993,7 +2008,7 @@
     {
       "repository": "https://github.com/mnesarco/Vars",
       "git_ref": "main",
-      "last_update_time": "2025-08-21T10:07:07-05:00",
+      "last_update_time": "2025-08-29T13:47:20-05:00",
       "metadata": {
         "name": "Vars",
         "description": "FreeCAD Vars",
@@ -2034,11 +2049,26 @@
       }
     }
   ],
+  "Woods": [
+    {
+      "repository": "https://github.com/davesrocketshop/Woods",
+      "git_ref": "master",
+      "last_update_time": "2025-08-31T21:19:46-04:00",
+      "metadata": {
+        "name": "Woods",
+        "description": "Wood material database.",
+        "version": "1.0.1",
+        "maintainer": "David Carter",
+        "license": "LGPL-2.1-or-later",
+        "icon": "Resources/icons/woods.png"
+      }
+    }
+  ],
   "woodworking": [
     {
       "repository": "https://github.com/dprojects/Woodworking",
       "git_ref": "master",
-      "last_update_time": "2025-08-28T19:57:30+02:00",
+      "last_update_time": "2025-09-02T20:30:53+02:00",
       "metadata": {
         "name": "Woodworking",
         "description": "FreeCAD workbench for woodworking purposes.",
