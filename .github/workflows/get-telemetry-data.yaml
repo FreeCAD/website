@@ -31,7 +31,7 @@ jobs:
       - name: Extract most common totalUsers
         id: extract_total
         run: |
-          TOTAL_USERS=$(jq '
+          TOTAL_USERS=$(jq -r '
             to_entries
             | map(select(.value.totalUsers != null) | .value.totalUsers)
             | group_by(.)
@@ -39,6 +39,7 @@ jobs:
             | reverse
             | .[0][0]
           ' chart_data_raw.json)
+
           echo "totalUsers=$TOTAL_USERS" >> $GITHUB_OUTPUT
 
       - name: Log invalid keys
