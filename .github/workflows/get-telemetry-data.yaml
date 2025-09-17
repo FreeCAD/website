@@ -28,6 +28,11 @@ jobs:
         run: |
           curl -s http://www.freecad.org/chart_data.json -o chart_data_raw.json
 
+      - name: Validate JSON file
+        run: |
+          echo "Validating JSON file..."
+          jq empty chart_data_raw.json
+
       - name: Extract most common totalUsers
         id: extract_total
         run: |
@@ -40,7 +45,7 @@ jobs:
             | .[0][0]
           ' chart_data_raw.json)
 
-          echo "totalUsers=$TOTAL_USERS" >> $GITHUB_OUTPUT
+          echo "totalUsers=$TOTAL_USERS" >> "$GITHUB_OUTPUT"
 
       - name: Log invalid keys
         run: |
