@@ -105,12 +105,14 @@ jobs:
                         .value.data != null and
                         (.value.labels | length) == (.value.data | length)
                       )
-                    | [range(0; (.value.labels | length))]
+                    | debug("Transformed value: ",
+                      [range(0; (.value.labels | length))]
                       | map({
                           key: .value.labels[.],
                           value: .value.data[.]
                         })
                       | from_entries
+                    )
                   )
                 }
               )
