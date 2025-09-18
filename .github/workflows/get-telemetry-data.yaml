@@ -94,23 +94,23 @@ jobs:
           jq --argjson totalUsers "${{ steps.extract_total.outputs.totalUsers }}" '
             to_entries
             | map(
-                select(.key != "totalUsers")
-                | select(
-                    (.value | type == "object")
-                    and (.value.labels != null)
-                    and (.value.data != null)
-                    and ((.value.labels | length) == (.value.data | length))
+              select(
+                .key != "totalUsers" and
+                (.value | type == "object") and
+                .value.labels != null and
+                .value.data != null and
+                (.value.labels | length) == (.value.data | length)
+              )
+              | {
+                  key: .key,
+                  value: (
+                    [range(0; .value.labels | length)]
+                    | map({
+                        (.value.labels[.]): .value.data[.]
+                      })
+                    | add
                   )
-                | {
-                    key: .key,
-                    value: (
-                      [range(0; .value.labels | length)]
-                      | map({
-                          (.value.labels[.]): .value.data[.]
-                        })
-                      | add
-                    )
-                  }
+                }
               )
             | from_entries
             + { totalUsers: $totalUsers }
