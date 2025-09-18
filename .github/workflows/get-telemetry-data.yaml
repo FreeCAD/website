@@ -113,7 +113,6 @@ jobs:
                           value: .value.data[.]
                         })
                       | from_entries
-                    )
                   )
                 }
               )
