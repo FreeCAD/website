@@ -95,11 +95,11 @@ jobs:
             to_entries
             | map(
               select(.key != "totalUsers")
-                . as $key_value | debug("Processing key-value:", $key_value)
+              . | debug("Processing key-value:", .)
               | {
                   key: .key,
                   value: (
-                      .value | debug("Original value (before transformation):", .)
+                    .value | debug("Original value (before transformation):", .)
                     select(
                       (.value | type == "object") and
                       .value.labels != null and
@@ -114,11 +114,11 @@ jobs:
                           }
                         ) | add)
                     }
-                      .value | debug("Transformed value (labels to data):", .)
+                    . | debug("Transformed value (labels to data):", .)
                   )
                 }
               )
-                . | debug("Intermediate JSON (after transformation):", .)
+            . | debug("Intermediate JSON (after transformation):", .)
             | from_entries
             | . + { totalUsers: $totalUsers }
           ' chart_data_raw.json > data/telemetry_chart_data.json
