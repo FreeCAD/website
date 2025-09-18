@@ -108,10 +108,10 @@ jobs:
                         .data != null
                       )
                     | debug("After select (labels/data): ", .)
-                    | [range(0; (.labels | length))]
+                    | [range(0; (.value.labels | length))]
                       | map({
-                          key: .labels[.],
-                          value: .data[.]
+                          key: .value.labels[.],
+                          value: .value.data[.]
                         })
                   )
                 }
