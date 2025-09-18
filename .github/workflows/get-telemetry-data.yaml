@@ -99,16 +99,13 @@ jobs:
                   key: .key,
                   value: (
                     .value
-                    | select(
-                      (.value | type == "object") and
-                      .value.labels != null and
-                      .value.data != null and
-                      (.value.labels | length) == (.value.data | length)
-                    )
-                    | (.value.labels | map(
-                      . as $label |
-                      { ($label): (.value.data[(.value.labels | index($label))]) }
-                    ) | add)
+                    | select(.labels != null and .data != null and (.labels | length) == (.data | length))
+                    | [range(0; (.labels | length))]
+                      | map({
+                          key: .labels[.],
+                          value: .data[.]
+                        })
+                      | from_entries
                   )
                 }
               )
