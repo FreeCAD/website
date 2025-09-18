@@ -105,6 +105,10 @@ jobs:
                         .data != null and
                         (.labels | length) == (.data | length)
                       )
+                    | {
+                        labels: .labels,
+                        data: .data
+                      }
                     | [range(0; (.labels | length))]
                       | map({
                           key: .labels[.],
