@@ -101,15 +101,14 @@ jobs:
                     .value
                     | debug("Processing value: ", .)
                     | select(
-                        type == "object" and
-                        .labels != null and
-                        .data != null and
-                        (.labels | length) == (.data | length)
+                        .value.labels != null and
+                        .value.data != null and
+                        (.value.labels | length) == (.value.data | length)
                       )
-                    | [range(0; (.labels | length))]
+                    | [range(0; (.value.labels | length))]
                       | map({
-                          key: .labels[.],
-                          value: .data[.]
+                          key: .value.labels[.],
+                          value: .value.data[.]
                         })
                       | from_entries
                   )
