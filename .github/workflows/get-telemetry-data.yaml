@@ -99,7 +99,12 @@ jobs:
                   key: .key,
                   value: (
                     .value
-                    | select(.labels != null and .data != null and (.labels | length) == (.data | length))
+                    | select(
+                        type == "object" and
+                        .labels != null and
+                        .data != null and
+                        (.labels | length) == (.data | length)
+                      )
                     | [range(0; (.labels | length))]
                       | map({
                           key: .labels[.],
