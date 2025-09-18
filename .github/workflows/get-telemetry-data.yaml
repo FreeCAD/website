@@ -102,8 +102,7 @@ jobs:
                     | debug("Processing value: ", .)
                     | select(
                         .value.labels != null and
-                        .value.data != null and
-                        (.value.labels | length) == (.value.data | length)
+                        .value.data != null
                       )
                     | debug("Transformed value: ",
                       [range(0; (.value.labels | length))]
