@@ -94,26 +94,33 @@ jobs:
           jq --argjson totalUsers "${{ steps.extract_total.outputs.totalUsers }}" '
             to_entries
             | map(
-              select(
-                .key != "totalUsers" and
-                (.value | type == "object") and
-                .value.labels != null and
-                .value.data != null and
-                (.value.labels | length) == (.value.data | length)
-              )
+              select(.key != "totalUsers")
+                . as $key_value | debug("Processing key-value:", $key_value)
               | {
                   key: .key,
                   value: (
-                    [range(0; .value.labels | length)]
-                    | map({
-                        (.value.labels[.]): .value.data[.]
-                      })
-                    | add
+                      .value | debug("Original value (before transformation):", .)
+                    select(
+                      (.value | type == "object") and
+                      .value.labels != null and
+                      .value.data != null and
+                      (.value.labels | length) == (.value.data | length)
+                    )
+                    | {
+                        (.value.labels | map(
+                          . as $label |
+                          {
+                            ($label): (.value.data[(.value.labels | index($label))])
+                          }
+                        ) | add)
+                    }
+                      .value | debug("Transformed value (labels to data):", .)
                   )
                 }
               )
+                . | debug("Intermediate JSON (after transformation):", .)
             | from_entries
-            + { totalUsers: $totalUsers }
+            | . + { totalUsers: $totalUsers }
           ' chart_data_raw.json > data/telemetry_chart_data.json
 
       - name: Commit and push cleaned Telemetry Data
