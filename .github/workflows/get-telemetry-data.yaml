@@ -95,8 +95,7 @@ jobs:
             to_entries
             | map(
               select(.key != "totalUsers")
-              . as $key_value
-              | debug("Processing key-value:", $key_value)
+              | debug("Processing key-value:", .)
               | {
                   key: .key,
                   value: (
