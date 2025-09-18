@@ -26,12 +26,33 @@ jobs:
 
       - name: Fetch JSON file
         run: |
-          curl -s http://www.freecad.org/chart_data.json -o chart_data_raw.json
+          curl -sSL https://www.freecad.org/chart_data.json -o chart_data_raw.json
+
+      - name: Check fetched JSON
+        run: |
+          cat chart_data_raw.json
+
+      - name: Ensure the JSON file is not empty
+        run: |
+          if [ ! -s chart_data_raw.json ]; then
+            echo "❌ chart_data_raw.json is empty or not found"
+            exit 1
+          else
+            echo "✅ chart_data_raw.json fetched successfully"
+          fi
+
+      - name: Validate JSON file (with lenient jq)
+        run: |
+          jq --ascii-output empty chart_data_raw.json || exit 1
 
       - name: Validate JSON file
         run: |
-          echo "Validating JSON file..."
-          jq empty chart_data_raw.json
+          if ! jq empty chart_data_raw.json; then
+            echo "❌ Invalid JSON format"
+            exit 1
+          else
+            echo "✅ Valid JSON format"
+          fi
 
       - name: Extract most common totalUsers
         id: extract_total
@@ -45,6 +66,7 @@ jobs:
             | .[0][0]
           ' chart_data_raw.json)
 
+          echo "totalUsers=$TOTAL_USERS"
           echo "totalUsers=$TOTAL_USERS" >> "$GITHUB_OUTPUT"
 
       - name: Log invalid keys
