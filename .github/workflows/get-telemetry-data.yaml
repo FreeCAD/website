@@ -108,7 +108,7 @@ jobs:
               end
             )
             | . + { totalUsers: $totalUsers }
-          ' chart_data_raw.json > data/telemetry_chart_data.jso
+          ' chart_data_raw.json > data/telemetry_chart_data.json
 
       - name: Commit and push cleaned Telemetry Data
         run: |
