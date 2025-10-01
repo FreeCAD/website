@@ -82,6 +82,10 @@
     height: calc(100vh - var(--header-height));
   }
 
+  .content {
+    max-width: var(--width);
+  }
+
   .content img:not([popover] img, blockquote img) {
     max-height: calc(var(--width) * 1.25);
   }
