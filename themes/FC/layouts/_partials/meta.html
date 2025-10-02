@@ -9,19 +9,17 @@
   </span>
 {{- end -}}
 
-{{- if .Page.Store.Get "archives" -}}
-  {{- if .Params.categories -}}
-    <span class="meta">
-      {{- partial "icon.html" "categories" -}}
-      <span class="categories">
-        {{- range (.GetTerms "categories") -}}
-          <a href="{{ .Permalink }}">
-            {{ .LinkTitle }}
-          </a>
-        {{- end -}}
-      </span>
+{{- if .Params.categories -}}
+  <span class="meta">
+    {{- partial "icon.html" "categories" -}}
+    <span class="categories">
+      {{- range (.GetTerms "categories") -}}
+        <a href="{{ .Permalink }}">
+          {{ .LinkTitle }}
+        </a>
+      {{- end -}}
     </span>
-  {{- end -}}
+  </span>
 {{- end -}}
 
 {{- if .Params.tags -}}
