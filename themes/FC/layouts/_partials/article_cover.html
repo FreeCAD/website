@@ -34,9 +34,9 @@
 
       {{/*  Display Caption  */}}
       {{- with $.Params.cover.caption -}}
-        <p>
+        <figcaption>
           {{ . | $.Page.RenderString }}
-        </p>
+        </figcaption>
       {{- end -}}
     </figure>
   {{- end -}}

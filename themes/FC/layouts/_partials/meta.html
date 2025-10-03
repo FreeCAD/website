@@ -1,87 +1,87 @@
-<div class="single-meta">
+<div class="metadata">
 
-{{- if not .Date.IsZero -}}
-  <span class="meta">
-    {{- partial "icon.html" "date" -}}
-    <time datetime="{{ .Date }}">
-      {{ .Date | time.Format ":date_long" }}
-    </time>
-  </span>
-{{- end -}}
-
-{{- if .Params.categories -}}
-  <span class="meta">
-    {{- partial "icon.html" "categories" -}}
-    <span class="categories">
-      {{- range (.GetTerms "categories") -}}
-        <a href="{{ .Permalink }}">
-          {{ .LinkTitle }}
-        </a>
-      {{- end -}}
+  {{- if not .Date.IsZero -}}
+    <span class="meta">
+      {{- partial "icon.html" "date" -}}
+      <time datetime="{{ .Date }}">
+        {{ .Date | time.Format ":date_long" }}
+      </time>
     </span>
-  </span>
-{{- end -}}
+  {{- end -}}
 
-{{- if .Params.tags -}}
-  <span class="meta">
-    {{- partial "icon.html" "tags" -}}
-    <span class="tags">
-      {{- range (.GetTerms "tags") -}}
-        <a href="{{ .Permalink }}">
-          {{ .LinkTitle }}
-        </a>
-      {{- end -}}
-    </span>
-  </span>
-{{- end -}}
-
-{{- if .Param "showWordCount" -}}
-  <span class="meta">
-    {{- partial "icon.html" "words-count" -}}
-    <span>
-      {{ i18n "words" .WordCount | default (printf "%d words" .WordCount) }}
-    </span>
-  </span>
-{{- end -}}
-
-{{- if .Param "showReadingTime" -}}
-  <span class="meta">
-    {{- partial "icon.html" "reading-time" -}}
-    <span>
-      {{ i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime) }}
-    </span>
-  </span>
-{{- end -}}
-
-{{- if .Param "showAuthor" -}}
-  <span class="meta">
-    {{- partial "icon.html" "author" -}}
-    <span>
-      {{ partial "author.html" . }}
-    </span>
-  </span>
-{{- end -}}
-
-{{- if .IsTranslated -}}
-  <span class="meta">
-    {{- partial "icon.html" "translations" -}}
-    <span class="i18n-links">
-      {{- range $i, $e := .Translations -}}
-        {{- if $i -}}
-          |
-        {{- end -}}
-        {{- with $e -}}
+  {{- if .Params.categories -}}
+    <span class="meta">
+      {{- partial "icon.html" "categories" -}}
+      <span class="categories">
+        {{- range (.GetTerms "categories") -}}
           <a href="{{ .Permalink }}">
-            {{- if (and site.Params.displayFullLangName (.Language.LanguageName)) -}}
-              {{ .Language.LanguageName | emojify }}
-            {{- else -}}
-              {{ .Lang | title }}
-            {{- end -}}
+            {{ .LinkTitle }}
           </a>
         {{- end -}}
-      {{- end -}}
+      </span>
     </span>
-  </span>
-{{- end -}}
+  {{- end -}}
+
+  {{- if .Params.tags -}}
+    <span class="meta">
+      {{- partial "icon.html" "tags" -}}
+      <span class="tags">
+        {{- range (.GetTerms "tags") -}}
+          <a href="{{ .Permalink }}">
+            {{ .LinkTitle }}
+          </a>
+        {{- end -}}
+      </span>
+    </span>
+  {{- end -}}
+
+  {{- if .Param "showWordCount" -}}
+    <span class="meta">
+      {{- partial "icon.html" "words-count" -}}
+      <span>
+        {{ i18n "words" .WordCount | default (printf "%d words" .WordCount) }}
+      </span>
+    </span>
+  {{- end -}}
+
+  {{- if .Param "showReadingTime" -}}
+    <span class="meta">
+      {{- partial "icon.html" "reading-time" -}}
+      <span>
+        {{ i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime) }}
+      </span>
+    </span>
+  {{- end -}}
+
+  {{- if .Param "showAuthor" -}}
+    <span class="meta">
+      {{- partial "icon.html" "author" -}}
+      <span>
+        {{ partial "author.html" . }}
+      </span>
+    </span>
+  {{- end -}}
+
+  {{- if .IsTranslated -}}
+    <span class="meta">
+      {{- partial "icon.html" "translations" -}}
+      <span class="i18n-links">
+        {{- range $i, $e := .Translations -}}
+          {{- if $i -}}
+            |
+          {{- end -}}
+          {{- with $e -}}
+            <a href="{{ .Permalink }}">
+              {{- if (and site.Params.displayFullLangName (.Language.LanguageName)) -}}
+                {{ .Language.LanguageName | emojify }}
+              {{- else -}}
+                {{ .Lang | title }}
+              {{- end -}}
+            </a>
+          {{- end -}}
+        {{- end -}}
+      </span>
+    </span>
+  {{- end -}}
 
 </div>

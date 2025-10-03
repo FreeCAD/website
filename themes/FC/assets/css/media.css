@@ -67,13 +67,12 @@
 
   .title,
   .description,
-  .single-meta {
-    padding: 0;
-    gap: calc(var(--gap) * 0.5);
+  .metadata {
+    gap: calc(var(--gap) * 0.25);
   }
 
   .buttons,
-  .single-meta,
+  .metadata,
   .cards-column {
     flex-direction: column;
   }

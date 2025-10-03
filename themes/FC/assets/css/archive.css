@@ -57,7 +57,7 @@
 }
 
 .archive-count,
-.archive-meta {
+.archives .metadata * {
   color: var(--secondary);
   font-size: var(--s);
 }

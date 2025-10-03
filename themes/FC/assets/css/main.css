@@ -31,7 +31,7 @@ main header {
 .title,
 .description,
 .hero-button,
-.single-meta {
+.metadata {
   display: inline-flex;
   gap: var(--gap);
   max-width: var(--width);
@@ -123,12 +123,7 @@ article .category {
   background: red;
 }
 
-.single-meta {
-  position: absolute;
-  bottom: 2rem;
-}
-
-:is(.single-meta, .single-meta a) {
+:is(.metadata, .metadata a) {
   color: var(--cover);
   font-size: var(--s);
 }
@@ -182,12 +177,8 @@ main header .entry-cover img {
 .article-header :is(.title,
 .description,
 .hero-button,
-.single-meta) {
-  display: inline-flex;
-  gap: var(--gap);
-  max-width: var(--width);
+.metadata) {
   color: var(--secondary);
-  z-index: 2;
 }
 
 .article-header :is(.category, .categories-list) {
@@ -203,13 +194,7 @@ main header .entry-cover img {
   color: var(--secondary);
 }
 
-.article-header .single-meta {
-  gap: 0;
-  position: relative;
-  bottom: 0;
-}
-
-.article-header :is(.single-meta, .single-meta a) {
+.article-header :is(.metadata, .metadata a) {
   color: var(--secondary);
 }
 
@@ -564,9 +549,10 @@ sup:target {
   position: relative;
 }
 
-.content figure > figcaption {
+figure > figcaption {
   width: 100%;
   margin: var(--gap) auto;
+  font-size: var(--s);
   color: var(--tertiary);
   text-align: center;
 }
