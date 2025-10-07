@@ -1516,3 +1516,46 @@ figure > figcaption {
   max-width: 100vw;
   width: 100vw;
 }
+
+
+/* Tabs shortcodes */
+
+.tabs {
+  margin: var(--gap) auto;
+  background: var(--entry);
+  border-radius: var(--radius);
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.tabs label {
+  display: inline-block;
+  padding: var(--padding);
+  border-radius: var(--radius) var(--radius) 0 0;
+  cursor: pointer;
+}
+
+.tabs :is(input[type="radio"]:checked, label):hover {
+  background: var(--link-hover-color);
+}
+
+.tabs input {
+  display: none;
+}
+
+.tabs-content {
+  order: 999; /* Move content blocks to end of flex container*/
+  width: 100%;
+  padding: var(--gap);
+  display: none;
+  border-top: var(--line) solid var(--tone);
+}
+
+.tabs input[type="radio"]:checked + label {
+  background: var(--tone);
+}
+
+.tabs input[type="radio"]:checked + label + .tabs-content {
+  display: block;
+}

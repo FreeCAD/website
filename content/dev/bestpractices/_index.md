@@ -8,6 +8,40 @@ cover:
   alt: "a cover alternative title"
 ---
 
+{{< tabs >}}
+
+{{% tab "Windows" %}}
+
+## Windows Content
+
+This tab is for **Windows** users.
+
+Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa protulit, sed sed aere valvis inhaesuro Pallas animam: qui quid, ignes. Miseratus fonte Ditis conubia.
+
+{{% /tab %}}
+
+{{% tab "MacOS" %}}
+
+## MacOS Content
+
+This tab is for ***MacOS** users.
+
+Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa protulit, sed sed aere valvis inhaesuro Pallas animam: qui quid, ignes. Miseratus fonte Ditis conubia.
+
+{{% /tab %}}
+
+{{% tab "Linux" %}}
+
+## Linux Content
+
+This tab is for ***Linux** users.
+
+Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa protulit, sed sed aere valvis inhaesuro Pallas animam: qui quid, ignes. Miseratus fonte Ditis conubia.
+
+{{% /tab %}}
+
+{{< /tabs >}}
+
 
 # Best Practices
 
