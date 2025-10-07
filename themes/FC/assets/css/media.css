@@ -12,7 +12,6 @@
   /* Theme-vars */
   :root {
     --width: calc(100vw - (var(--gap) * 2));
-    --side: var(--gap);
     --header-height: 4rem;
     --footer-height: 4rem;
     --radius: 0.5rem;
@@ -40,9 +39,7 @@
     order: 2;
   }
 
-  #menu-list:popover-open,
-  #lang-list:popover-open {
-    right: var(--gap);
+  :is(#menu-list, #lang-list):popover-open {
     width: var(--width);
   }
 
@@ -177,11 +174,6 @@
     flex: 2 0 auto
   }
 
-  .fedishare {
-    padding: var(--gap) var(--side);
-    gap: 0;
-  }
-
   #shareForm {
     width: 100%;
     padding: var(--gap);
@@ -218,6 +210,11 @@
     flex-direction: column;
   }
 
+  .archive-month-header {
+    max-width: var(--width);
+    margin: auto;
+  }
+
   .archive-year {
     margin-top: var(--gap);
   }
@@ -227,11 +224,6 @@
 @media screen and (max-width: 1249px) {
 
   /* NOTE: horizontal navigation menu is hidden on "small-screen" desktops and tablets, vertical popover menu is displayed instead */
-
-  #menu-list:popover-open,
-  #lang-list:popover-open {
-    right: var(--side);
-  }
 
   .menu-list {
     display: none;

@@ -3,7 +3,6 @@
 
 :root {
   --width: clamp(56rem, 20rem + 50vw, 100rem);
-  --side: calc((100vw - var(--width)) * 0.5);
   --header-height: 4rem;
   --footer-height: 4rem;
   --radius: 0.5rem;
@@ -12,6 +11,9 @@
   --padding: 0.75rem 1.5rem;
   --article: clamp(16rem, 4rem + 17.5vw, 32rem);
   --monospace: "Lucida Console", Monaco, "Consolas", monospace;
+  --filter: brightness(1.05) saturate(105%);
+  --transform-hover: scale(1.02);
+  --transform-active: scale(0.95);
 
   --cover: rgb(255, 255, 255);
   --header: rgb(248, 248, 248);

@@ -2,20 +2,20 @@
 
 
 .site-footer {
-  padding-top: var(--gap);
+  min-height: var(--footer-height);
+  padding: var(--gap);
   background: var(--tone);
 }
 
 .footer-menu {
+  max-width: var(--width);
+  margin: var(--gap) auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
   gap: var(--gap);
-  min-height: var(--footer-height);
-  margin: 0 auto;
-  padding: var(--gap) var(--side);
   font-size: var(--m);
   color: var(--tertiary);
 }
@@ -81,14 +81,14 @@
 }
 
 .footer-custom {
+  max-width: var(--width);
+  margin: var(--gap) auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
   gap: var(--gap);
-  margin: 0 auto;
-  padding: var(--gap) var(--side);
   font-size: var(--m);
   color: var(--tertiary);
 }

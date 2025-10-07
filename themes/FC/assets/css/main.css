@@ -211,14 +211,14 @@ main header .article-cover img {
 /* List page article entries */
 
 .articles {
-  background: var(--theme);
-  margin: auto;
-  padding: calc(var(--gap) * 2) var(--side);
+  width: var(--width);
+  margin: calc(var(--gap) * 2) auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-evenly;
   gap: var(--gap);
+  background: var(--theme);
 }
 
 .articles .article-card  {
@@ -239,8 +239,8 @@ main header .article-cover img {
 }
 
 .articles .article-card:hover figure {
-  filter: brightness(1.05) saturate(105%);
-  transform: scale(1.02);
+  filter: var(--filter);
+  transform: var(--transform-hover);
 }
 
 .articles .article-card:hover .entry-title,
@@ -249,7 +249,7 @@ main header .article-cover img {
 }
 
 .articles .article-card a:active figure {
-  transform: scale(0.95);
+  transform: var(--transform-active);
 }
 
 .articles .article-card  .entry-cover img {
@@ -558,8 +558,8 @@ figure > figcaption {
 }
 
 .content a img:not(blockquote img, .column-content img):hover {
-  filter: brightness(1.05) saturate(105%);
-  transform: scale(1.02);
+  filter: var(--filter);
+  transform: var(--transform-hover);
 }
 
 .content [popover] {
@@ -614,7 +614,7 @@ figure > figcaption {
   align-content: space-evenly;
   text-align: center;
   gap: var(--gap);
-  margin-top: calc(var(--gap) * 2);
+  margin: var(--gap) auto;
   z-index: 2;
 }
 
@@ -639,7 +639,7 @@ figure > figcaption {
 
 .download-box .cards-column:has([popovertarget]):hover :not(.arch-icon) svg {
   color: var(--link-hover-color);
-  transform: scale(1.05);
+  transform: var(--transform-hover);
 }
 
 .download-box .arch-icon svg {
@@ -658,7 +658,7 @@ figure > figcaption {
 }
 
 .download-box svg:active {
-  transform: scale(0.90);
+  transform: var(--transform-active);
 }
 
 :is(#windows:has(#windows-arch:popover-open),
@@ -678,15 +678,7 @@ figure > figcaption {
 .download-release {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: space-evenly;
-  align-items: center;
-  text-align: center;
-  gap: var(--gap);
-  margin: auto;
-  padding: var(--gap) var(--side) calc(var(--gap) * 2);
   background: var(--backdrop);
-  z-index: 2;
 }
 
 
@@ -721,21 +713,21 @@ figure > figcaption {
 }
 
 .cards-column:hover {
-  filter: brightness(1.05) saturate(105%);
-  transform: scale(1.02);
+  filter: var(--filter);
+  transform: var(--transform-hover);
 }
 
 .cards-column svg:active {
-  transform: scale(0.90);
+  transform: var(--transform-active);
 }
 
 
 /* List page footer */
 
 .list-pagination {
+  width: var(--width);
   display: flex;
-  margin: auto;
-  padding: var(--gap) var(--side);
+  margin: var(--gap) auto;
   font-size: var(--s);
 }
 
@@ -763,12 +755,11 @@ figure > figcaption {
 }
 
 .share-links {
+  max-width: var(--width);
   margin: auto;
-  padding: var(--gap) var(--side);
   display: flex;
   justify-content: center;
   gap: var(--gap);
-  flex-wrap: wrap;
 }
 
 .share-links svg {
@@ -781,7 +772,7 @@ figure > figcaption {
 }
 
 .share-links svg:active {
-  transform: scale(0.95);
+  transform: var(--transform-active);
   transition: var(--link-transition);
 }
 
@@ -789,18 +780,20 @@ figure > figcaption {
 /* Pagination links to next and previous pages */
 
 .single-pagination {
+  width: var(--width);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  margin: 0 auto var(--gap);
-  padding: var(--gap) var(--side);
+  margin: var(--gap) auto calc(var(--gap) * 2);
   text-align: center;
   gap: var(--gap);
 }
 
 .single-pagination .next, .single-pagination .prev {
-  flex: 0 0 auto;
+  padding: var(--padding);
+  background: var(--link-color);
+  border-radius: var(--radius);
   transition: var(--link-transition);
   font-size: var(--s);
 }
@@ -814,10 +807,7 @@ figure > figcaption {
 }
 
 .single-pagination :is(.prev, .next) a {
-  padding: var(--padding);
   color: var(--cover);
-  background: var(--link-color);
-  border-radius: 2rem;
   text-transform: capitalize;
 }
 
@@ -963,13 +953,12 @@ figure > figcaption {
 /* Share form */
 
 .fedishare {
-  margin: auto;
-  padding: calc(var(--gap) * 2) var(--side);
+  margin: var(--gap) auto;
+  max-width: var(--width);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: var(--gap);
   text-align: center;
 }
 
@@ -980,7 +969,7 @@ figure > figcaption {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: calc(var(--gap) * 1.5);
+  gap: var(--gap);
   border-radius: var(--radius);
   background: var(--entry);
 }
@@ -1016,10 +1005,6 @@ figure > figcaption {
   flex-direction: row;
   align-items: baseline;
   gap: var(--gap);
-}
-
-#shareForm [for="rememberInstance"] {
-  padding: 0 calc(var(--gap) * 0.5);
 }
 
 #shareForm .fedishare-instance {
@@ -1061,7 +1046,7 @@ figure > figcaption {
 /* Calendar on Community page */
 
 .calendar {
-  margin: var(--gap) var(--side);
+  margin: var(--gap) auto;
   width: var(--width);
   height: calc(var(--width) * 0.5);
   border: none;
@@ -1073,8 +1058,8 @@ figure > figcaption {
 /* Addons catalog */
 
 .addons-list {
-  margin: auto;
-  padding: calc(var(--gap) * 2) var(--side);
+  width: var(--width);
+  margin: calc(var(--gap) * 2) auto;
   display: flex;
   flex-wrap: wrap;
   gap: var(--gap);
@@ -1086,8 +1071,8 @@ figure > figcaption {
 }
 
 .addons-list a:hover .addon-entry {
-  filter: brightness(1.05) saturate(105%);
-  transform: scale(1.02);
+  filter: var(--filter);
+  transform: var(--transform-hover);
 }
 
 .addons-list a:hover h3 {
@@ -1161,8 +1146,8 @@ figure > figcaption {
 /* Funded Grants list */
 
 .grants {
-  margin: auto;
-  padding: calc(var(--gap) * 2) var(--side);
+  width: var(--width);
+  margin: var(--gap) auto;
   display: flex;
   flex-direction: column;
   gap: var(--gap);
@@ -1190,8 +1175,8 @@ figure > figcaption {
 }
 
 .grants-list a:hover .grant-entry {
-  filter: brightness(1.05) saturate(105%);
-  transform: scale(1.02);
+  filter: var(--filter);
+  transform: var(--transform-hover);
 }
 
 .grants-list a:hover .grant-entry h3 {
@@ -1452,8 +1437,7 @@ figure > figcaption {
 /* Sponsors list */
 
 .sponsors {
-  margin: auto;
-  padding: calc(var(--gap) * 2) var(--side);
+  padding: var(--gap) calc((100vw - var(--width)) * 0.5);
   display: flex;
   flex-direction: column;
   gap: var(--gap);
@@ -1482,8 +1466,8 @@ figure > figcaption {
 }
 
 .sponsors-tier a:hover .sponsor-entry {
-  filter: brightness(1.05) saturate(105%);
-  transform: scale(1.05);
+  filter: var(--filter);
+  transform: var(--transform-hover);
 }
 
 :is(.gold, .corporate) {
@@ -1553,8 +1537,8 @@ figure > figcaption {
 }
 
 .column-link:hover {
-  filter: brightness(1.05) saturate(105%);
-  transform: scale(1.02);
+  filter: var(--filter);
+  transform: var(--transform-hover);
 }
 
 .box img:not([popover] img, blockquote img) {

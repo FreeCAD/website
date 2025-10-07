@@ -16,7 +16,8 @@
 }
 
 .archive-year {
-  padding: var(--gap) var(--side);
+  max-width: var(--width);
+  margin: auto;
   font-size: var(--l);
 }
 

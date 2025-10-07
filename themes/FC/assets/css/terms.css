@@ -4,7 +4,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: var(--gap) var(--side);
+  max-width: var(--width);
+  padding: 0;
   gap: var(--gap);
   z-index: 3;
 }
@@ -28,5 +29,5 @@
 
 .terms a:active {
   background: black;
-  transform: scale(0.9);
+  transform: var(--transform-active);
 }
