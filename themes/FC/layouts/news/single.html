@@ -28,35 +28,18 @@
   {{- partial "article_cover.html" . -}}
 </header>
 
-{{/* Get the Table Of Contents. */}}
+{{/* Get Table Of Contents. */}}
 {{- if .Params.ToC -}}
   {{ .TableOfContents }}
 {{- end -}}
 
-{{/* Get the content of a Page. */}}
 {{- partial "content.html" . -}}
 
-<footer class="single-footer">
-  {{- if .Params.tags -}}
-    <ul class="terms">
-      {{- $taxonomy := site.Sites.Default.Taxonomies.tags -}}
-      {{- range .GetTerms "tags" -}}
-        {{- $count := len ($taxonomy.Get .Title) -}}
-        <li>
-          <a href="{{ .RelPermalink }}">
-            {{ .LinkTitle }}
-            <sup>
-              {{ $count }}
-            </sup>
-          </a>
-        </li>
-      {{- end -}}
-    </ul>
-  {{- end -}}
-  {{- if (.Param "showPaginationLinks") -}}
+{{- if (.Param "showPaginationLinks") -}}
+  <footer class="single-footer">
     {{- partial "pagination_links.html" . -}}
-  {{- end -}}
-</footer>
+  </footer>
+{{- end -}}
 
 {{- end -}}
-{{/* end main */}}
+{{/* End main. */}}

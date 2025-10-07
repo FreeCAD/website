@@ -1,17 +1,34 @@
 {{- define "main" -}}
 
-{{/* Debug only in non-production environments */}}
+{{/* Debug only in non-production environments. */}}
 {{- if not hugo.IsProduction -}}
   {{- partial "debug.html" . -}}
 {{- end -}}
 
-<header>
-  {{- if eq .Kind "term" -}}
-    {{- partial "categories_list.html" . -}}
+{{/* Get pages from current Section */}}
+{{- $pages := .RegularPages -}}
+
+{{/* Get pages from default language Site for this Term. */}}
+{{- $defaultTerm := index (index site.Sites.Default.Taxonomies .Data.Plural) .Data.Term -}}
+
+{{/* Merge current language Term pages and default language Site fallback. */}}
+{{- $fallbackPages := slice -}}
+{{- if $defaultTerm -}}
+  {{- range $p := $defaultTerm.Pages -}}
+    {{- if not (in $pages $p.Translations) -}}
+      {{- $fallbackPages = $fallbackPages | append $p -}}
+    {{- end -}}
   {{- end -}}
+{{- end -}}
+
+{{- $pages = sort (union $pages $fallbackPages) "Date" "desc" -}}
+{{- $count := len $pages -}}
+
+<header>
+  {{- partial "categories_list.html" . -}}
 
   <h1 class="title">
-    {{ .Data.Singular | title }}: {{ .Title | .RenderString }}
+    {{ .Data.Singular | title }}: {{ .Title | .RenderString }} ({{ $count }})
   </h1>
 
   {{- if .Description -}}
@@ -25,25 +42,7 @@
   {{- end -}}
 </header>
 
-{{/* Get the latest pages from the current section */}}
-{{- $pages := .RegularPages -}}
-
-{{/* Pages in the default language site for this term */}}
-{{- $defaultTerm := index (index site.Sites.Default.Taxonomies .Data.Plural) .Data.Term -}}
-
-{{/* Merge current language term pages and fallback from default site. */}}
-{{- $fallbackPages := slice -}}
-{{- if $defaultTerm -}}
-  {{- range $p := $defaultTerm.Pages -}}
-    {{- if not (in $pages $p.Translations) -}}
-      {{- $fallbackPages = $fallbackPages | append $p -}}
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
-
-{{- $pages = sort (union $pages $fallbackPages) "Date" "desc" -}}
-
 {{- partial "list_paginator.html" (dict "pages" $pages "context" .) -}}
 
 {{- end -}}
-{{- /* end main */ -}}
+{{/* End main. */}}

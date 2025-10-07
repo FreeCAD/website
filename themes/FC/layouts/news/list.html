@@ -1,6 +1,6 @@
 {{- define "main" -}}
 
-{{/* Debug only in non-production environments */}}
+{{/* Debug only in non-production environments. */}}
 {{- if not hugo.IsProduction -}}
   {{- partial "debug.html" . -}}
 {{- end -}}
@@ -25,10 +25,10 @@
   {{- partial "hero_cover.html" . -}}
 </header>
 
-{{/* get the latest pages from the current section, and fill in the missing translated pages from the first site (currently English) */}}
+{{/* Get latest pages from current section, and fill in missing translated pages from default language Site. */}}
 {{- $pages := where (.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Section" .Section -}}
 
 {{- partial "list_paginator.html" (dict "pages" $pages "context" .) -}}
 
 {{- end -}}
-{{- /* end main */ -}}
+{{/* End main. */}}

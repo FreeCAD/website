@@ -10,12 +10,14 @@
   {{- end -}}
 
   {{- if .Params.categories -}}
+    {{- $taxonomy := site.Sites.Default.Taxonomies.categories -}}
     <span class="meta">
       {{- partial "icon.html" "categories" -}}
       <span class="categories">
-        {{- range (.GetTerms "categories") -}}
-          <a href="{{ .Permalink }}">
-            {{ .LinkTitle }}
+        {{- range .GetTerms "categories" -}}
+          {{- $count := len ($taxonomy.Get .Title) -}}
+          <a href="{{ .RelPermalink }}">
+            {{ .LinkTitle }} ({{ $count }})
           </a>
         {{- end -}}
       </span>
@@ -23,12 +25,14 @@
   {{- end -}}
 
   {{- if .Params.tags -}}
+    {{- $taxonomy := site.Sites.Default.Taxonomies.tags -}}
     <span class="meta">
       {{- partial "icon.html" "tags" -}}
       <span class="tags">
-        {{- range (.GetTerms "tags") -}}
-          <a href="{{ .Permalink }}">
-            {{ .LinkTitle }}
+        {{- range .GetTerms "tags" -}}
+          {{- $count := len ($taxonomy.Get .Title) -}}
+          <a href="{{ .RelPermalink }}">
+            {{ .LinkTitle }} ({{ $count }})
           </a>
         {{- end -}}
       </span>

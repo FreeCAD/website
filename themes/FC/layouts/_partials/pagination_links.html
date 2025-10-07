@@ -1,4 +1,5 @@
-{{/* get pages from the current page's section */}}
+{{/* Get pages from current Section. */}}
+
 {{- $sections := site.Params.mainSections -}}
 {{- if .Section -}}
   {{- $sections = slice .Section -}}
