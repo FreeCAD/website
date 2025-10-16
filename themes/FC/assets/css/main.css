@@ -533,7 +533,7 @@ sup:target {
 
 .content img:not([popover] img, blockquote img) {
   display: block;
-  width: 100%;
+  max-width: 100%;
   height: auto;
   max-height: calc(var(--width) * 0.5);
   border-radius: var(--radius);
@@ -785,6 +785,13 @@ figure > figcaption {
 .pagination .prev {
   margin-inline-end: auto;
   text-align: start;
+}
+
+.pagination :is(.next, .prev) svg {
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  vertical-align: -.25rem;
 }
 
 

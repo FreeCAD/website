@@ -1,12 +1,7 @@
 {{- define "main" -}}
 
-{{/* Debug only in non-production environments. */}}
-{{- if not hugo.IsProduction -}}
-  {{- partial "debug.html" . -}}
-{{- end -}}
-
 <header>
-  {{- if eq .Section "news" -}}
+  {{- if (eq .Section "news") -}}
     {{- partial "categories_list.html" . -}}
   {{- end -}}
 
@@ -27,24 +22,24 @@
   {{- partial "hero_cover.html" . -}}
 </header>
 
-{{- if eq .Type "guide" -}}
-  {{- partial "content.html" . -}}
+{{- partial "content.html" . -}}
+
+{{/* Get latest current sub-Sections or RegularPages, and fill in missing translated pages from default language Site. */}}
+{{- $default := site.Sites.Default.GetPage .Path -}}
+{{- $pages := slice -}}
+
+{{- range .Sections -}}
+  {{- $pages = $pages | append . -}}
 {{- end -}}
 
-{{/* Get latest pages from current Section, and fill in missing translated pages from default language Site. */}}
-{{- $pages := where (.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Section" .Section -}}
-
-{{- if eq .Type "contribute" -}}
-  {{- $lang := slice -}}
-  {{- range .Translations -}}
-    {{- $lang = $lang | append .Sections -}}
+{{- range $default.Sections -}}
+  {{- if not (site.GetPage .Path) -}}
+    {{- $pages = $pages | append . -}}
   {{- end -}}
-  {{- $pages = where (lang.Merge .Sections $lang) "Type" "guide" -}}
-  {{- $pages = $pages | append (.Site.GetPage "telemetry")}}
 {{- end -}}
 
-{{- if eq .Type "guide" -}}
-  {{- $pages = .RegularPages -}}
+{{- if or (not $pages) (not (and .IsSection .Parent.IsHome)) -}}
+  {{- $pages = .RegularPages | lang.Merge $default.RegularPages -}}
 {{- end -}}
 
 {{- partial "list_paginator.html" (dict "pages" $pages "context" .) -}}

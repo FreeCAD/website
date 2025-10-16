@@ -1,9 +1,5 @@
 {{- define "main" -}}
 
-{{- if not hugo.IsProduction -}}
-  {{- partial "debug.html" . -}}
-{{- end -}}
-
 {{- $latest_release := index (where site.RegularPages "Type" "releases") 0 | default (index (where site.Sites.Default.RegularPages "Type" "releases") 0) -}}
 
 <header>

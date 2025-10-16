@@ -1,9 +1,5 @@
 {{- define "main" -}}
 
-{{- if not hugo.IsProduction -}}
-  {{- partial "debug.html" . -}}
-{{- end -}}
-
 <header>
   {{- if eq .Section "releases" -}}
     {{- with .Site.GetPage "releases" -}}
@@ -62,9 +58,7 @@
 {{- end -}}
 
 {{- if (.Param "showPaginationLinks") -}}
-  <footer class="single-footer">
-    {{- partial "pagination_links.html" . -}}
-  </footer>
+  {{- partial "pagination_links.html" . -}}
 {{- end -}}
 
 {{- end -}}

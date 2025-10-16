@@ -1,10 +1,5 @@
 {{- define "main" -}}
 
-{{/* Debug only in non-production environments. */}}
-{{- if not hugo.IsProduction -}}
-  {{- partial "debug.html" . -}}
-{{- end -}}
-
 <section class="archives">
 
   <header>
@@ -18,12 +13,9 @@
     {{- end -}}
   </header>
 
-  {{/* Set sections to include in archive (as defined by mainSection config or in current section) */}}
-  {{- $sections := site.Params.mainSections | default (slice "news") -}}
-  {{- with .Section -}}
-    {{- $sections = slice . -}}
-  {{- end -}}
-  {{- $pages := where site.RegularPages "Section" "in" $sections -}}
+  {{/* Get current Section or fallback to default language Site if missing */}}
+  {{- $section := .CurrentSection -}}
+  {{- $pages := $section.RegularPages | lang.Merge (where site.Sites.Default.RegularPages "CurrentSection.Path" "eq" $section.Path) -}}
 
   {{/* Group pages by year and then by month */}}
   {{- range $year := $pages.GroupByPublishDate "2006" -}}

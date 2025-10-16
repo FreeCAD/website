@@ -8,18 +8,27 @@
 | uniq -}}
 
 <!DOCTYPE html>
-<html lang="{{ .Params.language | default .Language.Lang | safeHTMLAttr }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
+<html lang="{{ .Params.language | default .Language.Lang | safeHTMLAttr }}"
+  dir="{{ .Language.LanguageDirection | default "auto" }}">
   <head>
     {{- partial "head.html" . -}}
     {{- block "head" . -}}
     {{- end -}}
   </head>
+
   <body class="{{ delimit $classes " " }}" id="top">
     {{- partial "header.html" . -}}
+
+    {{/* Debug info in non-production environments. */}}
+    {{- if not hugo.IsProduction -}}
+      {{- partial "debug.html" . -}}
+    {{- end -}}
+
     <main class="{{ .Kind }}" role="main">
       {{- block "main" . -}}
       {{- end -}}
     </main>
+
     {{- partial "footer/footer.html" . -}}
     {{- block "body_end" . -}}
     {{- end -}}

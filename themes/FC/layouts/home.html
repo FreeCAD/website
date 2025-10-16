@@ -1,9 +1,5 @@
 {{- define "main" -}}
 
-{{- if not hugo.IsProduction -}}
-  {{- partial "debug.html" . -}}
-{{- end -}}
-
 {{- partial "hero.html" . -}}
 
 {{/* get the latest news articles by category except the ones with "hero" parameters in front matter */}}

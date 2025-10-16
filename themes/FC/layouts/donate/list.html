@@ -1,10 +1,5 @@
 {{- define "main" -}}
 
-{{/* Debug only in non-production environments. */}}
-{{- if not hugo.IsProduction -}}
-  {{- partial "debug.html" . -}}
-{{- end -}}
-
 <header>
   <h1 class="title">
     {{ .Title | .RenderString }}

@@ -3,12 +3,7 @@
 {{- $paginator := "" -}}
 
 {{- with .context -}}
-
-  {{- if (.Param "paginate") -}}
-    {{- $paginator = .Paginate $pages (.Param "paginate") -}}
-  {{- else -}}
-    {{- $paginator = .Paginate $pages -}}
-  {{- end -}}
+  {{- $paginator = .Paginate $pages (.Param "paginate" | default 12) -}}
 
   {{- with $paginator.Pages -}}
     <section class="articles">

@@ -1,28 +1,35 @@
-{{/* Get pages from current Section. */}}
+{{/* Paginate current Section:
+     - Provide links to Previous and Next pages in Section.
+     - Fallback to default language Site if missing. */}}
 
-{{- $sections := site.Params.mainSections -}}
-{{- if .Section -}}
-  {{- $sections = slice .Section -}}
-{{- end -}}
-{{- $pages := where site.RegularPages "Section" "in" $sections -}}
+{{- $section := .CurrentSection -}}
+{{- $pages := $section.RegularPages | lang.Merge (where site.Sites.Default.RegularPages "CurrentSection.Path" "eq" $section.Path) -}}
 
-{{- if and (gt (len $pages) 1) (in $pages . ) -}}
-  <nav class="pagination">
-    {{- with .PrevInSection -}}
-      <a class="prev"
-        href="{{ .RelPermalink -}}#top"
-        alt="PREVIOUS ARTICLE"
-        title="{{ i18n "previous_article" | default "Previous article" }}">
-        ◀ {{ .LinkTitle | .RenderString }}
-      </a>
-    {{- end -}}
-    {{- with .NextInSection -}}
-      <a class="next"
-        href="{{ .RelPermalink -}}#top"
-        alt="NEXT ARTICLE"
-        title="{{ i18n "next_article" | default "Next article" }}">
-        {{ .LinkTitle | .RenderString }} ▶
-      </a>
-    {{- end -}}
-  </nav>
+{{- if $pages -}}
+  <footer class="single-footer">
+    <nav class="pagination">
+      {{- with $pages.Prev . -}}
+        <a class="prev"
+          href="{{ .RelPermalink -}}#top"
+          alt="PREVIOUS ARTICLE"
+          title="{{ i18n "previous_article" | default "Previous article" }}">
+          ◀ {{ .LinkTitle | .RenderString }}
+          {{ if not (eq .Lang $.Lang) }}
+            {{ partial "icon.html" "translations" }} {{ .Lang | upper }}
+          {{ end }}
+        </a>
+      {{- end -}}
+      {{- with $pages.Next . -}}
+        <a class="next"
+          href="{{ .RelPermalink -}}#top"
+          alt="NEXT ARTICLE"
+          title="{{ i18n "next_article" | default "Next article" }}">
+          {{ .LinkTitle | .RenderString }}
+          {{ if not (eq .Lang $.Lang) }}
+            {{ partial "icon.html" "translations" }} {{ .Lang | upper }}
+          {{ end }} ▶
+        </a>
+      {{- end -}}
+    </nav>
+  </footer>
 {{- end -}}

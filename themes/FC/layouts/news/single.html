@@ -1,9 +1,5 @@
 {{- define "main" -}}
 
-{{- if not hugo.IsProduction -}}
-  {{- partial "debug.html" . -}}
-{{- end -}}
-
 <header class="article-header">
 
   <h2 class="title">
@@ -36,9 +32,7 @@
 {{- partial "content.html" . -}}
 
 {{- if (.Param "showPaginationLinks") -}}
-  <footer class="single-footer">
-    {{- partial "pagination_links.html" . -}}
-  </footer>
+  {{- partial "pagination_links.html" . -}}
 {{- end -}}
 
 {{- end -}}
