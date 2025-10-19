@@ -1,22 +1,12 @@
 {{- define "main" -}}
 
-<header>
-  {{- if eq .Section "releases" -}}
-    {{- with .Site.GetPage "releases" -}}
-      <span class="releases">
-        <a href="{{ .RelPermalink }}">
-          {{ .LinkTitle | .RenderString }}
-        </a>
-      </span>
-    {{- end -}}
-  {{- end -}}
-
-  <h1 class="title">
+<header class="article-header">
+  <h2 class="title">
     {{ .Title | .RenderString }}
     {{- if .Draft -}}
       <sup><span class="entry-isdraft">[{{- i18n "draft" | default "Draft" -}}]</span></sup>
     {{- end -}}
-  </h1>
+  </h2>
 
   {{- if .Description -}}
     <h3 class="description">
@@ -28,11 +18,9 @@
     {{- partial "hero_cards.html" . -}}
   {{- end -}}
 
-  {{- if eq .Type "releases" -}}
-    {{- partial "meta.html" . -}}
-  {{- end -}}
+  {{- partial "meta.html" . -}}
 
-  {{- partial "hero_cover.html" . -}}
+  {{- partial "article_cover.html" . -}}
 </header>
 
 {{/* Get Table Of Contents. */}}

@@ -198,6 +198,10 @@ main header .entry-cover img {
   color: var(--secondary);
 }
 
+.article-header .meta a:hover {
+  color: var(--link-hover-color);
+}
+
 main header .article-cover img {
   margin: auto;
   width: var(--content-width);
