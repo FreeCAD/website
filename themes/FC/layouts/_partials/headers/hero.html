@@ -10,26 +10,33 @@
 {{- /* get the latest article with the "hero" parameters in front matter. */ -}}
 {{- with (index (where (site.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Params.hero" "!=" nil) 0) -}}
   <header>
+
     <h1 class="title">
       {{ .LinkTitle | .RenderString }}
     </h1>
+
     {{- with .Description -}}
-      <h3 class="description">
-        {{ . | $.Page.RenderString }}
-      </h3>
+      <h3 class="description">{{ . | $.RenderString }}</h3>
     {{- end -}}
+
     {{- with $homepageButtons -}}
       <div class="buttons">
         {{- range $buttons := . -}}
           {{- with $buttons.url -}}
             {{- $page := site.GetPage . | default (site.Sites.Default.GetPage .) -}}
             {{- if $page -}}
-              <a class="hero-button" href="{{ $page.RelPermalink }}">{{ $buttons.label }}</a>
+              <a href="{{ $page.RelPermalink }}"
+                title="{{ $buttons.label }}"
+                class="hero-button">
+                {{ $buttons.label }}
+              </a>
             {{- end -}}
           {{- end -}}
         {{- end -}}
       </div>
     {{- end -}}
+
     {{- partial "hero_cover.html" . -}}
+
   </header>
 {{- end -}}

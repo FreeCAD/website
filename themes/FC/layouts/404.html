@@ -1,7 +1,10 @@
+{{- /* Error 404 page with Homepage return link. */ -}}
+
 {{- define "main" -}}
 
 <div class="not-found">
-  <a href="{{ .Site.Home.RelPermalink }}" title="Return to the home page">
+  <a href="{{ .Site.Home.RelPermalink }}"
+    title="{{- i18n "return_homepage" | default "Return to Homepage" -}}">
     🦄
   </a>
 </div>

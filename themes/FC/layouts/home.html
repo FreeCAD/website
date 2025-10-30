@@ -1,14 +1,20 @@
+{{- /* Homepage:
+
+  - Set header with latest hero article.
+  - List selection of latest News articles.
+  - Get Content from Homepage Section.
+*/ -}}
+
 {{- define "main" -}}
 
-{{- partial "hero.html" . -}}
+{{- partial "headers/hero.html" . -}}
 
-{{- /* get the latest news articles by category except the ones with "hero" parameters in front matter. */ -}}
+{{- /* Get latest News articles by category, excluding those with "hero" param. */ -}}
 {{- $pages := slice -}}
 {{- with site.Sites.Default -}}
   {{- range .Taxonomies.categories.ByCount -}}
-    {{- range first 1 (where .Pages "Params.hero" "ne" true) -}}
-      {{- $pages = $pages | append . -}}
-    {{- end -}}
+    {{- $categoryPages := where .Pages "Params.hero" "ne" true | first 1 -}}
+    {{- $pages = $pages | append $categoryPages -}}
   {{- end -}}
 {{- end -}}
 {{- $pages = first (.Params.paginate | default 6) $pages -}}
@@ -19,6 +25,7 @@
   {{- end -}}
 </section>
 
+{{- /* Get Homepage content. */ -}}
 {{- with (index (where (.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Type" "homepage") 0) -}}
   {{- partial "content/content.html" . -}}
 {{- end -}}

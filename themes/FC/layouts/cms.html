@@ -1,5 +1,6 @@
-{{- /* CMS Admin index page.
-  - Get CMS config setup.
+{{- /* CMS Admin:
+
+  - Get CMS config.
   - Fetch external CMS script resource.
   - Load CMS script.
 */ -}}
@@ -8,13 +9,12 @@
 
   <!DOCTYPE html>
   <html lang="{{ .Site.Language.LanguageCode }}">
+
     <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="robots" content="noindex" />
-      <title>
-        {{ .Title }}
-      </title>
+      <title>{{ .Title }}</title>
       {{- with site.Home.OutputFormats.Get "CMS_Config" -}}
         <link
           href="{{ .RelPermalink }}"
@@ -44,14 +44,10 @@
         {{- end -}}
 
       {{- else -}}
-        <h1>
-          Error
-        </h1>
-        <p>
-          Invalid CMS configuration.
-        </p>
+        <h2>Error: Invalid CMS configuration</h2>
       {{- end -}}
     </body>
+
   </html>
 
 {{- end -}}

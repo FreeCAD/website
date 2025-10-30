@@ -1,6 +1,14 @@
+{{- /* List:
+
+  - Set header with custom headers if available.
+  - Set content with custom content if available.
+  - List RegularPages or sub-Sections for current Section.
+*/ -}}
+
 {{- define "main" -}}
 
 <header>
+
   {{- if eq .Section "news" -}}
     {{- partial "categories.html" . -}}
   {{- end -}}
@@ -13,9 +21,7 @@
   </h1>
 
   {{- with .Description -}}
-    <h3 class="description">
-      {{ . | $.RenderString }}
-    </h3>
+    <h3 class="description">{{ . | $.RenderString }}</h3>
   {{- end -}}
 
   {{/* Dynamically include header partial based on Type */}}
@@ -29,6 +35,7 @@
   {{- end -}}
 
   {{- partial "hero_cover.html" . -}}
+
 </header>
 
 {{- /* Get Table Of Contents. */ -}}

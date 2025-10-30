@@ -39,13 +39,13 @@
     </div>
 
     {{- $grantsLink := i18n "all_grants" | default "See All Funded Grants" -}}
-    <p><a href="https://github.com/FreeCAD/FPA-grant-proposals/issues"
+    <a href="https://github.com/FreeCAD/FPA-grant-proposals/issues"
       class="grants-link"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="{{ $grantsLink }}"
       title="{{ $grantsLink }}">
       {{ $grantsLink }}
-    </a></p>
+    </a>
   </section>
 {{- end -}}

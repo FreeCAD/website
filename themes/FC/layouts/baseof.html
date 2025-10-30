@@ -1,11 +1,17 @@
+{{- /* Base template:
+
+  - Define common structural HTML components.
+  - Get head, header and footer partials.
+  - Set main block to be used by other templates.
+*/ -}}
+
 {{- $classes := slice
-  (cond (eq .BundleType "branch") "list"
-    (cond (eq .BundleType "leaf") "single" "unknown-BundleType"))
-  (cond (eq site.Params.defaultChroma "dark") "dark" "")
-  (printf "type-%s" .Type)
-  (printf "kind-%s" .Kind)
-  (printf "layout-%s" .Layout)
-| uniq -}}
+    (cond (eq .BundleType "branch") "list" (cond (eq .BundleType "leaf") "single" "unknown-BundleType"))
+    (cond (eq site.Params.defaultChroma "dark") "dark" "")
+    (printf "type-%s" .Type)
+    (printf "kind-%s" .Kind)
+    (cond .Layout (printf "layout-%s" .Layout) "")
+  | uniq -}}
 
 <!DOCTYPE html>
 <html lang="{{ .Params.language | default .Language.Lang | safeHTMLAttr }}"
@@ -14,6 +20,7 @@
   {{- partial "head.html" . -}}
 
   <body class="{{ delimit $classes " " }}" id="top">
+
     {{- partial "header.html" . -}}
 
     {{- /* Debug info in non-production environments. */ -}}
@@ -27,5 +34,7 @@
     </main>
 
     {{- partial "footer/footer.html" . -}}
+
   </body>
+
 </html>

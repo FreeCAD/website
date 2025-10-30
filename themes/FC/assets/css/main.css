@@ -1142,6 +1142,7 @@ figure > figcaption {
 }
 
 .grants-link {
+  margin: var(--gap) auto;
   padding: var(--padding);
   color: var(--cover);
   background: var(--link-color);

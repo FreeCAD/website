@@ -1,3 +1,8 @@
+{{- /* Term:
+
+  - List RegularPages for current Term.
+*/ -}}
+
 {{- define "main" -}}
 
 {{- /* Get pages from current Section. */ -}}
@@ -20,21 +25,19 @@
 {{- $count := len $pages -}}
 
 <header>
+
   {{- partial "categories.html" . -}}
 
-  <h1 class="title">
-    {{ .Data.Singular | title }}: {{ .Title | .RenderString }} ({{ $count }})
-  </h1>
+  <h1 class="title">{{ .Data.Singular | title }}: {{ .Title | .RenderString }} ({{ $count }})</h1>
 
-  {{- if .Description -}}
-    <h3 class="description">
-      {{ .Description | .RenderString }}
-    </h3>
+  {{- with .Description -}}
+    <h3 class="description">{{ . | $.RenderString }}</h3>
   {{- end -}}
 
   {{- with site.GetPage "news" -}}
     {{- partial "hero_cover.html" . -}}
   {{- end -}}
+
 </header>
 
 {{- partial "paginator.html" (dict "pages" $pages "context" .) -}}

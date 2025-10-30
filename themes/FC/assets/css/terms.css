@@ -10,10 +10,6 @@
   z-index: 3;
 }
 
-.terms li {
-  display: inline-block;
-}
-
 .terms a {
   display: block;
   padding: 0.5rem var(--gap);
