@@ -21,6 +21,8 @@
 
   <body class="{{ delimit $classes " " }}" id="top">
 
+    {{- partial "utils/unsupported_browser.html" . -}}
+
     {{- partial "header.html" . -}}
 
     {{- /* Debug info in non-production environments. */ -}}
