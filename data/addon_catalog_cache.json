@@ -41,11 +41,11 @@
     {
       "repository": "https://github.com/GS90/addFC",
       "git_ref": "main",
-      "last_update_time": "2025-09-06T12:18:30+03:00",
+      "last_update_time": "2025-10-27T00:33:55+03:00",
       "metadata": {
         "name": "AddFC Workbench",
         "description": "Additional tools for FreeCAD.",
-        "version": "1.9.2",
+        "version": "1.9.3",
         "maintainer": "Golodnikov Sergey",
         "license": "LGPL-2.1-or-later",
         "icon": "repo/icon/workbench.svg"
@@ -56,7 +56,7 @@
     {
       "repository": "https://github.com/FreeCAD/AddonManager",
       "git_ref": "main",
-      "last_update_time": "2025-10-16T11:14:25-05:00",
+      "last_update_time": "2025-10-27T16:35:20-05:00",
       "metadata": {
         "name": "Addon Manager",
         "description": "Tool to install workbenches, macros, themes, etc.",
@@ -69,7 +69,7 @@
     {
       "repository": "https://github.com/FreeCAD/AddonManager",
       "git_ref": "dev",
-      "last_update_time": "2025-10-16T11:13:32-05:00",
+      "last_update_time": "2025-10-27T16:33:57-05:00",
       "metadata": {
         "name": "Addon Manager",
         "description": "Development branch of a tool to install workbenches, macros, themes, etc.",
@@ -423,11 +423,11 @@
     {
       "repository": "https://github.com/jaheyns/CfdOF",
       "git_ref": "master",
-      "last_update_time": "2025-10-20T21:55:34+02:00",
+      "last_update_time": "2025-10-30T21:24:06+02:00",
       "metadata": {
         "name": "CfdOF",
         "description": "Computational Fluid Dynamics (CFD) for FreeCAD based on OpenFOAM",
-        "version": "1.32.3",
+        "version": "1.33.1",
         "maintainer": "Oliver Oxtoby",
         "license": "LGPL-3.0-or-later",
         "icon": "Gui/Icons/cfd.svg"
@@ -560,7 +560,7 @@
     {
       "repository": "https://github.com/MariwanJ/Design456",
       "git_ref": "main",
-      "last_update_time": "2025-05-26T13:46:11+02:00",
+      "last_update_time": "2025-11-02T14:13:13+01:00",
       "metadata": {
         "name": "Design456 workbench",
         "description": "Direct Modeling Workbench for FreeCAD",
@@ -636,11 +636,11 @@
     {
       "repository": "https://github.com/mwganson/DynamicData",
       "git_ref": "master",
-      "last_update_time": "2025-10-19T22:41:34-05:00",
+      "last_update_time": "2025-10-29T17:29:20-05:00",
       "metadata": {
         "name": "DynamicData",
         "description": "Container object for holding custom properties, alternative to spreadsheet",
-        "version": "2.75",
+        "version": "2.76",
         "maintainer": "TheMarkster",
         "license": "LGPL-2.1-or-later",
         "icon": "Resources/icons/DynamicDataLogo.svg"
@@ -712,7 +712,7 @@
     {
       "repository": "https://github.com/shaise/FreeCAD_FastenersWB",
       "git_ref": "master",
-      "last_update_time": "2025-10-10T18:08:06+03:00",
+      "last_update_time": "2025-11-02T08:17:43+02:00",
       "metadata": {
         "name": "Fasteners Workbench",
         "description": "Some common fasteners and fastener tools for FreeCAD.",
@@ -817,15 +817,8 @@
     {
       "repository": "https://github.com/Reqrefusion/FreeCAD-Documentation-html",
       "git_ref": "main",
-      "last_update_time": "2025-10-26T19:15:05+01:00",
-      "metadata": {
-        "name": "FreeCAD HTML documentation",
-        "description": "The FreeCAD documentation for offline use",
-        "version": "1.0.0-alpha",
-        "maintainer": "Turan Furkan Topak",
-        "license": "CC0-1.0",
-        "icon": null
-      }
+      "last_update_time": "",
+      "metadata": {}
     }
   ],
   "Freecad-Built-in-themes-beta": [
@@ -862,11 +855,11 @@
     {
       "repository": "https://github.com/APEbbers/FreeCAD-Ribbon",
       "git_ref": "main",
-      "last_update_time": "2025-10-26T19:37:19+01:00",
+      "last_update_time": "2025-10-28T18:22:53+01:00",
       "metadata": {
         "name": "FreeCAD Ribbon",
         "description": "A Ribbon interface for FreeCAD",
-        "version": "1.9.1.20",
+        "version": "1.9.1.21",
         "maintainer": "Paul Ebbers",
         "license": "GPL-3.0-or-later",
         "icon": "Resources/icons/FreecadNew.svg"
@@ -875,7 +868,7 @@
     {
       "repository": "https://github.com/APEbbers/FreeCAD-Ribbon",
       "git_ref": "Develop",
-      "last_update_time": "2025-10-26T19:38:55+01:00",
+      "last_update_time": "2025-11-02T12:21:35+01:00",
       "metadata": {
         "name": "FreeCAD Ribbon",
         "description": "A Ribbon interface for FreeCAD",
@@ -1185,7 +1178,7 @@
     {
       "repository": "https://github.com/DeepSOIC/Lattice2",
       "git_ref": "master",
-      "last_update_time": "2025-10-24T19:37:16+02:00",
+      "last_update_time": "2025-11-01T18:13:25+01:00",
       "metadata": {
         "name": "Lattice2 Workbench",
         "description": "Tools and arrays of all sorts and kinds, and local coordinate systems",
@@ -1391,15 +1384,8 @@
     {
       "repository": "https://github.com/FreeCAD/FreeCAD-documentation",
       "git_ref": "main",
-      "last_update_time": "2025-01-15T10:43:00+01:00",
-      "metadata": {
-        "name": "FreeCAD documentation",
-        "description": "The FreeCAD documentation for offline use",
-        "version": "1.0.0-alpha",
-        "maintainer": "Yorik van Havre",
-        "license": "CC0-1.0",
-        "icon": null
-      }
+      "last_update_time": "",
+      "metadata": {}
     }
   ],
   "Ondsel-Lens": [
@@ -1563,9 +1549,9 @@
   ],
   "Plot": [
     {
-      "repository": "https://github.com/FreeCAD/freecad.plot",
-      "git_ref": "master",
-      "last_update_time": "2025-10-22T02:03:57-04:00",
+      "repository": "https://github.com/FreeCAD/Plot",
+      "git_ref": "2024.11.26",
+      "last_update_time": "2024-11-26T20:43:53-05:00",
       "metadata": {
         "name": "Plot Workbench",
         "description": "Some tools to manipulate the FreeCAD plots",
@@ -1573,6 +1559,19 @@
         "maintainer": "Jose Luis Cerc\u00f3s Pita",
         "license": "LGPL-2.1-or-later",
         "icon": "freecad/plot/resources/icons/Plot_Icon.svg"
+      }
+    },
+    {
+      "repository": "https://github.com/FreeCAD/Plot",
+      "git_ref": "Latest",
+      "last_update_time": "2025-10-29T11:28:27-04:00",
+      "metadata": {
+        "name": "Plot",
+        "description": "Tools to modify existing plots.",
+        "version": "2025.10.29",
+        "maintainer": "PhoneDroid",
+        "license": "LGPL-2.1-or-later",
+        "icon": "freecad/plot/Resources/Icons/Addon.svg"
       }
     }
   ],
@@ -1733,7 +1732,7 @@
     {
       "repository": "https://github.com/HakanSeven12/Road",
       "git_ref": "main",
-      "last_update_time": "2025-10-22T19:17:06+03:00",
+      "last_update_time": "2025-11-02T19:12:56+03:00",
       "metadata": {
         "name": "Road",
         "description": "Road is the Transportation and Geomatics Engineering workbench for FreeCAD.",
@@ -1761,11 +1760,11 @@
     {
       "repository": "https://github.com/davesrocketshop/Rocket",
       "git_ref": "master",
-      "last_update_time": "2025-10-07T06:37:18-04:00",
+      "last_update_time": "2025-11-01T23:35:57+00:00",
       "metadata": {
         "name": "Rocket",
         "description": "A workbench for designing model rockets.",
-        "version": "5.0.3",
+        "version": "5.0.4",
         "maintainer": "David Carter",
         "license": "LGPL-2.1-or-later",
         "icon": "Resources/icons/RocketWorkbench.svg"
@@ -1963,7 +1962,7 @@
     {
       "repository": "https://github.com/FreeCAD/FreeCAD-Telemetry",
       "git_ref": "main",
-      "last_update_time": "2025-10-06T23:09:29-05:00",
+      "last_update_time": "2025-11-02T11:55:59-06:00",
       "metadata": {
         "name": "Telemetry",
         "description": "Help improve FreeCAD by sending basic metrics to the development team.",
@@ -2144,11 +2143,11 @@
     {
       "repository": "https://github.com/dprojects/Woodworking",
       "git_ref": "master",
-      "last_update_time": "2025-10-20T23:57:02+02:00",
+      "last_update_time": "2025-11-01T21:08:12+01:00",
       "metadata": {
         "name": "Woodworking",
         "description": "FreeCAD workbench for woodworking purposes.",
-        "version": "1.1.0.dev.1.1.1.2025.10.20",
+        "version": "1.1.0.dev.1.1.1.2025.11.01",
         "maintainer": "FreeCAD updates appear every week. Unfortunately, I do not have the ability to consistently follow the changes and wonder if something has been broken.",
         "license": "MIT, keep author tag without change.",
         "icon": "Icons/Woodworking.png"
