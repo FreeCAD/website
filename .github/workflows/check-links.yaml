@@ -29,15 +29,13 @@ jobs:
     - name: Validate links
       uses: JustinBeckwith/linkinator-action@v2
       with:
-        paths: ./public
+        paths: "https://marcuspollio.github.io/FreeCAD-website/"
         recurse: true
         retry: true
         checkFragments: true
         cleanUrls: true
         redirects: warn
         requireHttps: warn
-        urlRewriteSearch: '^/FreeCAD-website/'
-        urlRewriteReplace: '/'
 
   trigger-deploy:
     needs: validate-links
