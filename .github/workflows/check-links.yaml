@@ -38,7 +38,7 @@ jobs:
         requireHttps: warn
 
   trigger-deploy:
-    needs: fetch-addon
+    needs: validate-links
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Hugo deployment
