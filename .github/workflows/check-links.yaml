@@ -36,8 +36,8 @@ jobs:
         cleanUrls: true
         redirects: warn
         requireHttps: warn
-        urlRewriteSearch: "public"
-        urlRewriteReplace: "https://marcuspollio.github.io"
+        urlRewriteSearch: '^/FreeCAD-website/'
+        urlRewriteReplace: '/'
 
   trigger-deploy:
     needs: validate-links
