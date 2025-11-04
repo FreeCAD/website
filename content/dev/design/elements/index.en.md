@@ -38,6 +38,6 @@ Alternative button configurations are inconsistent and not acceptable.
 
 - Minimize the width of the panel as much as possible through good use of space, arrangement of widgets, and [naming](../naming).
 
-- Developers should use the approriate [interactive control](../interactive) widgets to ensure a consistent experience throughout
+- Developers should use the approriate interactive control widgets to ensure a consistent experience throughout
 
 - Task Panels can potentially include enormous amounts of information and advanced settings/controls. Utilizing FreeCAD's custom [QSInt](https://freecad.github.io/SourceDoc/d9/d11/namespaceQSint.html) widget class, which provides a 'rolling up' of portions of the panel, is encouraged. Follow the [80/20 rule](../ux#pareto-principle), and by default only expose the most commonly needed controls/data to avoid overwhelming users with information/settings when they are not needed. This allows the user to expand more advanced settings, controls or information when the need arises.

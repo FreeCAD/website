@@ -58,7 +58,7 @@ This is the list of **current** maintainers & admins.
 
 ## The Role of a Maintainer
 
-The maintainers group has the ultimate responsibility for determining which contributions are accepted into the FreeCAD source. To perform their duty, maintainers have elevated permission. Maintainers use this authority within the scope and process outlined by the [CONTRIBUTING](https://github.com/FreeCAD/FreeCAD/blob/master/CONTRIBUTING) document.
+The maintainers group has the ultimate responsibility for determining which contributions are accepted into the FreeCAD source. To perform their duty, maintainers have elevated permission. Maintainers use this authority within the scope and process outlined by the [CONTRIBUTING](https://github.com/FreeCAD/FreeCAD/blob/master/CONTRIBUTING.md) document.
 
 ## Contributing document
 

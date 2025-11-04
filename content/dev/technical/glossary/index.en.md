@@ -17,4 +17,4 @@ Note that there may be subtle differences in how some terms are used by develope
 ## See Also
 
 * [FreeCAD glossary wiki entry](https://wiki.freecad.org/Glossary)
-* [Contributing](https://github.com/FreeCAD/FreeCAD/blob/master/CONTRIBUTING)
+* [Contributing](https://github.com/FreeCAD/FreeCAD/blob/master/CONTRIBUTING.md)

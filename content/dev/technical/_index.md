@@ -10,19 +10,19 @@ cover:
 
 ## The Basics
 
-- [Developer's Glossary](developerglossary)
+- [Developer's Glossary](glossary)
 
-- [Source Tree Basics](sourcetreebasics)
+- [Source Tree Basics](source-tree)
 
-- [The Application Module](applicationmodule)
+- [The Application Module](app-module)
 
 - [The Source Code in More Depth](https://wiki.freecad.org/The_FreeCAD_source_code)
 
-- [Writing Code for Translation](translation)
+- [Writing Code for Translation](translations)
 
 - [Automated Testing](automated_testing)
 
-- [Dealing with Property Changes](propertychanges)
+- [Dealing with Property Changes](property-changes)
 
 - The FreeCAD developer's tool set:
 
@@ -32,35 +32,35 @@ cover:
     - [Coin3d](https://www.coin3d.org/): a [scenegraph](https://wiki.freecad.org/Scenegraph) manager based on OpenInventor that handles drawing in the 3d window.
     - [Pivy](https://wiki.freecad.org/Pivy): a Python binding for Coin3d
 
-- [Reference Library](referencelibrary)
+- [Reference Library](reference-library)
 
 ## Modifying FreeCAD
 
 - Contributing to FreeCAD
 
-    - The process for submitting changes to FreeCAD is described in the [CONTRIBUTING](https://github.com/FreeCAD/FreeCAD/blob/master/CONTRIBUTING) file in the root of the source tree.
+    - The process for submitting changes to FreeCAD is described in the [CONTRIBUTING](https://github.com/FreeCAD/FreeCAD/blob/master/CONTRIBUTING.md) file in the root of the source tree.
 
 - [Creating a WorkBench](https://wiki.freecad.org/Workbench_creation)
 
 - The [PowerUser's hub](https://wiki.freecad.org/Power_users_hub) in the FreeCAD wiki contains good information about Python scripting and workbench creation
 
-- [Python stubs package](pythonstubspackage)
+- [Python stubs package](python-stubs)
 
 - [Accessing User Preferences](preferences)
 
-- [Controlling Object Deletion](objectdeletion)
+- [Controlling Object Deletion](object-deletion)
 
-- [Create a Python Binding for C++ Class](createpythonbindingforcpp)
+- [Create a Python Binding for C++ Class](python-binding)
 
-- [Checklist for Adding a Feature to a Workbench in C++](checklistfornewfeaturec++)
+- [Checklist for Adding a Feature to a Workbench in C++](checklist)
 
 ## Release Management
 
-- [Overview](releaseprocess)
+- [Overview](release-process)
 
-    - [Major Releases](majorrelease)
-    - [Minor Releases](minorrelease)
-    - [Building Release Packages](releasepackages)
+    - [Major Releases](major-release)
+    - [Minor Releases](minor-release)
+    - [Building Release Packages](release-packages)
 
 ## See Also
 
