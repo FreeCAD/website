@@ -44,11 +44,5 @@
   url: "telemetry"
   parent: "contribute"
 
-- title: "Privacy Policy"
-  url: "privacy"
-
-- title: "Terms of Use"
-  url: "terms"
-
 - title: "About"
   url: "about"
