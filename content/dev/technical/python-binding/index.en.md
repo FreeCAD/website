@@ -138,7 +138,7 @@ The basic structure of a program to expose functionality to Python is something 
 * convert the c++ result into Py object using routines like PyLong_AsLong(), Py::asObject(), etc,
 * return the Py object.
 
-There are two source files required to implement a new Python binding.  Assuming we wanted to expose some methods from https://github.com/FreeCAD/FreeCAD/blob/master/src/Mod/Part/TopoShape.cpp, we would need to make:
+There are two source files required to implement a new Python binding.  Assuming we wanted to expose some methods from https://github.com/FreeCAD/FreeCAD/blob/master/src/Mod/Part/App/TopoShape.cpp, we would need to make:
 * TopoShapePy.xml - definitions of the functions for be exposed in XML format.  This file is used to generate header files for our next file...
 * TopoShapePyImp.cpp - the actual C++ code that bridges from Python to C++.
 
@@ -154,8 +154,8 @@ There is a convention for return values from our C++/Python connections:
 
 ## See also
 
-* [A forum thread](https://forum.freecadweb.org/viewtopic.php?p##314796#p314617)
-* [Forum discussion: Adding Commands in Python to C++ Workbench](https://forum.freecadweb.org/viewtopic.php?p##560639#p560639)
-* [Another forum thread](https://forum.freecadweb.org/viewtopic.php?f##10&t##70750)
+* [A forum thread](https://forum.freecadweb.org/viewtopic.php?p=14796#p314617)
+* [Forum discussion: Adding Commands in Python to C++ Workbench](https://forum.freecadweb.org/viewtopic.php?p=560639#p560639)
+* [Another forum thread](https://forum.freecadweb.org/viewtopic.php?f=10&t=70750)
 * Workbench creation
 * [Commit 20b86e5, exposing OCC's precision methods to Python](https://github.com/FreeCAD/FreeCAD/commit/20b86e55b8dd1873f4c19e036d047528c9ff7f4e)

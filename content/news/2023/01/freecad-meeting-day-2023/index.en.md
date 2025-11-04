@@ -33,7 +33,7 @@ There are many restaurants with all kinds of food very close to the location, in
 
 **Travel grants**
 
-The FPA is offering travel grants to help FreeCAD developers and community members attend the FreeCAD meeting day and [FOSDEM 2023](https://fosdem.org/2023/). Be sure to check the [requirements](https://fpa.freecad.org/programs/FOSDEM_travel_grants.md) if you are interested in getting a grant.
+The FPA is offering travel grants to help FreeCAD developers and community members attend the FreeCAD meeting day and [FOSDEM 2023](https://fosdem.org/2023/). Be sure to check the [requirements](https://fpa.freecad.org/programs/fosdem-travel-grants) if you are interested in getting a grant.
 
 **Streaming and showcasing**
 

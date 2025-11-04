@@ -25,7 +25,7 @@ cover:
 | `author`                               | string \|list | "Me" \| ["Me","You"]     | To show multiple Authors                                                                  |
 | `images`                               | string        | "myimage.webp"            | Link or path of image for opengraph                                        |
 | `keywords`                             | list          | [blog, page]             | Add keywords for Home page                                                                |
-| `DateFormat`                           | string        | January 2, 2006        | The format of date strings in the website. [Details](https://gohugo.io/functions/format/) |
+| `DateFormat`                           | string        | January 2, 2006        | The format of date strings in the website. [Details](https://gohugo.io/methods/time/format/) |
 | `languageAltTitle`                     | string        | English                | Alternate title in Multilingual Mode                                                      |
 | `showReadingTime`                      | boolean       | true \| false            | To show read time in post meta                                                            |
 | `showShareButtons`                     | boolean       | true \| false            | To show/hide share buttons under post                                                     |
@@ -43,7 +43,7 @@ cover:
 
 | name        | type   | example                                    | Description                                                                                                                   |
 | ----------- | ------ | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| `copyright` | string | `**[example.site](https://example.site)**` | This is [HUGO's site variable](https://gohugo.io/variables/site/#site-variables-list), which can also render markdown content |
+| `copyright` | string | `**[example.site](https://example.site)**` | This is [HUGO's site variable](https://gohugo.io/methods/site/), which can also render markdown content |
 
 #### label
 

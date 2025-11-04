@@ -5,12 +5,12 @@ description: "How to build FreeCAD packages for the different supported platform
 
 ## Windows Installer
 
-The main entry point to build a Windows installer is within the FreeCAD sources, at https://github.com/FreeCAD/FreeCAD/tree/master/src/WindowsInstaller . To build the installer:
+The main entry point to build a Windows installer is within the FreeCAD sources. To build the installer:
 
 ### Creating a Windows installer for FreeCAD
 
 These are instructions for building an NSIS-based installer for FreeCAD. They were designed for FreeCAD 0.21 and later,
-and presume that you have cloned a copy of FreeCAD's source code, and therefore have the directory *src/WindowsInstaller*.
+and presume that you have cloned a copy of FreeCAD's source code.
 
 #### Install NSIS
 To set up your system for building an NSIS installer:
@@ -81,7 +81,7 @@ It is also possible to build a FreeCAD package for Windows with [conda](https://
 
 You will need:
 
-1. **Mambaforge** from [GitHub - conda-forge/miniforge: A conda-forge distribution.](https://github.com/conda-forge/miniforge#mambaforge)
+1. **Mambaforge** from [GitHub - conda-forge/miniforge: A conda-forge distribution.](https://github.com/conda-forge/miniforge)
 2. **7zip** from https://www.7-zip.org/
 
 To use the script:
@@ -110,7 +110,7 @@ The main structure used to gather FreeCAD and its dependencies and build appimag
 
 You will need:
 
-1. **Mambaforge** from https://github.com/conda-forge/miniforge#mambaforge
+1. **Mambaforge** from https://github.com/conda-forge/miniforge
 2. **appimagetool** from https://appimage.github.io/appimagetool/
 
 To use the script:

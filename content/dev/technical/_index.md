@@ -20,7 +20,7 @@ cover:
 
 - [Writing Code for Translation](translations)
 
-- [Automated Testing](automated_testing)
+- [Automated Testing](tests)
 
 - [Dealing with Property Changes](property-changes)
 

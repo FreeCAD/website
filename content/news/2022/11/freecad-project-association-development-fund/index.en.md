@@ -14,7 +14,7 @@ cover:
 
 The FPA development fund won't pay in a pile of coins. But you could always buy them yourself! (Image courtesy of [ViajeroExtraviado](https://commons.wikimedia.org/wiki/File:Monedas_Varias.jpg))
 
-The FreeCAD Project Association is pleased to announce the creation of the [FPA Development Fund](https://github.com/FreeCAD/FPA/blob/main/FPADF_Announcement.md) (FPADF). The FPADF offers grants to individuals for contributions to FreeCAD. Grants are currently capped at US$1000 and will be awarded only for work on the FreeCAD code base.
+The FreeCAD Project Association is pleased to announce the creation of the [FPA Development Fund](https://fpa.freecad.org/programs/fpadf-announcement) (FPADF). The FPADF offers grants to individuals for contributions to FreeCAD. Grants are currently capped at US$1000 and will be awarded only for work on the FreeCAD code base.
 
 Any contributor who wishes to be considered for a grant should submit a proposal in writing to the FPA. The proposal should state clearly how much money is requested and what the contributor intends to create/improve/fix. An estimated timeline with major milestones should be included along with clear completion criteria.
 

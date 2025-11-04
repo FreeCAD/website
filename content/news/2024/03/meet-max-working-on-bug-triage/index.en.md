@@ -18,7 +18,7 @@ Having got to grips with using FreeCAD, excellently Max became interested in con
 
 When the [FPA announced the grant allocation for the bug triage role](https://forum.freecad.org/viewtopic.php?style=4&t=84689) Max was the successful applicant and he has now completed his first month delivering this work. As a recap the role is centred around managing the GitHub [FreeCAD bug tracker](https://github.com/FreeCAD/FreeCAD-homepage/issues) . The role places emphasis on various related activities such as, checking new bug submissions for relevance and/or duplication. Another task is to rephrase issues raised to make them addressable points so that required action is clearly identifiable. Max also acts as a facilitator between issue authors, seeking clarifications and further information, to feed to the relevant maintainers and developers.
 
-As part of his first month of activities Max has now produced his first report [available to view here](https://github.com/FreeCAD/FPA/blob/main/reports/BugTracker/mxwxyz_report.md). The report begins with some context and some statistics for the month. It's a really easy straightforward read and obvious to see the quality work Max has done.
+As part of his first month of activities Max has now produced his first report [available to view here](https://github.com/FreeCAD/FPA/blob/main/reports/BugTracker/maxwxyz_report.md). The report begins with some context and some statistics for the month. It's a really easy straightforward read and obvious to see the quality work Max has done.
 
 ![Current stats this month](current_stats_this_month.png "Current stats this month")
 

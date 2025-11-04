@@ -28,7 +28,7 @@ Follow [Quick Start](https://gohugo.io/getting-started/quick-start/) guide to se
 
 Make sure you install latest version of **`hugo`**.
 
-After you have created a new site, at [Step 3](https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme) follow the steps:
+After you have created a new site, at [Step 3](https://gohugo.io/getting-started/quick-start) follow the steps:
 
 ### Method 1
 
@@ -48,10 +48,6 @@ git clone https://github.com/FreeCAD/FreeCAD-website PATH_TO_YOUR_LOCAL_GIT_DIRE
 ### Method 2
 
 Or you can Download as Zip from Github Page and extract in your themes directory
-
-Direct Links:
-
--   [Main Branch (Latest)](https://github.com/FreeCAD/FreeCAD-website/archive/master.zip)
 
 ### Finally ...
 
@@ -82,22 +78,6 @@ module:
 ```
 hugo mod get -u
 ```
-
----
-
-## Quick Links
-
--   ### [FC Theme - Features](../features)
-
--   ### [FC Theme- FAQs](../faq)
-
--   ### [FC Theme - Variables](../variables)
-
--   ### [FC Theme - Icons](../icons)
-
--   ### [ChangeLog](https://github.com/FreeCAD/FreeCAD-website/releases)
-
----
 
 ## Sample `config.yml`
 

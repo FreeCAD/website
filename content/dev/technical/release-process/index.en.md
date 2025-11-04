@@ -13,5 +13,5 @@ Between major releases, bugs are occasionally found and repaired. These fixes ma
 
 Major and minor releases have slightly different processes.
 
-- [Major Releases](../majorrelease)
-- [Minor Releases](../minorrelease)
+- [Major Releases](../major-release)
+- [Minor Releases](../minor-release)

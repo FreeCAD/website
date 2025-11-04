@@ -57,7 +57,7 @@ or set `HUGO_ENV` as "production" in system env-vars
 
 Read about How Subresource Integrity helps: [Subresource_Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)
 
-Why was the `asset` not loading ? : [How_browsers_handle_Subresource_Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity#How_browsers_handle_Subresource_Integrity)
+Why was the `asset` not loading ? : [How_browsers_handle_Subresource_Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity#how_browsers_handle_subresource_integrity)
 
 **Solution:**
 
