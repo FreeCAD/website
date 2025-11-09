@@ -1,0 +1,31 @@
+{{- /* Column Shortcode:
+
+  - Useful when nested in a box shortcode to clearly separate content in columns.
+  - Optional custom CSS styles and Markdown title.
+  - Support content via argument "content" or inner content.
+*/ -}}
+
+{{- $content := .InnerDeindent | default (cond (.IsNamedParams) (.Get "content") (.Get 0)) | default "No content provided" | strings.TrimSpace -}}
+{{- $title := cond (.IsNamedParams) (.Get "title") (.Get 1) | replaceRE "^#+\\s*" "" -}}
+{{- $url := cond (.IsNamedParams) (.Get "url") (.Get 2) -}}
+{{- $isExternal := and (strings.HasPrefix $url "http") (not (strings.HasPrefix $url site.BaseURL)) -}}
+{{- $columnStyle := cond (.IsNamedParams) (.Get "style") (.Get 3) -}}
+
+<section class="column"
+  {{ with $columnStyle }}style="{{ . | safeCSS }}"{{ end }}>
+  {{- with $content -}}
+    {{- with $url -}}
+      <a class="column-link" href="{{ . }}"
+        {{- with $title -}}
+          title="{{ . | $.Page.RenderString | plainify | htmlEscape }}"
+        {{- end -}}
+        {{- if $isExternal -}}
+          target="_blank" rel="external noreferrer"
+        {{- end -}}>
+    {{- end -}}
+    {{- . | $.Page.RenderString -}}
+    {{- with $url -}}
+      </a>
+    {{- end -}}
+  {{- end -}}
+</section>

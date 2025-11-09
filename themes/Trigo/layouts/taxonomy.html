@@ -1,0 +1,48 @@
+{{- /* Taxonomy:
+
+  - Set header with list of Terms for current Taxonomy.
+*/ -}}
+
+{{- define "main" -}}
+
+{{- $description := .Description | .RenderString -}}
+{{- $type := .Type -}}
+{{- $terms := .Data.Terms.Alphabetical -}}
+
+<header>
+
+  <h1 class="title">
+    {{- partial "utils/icon.html" (lower .Title) -}}
+    {{ .Title | .RenderString }}
+  </h1>
+
+  {{- with .Description -}}
+    <h3 class="description">{{ . | $.RenderString }}</h3>
+  {{- end -}}
+
+  {{- with $terms -}}
+    <ul class="terms">
+      {{- range . -}}
+        {{- $name := .Name -}}
+        {{- $count := .Count -}}
+        {{- with site.GetPage (printf "/%s/%s" $type $name) -}}
+          <a href="{{ .RelPermalink }}">
+            {{ .LinkTitle }} ({{ $count }})
+          </a>
+        {{- end -}}
+      {{- end -}}
+    </ul>
+
+  {{- else -}}
+    {{- i18n "noterms" | default (printf "No %s found." $type) -}}
+  {{- end -}}
+
+  {{- /* Get news section hero cover image. */ -}}
+  {{- with site.GetPage "news" -}}
+    {{- partial "cover/hero.html" . -}}
+  {{- end -}}
+
+</header>
+
+{{- end -}}
+{{- /* End main. */ -}}

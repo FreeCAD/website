@@ -1,0 +1,65 @@
+{{- /* Archives:
+
+  - Get current Section RegularPages with fallback to default Site.
+  - List grouped by year then month.
+*/ -}}
+
+{{- define "main" -}}
+
+<section class="archives">
+
+  <header>
+    <h1 class="title">{{ .Title | .RenderString }}</h1>
+
+    {{- with .Description -}}
+      <h3 class="description">{{ . | $.RenderString }}</h3>
+    {{- end -}}
+  </header>
+
+  {{- /* Get current Section or fallback to default language Site if missing. */ -}}
+  {{- $section := .CurrentSection -}}
+  {{- $pages := $section.RegularPages | lang.Merge (where site.Sites.Default.RegularPages "CurrentSection.Path" "eq" $section.Path) -}}
+
+  {{- /* Group pages by year and then by month. */ -}}
+  {{- range $year := $pages.GroupByPublishDate "2006" -}}
+    {{- if ne $year .Key "0001" -}}
+      <div class="archive-year">
+        <h2 class="archive-year-header">{{ $year.Key }} ({{ len $year.Pages -}})</h2>
+
+        {{- range $month := $year.Pages.GroupByDate "January" -}}
+          <div class="archive-month">
+            <h3 class="archive-month-header">{{ $month.Key }} ({{- len $month.Pages -}})</h3>
+            <div class="archive-month-list">
+
+              {{- range $month.Pages -}}
+                <article class="archive-entry">
+                  <a href="{{ .Permalink }}"
+                    alt="{{ .Title | plainify }}"
+                    aria-label="{{ .Title | plainify }}"
+                    title="{{ .Title | plainify }}">
+                    <h4 class="archive-entry-title">
+                      {{ .Title | .RenderString }}
+                      {{- if .Draft -}}
+                        <sup>
+                          <span class="entry-isdraft">[{{- i18n "draft" | default "Draft" -}}]</span>
+                        </sup>
+                      {{- end -}}
+                    </h4>
+                  </a>
+                  {{- /* Get article metadata. */ -}}
+                  {{- partial "header/meta.html" . -}}
+                </article>
+              {{- end -}}
+
+            </div>
+          </div>
+        {{- end -}}
+
+      </div>
+    {{- end -}}
+  {{- end -}}
+
+</section>
+
+{{- end -}}
+{{- /* End main. */ -}}

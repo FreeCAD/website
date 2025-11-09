@@ -1,0 +1,51 @@
+{{- /* Term:
+
+  - List RegularPages for current Term.
+*/ -}}
+
+{{- define "main" -}}
+
+{{- /* Get pages from current Section. */ -}}
+{{- $pages := .RegularPages -}}
+
+{{- /* Get pages from default language Site for this Term. */ -}}
+{{- $defaultTerm := index (index site.Sites.Default.Taxonomies .Data.Plural) .Data.Term -}}
+
+{{- /* Merge current language Term pages and default language Site fallback. */ -}}
+{{- $fallbackPages := slice -}}
+{{- if $defaultTerm -}}
+  {{- range $p := $defaultTerm.Pages -}}
+    {{- if not (in $pages $p.Translations) -}}
+      {{- $fallbackPages = $fallbackPages | append $p -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $pages = sort (union $pages $fallbackPages) "Date" "desc" -}}
+{{- $count := len $pages -}}
+
+<header>
+  {{- /* List categories. */ -}}
+  {{- partial "header/categories.html" . -}}
+
+  <h1 class="title">
+    {{- partial "utils/icon.html" (lower .Data.Plural) -}}
+    {{ .Data.Singular | title }}: {{ .Title | .RenderString }} ({{ $count }})
+  </h1>
+
+  {{- with .Description -}}
+    <h3 class="description">{{ . | $.RenderString }}</h3>
+  {{- end -}}
+
+  {{- /* Get news Section hero cover image. */ -}}
+  {{- with site.GetPage "news" -}}
+    {{- partial "cover/hero.html" . -}}
+  {{- end -}}
+
+</header>
+
+{{- /* List RegularPages for Term. */ -}}
+{{- partial "list/paginator.html" (dict "pages" $pages "context" .) -}}
+
+{{- end -}}
+{{- /* End main. */ -}}

@@ -1,0 +1,29 @@
+{{- /* Leaf shortcode:
+
+@param {string} name The name of the leaf.
+@param {string} type The type of the leaf, i.e. standalone element (not collapsible):
+file, body, feature, sketch, item, element, leaf, commit. Default is file.
+@param {string} style The CSS style of the leaf.
+
+@example {{< tree name="_index.md" type="file" style="color: red;" >}}
+*/ -}}
+
+{{- $name := cond (.IsNamedParams) (.Get "name") (.Get 0) | default "file" -}}
+{{- $type := cond (.IsNamedParams) (.Get "type") (.Get 1) | default "file" -}}
+{{- $style := cond (.IsNamedParams) (.Get "style") (.Get 2) | safeCSS -}}
+{{- $leaf := slice "file" "body" "feature" "sketch" "item" "element" "leaf" "commit" -}}
+{{- if not (in $leaf $type) -}}
+  {{- $type = "file" -}}
+{{- end -}}
+
+<li>
+  <span
+    class="leaf"
+    tabindex="0"
+    {{ with $style }}style="{{ . }}"{{ end }}>
+    <span>
+      {{- partial "utils/icon.html" $type -}}
+    </span>
+    {{- $name | $.Page.RenderString -}}
+  </span>
+</li>

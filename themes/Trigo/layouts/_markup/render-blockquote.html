@@ -1,0 +1,38 @@
+{{- /* Custom rendering for blockquotes:
+
+  - Add citation and caption attributes.
+  - Add alert callouts.
+  - Add icons for quote and alerts.
+*/ -}}
+
+{{- $text := .Text | safeHTML -}}
+
+{{- if eq .Type "alert" -}}
+  {{- $type := .AlertType -}}
+  <blockquote class="alert-{{ $type }}">
+    <span>
+      {{- partial "utils/icon.html" $type -}}
+    </span>
+    {{- with .AlertTitle -}}
+      {{ . }}
+    {{- else -}}
+      {{ or (i18n $type) (title $type) }}
+    {{- end -}}
+    {{ $text }}
+  </blockquote>
+
+{{- else -}}
+  <figure>
+    <blockquote {{- with .Attributes.cite -}}cite="{{ . }}"{{- end -}}>
+      <span>
+        {{- partial "utils/icon.html" "quote" -}}
+      </span>
+      {{ $text }}
+    </blockquote>
+    {{- with .Attributes.caption -}}
+      <figcaption class="blockquote-caption">
+        {{ . | safeHTML }}
+      </figcaption>
+    {{- end -}}
+  </figure>
+{{- end -}}

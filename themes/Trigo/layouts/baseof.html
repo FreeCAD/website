@@ -1,0 +1,46 @@
+{{- /* Base template:
+
+  - Define common structural HTML components.
+  - Get head, header and footer partials.
+  - Set main block to be used by other templates.
+*/ -}}
+
+{{- $classes := slice
+    (cond (eq .BundleType "branch") "list" (cond (eq .BundleType "leaf") "single" "unknown-BundleType"))
+    (cond (eq site.Params.defaultChroma "dark") "dark" "")
+    (printf "type-%s" .Type)
+    (printf "kind-%s" .Kind)
+    (cond .Layout (printf "layout-%s" .Layout) "")
+  | uniq -}}
+
+<!DOCTYPE html>
+<html lang="{{ .Params.language | default .Language.Lang | safeHTMLAttr }}"
+  dir="{{ .Language.LanguageDirection | default "auto" }}">
+
+  {{- /* Get site head. */ -}}
+  {{- partial "head/site_head.html" . -}}
+
+  <body class="{{ delimit $classes " " }}" id="top">
+
+    {{- /* Notice for old browser, e.g. IE. */ -}}
+    {{- partial "utils/unsupported_browser.html" . -}}
+
+    {{- /* Get site top banner header. */ -}}
+    {{- partial "header/site_banner.html" . -}}
+
+    {{- /* Debug info for current page. */ -}}
+    {{- if not hugo.IsProduction -}}
+      {{- partial "utils/debug.html" . -}}
+    {{- end -}}
+
+    <main class="{{ .Kind }}" role="main">
+      {{- block "main" . -}}
+      {{- end -}}
+    </main>
+
+    {{- /* Get site bottom footer. */ -}}
+    {{- partial "footer/site_footer.html" . -}}
+
+  </body>
+
+</html>

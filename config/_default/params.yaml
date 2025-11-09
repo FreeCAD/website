@@ -1,4 +1,4 @@
-# FC Theme parameters
+# Trigo Theme parameters
 
 env: production # Enables google analytics, opengraph and schema.
 
@@ -63,6 +63,7 @@ assets:
     - css/footer.css
     - css/header.css
     - css/main.css
+    - css/shortcodes.css
     - css/toot.css
     - css/gallery.css
     - css/terms.css

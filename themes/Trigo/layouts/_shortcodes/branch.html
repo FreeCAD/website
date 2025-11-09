@@ -1,0 +1,49 @@
+{{- /* Branch shortcode:
+
+@param {string} name The name of the branch.
+@param {string} type The type of the branch, i.e. container for nesting (can be opened and closed):
+folder, document, container, group, part, assembly, arrow, branch, fork, merge. Default is folder.
+@param {string} state The state of the branch, open or closed. Default is open.
+@param {string} style The CSS style of the branch.
+
+@example {{< branch name="docs" type="folder" state="closed" style="color: red;" >}}
+*/ -}}
+
+{{- $name := cond (.IsNamedParams) (.Get "name") (.Get 0) | default "folder" -}}
+{{- $type := cond (.IsNamedParams) (.Get "type") (.Get 1) | default "folder" -}}
+{{- $state := cond (.IsNamedParams) (.Get "state") (.Get 2) | default "open" -}}
+{{- $style := cond (.IsNamedParams) (.Get "style") (.Get 3) | safeCSS -}}
+{{- $branch := slice "folder" "document" "container" "group" "part" "assembly" "arrow" "branch" "fork" "merge" -}}
+{{- if not (in $branch $type) -}}
+  {{- $type = "folder" -}}
+{{- end -}}
+{{- $isRoot := not .Parent -}}
+
+{{- if $isRoot -}}
+  <ul class="tree">
+{{- end -}}
+
+<li>
+  <span
+    class="branch"
+    data-state="{{ $state }}"
+    tabindex="0"
+    {{ with $style }}style="{{ . }}"{{ end }}>
+    <span class="branch-open">
+      {{- partial "utils/icon.html" (printf "%s-open" $type) -}}
+    </span>
+    <span class="branch-closed">
+      {{- partial "utils/icon.html" (printf "%s" $type) -}}
+    </span>
+    {{- $name | $.Page.RenderString -}}
+  </span>
+  {{- with .InnerDeindent -}}
+    <ul>
+      {{ . }}
+    </ul>
+  {{- end -}}
+</li>
+
+{{- if $isRoot -}}
+  </ul>
+{{- end -}}

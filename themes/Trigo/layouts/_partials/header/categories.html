@@ -1,0 +1,31 @@
+{{- /* Categories taxonomy list:
+
+  - Get categories Term pages from the default language Site.
+  - List Term pages with respective number.
+  - Add active class to current Term.
+*/ -}}
+
+<ul class="categories-list">
+  {{- $pageCategories := or .Params.categories (slice) -}}
+  {{- range site.Sites.Default.Taxonomies.categories -}}
+    {{- $term := .Page -}}
+    {{- $isActive := false -}}
+
+    {{- if eq $.Kind "term" -}}
+      {{- if eq $.Title $term.Title -}}
+        {{- $isActive = true -}}
+      {{- end -}}
+    {{- else if in $pageCategories (lower $term.Title) -}}
+      {{- $isActive = true -}}
+    {{- end -}}
+
+    <li>
+      <a href="{{ $term.RelPermalink }}"
+        class="{{- if $isActive -}}menu-active{{- end -}}">
+        <span>
+        {{ $term.LinkTitle }} ({{ len $term.Pages }})
+        </span>
+      </a>
+    </li>
+  {{- end -}}
+</ul>

@@ -1,0 +1,147 @@
+{{- /* Site Banner:
+
+  - Logo and Site Title.
+  - Navigation menu, horizontal list on desktop, dropdown hamburger on mobile.
+  - Languages dropdown.
+  - Theme chroma toggle.
+*/ -}}
+
+{{- $logo := resources.Get site.Params.logo -}}
+{{- $logoType := $logo.MediaType.SubType -}}
+{{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
+{{- $logoText := site.Title | .RenderString -}}
+{{- $menuMain := site.Menus.main | default site.Sites.Default.Menus.main -}}
+{{- $pageLang := .Page.Lang -}}
+
+<header class="site-header" role="banner">
+
+  <div class="logo">
+    <a href="{{ "" | relLangURL }}"
+      {{- if .IsHome -}}class="active"{{- end -}}
+      accesskey="h"
+      title="{{ $logoText }} {{ i18n "home" | default "Home" }} (Alt + H)"
+      aria-label="{{ $logoText }} {{ i18n "home" | default "Home" }}">
+
+      {{- with $logo -}}
+        {{- if in $processableFormats $logoType -}}
+          {{- $logo = $logo.Resize "x32" -}}
+          <img src="{{ $logo.RelPermalink }}"
+            alt="LOGO"
+            aria-label="logo">
+        {{- else if eq $logoType "svg" -}}
+          {{- .Content | safeHTML -}}
+        {{- else -}}
+          {{- $logoText | plainify -}}
+          {{- errorf "Unsupported logo format: %s" $logoType -}}
+        {{- end -}}
+
+      {{- else -}}
+        {{- $logoText | plainify -}}
+        {{- errorf "Unable to get logo file" -}}
+      {{- end -}}
+    </a>
+  </div>
+
+  <div class="site-nav">
+    <nav class="menu">
+      <button popovertarget="menu-list"
+        popovertargetaction="toggle"
+        class="menu-toggle"
+        title="{{ i18n "menu" | default "Menu" }}"
+        aria-label="{{ i18n "menu" | default "Menu" }}">
+        <span class="hamburger">☰</span>
+        <span class="cross">✕</span>
+      </button>
+
+      <ul popover id="menu-list" class="menu-list">
+        {{- range $menuMain -}}
+          {{- $classes := slice -}}
+          {{- with .Params.style -}}
+            {{- $classes = $classes | append . -}}
+          {{- end -}}
+          {{- $sectionKey := trim (.URL | relURL) "/" | lower -}}
+          {{- $isActive := false -}}
+          {{- if strings.HasPrefix $.RelPermalink .URL -}}
+            {{- $isActive = true -}}
+          {{- else if strings.HasSuffix $sectionKey "news" -}}
+            {{- if and
+              (or (eq $.Kind "term")
+              (eq $.Kind "taxonomy"))
+              (or (eq $.Type "categories")
+              (eq $.Type "tags")
+              (eq $.Type "series")) -}}
+              {{- $isActive = true -}}
+            {{- end -}}
+          {{- end -}}
+          {{- if $isActive -}}
+            {{- $classes = $classes | append "menu-active" -}}
+          {{- end -}}
+
+          <li>
+              <a href="{{ .URL }}"
+                title="{{ .Title | default .Name | plainify }}"
+                aria-label="{{ .Title | default .Name | plainify }}"
+                class="{{ delimit $classes " " }}"
+                {{- if $isActive -}}
+                  aria-current="page"
+                {{- end -}}>
+                <span>
+                  {{ .Title | $.Page.RenderString }}
+                </span>
+              </a>
+          </li>
+        {{- end -}}
+      </ul>
+    </nav>
+
+    {{- if hugo.IsMultilingual -}}
+    <div class="language-dropdown">
+      <button popovertarget="lang-list"
+        popovertargetaction="toggle"
+        class="lang-toggle"
+        accesskey="l"
+        title="{{ i18n "choose_language" | default "Choose language" }} (Alt + L)"
+        aria-label="{{ i18n "choose_language" | default "Choose language" }} (Alt + L)">
+        {{- partial "utils/icon.html" "language" -}}
+      </button>
+
+      <ul popover id="lang-list" class="language-list">
+        {{- range .Page.AllTranslations -}}
+          {{- $translation := . -}}
+          {{- range sort site.Languages "Weight" "asc" -}}
+            {{- if eq $translation.Lang .Lang -}}
+              {{- if eq $pageLang .Lang -}}
+                <li>
+                  <a class="language-active" href="{{ $translation.RelPermalink }}">
+                    {{ .LanguageName }} {{ .Params.languageFlag }}
+                  </a>
+                </li>
+              {{- else -}}
+                <li>
+                  <a class="language-not-active" href="{{ $translation.RelPermalink }}">
+                    {{ .LanguageName }} {{ .Params.languageFlag }}
+                  </a>
+                </li>
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      </ul>
+    </div>
+    {{- end -}}
+
+    <div class="chroma-toggle">
+      <button id="chroma-toggle"
+        accesskey="t"
+        title="{{ i18n "toggle_theme" | default "Switch theme chroma" }} (Alt + T)"
+        aria-label="{{ i18n "toggle_theme" | default "Switch theme chroma" }}">
+        <span id="dark">
+          {{- partial "utils/icon.html" "moon" -}}
+        </span>
+        <span id="light">
+          {{- partial "utils/icon.html" "sun" -}}
+        </span>
+      </button>
+    </div>
+  </div>
+</header>

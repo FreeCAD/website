@@ -1,0 +1,203 @@
+/* This CSS stylesheet defines the style of the site header (navigation menu) */
+
+
+.site-header {
+  background: var(--header);
+  height: var(--header-height);
+  margin: auto;
+  padding: 0 calc((100vw - var(--width)) * 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.site-header,
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.logo,
+.menu-list,
+.language-dropdown,
+.chroma-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.logo a {
+  color: var(--secondary);
+}
+
+.logo :is(img, svg) {
+  float: inline-start;
+  height: 2rem;
+  margin-inline-end: var(--gap);
+}
+
+.logo .active {
+  color: var(--primary);
+}
+
+.logo:hover :is(a, img, svg) {
+  color: var(--link-hover-color);
+}
+
+.menu-toggle,
+.lang-toggle,
+#chroma-toggle {
+  padding: 0.25rem;
+  color: var(--tertiary);
+}
+
+:is(.menu-toggle, .lang-toggle, #chroma-toggle):hover  {
+  color: var(--link-hover-color);
+}
+
+:is(.lang-toggle, #chroma-toggle) svg {
+  height: 1.5rem;
+}
+
+body.dark #dark {
+  display: none;
+}
+
+body:not(.dark) #light {
+  display: none;
+}
+
+/* Menu in non-media mode */
+
+.menu-toggle {
+  font-size: var(--l);
+  display: block;
+  width: 2rem;
+}
+
+.menu:has(#menu-list:popover-open) .hamburger {
+  display: none;
+}
+
+.menu .cross {
+  display: none;
+}
+
+.menu:has(#menu-list:popover-open) .cross {
+  display: block;
+}
+
+.menu-list {
+  position: sticky;
+  word-break: keep-all;
+  white-space: nowrap;
+  gap: var(--gap);
+  border: none;
+  background: none;
+}
+
+.menu-list li {
+  margin: 0;
+}
+
+.menu-list a {
+  font-size: var(--m);
+  color: var(--secondary);
+}
+
+.menu-list a:hover {
+  color: var(--link-hover-color);
+}
+
+.menu-active:not(.button) span {
+  font-weight: 700;
+  text-decoration: var(--underline);
+}
+
+.menu-active:not(.button):hover span {
+  color: var(--link-hover-color);
+}
+
+.menu-list .button {
+  padding: var(--padding);
+  line-height: 2.5;
+  box-shadow: none;
+  color: var(--cover);
+  background: var(--link-color);
+  border-radius: var(--radius);
+  box-shadow: none;
+  transition: none;
+}
+
+.menu-list :is(.button, .button.menu-active):hover {
+  color: var(--cover);
+  background: var(--link-hover-color);
+  box-shadow: none;
+}
+
+.button.menu-active  {
+  color: var(--cover);
+  background: black;
+}
+
+/* Languages and Menu in media mode */
+
+#lang-list {
+  display: none;
+  inset: 0;
+}
+
+:is(#menu-list, #lang-list):popover-open {
+  position: fixed;
+  display: flex;
+  inset: auto;
+  flex-direction: column;
+  min-width: 15rem;
+  max-height: calc(100vh - (var(--header-height) + (var(--gap) * 4)));
+  top: calc(var(--header-height) + var(--gap));
+  right: calc((100vw - var(--width)) * 0.5);
+  text-align: center;
+  background: var(--theme);
+  border: none;
+  border-radius: var(--radius);
+  padding: var(--gap);
+  color: var(--tertiary);
+}
+
+:is(#menu-list:popover-open, #lang-list:popover-open)::backdrop {
+  background: linear-gradient(transparent, transparent var(--header-height), var(--backdrop) var(--header-height), var(--backdrop));
+}
+
+.language-list {
+  list-style: none;
+}
+
+.language-list li a {
+  text-align: center;
+  margin: 0.5rem;
+  padding: 0;
+  display: inline-block;
+}
+
+.language-list li .language-active {
+  margin: 0.5rem;
+  padding: 0;
+  color: var(--primary);
+  text-decoration: var(--underline);
+  font-weight: 700;
+}
+
+.language-list li .language-active:hover {
+  color: var(--link-hover-color);
+}
+
+.language-list li .language-not-active {
+  color: var(--tertiary);
+}
+
+.language-list li .language-not-active:hover {
+  color: var(--link-hover-color);
+}

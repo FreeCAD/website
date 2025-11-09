@@ -185,7 +185,7 @@ Hugo [Lookup order](https://gohugo.io/templates/lookup-order/) and [Union file s
 
 - `static`: global static resources used throughout the website. This includes favicons and fonts.
 
-- `theme`: [Theme](#theme) files with its specific templates actions, layouts, assets and translation tables. It is currently called `FC` Theme.
+- `theme`: [Theme](#theme) files with its specific templates actions, layouts, assets and translation tables. It is currently called `Trigo` Theme.
 
 ## Guidelines
 
@@ -212,7 +212,7 @@ Please avoid adding links to images (e.g. `[![alt](img.webp)](link)`) as the Mar
 
 Currently, only static images (no animations) are used. A minimum width of about 2000 pixels is recommended. The WebP graphics file format is recommended as well. AVIF is currently not supported.
 
-Template actions in the FC Theme resize and crop images at build time depending on their use. The Content Management System also resize uploaded images at the correct resolution. That means content contributors only need to add one WebP file about 2000px wide.
+Template actions in the Trigo Theme resize and crop images at build time depending on their use. The Content Management System also resize uploaded images at the correct resolution. That means content contributors only need to add one WebP file about 2000px wide.
 
 ### Releases
 
@@ -251,7 +251,7 @@ Current supported languages are defined in the general site configuration `confi
 
 Translations of the content are stored in the same folder ([leaf bundle](https://gohugo.io/content-management/page-bundles/) method) as the default language file (English) using a [translation by file name](https://gohugo.io/content-management/multilingual/#translate-your-content) approach.
 
-Translations of the theme are handled by translations tables in `themes/FC/i18n`.
+Translations of the theme are handled by translations tables in `themes/Trigo/i18n`.
 
 Before a new language is enabled, the main navigation pages (Homepage, features, download, news, community, documentation, contribute and donate) and the theme strings have to be translated. If willing to add a new language, please use the provided repository issue template indicating who will translate and who will proofread.
 
@@ -262,7 +262,7 @@ Before a new language is enabled, the main navigation pages (Homepage, features,
 
 A server-less Content Management System is available to manage content easily. It is based on the [Sveltia CMS](https://github.com/sveltia/sveltia-cms) project. It's a single JavaScript that interacts with the Git repository of the website. It can be used locally on supported web browsers (currently only Chromium-based) or via GitHub login. Pages, translations and resources such as illustrations can be added, edited or deleted directly from the content panel of available collections.
 
-Configuration for the CMS is defined in `themes/FC/data/cms_config.yaml`.
+Configuration for the CMS is defined in `themes/Trigo/data/cms_config.yaml`.
 
 ### Archetypes
 
@@ -280,9 +280,9 @@ Some fields in the Front Matter or page content will be pre-filled or pre-popula
 ## Theme
 
 > [!NOTE]
-> The FC Theme is work-in-progress and its structure and methods may change in the near future. The code is also pretty messy and YOLO. It will gradually be cleaned up, simplified and refactored so it can _live more than once_... More documentation will be added later as well.
+> The Trigo Theme is work-in-progress and its structure and methods may change in the near future. The code is also pretty messy and YOLO. It will gradually be cleaned up, simplified and refactored so it can _live more than once_... More documentation will be added later as well.
 
-Currently the FC Theme is used. It is included directly in the `themes/FC` folder. Read its [own documentation](themes/FC/README.md) to find out more.
+Currently the Trigo Theme is used. It is included directly in the `themes/Trigo` folder. Read its [own documentation](themes/Trigo/README.md) to find out more.
 
 ## Resources
 
@@ -311,4 +311,4 @@ The trademark of FreeCAD branded resources (e.g. FreeCAD logo) is registered and
 
 ### Theme
 
-The `FC` Theme folder is licensed under the [MIT License](https://github.com/marcuspollio/FreeCAD-website/blob/testing/themes/FC/LICENSE "Read the license text").
+The `Trigo` Theme folder is licensed under the [MIT License](https://github.com/marcuspollio/FreeCAD-website/blob/testing/themes/Trigo/LICENSE "Read the license text").

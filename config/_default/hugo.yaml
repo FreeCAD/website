@@ -5,7 +5,7 @@ title: "FreeCAD"
 
 defaultContentLanguage: en
 
-theme: FC
+theme: Trigo
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
@@ -60,7 +60,7 @@ markup:
         superscript:
           enable: true
   highlight:
-    style: dracula # NOTE: Currently overriden by FC/assets/css/highlight.css, keep this setting for now
+    style: dracula # NOTE: Currently overriden by Trigo/assets/css/highlight.css, keep this setting for now
     lineNos: false
     noClasses: false
   tableOfContents:

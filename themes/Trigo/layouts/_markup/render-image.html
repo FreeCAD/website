@@ -1,0 +1,105 @@
+{{- /* Render images or videos from local or remote sources:
+
+  - Resize local images and builds responsive set.
+  - Add popover lightbox.
+*/ -}}
+
+{{- $url := urls.Parse .Destination -}}
+{{- $sizes := slice 500 1000 -}}
+{{- $format := "webp" -}}
+{{- $id := printf "img-%s" (delimit (shuffle (seq 1 9)) "") -}}
+{{- $alt := or .PlainText .Text .Title (i18n "image_fallback" | default "Image") -}}
+{{- $title := or .Title .PlainText | plainify -}}
+{{- $video_fallback := i18n "video_fallback" | default "A video should have been here, but your browser does not support it." -}}
+{{- $zoom := i18n "zoom" | default "Zoom image" -}}
+{{- $close := i18n "close" | default "Close image viewer" -}}
+
+{{- if $url.Scheme -}}
+  {{- /* Remote image. */ -}}
+  {{- with try (resources.GetRemote .Destination) -}}
+    {{- with .Err -}}
+      {{- errorf "%s" . -}}
+    {{- else with .Value -}}
+      <figure>
+        <img loading="lazy"
+          src="{{ .RelPermalink | safeURL }}"
+          {{- with $alt -}} alt="{{ . }}" title="{{ . }}"{{- end -}}>
+        {{- with $title -}}
+          <figcaption>
+            {{ . }}
+          </figcaption>
+        {{- end -}}
+      </figure>
+    {{- end -}}
+  {{- else -}}
+    {{- errorf "Unable to get remote resource %q" .Destination -}}
+  {{- end -}}
+{{- else -}}
+
+  {{- /* Local (bundled/static) image or video. */ -}}
+  {{- $img := .Page.Resources.GetMatch .Destination | default (resources.Get .Destination) -}}
+
+  {{- if $img -}}
+    {{- if eq $img.MediaType.MainType "video" -}}
+      <figure>
+        <video class="video-shortcode" preload="metadata" controls>
+          <source src="{{ $img.RelPermalink | safeURL }}">
+          {{ $video_fallback }}
+        </video>
+      </figure>
+
+    {{- else if not (in (slice "jpeg" "jpg" "png" "webp" "gif") $img.MediaType.SubType) -}}
+      {{- /* SVG, AVIF, TIFF, BMP, ICO cannot be resized or processed. */ -}}
+        <figure>
+          <img loading="lazy"
+            src="{{ $img.RelPermalink | safeURL }}"
+            {{- with $alt -}} alt="{{ . }}" title="{{ . }}"{{- end -}}>
+          {{- with $title -}}
+            <figcaption>
+              {{ . }}
+            </figcaption>
+          {{- end -}}
+        </figure>
+
+    {{- else -}}
+      {{- /* Responsive image with popover. */ -}}
+      <figure>
+        <button aria-label="{{ $zoom }}" popovertarget="{{ $id }}">
+          <img loading="lazy"
+            srcset="
+              {{- range $imgSize := $sizes -}}
+                {{- if ge $img.Width $imgSize -}}
+                  {{ printf "%s %dw, " (($img.Resize (printf "%dx %s" $imgSize $format)).RelPermalink | safeURL) $imgSize }}
+                {{- end -}}
+              {{- end -}}"
+            sizes="
+              (max-width: {{ index $sizes 0 }}px) {{ index $sizes 0 }}px,
+              {{ index $sizes 1 }}px"
+            src="{{ $img.RelPermalink | safeURL }}"
+            width="{{ $img.Width }}"
+            height="{{ $img.Height }}"
+            {{- with $alt -}} alt="{{ . }}" title="{{ . }}"{{- end -}}>
+        </button>
+        {{- with $title -}}
+          <figcaption>
+            {{ . }}
+          </figcaption>
+        {{- end -}}
+
+        <div id="{{ $id }}" popover>
+          <img loading="lazy"
+            src="{{ $img.RelPermalink | safeURL }}"
+            {{- with $alt -}} alt="{{ . }}" title="{{ . }}"{{- end -}}>
+          <button class="close"
+            popovertarget="{{ $id }}"
+            popovertargetaction="hide"
+            aria-label="{{ $close }}">
+            ✕
+          </button>
+        </div>
+      </figure>
+    {{- end -}}
+  {{- else -}}
+    {{- warnf "No image found for %q in page %q" .Destination .Page.File -}}
+  {{- end -}}
+{{- end -}}

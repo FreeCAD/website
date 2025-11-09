@@ -1,0 +1,199 @@
+/* Shortcodes stylesheet. */
+
+
+/* Box and column shortcodes */
+
+.box {
+  padding: calc(var(--gap) * 2);
+}
+
+.content > .box {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.content > :is(:first-child, .box + *):not(.box) {
+  margin-top: calc(var(--gap) * 2);
+}
+
+.content > :is(:last-child, :has(+ .box)):not(.box) {
+  margin-bottom: calc(var(--gap) * 2);
+}
+
+.box-title {
+  text-align: center;
+  max-width: var(--width);
+  margin: auto;
+}
+
+.box-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  margin: auto;
+  padding: var(--gap);
+  max-width: var(--width);
+  border-radius: var(--radius);
+}
+
+.box-content:has(.column) {
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--gap);
+  flex: 1;
+  padding: var(--gap);
+  border-radius: var(--radius);
+  transition: var(--link-transition);
+}
+
+.column:has(.column-link):hover {
+  filter: var(--filter);
+  transform: var(--transform-hover);
+}
+
+.column:has(.column-link):hover figcaption {
+  color: var(--link-color);
+}
+
+
+/* Merge shortcode. */
+
+.merge {
+  background: var(--entry);
+  padding: calc(var(--gap) * 0.25) 0 0 calc(var(--gap) * 0.25);
+  border-radius: var(--radius);
+}
+
+.merge svg {
+  width: 1rem;
+  height: 1rem;
+  vertical-align: -0.125rem;
+}
+
+
+/* Tabs shortcodes */
+
+.tabs {
+  margin: var(--gap) auto;
+  background: var(--entry);
+  border-radius: var(--radius);
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.tabs label {
+  display: inline-block;
+  padding: var(--padding);
+  border-radius: var(--radius) var(--radius) 0 0;
+  cursor: pointer;
+}
+
+.tabs :is(input[type="radio"]:checked, label):hover {
+  background: var(--link-hover-color);
+}
+
+.tabs input {
+  display: none;
+}
+
+.tabs-content {
+  order: 999; /* Move content blocks to end of flex container*/
+  width: 100%;
+  padding: var(--gap);
+  display: none;
+  border-top: var(--line) solid var(--tone);
+}
+
+.tabs input[type="radio"]:checked + label {
+  background: var(--tone);
+}
+
+.tabs input[type="radio"]:checked + label + .tabs-content {
+  display: block;
+}
+
+
+/* Tree, branch and leaf shortcode. */
+
+.tree {
+  padding: var(--gap);
+  border-radius: var(--radius);
+  text-align: center;
+  background: var(--entry);
+}
+
+.tree-name, li:has(.branch), li:has(.leaf) {
+  list-style: none;
+}
+
+.branch[data-state="open"] + ul {
+  display: block;
+}
+
+.branch[data-state="open"] .branch-open,
+.branch[data-state="closed"] .branch-closed {
+  display: inline;
+}
+
+.branch[data-state="closed"] + ul,
+.branch[data-state="closed"] .branch-open,
+.branch[data-state="open"] .branch-closed {
+  display: none;
+}
+
+.branch + ul {
+  transition: var(--link-transition);
+}
+
+:is(.branch, .leaf) svg {
+  width: 1rem;
+  height: 1rem;
+  vertical-align: -0.25rem;
+}
+
+.branch, .leaf {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--gap) * 0.25);
+  user-select: none;
+}
+
+.branch {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* Steps shortcode. */
+
+.steps {
+  counter-reset: step;
+  border-left: var(--border);
+  margin-left: var(--gap);
+}
+
+.steps > :not(:where(h2, h3, h4, h5, h6):not(.no-step)) {
+  margin-left: 2.5rem;
+}
+
+.steps :where(h2, h3, h4, h5, h6):not(.no-step)::before {
+  counter-increment: step;
+  content: counter(step);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  font-size: var(--m);
+  color: var(--theme);
+  background: var(--tone);
+  outline: var(--theme) solid var(--gap);
+  border-radius: 50%;
+  transform: translateX(-1rem);
+}

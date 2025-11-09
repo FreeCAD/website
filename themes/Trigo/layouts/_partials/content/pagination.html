@@ -1,0 +1,36 @@
+{{- /* Paginate current Section:
+     - Provide links to Previous and Next pages in Section.
+     - Fallback to default language Site if missing. */ -}}
+
+{{- $section := .CurrentSection -}}
+{{- $pages := $section.RegularPages | lang.Merge (where site.Sites.Default.RegularPages "CurrentSection.Path" "eq" $section.Path) -}}
+
+{{- if $pages -}}
+  <footer class="single-footer">
+    <nav class="pagination">
+      {{- with $pages.Prev . -}}
+        <a class="prev"
+          href="{{ .RelPermalink -}}#top"
+          alt="PREVIOUS ARTICLE"
+          title="{{ i18n "previous_article" | default "Previous article" }}">
+          ◀ {{ .LinkTitle | .RenderString }}
+          {{ if not (eq .Lang $.Lang) }}
+            {{ partial "utils/icon.html" "translations" }} {{ .Lang | upper }}
+          {{ end }}
+        </a>
+      {{- end -}}
+
+      {{- with $pages.Next . -}}
+        <a class="next"
+          href="{{ .RelPermalink -}}#top"
+          alt="NEXT ARTICLE"
+          title="{{ i18n "next_article" | default "Next article" }}">
+          {{ .LinkTitle | .RenderString }}
+          {{ if not (eq .Lang $.Lang) }}
+            {{ partial "utils/icon.html" "translations" }} {{ .Lang | upper }}
+          {{ end }} ▶
+        </a>
+      {{- end -}}
+    </nav>
+  </footer>
+{{- end -}}

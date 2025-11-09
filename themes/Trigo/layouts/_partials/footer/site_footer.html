@@ -1,0 +1,58 @@
+{{- /* Site Footer:
+
+  - Render footer menu by section.
+  - Add social media links.
+  - Add custom links without parent section.
+  - Add copyright notice.
+  - Add Scripts.
+*/ -}}
+
+{{- $currentPage := . -}}
+{{- $menuFooter := site.Menus.footer | default site.Sites.Default.Menus.footer -}}
+{{- $pageUrl := $currentPage.RelPermalink -}}
+{{- $linksMax := site.Params.footerSectionLinksMax | default 6 -}}
+{{- $customLinks := site.Data.footer_links | default slice -}}
+{{- $standalone := where $customLinks "parent" "eq" nil -}}
+
+<footer class="site-footer">
+  <a id="top-link"
+    href="#top"
+    accesskey="g"
+    alt="TOP"
+    aria-label="{{ i18n "go_top" | default "Go to Top" }}"
+    title="{{ i18n "go_top" | default "Go to Top" }} (Alt + G)" >
+    ▲
+  </a>
+
+  {{- /* Get Footer Menu Sections. */ -}}
+  <section class="footer-menu">
+    {{- range $menuFooter -}}
+      {{- partial "footer/menu.html" (dict
+        "Section" .
+        "CurrentPage" $currentPage
+        "CustomLinks" $customLinks
+        "MaxLinks" $linksMax
+        )
+      -}}
+    {{- end -}}
+  </section>
+
+  {{- /* Get social media share links. */ -}}
+  {{- partial "share/share.html" . -}}
+
+  {{- /* Get custom standalone links without parent Section. */ -}}
+  {{- with $standalone -}}
+    {{- partial "footer/custom.html" . -}}
+  {{- end -}}
+
+  {{- /* List bundled icons for dev/debug purpose. */ -}}
+  {{- if not hugo.IsProduction -}}
+    {{- partial "utils/icons_debug.html" . -}}
+  {{- end -}}
+
+  {{- /* Get copyright notice. */ -}}
+  {{- partial "footer/copyright.html" . -}}
+</footer>
+
+{{- /* Load bunch of JS at end of DOM. */ -}}
+{{- partial "scripts/scripts.html" . -}}
