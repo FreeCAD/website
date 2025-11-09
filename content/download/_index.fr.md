@@ -46,7 +46,7 @@ params:
           alt: LINUX-AARCH64
 ---
 
-{{< box text-align="justify" background="var(--tone)" >}}
+{{< box style="text-align: justify; background: var(--tone);" >}}
 
 {{< column content="![A image text alt text](4.webp 'An image caption')" />}}
 
@@ -61,7 +61,7 @@ This is a text in first column of the second box with `text-align="justify" back
 {{< /box >}}
 
 
-{{< box title="Title of the second box shortcode with `text-align=\"center\"`, `background=\"gold\"` and `color=\"red\"`" text-align="center" background="gold" color="red" >}}
+{{< box title="Second box shortcode" style="text-align: center; background: gold; color: red;" >}}
 
 {{< column >}}
 

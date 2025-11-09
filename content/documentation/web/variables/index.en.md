@@ -1,10 +1,8 @@
 ---
 title: "Variables | Front Matter"
-description: "List of Front Matter variables used by FC Theme"
+description: "List of Front Matter variables used by Trigo Theme"
 date: 2021-01-20
 author: "FreeCAD"
-draft: false
-categories: docs
 cover:
   image: 7.webp
   caption: "a cover caption"

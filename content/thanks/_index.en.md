@@ -2,7 +2,6 @@
 title: "Thank you!"
 description: "Thank you for downloading FreeCAD!"
 author: "FreeCAD"
-type: thanks
 cover:
   image: 3.webp
   caption: "a cover caption"

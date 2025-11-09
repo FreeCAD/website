@@ -1,27 +1,26 @@
 ---
-title: Homepage
-description: FreeCAD highlights on the Homepage
+title: Accueil
+description: FreeCAD points forts sur la page d'accueil
 author: FreeCAD
-type: homepage
 menus:
   footer:
     weight: 1
 date: 2024-05-22T08:04:23+12:00
 params:
   buttons:
-    - label: "Download"
-      url: download
-    - label: "See what's new"
-      url: releases/1-0
+    - url: download
+      style: "background: black; color: white;"
+    - url: releases/1-0
+      label: "Découvre les nouveautés"
 ---
 
-{{< box text-align="center" background="var(--entry)" >}}
+{{< box style="text-align: center; background: var(--entry);" >}}
 
 {{< column content="![An image text](assembly2.webp 'An image caption')" />}}
 
 {{< column >}}
 
-## First Box
+## Première boîte
 
 This is a text in the first box.
 
@@ -30,11 +29,11 @@ This is a text in the first box.
 {{< /box >}}
 
 
-{{< box text-align="center" background="var(--theme)" >}}
+{{< box style="text-align: center; background: var(--theme);" >}}
 
 {{< column >}}
 
-## Second Box
+## Deuxième boîte
 
 This is a text in the second box.
 
@@ -45,13 +44,13 @@ This is a text in the second box.
 {{< /box >}}
 
 
-{{< box text-align="center" background="var(--entry)" >}}
+{{< box style="text-align: center; background: var(--entry);" >}}
 
 {{< column content="![An image text](assembly1.webp 'An image caption')" />}}
 
 {{< column >}}
 
-## Third Box
+## Troisième boîte
 
 This is a text in the third box.
 
@@ -60,11 +59,11 @@ This is a text in the third box.
 {{< /box >}}
 
 
-{{< box text-align="center" background="var(--theme)" >}}
+{{< box style="text-align: center; background: var(--theme);" >}}
 
 {{< column >}}
 
-## Fourth Box
+## Quatrième boîte
 
 This is a text in the fourth box.
 

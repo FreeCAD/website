@@ -3,8 +3,6 @@ title: "Installation | Update"
 description: "Read Install and Update instructions here"
 date: 2021-01-20
 author: "FreeCAD"
-draft: false
-categories: docs
 cover:
   image: 3.webp
   caption: "a cover caption"
@@ -35,7 +33,7 @@ After you have created a new site, at [Step 3](https://gohugo.io/getting-started
 Inside the folder of your Hugo site, run:
 
 ```bash
-git clone https://github.com/FreeCAD/FreeCAD-website PATH_TO_YOUR_LOCAL_GIT_DIRECTORY --depth=1
+git clone https://github.com/FreeCAD/website PATH_TO_YOUR_LOCAL_GIT_DIRECTORY --depth=1
 ```
 
 > Updating theme :
@@ -54,7 +52,7 @@ Or you can Download as Zip from Github Page and extract in your themes directory
 Add in `config.yml`:
 
 ```yml
-theme: FC
+theme: Trigo
 ```
 ### Method 4
 
@@ -66,12 +64,12 @@ theme: FC
 hugo mod init PATH_TO_YOUR_LOCAL_GIT_DIRECTORY
 ```
 
- - Add FC in your `config.yml` file
+ - Add Trigo Theme in your `config.yml` file
 
 ```
 module:
   imports:
-  - path: github.com/FreeCAD/FreeCAD-website/tree/main/themes/FC
+  - path: github.com/FreeCAD/website/tree/main/themes/Trigo
 ```
  - Update theme
 
@@ -87,7 +85,7 @@ hugo mod get -u
 baseURL: https://examplesite.com/
 title: "ExampleSite"
 paginate: 6
-theme: FC
+theme: Trigo
 
 enableRobotsTXT: true
 buildDrafts: false

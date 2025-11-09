@@ -14,22 +14,10 @@ menus:
     weight: 5
 ---
 
-{{< box text-align="center" background="var(--entry)" >}}
+{{< box style="text-align: center; background: var(--entry);" >}}
 
-{{< column url="https://fpa.freecad.org" >}}
+{{< column url="https://fpa.freecad.org" content="![FreeCAD Project Association](fpa.svg 'The Association supporting the development of FreeCAD')" />}}
 
-![FreeCAD Project Association](fpa.svg)
-
-The Association supporting the development of FreeCAD.
-
-{{< /column >}}
-
-{{< column url="fpn" >}}
-
-![FreeCAD Professional Network](fpn.svg)
-
-The Network of professional users contributing to FreeCAD development.
-
-{{< /column >}}
+{{< column url="fpn" content="![FreeCAD Professional Network](fpn.svg 'The Network of professional users contributing to FreeCAD development.')" />}}
 
 {{< /box >}}

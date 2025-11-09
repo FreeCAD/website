@@ -17,9 +17,51 @@ menus:
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-{{< box title="FreeCAD *awesome* features!" background="var(--tone)" columnBackground="var(--theme)" border="thin solid" >}}
+{{< box content-style="background: var(--entry);" >}}
 
-{{< column border="red solid" >}}
+{{< column >}}
+
+![An image text](5.webp 'An image caption')
+
+## Column 1 Title
+
+Some content in the first column.
+
+{{< /column >}}
+
+{{< column >}}
+
+## Column 2 Title
+
+Some content in the second column.
+
+![An image text](5.webp 'An image caption')
+
+{{< /column >}}
+
+{{< /box >}}
+
+
+{{< box title="Box *title*" style="text-align: justify; background: var(--tone);" content-style="border: var(--theme) solid; text-align: center;" >}}
+
+## Header in a _box_
+
+![An image text](5.webp 'An image directly in a box shortcode')
+
+This is again some text.
+
+{{< /box >}}
+
+
+{{< box >}}
+
+{{< column content="![An image text](5.webp 'An image in a column shortcode in a box shortcode.')" />}}
+
+{{< /box >}}
+
+{{< box style="background: var(--tone);" content-style="border: var(--theme) solid;" >}}
+
+{{< column style="display: block; border: red solid;" >}}
 
 ### Column One
 
@@ -35,7 +77,7 @@ Mixed **Markdown** and <u>HTML underline</u>.
 
 {{< /column >}}
 
-{{< column background="var(--theme)" >}}
+{{< column style="display: block; background: var(--theme);" >}}
 
 ### Column Two
 
@@ -50,7 +92,7 @@ def hello():
 
 {{< /column >}}
 
-{{< column background="var(--entry)" >}}
+{{< column style="display: block; background: var(--entry);" >}}
 
 ![Hugo Logo](https://gohugo.io/images/hugo-logo-wide.svg)
 
@@ -66,7 +108,7 @@ This is **bold**, *italic*, and includes a [link](https://example.com).
 {{< /box >}}
 
 
-{{< box text-align="center" background="orange" >}}
+{{< box style="text-align: center; background: orange;" >}}
 
 {{< column >}}
 
@@ -81,7 +123,7 @@ This is **bold**, *italic*, and includes a [link](https://example.com). Lorem ip
 {{< /box >}}
 
 
-{{< box text-align="justify" background="darkseagreen" color="darkslategrey" >}}
+{{< box style="text-align: justify; background: darkseagreen; color: darkslategrey;" >}}
 
 {{< column content="![An image text](5.webp 'An image caption')" />}}
 
@@ -96,9 +138,9 @@ This is **bold**, *italic*, and includes a [link](https://example.com). Lorem ip
 {{< /box >}}
 
 
-{{< box text-align="center" background="gold" color="black" >}}
+{{< box style="text-align: center; background: gold; color: black;" >}}
 
-{{< column text-align="" >}}
+{{< column >}}
 
 ### Fourth Box
 

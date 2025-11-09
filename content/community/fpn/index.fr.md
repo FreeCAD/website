@@ -3,10 +3,6 @@ title: "FreeCAD Professional Network"
 description: "Rejoindre la communauté de professionnels construisant l'avenir de FreeCAD"
 date: 2024-05-22T08:04:23+12:00
 author: "FreeCAD"
-cover:
-  image: 1.webp
-  caption: "a cover caption"
-  alt: "a cover alternative title"
 ---
 
 The FreeCAD Professional Network (FPN) is a voluntary association of professionals committed to strengthening the FreeCAD ecosystem for long-term growth and success.
@@ -41,9 +37,9 @@ The FPN brings professionals together to:
 This is where professionals make their voice heard and pool their strengths to move FreeCAD forward.
 
 
-{{< box title="Membership Tiers" text-align="center" background="var(--entry)" >}}
+{{< box title="Membership Tiers" style="text-align: center; background: var(--entry);" >}}
 
-{{< column background="var(--theme)" border="solid var(--link-color)" url="https://buy.stripe.com/eVqaEX2IteaO8bc7zVdZ602" >}}
+{{< column style="background: var(--theme); border: solid var(--link-color);" url="https://buy.stripe.com/eVqaEX2IteaO8bc7zVdZ602" >}}
 
 <h3>Individual</h3>
 
@@ -56,7 +52,7 @@ This is where professionals make their voice heard and pool their strengths to m
 
 {{< /column >}}
 
-{{< column background="var(--theme)" border="solid var(--link-color)" url="https://buy.stripe.com/aFa9AT2It7MqfDE4nJdZ603" >}}
+{{< column style="background: var(--theme); border: solid var(--link-color);" url="https://buy.stripe.com/aFa9AT2It7MqfDE4nJdZ603" >}}
 
 <h3>Organization</h3>
 

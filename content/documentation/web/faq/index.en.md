@@ -3,8 +3,6 @@ title: "FAQs"
 description: "Frequently Asked Questions"
 date: 2021-01-20
 author: "FreeCAD"
-draft: false
-categories: docs
 cover:
   image: 6.webp
   caption: "a cover caption"
@@ -13,9 +11,7 @@ cover:
 
 ## Intro
 
--   We'll be using `yml/yaml` format for all examples down below, I recommend using `yml` over `toml` as it is easier to read.
-
--   You can find any [YML to TOML](https://www.google.com/search?q=yml+to+toml) converters if necessary.
+-   We'll be using `yaml` format for all examples down below, as it is easier to read.
 
 ---
 
@@ -26,7 +22,7 @@ By Hugo's Lookup Order, you can override any part of a theme that you want. The 
 Let's say you wish the `list` was different. All you have to do is copy the `list` template:
 
 ```shell
-your-site/themes/FC/layouts/_defaults/list.html
+your-site/themes/Trigo/layouts/_defaults/list.html
 ```
 
 And paste it under your own `layouts` folder:
@@ -46,7 +42,7 @@ These include OpenGraph and Schema.
 
 ```yml
 params:
-    env: production
+  env: production
 ```
 
 or set `HUGO_ENV` as "production" in system env-vars
@@ -65,8 +61,8 @@ Set the following in `config.yml`
 
 ```yml
 params:
-    assets:
-        disableFingerprinting: true
+  assets:
+    disableFingerprinting: true
 ```
 
 Linked Issues:
@@ -85,19 +81,19 @@ To do so, add a `menu` section to your site's `config.yml`:
 
 ```yml
 menu:
-    main:
-        - identifier: categories
-          name: categories
-          url: /categories/
-          weight: 10
-        - identifier: tags
-          name: tags
-          url: /tags/
-          weight: 20
-        - identifier: example
-          name: example.org
-          url: https://example.org
-          weight: 30
+  main:
+    - identifier: categories
+      name: categories
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 20
+    - identifier: example
+      name: example.org
+      url: https://example.org
+      weight: 30
 ```
 
 `name` controls what will be displayed for the menu entry.
@@ -139,11 +135,11 @@ weight: 2
 We support the following paths under `/static` directory
 and can be added accordingly.
 
--   `favicon.ico`
--   `favicon-16x16.webp`
--   `favicon-32x32.webp`
--   `apple-touch-icon.webp`
--   `safari-pinned-tab.svg`
+- `favicon.ico`
+- `favicon-16x16.webp`
+- `favicon-32x32.webp`
+- `apple-touch-icon.webp`
+- `safari-pinned-tab.svg`
 
 ---
 
@@ -155,16 +151,6 @@ Add `#center` after image to center align an image
 ![name](path/to/image.webp#center)
 ```
 
-**When using [`figure`](https://gohugo.io/content-management/shortcodes/) shortcode**
-
-use `align=center` to center image with captions
-
-ex.
-
-```md
-{{</* figure align=center src="image.jpg" */>}}
-```
-
 ---
 
 ## Using Hugo's Syntax highlighter "chroma"
@@ -173,8 +159,8 @@ Set hugo's markdown styling in site `config.yml`
 
 ```yml
 markup:
-    highlight:
-        noClasses: false
+  highlight:
+    noClasses: false
 ```
 
 `noClasses` has to be `false` to make highlight color follows the theme.
@@ -183,4 +169,4 @@ markup:
 
 ## References
 
--   [Override a Hugo theme](https://zwbetz.com/override-a-hugo-theme/)
+- [Override a Hugo theme](https://gohugo.io/templates/lookup-order)
