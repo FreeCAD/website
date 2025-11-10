@@ -111,7 +111,7 @@ jobs:
 
           mkdir -p data
 
-          jq --arg totalUsers "${{ steps.extract_total.outputs.totalUsers }}" '
+          jq --argjson totalUsers "${{ steps.extract_total.outputs.totalUsers }}" '
             with_entries(
               if (.value.labels and .value.data) then
                 . as {key: $k, value: $v} |
