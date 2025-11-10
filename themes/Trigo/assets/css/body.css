@@ -109,12 +109,18 @@ input[type=number] {
 
 del {
   text-decoration: line-through;
-  color: var(--tertiary);
-  background: lightcoral;
+  padding: 0.125rem 0.25rem;
+  color: rgb(128, 8, 32);
+  background: rgb(255, 224, 224);
+  border-radius: 0.25rem;
 }
 
 ins {
-  text-decoration: underline;
+  text-decoration: none;
+  padding: 0.125rem 0.25rem;
+  color: rgb(16, 96, 48);
+  background: rgb(224, 255, 224);
+  border-radius: 0.25rem;
 }
 
 kbd {

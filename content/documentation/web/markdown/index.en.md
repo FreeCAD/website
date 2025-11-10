@@ -34,7 +34,7 @@ This article offers a sample of basic Markdown syntax that can be used in Hugo c
 ### Heading with a custom id {#custom-id}
 ```
 
-<ins>How it renders:</ins>
+<u>How it renders:</u>
 
 # Heading 1
 ## Heading 2
@@ -43,7 +43,7 @@ This article offers a sample of basic Markdown syntax that can be used in Hugo c
 ##### Heading 5
 ###### Heading 6
 
-### Headings with custom style {style="color: red"}
+### Heading with custom style {style="color: red"}
 
 ### Heading with a custom id {#custom-id}
 
@@ -59,7 +59,7 @@ __This will also be bold__
 _You **can** combine them_
 ```
 
-<ins>How it renders:</ins>
+<u>How it renders:</u>
 
 *This text will be italic*
 
@@ -82,7 +82,7 @@ _You **can** combine them_
   - Item 2b
 ```
 
-<ins>How it renders:</ins>
+<u>How it renders:</u>
 
 - Item 1
 - Item 2
@@ -99,7 +99,7 @@ _You **can** combine them_
    2. Item 3b
 ```
 
-<ins>How it renders:</ins>
+<u>How it renders:</u>
 
 1. Item 1
 2. Item 2
@@ -115,7 +115,7 @@ _You **can** combine them_
 - [ ] Deploy changes
 ```
 
-<ins>How it renders:</ins>
+<u>How it renders:</u>
 
 - [x] Write documentation
 - [ ] Review code
@@ -131,7 +131,7 @@ Second Term
 : This is the definition of the second term.
 ```
 
-<ins>How it renders:</ins>
+<u>How it renders:</u>
 
 First Term
 : This is the definition of the first term.
@@ -145,7 +145,7 @@ Second Term
 ![](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
 ```
 
-<ins>How it renders:</ins>
+<u>How it renders:</u>
 
 ![](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
 
@@ -155,7 +155,7 @@ With caption:
 ![landscape](https://fastly.picsum.photos/id/1044/800/600.jpg?hmac=aNJNCvHzwwgQQWDUJPUFUAyd5LYhh8cAPIawaBtti3c "Lorem Picsum")
 ```
 
-<ins>How it renders:</ins>
+<u>How it renders:</u>
 
 ![Alternative text](https://fastly.picsum.photos/id/1044/800/600.jpg?hmac=aNJNCvHzwwgQQWDUJPUFUAyd5LYhh8cAPIawaBtti3c "Image description")
 
@@ -171,7 +171,7 @@ For more advanced functionality, use Hugo's built-in [Figure shortcode](https://
 [Heading ID](#custom-id)
 ```
 
-<ins>How it renders:</ins>
+<u>How it renders:</u>
 
 [Hugo](https://gohugo.io)
 
@@ -181,13 +181,14 @@ For more advanced functionality, use Hugo's built-in [Figure shortcode](https://
 
 ## Styling Text
 
-| Style         | Syntax                   | Example output                        |
-| :------------ | :----------------------- | :------------------------------------ |
-| Bold          | `**bold**`               | This is a **bold** text               |
-| Italic        | `*italic*`               | This is an *italic* text              |
-| Strikethrough | `~~strikethrough~~`      | This is a ~~strikethrough~~ text      |
-| Subscript     | `<sub>subscript</sub>`   | This is a <sub>subscript</sub> text   |
-| Superscript   | `^superscript^`          | This is a ^superscript^ text          |
+| Style       | Syntax          | Example output               |
+| ----------- | --------------- | ---------------------------- |
+| Bold        | `**bold**`      | This is a **bold** text      |
+| Italic      | `*italic*`      | This is an *italic* text     |
+| Deleted     | `~~deleted~~`   | This is a ~~deleted~~ text   |
+| Inserted    | `++inserted++`  | This is a ++inserted++ text  |
+| Subscript   | `~subscript~`   | This is a ~subscript~ text   |
+| Superscript | `^superscript^` | This is a ^superscript^ text |
 
 ## Blockquotes
 
@@ -197,7 +198,7 @@ For more advanced functionality, use Hugo's built-in [Figure shortcode](https://
 > If I have seen further it is by standing on the shoulders of Giants.
 ```
 
-<ins>How it renders:</ins>
+<u>How it renders:</u>
 
 > As Newton said:
 >
@@ -212,7 +213,7 @@ For more advanced functionality, use Hugo's built-in [Figure shortcode](https://
 [^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
 ```
 
-<ins>How it renders:</ins>
+<u>How it renders:</u>
 
 > Don't communicate by sharing memory, share memory by communicating.
 >
@@ -226,7 +227,7 @@ For more advanced functionality, use Hugo's built-in [Figure shortcode](https://
 Inline `code` has `back-ticks around` it.
 ```
 
-<ins>How it renders:</ins>
+<u>How it renders:</u>
 
 Inline `code` has `back-ticks around` it.
 
@@ -242,7 +243,7 @@ func main() {
 ```
 ````
 
-<ins>How it renders:</ins>
+<u>How it renders:</u>
 
 ```go
 func main() {
@@ -268,7 +269,7 @@ func main() {
 ```
 ````
 
-<ins>How it renders:</ins>
+<u>How it renders:</u>
 
 ```html {linenos=true}
 <!DOCTYPE html>
@@ -304,7 +305,7 @@ func main() {
 {{< /highlight */>}}
 ```
 
-<ins>How it renders:</ins>
+<u>How it renders:</u>
 
 {{< highlight html >}}
 
@@ -331,7 +332,7 @@ func main() {
 | Paragraph | Text        |
 ```
 
-<ins>How it renders:</ins>
+<u>How it renders:</u>
 
 | Syntax    | Description |
 | --------- | ----------- |
@@ -346,7 +347,7 @@ func main() {
 | _italics_ | **bold** | `code` |
 ```
 
-<ins>How it renders:</ins>
+<u>How it renders:</u>
 
 | Italics   | Bold     | Code   |
 | :-------- | :------: | -----: |
@@ -375,7 +376,7 @@ Please make sure you are using [Hugo v0.146.0](https://github.com/gohugoio/hugo/
 > Advises about risks or negative outcomes of certain actions.
 ```
 
-<ins>How it renders:</ins>
+<u>How it renders:</u>
 
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
@@ -400,9 +401,9 @@ Please make sure you are using [Hugo v0.146.0](https://github.com/gohugoio/hugo/
 <abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
 
 ```text {file=Markdown}
-H<sub>2</sub>O
+H~2~O
 ```
-H<sub>2</sub>O
+H~2~O
 
 ```text {file=Markdown}
 X^n^ + Y^n^ = Z^n^
@@ -417,10 +418,10 @@ Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
 Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
 
 ```text {file=Markdown}
-Most ==reptiles and salamanders== are nocturnal and hunt for insects, worms and other small creatures. Note that most ==reptiles== are nocturnal and hunt for insects, worms and other small creatures. Most ==reptiles and salamanders== are nocturnal and hunt for insects, worms and other small creatures. Note that most ==reptiles== are nocturnal and hunt for insects, worms and other small creatures.
+Most ==reptiles and salamanders== are nocturnal and hunt for insects, worms and other small creatures.
 ```
 
-Most ==reptiles and salamanders== are nocturnal and hunt for insects, worms and other small creatures. Note that most ==reptiles== are nocturnal and hunt for insects, worms and other small creatures. Most ==reptiles and salamanders== are nocturnal and hunt for insects, worms and other small creatures. Note that most ==reptiles== are nocturnal and hunt for insects, worms and other small creatures.
+Most ==reptiles and salamanders== are nocturnal and hunt for insects, worms and other small creatures.
 
 ## Configuration
 

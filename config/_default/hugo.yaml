@@ -48,6 +48,7 @@ markup:
     renderer:
       unsafe: true
     extensions:
+      strikethrough: false
       extras:
         delete:
           enable: true
