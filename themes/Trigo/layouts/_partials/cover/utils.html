@@ -4,11 +4,6 @@
 {{- $kind := "" -}}
 
 {{- $processableFormats := site.Params.processableFormats -}}
-{{- $sizes := site.Params.resizeSizes -}}
-{{- $w0 := index $sizes 0 -}}
-{{- $w1 := index $sizes 1 -}}
-{{- $w2 := index $sizes 2 -}}
-{{- $w3 := index $sizes 3 -}}
 {{- $resizeFormat := site.Params.resizeFormat -}}
 
 {{- $pageCover := .Params.cover.image -}}
@@ -47,9 +42,5 @@
   "anchor" $anchor
   "kind" $kind
   "processableFormats" $processableFormats
-  "w0" $w0
-  "w1" $w1
-  "w2" $w2
-  "w3" $w3
   "resizeFormat" $resizeFormat
 -}}

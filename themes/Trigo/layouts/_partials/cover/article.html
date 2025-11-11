@@ -9,29 +9,48 @@
 
       {{- /* Cover image is present in page bundle. */ -}}
       {{- if in $img.processableFormats .MediaType.SubType -}}
+
+        {{- $srcset := slice -}}
+        {{- $widths := slice -}}
+        {{- range $dimensions := site.Params.resizeDimensions.article -}}
+          {{- $width := int (index (split $dimensions "x") 0) -}}
+          {{- if lt $width $img.cover.Width -}}
+            {{- $resized := $img.cover.Resize (printf "%dx %s %s" $width $img.resizeFormat) -}}
+            {{- $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink $width) -}}
+            {{- $widths = $widths | append $width -}}
+          {{- end -}}
+        {{- end -}}
+        {{- $srcset = $srcset | append (printf "%s %dw" .RelPermalink .Width) -}}
+
+        {{- $sizes := slice -}}
+        {{- range $width := $widths -}}
+          {{- $sizes = $sizes | append (printf "(max-width: %dpx) %dpx" $width $width) -}}
+        {{- end -}}
+        {{- $sizes = $sizes | append "75vw" -}}
+
         <img
-          srcset="
-            {{ printf "%s %dw, " ((.Resize (printf "%dx %s %s" $img.w1 $img.anchor $img.resizeFormat)).RelPermalink) $img.w1 }}
-            {{ printf "%s %dw, " ((.Resize (printf "%dx %s %s" $img.w2 $img.anchor $img.resizeFormat)).RelPermalink) $img.w2 }}
-            {{ printf "%s %dw" .RelPermalink .Width }}"
-          sizes="
-              (max-width: {{ $img.w1 }}px) {{ $img.w1 }}px,
-              ((min-width: {{ $img.w1 }}px) and (max-width: {{ $img.w2 }}px)) {{ $img.w1 }}px,
-              (min-width: {{ $img.w2 }}px) {{ $img.w2 }}px,
-              100vw"
+          srcset="{{ delimit $srcset ", " }}"
+          sizes="{{ delimit $sizes ", " }}"
           src="{{ .RelPermalink }}"
           alt="{{ $img.alt }}"
           width="{{ .Width }}"
           height="{{ .Height }}"
+          loading="eager"
           fetchpriority="high">
 
       {{- /* Unprocessable image or responsive images disabled. */ -}}
       {{- else if .RelPermalink -}}
-        <img src="{{ path.Join $.RelPermalink . }}" alt="{{ $img.alt }}">
+        <img src="{{ .RelPermalink . }}"
+          alt="{{ $img.alt }}"
+          loading="eager"
+          fetchpriority="high">
 
       {{- /* For absolute urls and external links, no img processing here. */ -}}
       {{- else -}}
-        <img src="{{ . | absURL }}" alt="{{ $img.alt }}">
+        <img src="{{ . | absURL }}"
+          alt="{{ $img.alt }}"
+          loading="eager"
+          fetchpriority="high">
       {{- end -}}
 
       {{- /* Display Caption. */ -}}
@@ -40,6 +59,7 @@
           {{ . | $.Page.RenderString }}
         </figcaption>
       {{- end -}}
+
     </figure>
   {{- end -}}
 {{- end -}}

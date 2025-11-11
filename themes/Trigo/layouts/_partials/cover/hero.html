@@ -8,39 +8,50 @@
 
     {{- /* Cover image is present in page bundle. */ -}}
     {{- if in $img.processableFormats .MediaType.SubType -}}
+
+      {{- $srcset := slice -}}
+      {{- range $dimensions := site.Params.resizeDimensions.hero -}}
+        {{- $width := int (index (split $dimensions "x") 0) -}}
+        {{- if lt $width $img.cover.Width -}}
+          {{- $resized := $img.cover.Fill (printf "%s %s %s" $dimensions $img.anchor $img.resizeFormat) -}}
+          {{- $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink $width) -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $srcset = $srcset | append (printf "%s %dw" .RelPermalink .Width) -}}
+
       <img
-        srcset="
-          {{ printf "%s %dw, " ((.Fill (printf "%dx%d %s %s" $img.w1 $img.w2 $img.anchor $img.resizeFormat)).RelPermalink) $img.w1 }}
-          {{ printf "%s %dw, " ((.Fill (printf "%dx%d %s %s" $img.w2 $img.w1 $img.anchor $img.resizeFormat)).RelPermalink) $img.w2 }}
-          {{ printf "%s %dw, " ((.Fill (printf "%dx%d %s %s" $img.w3 $img.w2 $img.anchor $img.resizeFormat)).RelPermalink) $img.w3 }}
-          {{ printf "%s %dw" .RelPermalink .Width }}"
-        sizes="
-            (max-width: {{ $img.w1 }}px) {{ $img.w1 }}px,
-            ((min-width: {{ $img.w1 }}px) and (max-width: {{ $img.w2 }}px)) {{ $img.w2 }}px,
-            ((min-width: {{ $img.w2 }}px) and (max-width: {{ $img.w3 }}px)) {{ $img.w3 }}px,
-            100vw"
+        srcset="{{ delimit $srcset ", " }}"
+        sizes="100vw"
         src="{{ .RelPermalink }}"
         alt="{{ $img.alt }}"
         width="{{ .Width }}"
         height="{{ .Height }}"
+        loading="eager"
         fetchpriority="high">
 
     {{- /* Unprocessable image or responsive images disabled. */ -}}
     {{- else if .RelPermalink -}}
-      <img src="{{ path.Join $.RelPermalink . }}" alt="{{ $img.alt }}">
+      <img src="{{ .RelPermalink }}"
+        alt="{{ $img.alt }}"
+        loading="eager"
+        fetchpriority="high">
 
     {{- /* For absolute urls and external links, no img processing here. */ -}}
     {{- else -}}
-      <img src="{{ . | absURL }}" alt="{{ $img.alt }}">
+      <img src="{{ . | absURL }}"
+        alt="{{ $img.alt }}"
+        loading="eager"
+        fetchpriority="high">
     {{- end -}}
 
     {{- /* Display Caption. */ -}}
     {{- if $.IsHome -}}
       {{- with $.Params.cover.caption -}}
-        <p>
+        <figcaption>
           {{ .RenderString }}
-        </p>
+        </figcaption>
       {{- end -}}
     {{- end -}}
+
   </figure>
 {{- end -}}

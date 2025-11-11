@@ -8,22 +8,43 @@
 
     {{- /* Cover image is present in page bundle. */ -}}
     {{- if in $img.processableFormats .MediaType.SubType -}}
+
+      {{- $srcset := slice -}}
+      {{- $sizes := slice -}}
+      {{- range $dimensions := site.Params.resizeDimensions.card -}}
+        {{- $width := int (index (split $dimensions "x") 0) -}}
+        {{- if lt $width $img.cover.Width -}}
+          {{- $resized := $img.cover.Fill (printf "%s %s %s" $dimensions $img.anchor $img.resizeFormat) -}}
+          {{- $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink $width) -}}
+          {{- $sizes = $sizes | append (printf "%dpx" $width) -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $srcset = $srcset | append (printf "%s %dw" .RelPermalink .Width) -}}
+
       <img
-        srcset="{{ printf "%s %dw" ((.Fill (printf "%dx%d %s %s" $img.w1 $img.w0 $img.anchor $img.resizeFormat)).RelPermalink) $img.w0 }}"
-        sizes="{{ $img.w0 }}px"
+        srcset="{{ delimit $srcset ", " }}"
+        sizes="{{ delimit $sizes ", " }}"
         src="{{ .RelPermalink }}"
         alt="{{ $img.alt }}"
         width="{{ .Width }}"
         height="{{ .Height }}"
-        loading="lazy">
+        loading="lazy"
+        fetchpriority="low">
 
     {{- /* Unprocessable image or responsive images disabled. */ -}}
     {{- else if .RelPermalink -}}
-      <img src="{{ path.Join $.RelPermalink . }}" alt="{{ $img.alt }}">
+      <img src="{{ .RelPermalink }}"
+        alt="{{ $img.alt }}"
+        loading="lazy"
+        fetchpriority="low">
 
     {{- /* For absolute urls and external links, no img processing here. */ -}}
     {{- else -}}
-      <img src="{{ . | absURL }}" alt="{{ $img.alt }}">
+      <img src="{{ . | absURL }}"
+        alt="{{ $img.alt }}"
+        loading="lazy"
+        fetchpriority="low">
     {{- end -}}
+
   </figure>
 {{- end -}}
