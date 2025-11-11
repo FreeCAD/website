@@ -2,7 +2,7 @@
 title: Configuration
 description: How to configure the Trigo Theme.
 date: 2020-01-01
-author: "FreeCAD"
+authors: FreeCAD
 weight: 5
 tags:
   - Config

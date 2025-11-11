@@ -1,7 +1,7 @@
 ---
 title: Accueil
 description: FreeCAD points forts sur la page d'accueil
-author: FreeCAD
+authors: FreeCAD
 menus:
   footer:
     weight: 1

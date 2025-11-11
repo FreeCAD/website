@@ -1,7 +1,7 @@
 ---
 title: 'Recap: GSoC 2023 Mentor Summit'
 date: 2024-02-02
-author: Kurt Kremitzki
+authors: Kurt Kremitzki
 draft: false
 categories: announcement
 tags: []

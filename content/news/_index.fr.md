@@ -2,7 +2,7 @@
 title: "Actualités"
 description: "Parcourir les dernières actualités"
 date: 2024-05-22T08:04:23+12:00
-author: "FreeCAD"
+authors: FreeCAD
 paginate: 12
 cover:
   image: 6.webp

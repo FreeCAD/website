@@ -1,7 +1,7 @@
 ---
 title: FPA Needs a Logo
 date: 2023-03-27
-author: Chris Hennes
+authors: Chris Hennes
 draft: false
 categories: announcement
 tags:

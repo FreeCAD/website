@@ -1,7 +1,7 @@
 ---
 title: Quick intro to FreeCAD programming
 date: 2024-07-25
-author: Aleksandr Prokudin
+authors: Aleksandr Prokudin
 draft: false
 categories: event
 tags: []

@@ -9,13 +9,13 @@
     </span>
   {{- end -}}
 
-  {{- if .Params.categories -}}
-    {{- $taxonomy := site.Sites.Default.Taxonomies.categories -}}
+  {{- if and .Params.categories site.Params.showCategories -}}
+    {{- $categories := site.Sites.Default.Taxonomies.categories -}}
     <span class="meta">
       {{- partial "utils/icon.html" "categories" -}}
       <span class="categories">
         {{- range .GetTerms "categories" -}}
-          {{- $count := len ($taxonomy.Get .Title) -}}
+          {{- $count := len ($categories.Get .Title) -}}
           <a href="{{ .RelPermalink }}">
             {{ .LinkTitle }} ({{ $count }})
           </a>
@@ -24,13 +24,13 @@
     </span>
   {{- end -}}
 
-  {{- if .Params.tags -}}
-    {{- $taxonomy := site.Sites.Default.Taxonomies.tags -}}
+  {{- if and .Params.tags site.Params.showTags -}}
+    {{- $tags := site.Sites.Default.Taxonomies.tags -}}
     <span class="meta">
       {{- partial "utils/icon.html" "tags" -}}
       <span class="tags">
         {{- range .GetTerms "tags" -}}
-          {{- $count := len ($taxonomy.Get .Title) -}}
+          {{- $count := len ($tags.Get .Title) -}}
           <a href="{{ .RelPermalink }}">
             {{ .LinkTitle }} ({{ $count }})
           </a>
@@ -39,7 +39,7 @@
     </span>
   {{- end -}}
 
-  {{- if .Param "showWordCount" -}}
+  {{- if site.Params.showWordCount -}}
     <span class="meta">
       {{- partial "utils/icon.html" "words" -}}
       <span>
@@ -48,7 +48,7 @@
     </span>
   {{- end -}}
 
-  {{- if .Param "showReadingTime" -}}
+  {{- if site.Params.showReadingTime -}}
     <span class="meta">
       {{- partial "utils/icon.html" "time" -}}
       <span>
@@ -57,16 +57,16 @@
     </span>
   {{- end -}}
 
-  {{- if .Param "showAuthor" -}}
+  {{- if and .Params.authors site.Params.showAuthors -}}
+    {{- $authors := site.Sites.Default.Taxonomies.authors -}}
     <span class="meta">
-      {{- partial "utils/icon.html" "author" -}}
+      {{- partial "utils/icon.html" "authors" -}}
       <span class="authors">
-        {{- with (.Params.author | default site.Params.author) -}}
-          {{- if reflect.IsSlice . -}}
-            {{- delimit . " · " -}}
-          {{- else -}}
-            {{- . -}}
-          {{- end -}}
+        {{- range .GetTerms "authors" -}}
+          {{- $count := len ($authors.Get .Title) -}}
+          <a href="{{ .RelPermalink }}">
+            {{ .LinkTitle }} ({{ $count }})
+          </a>
         {{- end -}}
       </span>
     </span>

@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Create custom TechDraw Templates.'
 date: 2023-12-19
-author: Jo Hinchliffe
+authors: Jo Hinchliffe
 draft: false
 categories: tutorial
 tags:

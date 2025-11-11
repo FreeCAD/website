@@ -1,7 +1,7 @@
 ---
 title: 'Coming Soon: Sketcher Elements UI Refinement'
 date: 2022-11-02
-author: Chris Hennes
+authors: Chris Hennes
 draft: false
 categories: feature
 tags:

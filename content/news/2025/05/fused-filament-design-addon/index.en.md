@@ -1,7 +1,7 @@
 ---
 title: Fused Filament Design Addon
 date: 2025-05-23
-author: Jo Hinchliffe
+authors: Jo Hinchliffe
 draft: false
 categories: showcase
 tags:

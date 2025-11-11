@@ -1,7 +1,7 @@
 ---
 title: "Forged in FreeCAD: Alexander's PCB Holder"
 date: 2023-11-20
-author: Jo Hinchliffe
+authors: Jo Hinchliffe
 draft: false
 categories: showcase
 tags:

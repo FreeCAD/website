@@ -2,7 +2,7 @@
 title: "Download"
 description: "Launch Into Design!"
 date: 2024-05-22T08:04:23+12:00
-author: "FreeCAD"
+authors: FreeCAD
 cover:
   image: 4.webp
   caption: "a cover caption"

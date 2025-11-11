@@ -1,7 +1,7 @@
 ---
 title: 'Forum and Wiki Performance: Anubis deployed'
 date: 2025-04-30
-author: Jo Hinchliffe
+authors: Jo Hinchliffe
 draft: false
 categories: announcement
 tags: []

@@ -1,7 +1,7 @@
 ---
 title: 'New Grants approved: Variant Parts, debugging with CLion and VSCode, Homebrew build update'
 date: 2024-09-24
-author: Aleksandr Prokudin
+authors: Aleksandr Prokudin
 draft: false
 categories: announcement
 tags:

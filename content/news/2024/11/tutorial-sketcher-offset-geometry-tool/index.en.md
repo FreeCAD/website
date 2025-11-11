@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Sketcher Offset Geometry Tool'
 date: 2024-11-14
-author: Jo Hinchliffe
+authors: Jo Hinchliffe
 draft: false
 categories: tutorial
 tags:

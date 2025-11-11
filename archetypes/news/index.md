@@ -2,7 +2,7 @@
 title: "{{ replace .File.ContentBaseName "-" " " | title }}"
 description: "Please fill the description here"
 date: {{ .Date }}
-author: "FreeCAD"
+authors: FreeCAD
 draft: true
 categories: category
 tags:

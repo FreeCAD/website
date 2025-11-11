@@ -1,7 +1,7 @@
 ---
 title: Homepage
 description: FreeCAD highlights on the Homepage
-author: FreeCAD
+authors: FreeCAD
 menus:
   footer:
     weight: 1

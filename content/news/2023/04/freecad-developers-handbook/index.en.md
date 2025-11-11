@@ -1,7 +1,7 @@
 ---
 title: FreeCAD Developer's Handbook
 date: 2023-04-03
-author: Chris Hennes
+authors: Chris Hennes
 draft: false
 categories: announcement
 tags: []

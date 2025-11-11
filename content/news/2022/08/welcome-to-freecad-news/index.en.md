@@ -1,7 +1,7 @@
 ---
 title: Welcome to FreeCAD News!
 date: 2022-08-31
-author: Chris Hennes
+authors: Chris Hennes
 draft: false
 categories: announcement
 tags: []

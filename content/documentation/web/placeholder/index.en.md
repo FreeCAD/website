@@ -2,7 +2,7 @@
 title: "Placeholder Text"
 description: "Lorem Ipsum Dolor Si Amet"
 date: 2019-03-09
-author: "FreeCAD"
+authors: FreeCAD
 tags:
   - example
 cover:

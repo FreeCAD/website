@@ -2,7 +2,7 @@
 title: Markdown Syntax Guide
 description: Sample article showcasing basic Markdown syntax and formatting.
 date: 2020-01-01
-author: "FreeCAD"
+authors: FreeCAD
 weight: 4
 tags:
   - Markdown

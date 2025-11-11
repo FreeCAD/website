@@ -1,7 +1,7 @@
 ---
 title: 'New Grant: refactoring Sketcher, part 2'
 date: 2025-01-31
-author: Aleksandr Prokudin
+authors: Aleksandr Prokudin
 draft: false
 categories: announcement
 tags:

@@ -1,7 +1,7 @@
 ---
 title: 'New Grants: electromagnetic system simulations and bug triage'
 date: 2024-02-27
-author: Aleksandr Prokudin
+authors: Aleksandr Prokudin
 draft: false
 categories: announcement
 tags:

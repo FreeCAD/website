@@ -1,7 +1,7 @@
 ---
 title: 'WIP Wednesday: 31 January 2024'
 date: 2024-01-31
-author: Aleksandr Prokudin
+authors: Aleksandr Prokudin
 draft: false
 categories: update
 tags:

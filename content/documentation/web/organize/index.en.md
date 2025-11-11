@@ -2,7 +2,7 @@
 title: Organize Files
 description: How to organize files in the Trigo Theme.
 date: 2020-01-01
-author: "FreeCAD"
+authors: FreeCAD
 weight: 3
 cover:
   image: 3.webp

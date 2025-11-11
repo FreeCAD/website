@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Getting started with the Path Workbench. Part Two.'
 date: 2023-12-07
-author: Jo Hinchliffe
+authors: Jo Hinchliffe
 draft: false
 categories: tutorial
 tags: []

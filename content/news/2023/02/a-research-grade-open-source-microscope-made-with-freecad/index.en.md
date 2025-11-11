@@ -1,7 +1,7 @@
 ---
 title: A Research Grade Open Source Microscope
 date: 2023-02-13
-author: Chris Hennes
+authors: Chris Hennes
 draft: false
 categories: showcase
 tags:

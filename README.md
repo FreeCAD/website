@@ -225,7 +225,7 @@ To create a new Release, use the following Front Matter:
 title: "FreeCAD X.Y Release"        <-- X is the major version number and Y minor
 description: "The Release description"
 date: yyyy-mm-dd
-author: "FreeCAD"
+authors: FreeCAD
 tags:
   - X.Y
 cover:

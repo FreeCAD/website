@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Helping translate FreeCAD using Crowdin'
 date: 2024-07-04
-author: Jo Hinchliffe
+authors: Jo Hinchliffe
 draft: false
 categories: tutorial
 tags: []

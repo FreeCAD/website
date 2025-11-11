@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Festive tree decoration, using the Revolution Tool!'
 date: 2024-12-13
-author: Jo Hinchliffe
+authors: Jo Hinchliffe
 draft: false
 categories: tutorial
 tags:

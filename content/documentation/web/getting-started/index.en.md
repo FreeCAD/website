@@ -2,7 +2,7 @@
 title: Getting Started
 description: How to get started with the Trigo Theme.
 date: 2020-01-01
-author: "FreeCAD"
+authors: FreeCAD
 weight: 2
 tags:
   - Docs

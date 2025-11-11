@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Using the Turntable Function'
 date: 2025-01-06
-author: Jo Hinchliffe
+authors: Jo Hinchliffe
 draft: false
 categories: tutorial
 tags: []

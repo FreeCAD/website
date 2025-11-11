@@ -1,7 +1,7 @@
 ---
 title: 'New Grants: further Toponaming work, better API documentation'
 date: 2024-07-02
-author: Aleksandr Prokudin
+authors: Aleksandr Prokudin
 draft: false
 categories: announcement
 tags:

@@ -1,7 +1,7 @@
 ---
 title: Google Summer of Code
 date: 2023-02-23
-author: Chris Hennes
+authors: Chris Hennes
 draft: false
 categories: announcement
 tags: []

@@ -2,7 +2,7 @@
 title: "Installation | Update"
 description: "Read Install and Update instructions here"
 date: 2021-01-20
-author: "FreeCAD"
+authors: FreeCAD
 cover:
   image: 3.webp
   caption: "a cover caption"
@@ -11,8 +11,8 @@ cover:
 
 ## Intro
 
--   **We'll be using `yml/yaml` format for all examples down below, I recommend using `yml` over `toml` as it is easier to read.**
--   You can find any [YML to TOML](https://www.google.com/search?q=yml+to+toml) converters if necessary.
+- **We'll be using `yml/yaml` format for all examples down below, I recommend using `yml` over `toml` as it is easier to read.**
+- You can find any [YML to TOML](https://www.google.com/search?q=yml+to+toml) converters if necessary.
 
 ---
 
@@ -56,22 +56,22 @@ theme: Trigo
 ```
 ### Method 4
 
- - Install [Go programming language](https://go.dev/doc/install) in your operating system.
+- Install [Go programming language](https://go.dev/doc/install) in your operating system.
 
- - Intialize your own hugo mod
+- Intialize your own hugo mod
 
 ```
 hugo mod init PATH_TO_YOUR_LOCAL_GIT_DIRECTORY
 ```
 
- - Add Trigo Theme in your `config.yml` file
+- Add Trigo Theme in your `config.yml` file
 
 ```
 module:
   imports:
   - path: github.com/FreeCAD/website/tree/main/themes/Trigo
 ```
- - Update theme
+- Update theme
 
 ```
 hugo mod get -u
@@ -96,34 +96,33 @@ pygmentsUseClasses: true
 googleAnalytics: UA-123-45
 
 minify:
-    disableXML: true
-    minifyOutput: true
+  disableXML: true
+  minifyOutput: true
 
 params:
-    env: production # to enable google analytics, opengraph and schema.
-    title: "ExampleSite"
-    description: "ExampleSite description"
-    keywords: [Blog, Portfolio]
-    author: "FreeCAD"
-    # author: [Me, You] # multiple authors
-    images: [<link or path of image for opengraph>]
-    DateFormat: January 2, 2006
-    defaultChroma: auto # dark, light
+  env: production # to enable google analytics, opengraph and schema.
+  title: "ExampleSite"
+  description: "ExampleSite description"
+  keywords: [Blog, Portfolio]
+  authors: [Me, You, Tom Sawyer]
+  images: [<link or path of image for opengraph>]
+  DateFormat: January 2, 2006
+  defaultChroma: auto # dark, light
 
-    showReadingTime: true
-    showShareButtons: true
-    showPagination: true
-    showCopyCodeButton: false
-    hideSummary: false
+  showReadingTime: true
+  showShareButtons: true
+  showPagination: true
+  showCopyCodeButton: false
+  hideSummary: false
 
-    label:
-        text: Home
-        icon: /apple-touch-icon.webp
-        iconHeight: 35
+  label:
+    text: Home
+    icon: /apple-touch-icon.webp
+    iconHeight: 35
 
-    analytics:
-        google:
-            SiteVerificationTag: XYZabc
+  analytics:
+    google:
+      SiteVerificationTag: XYZabc
 ```
 
 ---
@@ -137,8 +136,7 @@ date: 2020-09-15T11:30:03+00:00
 # weight: 1
 # aliases: [/first]
 tags: [first]
-author: "FreeCAD"
-# author: [Me, You] # multiple authors
+authors: [Me, You, Tom Sawyer]
 
 draft: false
 description: "Desc Text."
@@ -147,9 +145,9 @@ hideSummary: false
 showReadingTime: true
 showPagination: true
 cover:
-    image: <image path/url> # image path/url
-    alt: <alt text> # alt text
-    caption: <text> # display caption under cover
+  image: <image path/url> # image path/url
+  alt: <alt text> # alt text
+  caption: <text> # display caption under cover
 ---
 ```
 

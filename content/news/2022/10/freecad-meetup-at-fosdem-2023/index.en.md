@@ -1,7 +1,7 @@
 ---
 title: FreeCAD Meetup at FOSDEM 2023
 date: 2022-10-26
-author: Chris Hennes
+authors: Chris Hennes
 draft: false
 categories: event
 tags: []

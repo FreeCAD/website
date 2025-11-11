@@ -1,7 +1,7 @@
 ---
 title: First FPA sponsored development
 date: 2022-09-26
-author: Chris Hennes
+authors: Chris Hennes
 draft: false
 categories: announcement
 tags:

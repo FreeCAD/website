@@ -2,7 +2,7 @@
 title: "FreeCAD 1.0 est enfin là !"
 description: "C'est finalement sorti !"
 date: 2024-06-16T15:27:48+12:00
-author: "FreeCAD"
+authors: FreeCAD
 draft: false
 categories: announcement
 tags:

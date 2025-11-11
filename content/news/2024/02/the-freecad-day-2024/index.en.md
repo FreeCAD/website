@@ -1,7 +1,7 @@
 ---
 title: The FreeCAD day 2024
 date: 2024-02-13
-author: Yorik van Havre
+authors: Yorik van Havre
 draft: false
 categories: event
 tags:

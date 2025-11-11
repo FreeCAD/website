@@ -2,7 +2,7 @@
 title: "♥ Parrainer"
 description: "Participer à la pérennisation de FreeCAD"
 date: 2024-05-22T08:04:23+12:00
-author: "FreeCAD"
+authors: FreeCAD
 cover:
   image: 3.webp
   caption: "a cover caption"

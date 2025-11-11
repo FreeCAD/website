@@ -2,7 +2,7 @@
 title: "FreeCAD 1.0"
 description: "A new chapter for free and open-source CAD!"
 date: 2024-11-19T00:00:00+12:00
-author: "FreeCAD"
+authors: FreeCAD
 cover:
   image: 9.webp
   caption: "a cover caption"

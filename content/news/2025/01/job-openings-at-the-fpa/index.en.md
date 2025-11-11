@@ -1,7 +1,7 @@
 ---
 title: Job openings at the FPA
 date: 2025-01-24
-author: Aleksandr Prokudin
+authors: Aleksandr Prokudin
 draft: false
 categories: announcement
 tags:

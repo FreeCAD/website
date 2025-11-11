@@ -1,7 +1,7 @@
 ---
 title: FOSDEM and FreeCAD Meeting travel Grants
 date: 2022-11-16
-author: Yorik van Havre
+authors: Yorik van Havre
 draft: false
 categories: announcement
 tags: []

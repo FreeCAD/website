@@ -1,7 +1,7 @@
 ---
 title: FPA 2022 report
 date: 2023-03-21
-author: Yorik van Havre
+authors: Yorik van Havre
 draft: false
 categories: announcement
 tags:

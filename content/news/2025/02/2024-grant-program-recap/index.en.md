@@ -1,7 +1,7 @@
 ---
 title: 2024 Grant program recap
 date: 2025-02-13
-author: Aleksandr Prokudin
+authors: Aleksandr Prokudin
 draft: false
 categories: announcement
 tags:

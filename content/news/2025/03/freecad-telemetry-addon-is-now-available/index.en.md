@@ -1,7 +1,7 @@
 ---
 title: FreeCAD Telemetry Addon is now available
 date: 2025-03-30
-author: Aleksandr Prokudin
+authors: Aleksandr Prokudin
 draft: false
 categories: announcement
 tags:

@@ -1,7 +1,7 @@
 ---
 title: "Merci!"
 description: "Merci de télécharger FreeCAD!"
-author: "FreeCAD"
+authors: FreeCAD
 cover:
   image: 3.webp
   caption: "a cover caption"

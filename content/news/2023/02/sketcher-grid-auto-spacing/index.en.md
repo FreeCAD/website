@@ -1,7 +1,7 @@
 ---
 title: Sketcher Grid Auto-Spacing
 date: 2023-02-27
-author: Chris Hennes
+authors: Chris Hennes
 draft: false
 categories: feature
 tags:

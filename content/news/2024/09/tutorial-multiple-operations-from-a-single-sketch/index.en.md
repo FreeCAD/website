@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: multiple operations from a single Sketch'
 date: 2024-09-20
-author: Jo Hinchliffe
+authors: Jo Hinchliffe
 draft: false
 categories: tutorial
 tags:

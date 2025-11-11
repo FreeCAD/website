@@ -1,7 +1,7 @@
 ---
 title: The annual Grant program is live
 date: 2024-03-01
-author: Aleksandr Prokudin
+authors: Aleksandr Prokudin
 draft: false
 categories: announcement
 tags:

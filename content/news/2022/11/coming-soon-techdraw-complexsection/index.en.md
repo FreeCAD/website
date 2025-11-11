@@ -1,7 +1,7 @@
 ---
 title: 'Coming Soon: TechDraw ComplexSection'
 date: 2022-11-09
-author: Chris Hennes
+authors: Chris Hennes
 draft: false
 categories: feature
 tags:

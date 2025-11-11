@@ -1,7 +1,7 @@
 ---
 title: FreeCAD Version 1.0 Released
 date: 2024-11-19
-author: Jo Hinchliffe
+authors: Jo Hinchliffe
 draft: false
 categories: announcement
 tags:

@@ -1,7 +1,7 @@
 ---
 title: 'The Little Things: Navigation Cube Update'
 date: 2022-12-21
-author: Chris Hennes
+authors: Chris Hennes
 draft: false
 categories: feature
 tags:

@@ -1,7 +1,7 @@
 ---
 title: FreeCAD Day 2025
 date: 2025-02-16
-author: Jo Hinchliffe
+authors: Jo Hinchliffe
 draft: false
 categories: event
 tags: []

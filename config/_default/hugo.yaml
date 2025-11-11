@@ -30,6 +30,7 @@ taxonomies:
   category: categories
   tag: tags
   series: series
+  author: authors
 
 markup:
   goldmark:

@@ -2,7 +2,7 @@
 title: "Fonctionnalités"
 description: "Découvrir les fonctionnalités de FreeCAD"
 date: 2024-05-22T08:04:23+12:00
-author: "FreeCAD"
+authors: FreeCAD
 ToC: true
 cover:
   image: 5.webp

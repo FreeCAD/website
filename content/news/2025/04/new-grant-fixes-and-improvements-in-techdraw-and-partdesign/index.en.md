@@ -1,7 +1,7 @@
 ---
 title: 'New Grant: fixes and improvements in TechDraw and PartDesign'
 date: 2025-04-29
-author: Aleksandr Prokudin
+authors: Aleksandr Prokudin
 draft: false
 categories: announcement
 tags:

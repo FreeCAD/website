@@ -1,7 +1,7 @@
 ---
 title: FPA annual report
 date: 2024-03-14
-author: Yorik van Havre
+authors: Yorik van Havre
 draft: false
 categories: announcement
 tags: []

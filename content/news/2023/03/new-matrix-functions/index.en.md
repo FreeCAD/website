@@ -1,7 +1,7 @@
 ---
 title: New Matrix Functions
 date: 2023-03-13
-author: Chris Hennes
+authors: Chris Hennes
 draft: false
 categories: feature
 tags:

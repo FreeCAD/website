@@ -1,7 +1,7 @@
 ---
 title: North America FreeCAD Meetup August 2024.
 date: 2024-09-09
-author: Jo Hinchliffe
+authors: Jo Hinchliffe
 draft: false
 categories: event
 tags: []

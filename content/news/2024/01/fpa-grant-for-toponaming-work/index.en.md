@@ -1,7 +1,7 @@
 ---
 title: FPA Grant for Toponaming work
 date: 2024-01-25
-author: Chris Hennes
+authors: Chris Hennes
 draft: false
 categories: announcement
 tags:

@@ -3,16 +3,20 @@
 env: production # Enables google analytics, opengraph and schema.
 
 description: "Your free and open-source parametric modeler"
-author: "FreeCAD"
+authors: FreeCAD
 logo: /FreeCAD-wordmark.svg
 
 defaultChroma: auto # dark, light
-showAuthor: true
+
+showCategories: true
+showTags: true
+showAuthors: true
 showReadingTime: true
 showWordCount: true
 showShareButtons: true
 showPagination: true
 showCopyCodeButton: true
+
 footerSectionLinksMax: 5
 telemetryMaxEntries: 20
 

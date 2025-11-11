@@ -1,7 +1,7 @@
 ---
 title: FreeCAD at FOSDEM
 date: 2024-02-01
-author: Jo Hinchliffe
+authors: Jo Hinchliffe
 draft: false
 categories: announcement
 tags:

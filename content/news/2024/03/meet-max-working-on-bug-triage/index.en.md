@@ -1,7 +1,7 @@
 ---
 title: 'Meet Max: Working on Bug Triage'
 date: 2024-03-22
-author: Jo Hinchliffe
+authors: Jo Hinchliffe
 draft: false
 categories: showcase
 tags:

@@ -2,7 +2,7 @@
 title: "Multi-language"
 description: How to configure multiple languages in the Trigo Theme.
 date: 2020-01-01
-author: "FreeCAD"
+authors: FreeCAD
 weight: 7
 cover:
   image: 6.webp

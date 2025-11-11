@@ -1,7 +1,7 @@
 ---
 title: FPA Website and Handbook
 date: 2022-11-30
-author: Chris Hennes
+authors: Chris Hennes
 draft: false
 categories: announcement
 tags:

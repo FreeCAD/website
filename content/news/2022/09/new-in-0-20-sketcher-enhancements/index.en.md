@@ -1,7 +1,7 @@
 ---
 title: 'New in 0.20: Sketcher Enhancements'
 date: 2022-09-07
-author: Chris Hennes
+authors: Chris Hennes
 draft: false
 categories: feature
 tags:

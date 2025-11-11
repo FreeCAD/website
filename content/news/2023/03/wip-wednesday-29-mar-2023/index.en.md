@@ -1,7 +1,7 @@
 ---
 title: 'WIP Wednesday: 29 Mar 2023'
 date: 2023-03-29
-author: Chris Hennes
+authors: Chris Hennes
 draft: false
 categories: update
 tags:

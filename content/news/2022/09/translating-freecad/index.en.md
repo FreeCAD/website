@@ -1,7 +1,7 @@
 ---
 title: Translating FreeCAD
 date: 2022-09-21
-author: Chris Hennes
+authors: Chris Hennes
 draft: false
 categories: feature
 tags:

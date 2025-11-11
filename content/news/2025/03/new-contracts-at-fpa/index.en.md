@@ -1,7 +1,7 @@
 ---
 title: New contracts at FPA
 date: 2025-03-02
-author: Aleksandr Prokudin
+authors: Aleksandr Prokudin
 draft: false
 categories: announcement
 tags:
