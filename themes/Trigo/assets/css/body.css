@@ -274,3 +274,22 @@ meter::-webkit-meter-optimum-value {
   white-space: nowrap;
   border: 0;
 }
+
+
+/* Unsupported Internet Explorer browsers. */
+
+.unsupported-browser {
+  display: none;
+  background: #900;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* IE10–11 hack */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .unsupported-browser {
+    display: block;
+  }
+}

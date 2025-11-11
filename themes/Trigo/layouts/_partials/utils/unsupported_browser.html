@@ -1,23 +1,5 @@
 {{- /* Notice for unsupported Internet Explorer (6-11) browser users. */ -}}
 
-<style>
-  .unsupported-browser {
-    display: none;
-    background: #900;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    font-size: 1rem;
-  }
-
-  /* IE10–11 hack */
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    .unsupported-browser {
-      display: block;
-    }
-  }
-</style>
-
 <!--[if IE]>
   <style>
     .unsupported-browser { display: block; }
@@ -26,5 +8,5 @@
 
 <div class="unsupported-browser">
   <h3>Hi there! Internet Explorer is no longer supported.</h3>
-  <p>Please use a proper web browser such as Firefox, Chromium or Edge. Thank you!</p>
+  <p>Please use a modern web browser such as Firefox, Chromium or Edge. Thank you!</p>
 </div>

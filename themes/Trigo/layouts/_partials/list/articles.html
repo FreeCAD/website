@@ -10,7 +10,6 @@
   {{- end -}}
 
   <a href="{{ .Permalink }}"
-  alt="ARTICLE"
   aria-label="{{ .Title | plainify }}"
   title="{{ .Title | plainify }}">
 
@@ -19,7 +18,7 @@
 
     {{- if not .Date.IsZero -}}
       <span class="entry-date">
-        <time datetime="{{ .Date }}">
+        <time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z" }}">
           {{ .Date | time.Format ":date_long" }}
         </time>
       </span>

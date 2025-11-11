@@ -63,15 +63,17 @@
 
     {{- else -}}
       {{- /* Responsive image with popover. */ -}}
+      {{- $srcset := slice -}}
+      {{- range $imgSize := $sizes -}}
+        {{- if ge $img.Width $imgSize -}}
+          {{- $resized := $img.Resize (printf "%dx %s" $imgSize $format) -}}
+          {{- $srcset = $srcset | append (printf "%s %dw" ($resized.RelPermalink | safeURL) $imgSize) -}}
+        {{- end -}}
+      {{- end -}}
       <figure>
         <button aria-label="{{ $zoom }}" popovertarget="{{ $id }}">
           <img loading="lazy"
-            srcset="
-              {{- range $imgSize := $sizes -}}
-                {{- if ge $img.Width $imgSize -}}
-                  {{ printf "%s %dw, " (($img.Resize (printf "%dx %s" $imgSize $format)).RelPermalink | safeURL) $imgSize }}
-                {{- end -}}
-              {{- end -}}"
+            srcset="{{ delimit $srcset ", " }}"
             sizes="
               (max-width: {{ index $sizes 0 }}px) {{ index $sizes 0 }}px,
               {{ index $sizes 1 }}px"
