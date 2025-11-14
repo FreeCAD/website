@@ -29,15 +29,13 @@
     {{- $item := .item -}}
     {{- $meta := $item.metadata -}}
 
-    {{- /* Clean repository name. */ -}}
+    {{- /* Clean repository name and detect provider. */ -}}
     {{- $repo := $item.repository | default "" -}}
     {{- if strings.HasSuffix $repo ".git" -}}
       {{- $repo = replace $repo ".git" "" -}}
     {{- end -}}
-
-    {{- /* Repository provider detection. */ -}}
-    {{- $isGitHub   := strings.Contains $repo "github" -}}
-    {{- $isGitLab   := strings.Contains $repo "gitlab" -}}
+    {{- $isGitHub := strings.Contains $repo "github" -}}
+    {{- $isGitLab := strings.Contains $repo "gitlab" -}}
     {{- $isCodeberg := strings.Contains $repo "codeberg" -}}
 
     {{- /* Get base raw file URL. */ -}}
@@ -51,14 +49,10 @@
           "")) -}}
 
     {{- /* Clean icon path. */ -}}
-    {{- $icon := $meta.icon -}}
-    {{- if $icon -}}
-      {{- $cleanIcon := replaceRE "(\\.\\.?/)+" "" $icon -}}
-      {{- $icon = cond (ne $raw "")
-          (printf "%s/%s" $raw $cleanIcon)
-          $cleanIcon -}}
-    {{- else -}}
-      {{- $icon = $defaultIcon.RelPermalink -}}
+    {{- $icon := $meta.icon | default $defaultIcon.RelPermalink -}}
+    {{- $icon = replaceRE "(\\.\\.?/)+" "" $icon -}}
+    {{- if ne $raw "" }}
+      {{- $icon = printf "%s/%s" $raw $icon -}}
     {{- end -}}
 
     <a href="{{ $item.repository }}">
