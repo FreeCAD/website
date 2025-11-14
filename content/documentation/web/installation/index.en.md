@@ -14,8 +14,6 @@ cover:
 - **We'll be using `yml/yaml` format for all examples down below, I recommend using `yml` over `toml` as it is easier to read.**
 - You can find any [YML to TOML](https://www.google.com/search?q=yml+to+toml) converters if necessary.
 
----
-
 ## Guide
 
 Follow [Quick Start](https://gohugo.io/getting-started/quick-start/) guide to setup hugo and create a new site.
@@ -125,8 +123,6 @@ params:
       SiteVerificationTag: XYZabc
 ```
 
----
-
 ## Sample `Page.md`
 
 ```yml
@@ -156,5 +152,3 @@ You can use it by creating `archetypes/post.md`
 ```shell
 hugo new --kind post <name>
 ```
-
----

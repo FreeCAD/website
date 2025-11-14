@@ -132,7 +132,7 @@ kbd {
 
 dl, ol, ul {
   margin: var(--gap) auto;
-  padding-left: var(--gap);
+  padding-inline-start: calc(var(--gap) * 1.5);
 }
 
 li,
@@ -144,25 +144,17 @@ li:has(input[type="checkbox"]) {
   list-style-type: none;
 }
 
-dl {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 dt {
-  width: 25%;
+  margin: calc(var(--gap) * 0.5) auto;
   font-weight: 700;
 }
 
 dd {
-  width: 75%;
-  margin-inline-start: 0;
-  padding-inline-start: 0.5rem;
+  margin-inline-start: var(--gap);
 }
 
-dd ~ dd,
 dt ~ dt {
-  margin-top: var(--gap);
+  margin-top: calc(var(--gap) * 1.5);
 }
 
 hr {

@@ -134,7 +134,7 @@ Second Term
 <u>How it renders:</u>
 
 First Term
-: This is the definition of the first term.
+: Lorem est tota propiore conpellat pectoribus de pectora summo. Redit teque digerit hominumque toris verebor lumina non cervice subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc caluere tempus inhospita parcite confusaque translucet patri vestro qui optatis lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.
 
 Second Term
 : This is the definition of the second term.

@@ -13,8 +13,6 @@ cover:
 
 -   We'll be using `yaml` format for all examples down below, as it is easier to read.
 
----
-
 ## Override theme template
 
 By Hugo's Lookup Order, you can override any part of a theme that you want. The following is a quick example.
@@ -34,8 +32,6 @@ your-site/layouts/_defaults/list.html
 Then you're free to make any changes you want to the `list`.
 When Hugo builds your site, your copy of `list.html` will be used instead of the theme's `list.html`.
 
----
-
 ## Enable SEO
 
 These include OpenGraph and Schema.
@@ -46,8 +42,6 @@ params:
 ```
 
 or set `HUGO_ENV` as "production" in system env-vars
-
----
 
 ## Failed to find a valid digest in the "integrity" attribute for resource ... ?
 
@@ -70,8 +64,6 @@ Linked Issues:
 -   https://stackoverflow.com/questions/65056585/hugo-theme-not-loading
 -   https://stackoverflow.com/questions/65040931/hugo-failed-to-find-a-valid-digest-in-the-integrity-attribute-for-resource
 -   https://blog.gerardbeckerleg.com/posts/hugo-failed-to-find-a-valid-digest-in-the-integrity-attribute-for-resource/
-
----
 
 ## Add menu to site
 
@@ -102,8 +94,6 @@ menu:
 
 For more information on menus, see the [Hugo wiki page](https://gohugo.io/content-management/menus/).
 
----
-
 ## Pin a Post
 
 Post can be pinned/ displayed top on the list by adding a `weight=<num>` var to page-variables
@@ -128,8 +118,6 @@ weight: 2
 
 ```
 
----
-
 ## Adding Custom Favicon(s)
 
 We support the following paths under `/static` directory
@@ -141,8 +129,6 @@ and can be added accordingly.
 - `apple-touch-icon.webp`
 - `safari-pinned-tab.svg`
 
----
-
 ## Centering image in markdown
 
 Add `#center` after image to center align an image
@@ -150,8 +136,6 @@ Add `#center` after image to center align an image
 ```md
 ![name](path/to/image.webp#center)
 ```
-
----
 
 ## Using Hugo's Syntax highlighter "chroma"
 
@@ -164,8 +148,6 @@ markup:
 ```
 
 `noClasses` has to be `false` to make highlight color follows the theme.
-
----
 
 ## References
 

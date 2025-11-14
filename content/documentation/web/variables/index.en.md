@@ -9,9 +9,8 @@ cover:
   alt: "a cover alternative title"
 ---
 
-**Below are variables used with this theme...**
+## Variables used with the Trigo theme
 
----
 
 ### Site Variables under `Params`
 
@@ -65,7 +64,6 @@ cover:
 | `schema.publisherType` | string | "Organization"   | https://schema.org/publisher  |
 | `schema.sameAs`        | list   | [URL1, URL2] | Set https://schema.org/sameAs |
 
----
 
 ### Page Variables
 

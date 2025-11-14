@@ -173,19 +173,27 @@
 /* Steps shortcode. */
 
 .steps {
+  margin: calc(var(--gap) * 2) auto;
   counter-reset: step;
   border-left: var(--border);
   margin-left: var(--gap);
 }
 
+.steps :is(h1, h2, h3, h4, h5, h6) {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap);
+}
+
 .steps > :not(:where(h2, h3, h4, h5, h6):not(.no-step)) {
-  margin-left: 2.5rem;
+  margin-left: 3rem;
 }
 
 .steps :where(h2, h3, h4, h5, h6):not(.no-step)::before {
   counter-increment: step;
   content: counter(step);
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 2rem;
@@ -196,4 +204,5 @@
   outline: var(--theme) solid var(--gap);
   border-radius: 50%;
   transform: translateX(-1rem);
+  flex-shrink: 0;
 }
