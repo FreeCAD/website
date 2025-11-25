@@ -128,7 +128,7 @@
     grid-template-columns: 1fr;
   }
 
-  :is(.card-icon, .download-box) svg {
+  .card-icon svg {
     height: calc(var(--width) * 0.2);
   }
 

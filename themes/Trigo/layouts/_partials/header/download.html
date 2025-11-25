@@ -17,32 +17,28 @@
     <div class="card" id="{{ $platform.id }}" style="order: {{ $platform.order }};">
       {{- range $download := $platform.downloads -}}
         {{- with index $params (printf "%s_%s" $platform.id $download.key) -}}
-          <a class="arch-icon"
+          <a class="card-icon app-build"
             href="{{ . }}"
             data-url="{{ . }}"
             alt="{{ $download.alt }}"
             aria-label="{{ $download.label }}"
             title="{{ $download.label }}"
             target="_blank"
-            rel="noopener noreferrer"
-            >
-            <span>
-              {{ $platform.label }}
-            </span>
-            <br>
+            rel="noopener noreferrer">
             {{- partial "utils/icon.html" $download.key -}}
+            <br>
+            <span>{{- $platform.label -}}</span>
           </a>
         {{- end -}}
       {{- end -}}
 
-      <button type="button"
+      <button class="card-icon"
+        type="button"
         popovertarget="{{ $platform.id }}-arch"
         title="{{ $platform.label }}">
         {{- partial "utils/icon.html" $platform.id -}}
         <br>
-        <span>
-          {{ $platform.label }}
-        </span>
+        <span>{{- $platform.label -}}</span>
       </button>
       <span popover id="{{ $platform.id }}-arch"></span>
     </div>
@@ -72,7 +68,7 @@
 {{- $thanks := site.GetPage "thanks" | default (site.Sites.Default.GetPage "thanks") -}}
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('.arch-icon').forEach(function(link) {
+    document.querySelectorAll('.app-build').forEach(function(link) {
       link.addEventListener('click', function(event) {
         event.preventDefault();
 

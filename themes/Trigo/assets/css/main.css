@@ -241,9 +241,10 @@ main header .entry-cover img {
   width: 100%;
 }
 
-:is(.card-icon, .download-box) svg {
+.card-icon svg {
   color: var(--secondary);
   height: calc(var(--width) * 0.075);
+  transition: var(--link-transition);
 }
 
 .card-title,
@@ -640,18 +641,18 @@ figcaption svg {
   justify-content: space-around;
 }
 
-.download-box .card a {
+.download-box .card-icon {
   color: var(--secondary);
 }
 
-.download-box .arch-icon svg {
+.download-box .app-build svg {
   padding: calc(var(--gap) * 0.75);
   background: var(--secondary);
   color: var(--entry);
   border-radius: calc(var(--radius) * 2);
 }
 
-.download-box .arch-icon:hover svg {
+.download-box .app-build:hover {
   transform: var(--transform-hover);
 }
 
@@ -661,7 +662,7 @@ figcaption svg {
 
 :is(#windows:has(#windows-arch:popover-open),
 #mac:has(#mac-arch:popover-open),
-#linux:has(#linux-arch:popover-open)) .arch-icon {
+#linux:has(#linux-arch:popover-open)) .app-build {
   display: inline-block;
 }
 
@@ -669,7 +670,7 @@ figcaption svg {
 #mac:has(#mac-arch:popover-open),
 #linux:has(#linux-arch:popover-open)) [popovertarget*="arch"],
 [id*="arch"],
-.arch-icon {
+.app-build {
   display: none;
 }
 
