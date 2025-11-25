@@ -153,14 +153,14 @@
     {
       "repository": "https://github.com/AnesBenmerzoug/FreeCAD-Assembly2MuJoCo",
       "git_ref": "main",
-      "last_update_time": "2025-06-08T14:10:24+02:00",
+      "last_update_time": "2025-11-18T20:16:08+01:00",
       "metadata": {
         "name": "Assembly2MuJoCo",
         "description": "An addon for exporting FreeCAD builtin Assemblies to MuJoCo.",
-        "version": "0.2.0",
+        "version": "0.3.0",
         "maintainer": "Anes Benmerzoug",
         "license": "LGPL-2.1-or-later",
-        "icon": "freecad/assembly2mujoco/resources/icons/assembly2mujoco-icon.svg"
+        "icon": "resources/icons/assembly2mujoco-icon.svg"
       }
     }
   ],
@@ -183,11 +183,11 @@
     {
       "repository": "https://codeberg.org/Zolko/Assembly4",
       "git_ref": "main",
-      "last_update_time": "2025-07-27T20:31:52+02:00",
+      "last_update_time": "2025-11-18T17:19:17+01:00",
       "metadata": {
         "name": "Assembly4",
         "description": "This assembly workbench allows you to assemble various FreeCAD parts (of type Part or Body) into a standard assembly container using links, and place them relative to the assembly and to each other.",
-        "version": "0.60.2",
+        "version": "0.60.3",
         "maintainer": "Zolko-123",
         "license": "LGPL-2.1-only",
         "icon": "../Resources/icons/Assembly4.svg"
@@ -305,14 +305,6 @@
       }
     }
   ],
-  "BIMBots": [
-    {
-      "repository": "https://github.com/opensourceBIM/BIMbots-FreeCAD",
-      "git_ref": "master",
-      "last_update_time": "2024-06-06T15:39:38+02:00",
-      "metadata": {}
-    }
-  ],
   "BIM": [
     {
       "repository": "https://github.com/yorikvanhavre/BIM_Workbench",
@@ -423,11 +415,11 @@
     {
       "repository": "https://github.com/jaheyns/CfdOF",
       "git_ref": "master",
-      "last_update_time": "2025-11-03T21:29:58+02:00",
+      "last_update_time": "2025-11-24T21:45:54+02:00",
       "metadata": {
         "name": "CfdOF",
         "description": "Computational Fluid Dynamics (CFD) for FreeCAD based on OpenFOAM",
-        "version": "1.33.2",
+        "version": "1.33.3",
         "maintainer": "Oliver Oxtoby",
         "license": "LGPL-3.0-or-later",
         "icon": "Gui/Icons/cfd.svg"
@@ -469,7 +461,7 @@
     {
       "repository": "https://github.com/drwho495/ConstraintDesign-wb",
       "git_ref": "main",
-      "last_update_time": "2025-10-01T20:03:39-05:00",
+      "last_update_time": "2025-11-17T20:53:07-06:00",
       "metadata": {
         "name": "Constraint Design",
         "description": "This addon adds a design workbench that is specially designed to be as flexible and stable as possible.",
@@ -484,7 +476,7 @@
     {
       "repository": "https://github.com/altangarts/FreeCAD-Themes-ColorPalette",
       "git_ref": "main",
-      "last_update_time": "2025-10-22T18:04:56+03:00",
+      "last_update_time": "2025-11-20T22:02:44+03:00",
       "metadata": {
         "name": "ColorPaletteTheme",
         "description": "2D-3D ColorPalette Theme",
@@ -636,7 +628,7 @@
     {
       "repository": "https://github.com/mwganson/DynamicData",
       "git_ref": "master",
-      "last_update_time": "2025-10-29T17:29:20-05:00",
+      "last_update_time": "2025-11-20T11:49:22-06:00",
       "metadata": {
         "name": "DynamicData",
         "description": "Container object for holding custom properties, alternative to spreadsheet",
@@ -681,7 +673,7 @@
     {
       "repository": "https://github.com/erroronline1/estimateWB",
       "git_ref": "master",
-      "last_update_time": "2025-09-21T17:06:06+02:00",
+      "last_update_time": "2025-11-22T01:34:00+01:00",
       "metadata": {
         "name": "estimateWB",
         "description": "A FreeCAD workbench to estimate material quantity by volume or weight for selected parts",
@@ -712,7 +704,7 @@
     {
       "repository": "https://github.com/shaise/FreeCAD_FastenersWB",
       "git_ref": "master",
-      "last_update_time": "2025-11-04T11:36:58+02:00",
+      "last_update_time": "2025-11-24T21:56:04+02:00",
       "metadata": {
         "name": "Fasteners Workbench",
         "description": "Some common fasteners and fastener tools for FreeCAD.",
@@ -787,7 +779,7 @@
     {
       "repository": "https://github.com/looooo/freecad.gears",
       "git_ref": "master",
-      "last_update_time": "2025-09-13T10:39:41+02:00",
+      "last_update_time": "2025-11-24T22:05:21+01:00",
       "metadata": {
         "name": "freecad.gears workbench",
         "description": "A gear workbench for FreeCAD",
@@ -855,11 +847,11 @@
     {
       "repository": "https://github.com/APEbbers/FreeCAD-Ribbon",
       "git_ref": "main",
-      "last_update_time": "2025-11-15T18:20:03+01:00",
+      "last_update_time": "2025-11-19T22:53:49+01:00",
       "metadata": {
         "name": "FreeCAD Ribbon",
         "description": "A Ribbon interface for FreeCAD",
-        "version": "1.10.1.1",
+        "version": "1.10.4",
         "maintainer": "Paul Ebbers",
         "license": "GPL-3.0-or-later",
         "icon": "Resources/icons/FreecadNew.svg"
@@ -868,11 +860,11 @@
     {
       "repository": "https://github.com/APEbbers/FreeCAD-Ribbon",
       "git_ref": "Develop",
-      "last_update_time": "2025-11-15T17:23:55+01:00",
+      "last_update_time": "2025-11-22T18:57:21+01:00",
       "metadata": {
         "name": "FreeCAD Ribbon",
         "description": "A Ribbon interface for FreeCAD",
-        "version": "1.10.1",
+        "version": "1.11.x",
         "maintainer": "Paul Ebbers",
         "license": "GPL-3.0-or-later",
         "icon": "Resources/icons/FreecadNew.svg"
@@ -898,11 +890,11 @@
     {
       "repository": "https://github.com/kwahoo2/freecad-xr-workbench",
       "git_ref": "main",
-      "last_update_time": "2025-08-26T13:58:37+02:00",
+      "last_update_time": "2025-11-19T17:56:49+01:00",
       "metadata": {
-        "name": "XR Virtual Reality Workbench",
+        "name": "Virtual Reality",
         "description": "A Virtual Reality (OpenXR) workbench. View your models with VR goggles.",
-        "version": "0.9.96",
+        "version": "0.9.97",
         "maintainer": "Adrian Przekwas",
         "license": "LGPL-3.0-or-later",
         "icon": "Gui/Resources/icons/preferences-xrworkbench.svg"
@@ -996,7 +988,7 @@
     {
       "repository": "https://github.com/lukh/frameforge",
       "git_ref": "main",
-      "last_update_time": "2025-11-16T12:38:59+01:00",
+      "last_update_time": "2025-11-17T19:22:00+01:00",
       "metadata": {
         "name": "FrameForge",
         "description": "FrameForge is dedicated for creating Frames and Beams, and apply operations (miter cuts, trim cuts) on these profiles.",
@@ -1163,11 +1155,11 @@
     {
       "repository": "https://github.com/easyw/kicadStepUpMod",
       "git_ref": "master",
-      "last_update_time": "2025-10-23T10:23:52+02:00",
+      "last_update_time": "2025-11-20T23:00:12+01:00",
       "metadata": {
         "name": "KicadStepUp Workbench",
         "description": "A bidirectional ECAD/MCAD collaboration between KiCAD and FreeCAD.",
-        "version": "11.07.8",
+        "version": "11.07.9",
         "maintainer": "Maui",
         "license": "AGPLv3.0",
         "icon": "Resources/icons/kicad-StepUp-tools-WB.svg"
@@ -1178,7 +1170,7 @@
     {
       "repository": "https://github.com/DeepSOIC/Lattice2",
       "git_ref": "master",
-      "last_update_time": "2025-11-08T16:51:52+01:00",
+      "last_update_time": "2025-11-20T13:09:30+01:00",
       "metadata": {
         "name": "Lattice2 Workbench",
         "description": "Tools and arrays of all sorts and kinds, and local coordinate systems",
@@ -1201,7 +1193,7 @@
     {
       "repository": "https://github.com/execuc/LCInterlocking",
       "git_ref": "master",
-      "last_update_time": "2020-01-28T13:40:11+01:00",
+      "last_update_time": "2025-11-23T20:57:12+01:00",
       "metadata": {}
     }
   ],
@@ -1390,14 +1382,14 @@
   ],
   "Ondsel-Lens": [
     {
-      "repository": "https://github.com/Ondsel-Development/Ondsel-Lens-Addon",
+      "repository": "https://github.com/FreeCAD/Ondsel-Lens-Addon",
       "git_ref": "main",
-      "last_update_time": "2024-11-29T18:16:20+00:00",
+      "last_update_time": "2025-11-21T09:31:56+00:00",
       "metadata": {
         "name": "Ondsel Lens Addon",
         "description": "Workspace manager for Ondsel Lens workspaces",
-        "version": "2024.11.29.01",
-        "maintainer": "Ondsel Development",
+        "version": "2025.11.21.01",
+        "maintainer": "Pieter Hijma",
         "license": "LGPL-2.0-or-later",
         "icon": "Resources/icons/OndselWorkbench.svg"
       }
@@ -1475,7 +1467,7 @@
     {
       "repository": "https://codeberg.org/osh-autodoc/osh-autodoc-workbench",
       "git_ref": "main",
-      "last_update_time": "2024-09-09T12:53:37+00:00",
+      "last_update_time": "2025-11-23T15:01:07+01:00",
       "metadata": {
         "name": "OSH Automated Documentation",
         "description": "A workbench that support the creation of assembly manuals of open source hardware.",
@@ -1732,7 +1724,7 @@
     {
       "repository": "https://github.com/HakanSeven12/Road",
       "git_ref": "main",
-      "last_update_time": "2025-11-16T16:14:43+03:00",
+      "last_update_time": "2025-11-24T21:17:48+03:00",
       "metadata": {
         "name": "Road",
         "description": "Road is the Transportation and Geomatics Engineering workbench for FreeCAD.",
@@ -1977,11 +1969,11 @@
     {
       "repository": "https://github.com/FreeCAD/FreeCAD-Telemetry",
       "git_ref": "main",
-      "last_update_time": "2025-11-02T11:55:59-06:00",
+      "last_update_time": "2025-11-17T16:55:54-06:00",
       "metadata": {
         "name": "Telemetry",
         "description": "Help improve FreeCAD by sending basic metrics to the development team.",
-        "version": "1.0.2",
+        "version": "1.0.3",
         "maintainer": "The FreeCAD project association AISBL",
         "license": "LGPL-2.1-or-later",
         "icon": "Resources/icons/telemetryLogo.svg"
@@ -2045,13 +2037,13 @@
     {
       "repository": "https://github.com/KeithSloan/toSketch",
       "git_ref": "main",
-      "last_update_time": "2025-11-07T20:12:32+00:00",
+      "last_update_time": "2025-11-24T21:03:34+00:00",
       "metadata": {
         "name": "toSketch",
-        "description": "Add toSketch facility for FreeCAD. This WB help with remodelling of existing models.",
+        "description": "Tools to help recreate models from STEP files.",
         "version": "1.0.1",
         "maintainer": "Keith Sloan",
-        "license": "GPL-2.0",
+        "license": "GPL-2.0-or-later",
         "icon": "freecad/toSketch/Resources/icons/toSketchlogo.svg"
       }
     }
@@ -2158,11 +2150,11 @@
     {
       "repository": "https://github.com/dprojects/Woodworking",
       "git_ref": "master",
-      "last_update_time": "2025-11-15T17:45:00+01:00",
+      "last_update_time": "2025-11-25T00:19:14+01:00",
       "metadata": {
         "name": "Woodworking",
         "description": "FreeCAD workbench for woodworking purposes.",
-        "version": "1.1.0.dev.1.1.1.2025.11.15",
+        "version": "1.1.0.dev.1.1.1.2025.11.24",
         "maintainer": "FreeCAD updates appear every week. Unfortunately, I do not have the ability to consistently follow the changes and wonder if something has been broken.",
         "license": "MIT, keep author tag without change.",
         "icon": "Icons/Woodworking.png"
