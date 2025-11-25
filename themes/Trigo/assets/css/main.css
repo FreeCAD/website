@@ -213,8 +213,12 @@ main header .entry-cover img {
   transition: var(--link-transition);
 }
 
-.card:has(> :not(.entry-cover):first-child) {
+.card:has(> :not(.entry-cover, .app-build):first-child) {
   padding-top: var(--gap);
+}
+
+.card:has(.app-build) {
+  padding: 0;
 }
 
 .card:hover, .card:focus {
@@ -642,6 +646,7 @@ figcaption svg {
 }
 
 .download-box .card-icon {
+  padding: var(--gap);
   color: var(--secondary);
 }
 
@@ -664,6 +669,14 @@ figcaption svg {
 #mac:has(#mac-arch:popover-open),
 #linux:has(#linux-arch:popover-open)) .app-build {
   display: inline-block;
+}
+
+.card:has(#windows-arch:popover-open,
+#mac-arch:popover-open,
+#linux-arch:popover-open) {
+  filter: var(--filter);
+  transform: var(--transform-hover);
+  outline: var(--outline);
 }
 
 :is(#windows:has(#windows-arch:popover-open),
