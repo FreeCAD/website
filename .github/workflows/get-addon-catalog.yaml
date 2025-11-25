@@ -99,10 +99,7 @@ jobs:
 
           echo "Validating $FILE..."
 
-          if ! python3 -m json.tool "$FILE"; then
-            echo "Error: $FILE is not valid JSON."
-            exit 1
-          fi
+          jq empty "$FILE" || (echo "Error: $FILE is not valid JSON." && exit 1)
 
       - name: Cleanup Addon JSON
         if: steps.fetch_zip.outputs.changed == 'true'
