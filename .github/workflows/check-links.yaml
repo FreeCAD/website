@@ -10,10 +10,10 @@ permissions:
   actions: write
 
 jobs:
-  validate-links:
-    runs-on: ubuntu-latest
+#  validate-links:
+#    runs-on: ubuntu-latest
 
-    steps:
+#    steps:
 #    - name: Checkout repository
 #      uses: actions/checkout@v4
 
@@ -39,8 +39,9 @@ jobs:
 #        statusCodes: '{"403": "warn"}'
 
   trigger-deploy:
-    needs: validate-links
+#    needs: validate-links
     runs-on: ubuntu-latest
+
     steps:
       - name: Trigger Hugo deployment
         run: |
