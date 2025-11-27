@@ -31,10 +31,14 @@
     tabindex="0"
     {{ with $style }}style="{{ . }}"{{ end }}>
     <span class="branch-open">
-      {{- partial "utils/icon.html" (printf "%s-open" $type) -}}
+      {{- with (partial "utils/icon.html" (printf "%s-open" $type)) -}}
+        <span class="icon">{{ . }}</span>
+      {{- end -}}
     </span>
     <span class="branch-closed">
-      {{- partial "utils/icon.html" (printf "%s" $type) -}}
+      {{- with (partial "utils/icon.html" (printf "%s" $type)) -}}
+        <span class="icon">{{ . }}</span>
+      {{- end -}}
     </span>
     {{- $name | $.Page.RenderString -}}
   </span>

@@ -44,12 +44,16 @@
           rel="noopener noreferrer">
       {{- end -}}
       <span>
-        {{- partial "utils/icon" "cv" -}}
+        {{- with (partial "utils/icon.html" "cv") -}}
+          <span class="icon">{{ . }}</span>
+        {{- end -}}
       </span>
       {{- . -}}
       {{- if $isExternal -}}
         <span class="external">
-          {{- partial "utils/icon.html" "external" -}}
+          {{- with (partial "utils/icon.html" "external") -}}
+            <span class="icon">{{ . }}</span>
+          {{- end -}}
         </span>
       {{- end -}}
       {{- if $isUrl -}}

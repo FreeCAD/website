@@ -2,7 +2,12 @@
 title: Customization
 description: How to customize the Trigo Theme.
 date: 2020-01-01
-weight: 12
+authors: FreeCAD
+weight: 9
+tags:
+  - Config
+  - Theme
+  - Guide
 ---
 
 The Trigo Theme offers some default customization options in the `hugo.yaml` config file to configure the theme.

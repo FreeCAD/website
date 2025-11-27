@@ -103,7 +103,9 @@
     {{- with $caption -}}
       <figcaption>
         <div class="internal-tooltip">
-          {{- partial "utils/icon.html" "important" -}}
+          {{- with (partial "utils/icon.html" "important") -}}
+            <span class="icon">{{ . }}</span>
+          {{- end -}}
           <span class="tooltip">
             {{- . | $.RenderString -}}
           </span>

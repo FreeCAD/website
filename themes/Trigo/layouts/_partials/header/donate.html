@@ -125,7 +125,9 @@
             <button class="close"
               popovertarget="donation-popover"
               popovertargetaction="hide">
-              {{- partial "utils/icon.html" "cross" -}}
+              {{- with (partial "utils/icon.html" "cross") -}}
+                <span class="icon">{{ . }}</span>
+              {{- end -}}
             </button>
           </div>
         {{- end -}}

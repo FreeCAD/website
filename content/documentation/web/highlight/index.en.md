@@ -2,7 +2,13 @@
 title: "Syntax Highlighting"
 description: How to use syntax highlight in the Trigo Theme.
 date: 2020-01-01
-weight: 8
+authors: FreeCAD
+weight: 7
+tags:
+  - Markdown
+  - Code
+  - Example
+  - Guide
 ---
 
 Hugo uses [Chroma](https://github.com/alecthomas/chroma), a general purpose syntax highlighter in pure Go, for syntax highlighting.

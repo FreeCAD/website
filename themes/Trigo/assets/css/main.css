@@ -397,60 +397,60 @@ blockquote p {
 
 .note {
   background: #ddeeff;
-  color: #334466;
-  border-inline-start: calc(var(--line) * 2) solid #334466;
+  color: #446688;
+  border-inline-start: calc(var(--line) * 2) solid #446688;
 }
 
 .tip {
-  background: #ddffcc;
-  color: #226633;
-  border-inline-start: calc(var(--line) * 2) solid #226633;
+  background: #cceedd;
+  color: #226644;
+  border-inline-start: calc(var(--line) * 2) solid #226644;
 }
 
 .important {
   background: #eeddff;
-  color: #552244;
-  border-inline-start: calc(var(--line) * 2) solid #552244;
+  color: #664488;
+  border-inline-start: calc(var(--line) * 2) solid #664488;
 }
 
 .warning {
-  background: #ffffcc;
-  color: #665533;
-  border-inline-start: calc(var(--line) * 2) solid #665533;
+  background: #ffeecc;
+  color: #886622;
+  border-inline-start: calc(var(--line) * 2) solid #886622;
 }
 
 .caution {
   background: #ffdddd;
-  color: #441111;
-  border-inline-start: calc(var(--line) * 2) solid #441111;
+  color: #884444;
+  border-inline-start: calc(var(--line) * 2) solid #884444;
 }
 
 .dark .note {
-  background: #334466;
+  background: #446688;
   color: #ddeeff;
   border-inline-start: calc(var(--line) * 2) solid #ddeeff;
 }
 
 .dark .tip {
-  background: #226633;
-  color: #ddffcc;
-  border-inline-start: calc(var(--line) * 2) solid #ddffcc;
+  background: #226644;
+  color: #cceedd;
+  border-inline-start: calc(var(--line) * 2) solid #cceedd;
 }
 
 .dark .important {
-  background: #662244;
+  background: #664488;
   color: #eeddff;
   border-inline-start: calc(var(--line) * 2) solid #eeddff;
 }
 
 .dark .warning {
-  background: #665533;
-  color: #ffffcc;
-  border-inline-start: calc(var(--line) * 2) solid #ffffcc;
+  background: #886622;
+  color: #ffeecc;
+  border-inline-start: calc(var(--line) * 2) solid #ffeecc;
 }
 
 .dark .caution {
-  background: #441111;
+  background: #884444;
   color: #ffdddd;
   border-inline-start: calc(var(--line) * 2) solid #ffdddd;
 }
@@ -827,6 +827,14 @@ figcaption svg {
   height: var(--m);
   display: inline-block;
   vertical-align: -.25rem;
+}
+
+.pagination .next svg {
+  margin-inline-start: calc(var(--gap) * 0.5);
+}
+
+.pagination .prev svg {
+  margin-inline-end: calc(var(--gap) * 0.5);
 }
 
 
@@ -1397,7 +1405,7 @@ figcaption > .internal-tooltip .tooltip {
 /* Code block render hook. */
 
 .codeblock {
-  margin: calc(var(--gap) * 0.5) auto;
+  margin: var(--gap) auto;
   background: var(--entry);
   border-radius: var(--radius);
 }

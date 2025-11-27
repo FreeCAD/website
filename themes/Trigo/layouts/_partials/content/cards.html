@@ -27,7 +27,9 @@
 
       {{- if $isMap -}}
         <span class="card-icon">
-          {{- partial "utils/icon.html" .icon -}}
+          {{- with (partial "utils/icon.html" .icon) -}}
+            <span class="icon">{{ . }}</span>
+          {{- end -}}
         </span>
       {{- end -}}
 
@@ -42,11 +44,19 @@
         <p class="card-description">{{- . -}}</p>
       {{- end -}}
 
+      {{- if not hugo.IsProduction -}}
+        {{- with .Weight -}}
+          <h2 style="color: red;">{{ . }}</h2>
+        {{- end -}}
+      {{- end -}}
+
       {{- if not $isMap -}}
         <div class="card-metadata">
           {{- if not .Date.IsZero -}}
             <span class="meta">
-              {{- partial "utils/icon.html" "date" -}}
+              {{- with (partial "utils/icon.html" "date") -}}
+                <span class="icon">{{ . }}</span>
+              {{- end -}}
               <time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z" }}">
                 {{- .Date | time.Format ":date_long" -}}
               </time>
@@ -56,7 +66,9 @@
           {{- if .Params.categories -}}
             {{- with index (.GetTerms "categories") 0 -}}
               <span class="meta">
-                {{- partial "utils/icon.html" "categories" -}}
+                {{- with (partial "utils/icon.html" "categories") -}}
+                  <span class="icon">{{ . }}</span>
+                {{- end -}}
                 {{ .LinkTitle }}
               </span>
             {{- end -}}

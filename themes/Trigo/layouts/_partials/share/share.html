@@ -7,7 +7,9 @@
         <a href="{{ $url }}"
           title="{{ i18n $social | default $social | title }}"
           target="_blank" rel="noopener">
-          {{- partial "utils/icon.html" $social -}}
+          {{- with (partial "utils/icon.html" $social) -}}
+            <span class="icon">{{ . }}</span>
+          {{- end -}}
         </a>
       {{- end -}}
     {{- end -}}
@@ -51,7 +53,9 @@
     <a href="{{ $url }}"
       title="{{ i18n "shareOn" | default "Share on" }} {{ i18n "fediverse" | default "Fediverse" }}"
       target="_blank" rel="noopener">
-      {{- partial "utils/icon.html" "fediverse" -}}
+      {{- with (partial "utils/icon.html" "fediverse") -}}
+        <span class="icon">{{ . }}</span>
+      {{- end -}}
     </a>
   {{- end -}}
 </section>

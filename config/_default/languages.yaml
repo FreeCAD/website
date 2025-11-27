@@ -2,120 +2,120 @@
 
 en:
   disabled: false
-  languageName: "English"
+  languageName: English
   languageCode: en-US
   languageDirection: ltr
   weight: 1
   params:
-    subtitle: "Your own free and open-source parametric modeler"
+    subtitle: Your own free and open-source parametric modeler
     languageFlag: 🇬🇧
 
 fr:
   disabled: false
-  languageName: "Français"
+  languageName: Français
   languageCode: fr-FR
   languageDirection: ltr
   weight: 2
   params:
-    subtitle: "Votre modeleur paramétrique libre et open-source"
+    subtitle: Votre modeleur paramétrique libre et open-source
     languageFlag: 🇫🇷
 
 de:
   disabled: false
-  languageName: "Deutsch"
+  languageName: Deutsch
   languageCode: de-DE
   languageDirection: ltr
   weight: 3
   params:
-    subtitle: "Ihr parametrischer frei und Open-Source 3D-Modellierer"
+    subtitle: Ihr parametrischer frei und Open-Source 3D-Modellierer
     languageFlag: 🇩🇪
 
 it:
   disabled: false
-  languageName: "Italiano"
+  languageName: Italiano
   languageCode: it-IT
   languageDirection: ltr
   weight: 4
   params:
-    subtitle: "Il tuo modellatore parametrico libero e open-source"
+    subtitle: Il tuo modellatore parametrico libero e open-source
     languageFlag: 🇮🇹
 
 es:
   disabled: false
-  languageName: "Español"
+  languageName: Español
   languageCode: es-ES
   languageDirection: ltr
   weight: 5
   params:
-    subtitle: "Tu propio modelador paramétrico libre y de código abierto"
+    subtitle: Tu propio modelador paramétrico libre y de código abierto
     languageFlag: 🇪🇸
 
 br:
   disabled: false
-  languageName: "Português brasileiro"
+  languageName: Português brasileiro
   languageCode: pt-BR
   languageDirection: ltr
   weight: 6
   params:
-    subtitle: "Seu próprio modelador paramétrico livre e de código aberto"
+    subtitle: Seu próprio modelador paramétrico livre e de código aberto
     languageFlag: 🇧🇷
 
 pl:
   disabled: false
-  languageName: "Polski"
+  languageName: Polski
   languageCode: pl-PL
   languageDirection: ltr
   weight: 7
   params:
-    subtitle: "Twój własny program do parametrycznego modelowania wolne i otwarte"
+    subtitle: Twój własny program do parametrycznego modelowania wolne i otwarte
     languageFlag: 🇵🇱
 
 nl:
   disabled: false
-  languageName: "Nederlands"
+  languageName: Nederlands
   languageCode: nl-NL
   languageDirection: ltr
   weight: 8
   params:
-    subtitle: "Jouw eigen parametrische vrije en opensource tekenprogramma"
+    subtitle: Jouw eigen parametrische vrije en opensource tekenprogramma
     languageFlag: 🇳🇱
 
 ru:
   disabled: false
-  languageName: "Русский"
+  languageName: Русский
   languageCode: ru-RU
   languageDirection: ltr
   weight: 9
   params:
-    subtitle: "Ваша собственная программа для параметрического моделирования с открытым исходным кодом"
+    subtitle: Ваша собственная бесплатная программа параметрического моделирования с открытым исходным кодом
     languageFlag: 🇷🇺
 
 zh:
   disabled: false
-  languageName: "汉语"
+  languageName: 汉语
   languageCode: zh-CN
   languageDirection: ltr
   weight: 10
   params:
-    subtitle: "你自己的免费开源参数建模器"
+    subtitle: 你自己的免费开源参数建模器
     languageFlag: 🇨🇳
 
 ar:
   disabled: false
-  languageName: "عربي"
+  languageName: عربي
   languageCode: ar
   languageDirection: rtl
   weight: 11
   params:
-    subtitle: "أداة النمذجة البارامترية المجانية والمفتوحة المصدر الخاصة بك"
+    subtitle: أداة النمذجة البارامترية المجانية والمفتوحة المصدر الخاصة بك
     languageFlag: 🇸🇦
 
 tr:
   disabled: false
-  languageName: "Türkçe"
+  languageName: Türkçe
   languageCode: tr
   languageDirection: ltr
   weight: 12
   params:
-    subtitle: "Kendi ücretsiz ve açık kaynaklı parametrik modelleyiciniz"
+    subtitle: Kendi ücretsiz ve açık kaynaklı parametrik modelleyiciniz
     languageFlag: 🇹🇷

@@ -50,10 +50,14 @@
         title="{{ i18n "menu" | default "Menu" }}"
         aria-label="{{ i18n "menu" | default "Menu" }}">
         <span class="hamburger">
-          {{- partial "utils/icon.html" "hamburger" -}}
+          {{- with (partial "utils/icon.html" "hamburger") -}}
+            <span class="icon">{{ . }}</span>
+          {{- end -}}
         </span>
         <span class="cross">
-          {{- partial "utils/icon.html" "cross" -}}
+          {{- with (partial "utils/icon.html" "cross") -}}
+            <span class="icon">{{ . }}</span>
+          {{- end -}}
         </span>
       </button>
 
@@ -106,7 +110,9 @@
         accesskey="l"
         title="{{ i18n "choose_language" | default "Choose language" }} (Alt + L)"
         aria-label="{{ i18n "choose_language" | default "Choose language" }} (Alt + L)">
-        {{- partial "utils/icon.html" "language" -}}
+        {{- with (partial "utils/icon.html" "language") -}}
+          <span class="icon">{{ . }}</span>
+        {{- end -}}
       </button>
 
       <ul popover id="lang-list" class="language-list">
@@ -140,10 +146,14 @@
         title="{{ i18n "toggle_theme" | default "Switch theme chroma" }} (Alt + T)"
         aria-label="{{ i18n "toggle_theme" | default "Switch theme chroma" }}">
         <span id="dark">
-          {{- partial "utils/icon.html" "moon" -}}
+          {{- with (partial "utils/icon.html" "moon") -}}
+            <span class="icon">{{ . }}</span>
+          {{- end -}}
         </span>
         <span id="light">
-          {{- partial "utils/icon.html" "sun" -}}
+          {{- with (partial "utils/icon.html" "sun") -}}
+            <span class="icon">{{ . }}</span>
+          {{- end -}}
         </span>
       </button>
     </div>

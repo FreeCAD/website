@@ -29,7 +29,9 @@
   {{- partial "header/categories.html" . -}}
 
   <h1 class="title">
-    {{- partial "utils/icon.html" (lower .Data.Plural) -}}
+    {{- with (partial "utils/icon.html" (lower .Data.Plural)) -}}
+      <span class="icon">{{ . }}</span>
+    {{- end -}}
     {{ .Data.Singular | title }}: {{ .Title | .RenderString }} ({{ $count }})
   </h1>
 

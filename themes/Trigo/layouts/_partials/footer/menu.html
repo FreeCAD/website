@@ -17,7 +17,6 @@
   (not (strings.HasPrefix $currentUrl site.BaseURL)
   )
 -}}
-{{- $externalIcon := partial "utils/icon.html" "external" -}}
 
 {{- $sectionKey := path.Base $section.Page.File.Dir -}}
 {{- $classes := slice -}}
@@ -47,7 +46,9 @@
       {{ $section.Title | $.CurrentPage.RenderString }}
       {{- if $isExternal -}}
         <span class="external">
-          {{ $externalIcon }}
+          {{- with (partial "utils/icon.html" "external") -}}
+            <span class="icon">{{ . }}</span>
+          {{- end -}}
         </span>
       {{- end -}}
     </a>
@@ -111,7 +112,9 @@
             </span>
             {{- if $external -}}
               <span class="external">
-                {{ $externalIcon }}
+                {{- with (partial "utils/icon.html" "external") -}}
+                  <span class="icon">{{ . }}</span>
+                {{- end -}}
               </span>
             {{- end -}}
           </a>

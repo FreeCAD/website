@@ -3,7 +3,7 @@ title: Markdown Syntax Guide
 description: Sample article showcasing basic Markdown syntax and formatting.
 date: 2020-01-01
 authors: FreeCAD
-weight: 4
+weight: 3
 tags:
   - Markdown
   - Syntax

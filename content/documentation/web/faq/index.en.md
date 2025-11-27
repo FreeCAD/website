@@ -3,6 +3,7 @@ title: "FAQs"
 description: "Frequently Asked Questions"
 date: 2021-01-20
 authors: FreeCAD
+weight: 10
 cover:
   image: 6.webp
   caption: "a cover caption"

@@ -54,7 +54,9 @@
 
       {{- if strings.HasPrefix $cite "http"}}
         <span class="external">
-          {{- partial "utils/icon.html" "external" -}}
+          {{- with (partial "utils/icon.html" "external") -}}
+            <span class="icon">{{ . }}</span>
+          {{- end -}}
         </span>
         </a>
       {{- end -}}

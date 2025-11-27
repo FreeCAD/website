@@ -1,7 +1,14 @@
 ---
 title: Shortcodes
 description: Bundled Trigo Theme and Hugo shortcodes to augment your content with custom stuff.
-weight: 6
+date: 2020-01-01
+authors: FreeCAD
+weight: 5
+tags:
+  - Shortcodes
+  - Syntax
+  - Example
+  - Guide
 cover:
   image: 2.webp
   caption: "a cover caption"

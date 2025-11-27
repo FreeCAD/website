@@ -1,7 +1,7 @@
 # General Hugo configuration. For Theme or CMS, go to params.yaml
 
 baseURL: https://marcuspollio.github.io/FreeCAD-website/
-title: "FreeCAD"
+title: FreeCAD
 
 defaultContentLanguage: en
 
@@ -13,7 +13,7 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 enableEmoji: true
-mainSections: "news"
+mainSections: news
 
 summaryLength: 20
 
@@ -86,11 +86,11 @@ outputs:
 
 outputFormats:
   CMS_Config:
-    baseName: "cms-config"
+    baseName: cms-config
     isHTML: false
     isPlainText: true
     notAlternative: true
-    mediaType: "application/yaml"
+    mediaType: application/yaml
 
 services:
   googleAnalytics:

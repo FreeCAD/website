@@ -2,7 +2,7 @@
 title: Deploy Site
 description: How to deploy a site using Hugo.
 date: 2020-01-01
-weight: 11
+weight: 8
 ---
 
 Hugo generates static websites, allowing for flexible hosting options.

@@ -4,8 +4,6 @@
   - Handle external links.
 */ -}}
 
-{{- $externalIcon := partial "utils/icon.html" "external" -}}
-
 <section class="footer-custom">
   {{- range . -}}
     {{- $url := .url -}}
@@ -23,7 +21,9 @@
         {{ $title }}
         {{- if $isExternal -}}
           <span class="external">
-            {{ $externalIcon }}
+            {{- with (partial "utils/icon.html" "external") -}}
+              <span class="icon">{{ . }}</span>
+            {{- end -}}
           </span>
         {{- end -}}
       </a>

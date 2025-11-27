@@ -3,7 +3,13 @@
      - Fallback to default language Site if missing. */ -}}
 
 {{- $section := .CurrentSection -}}
-{{- $pages := $section.RegularPages | lang.Merge (where site.Sites.Default.RegularPages "CurrentSection.Path" "eq" $section.Path) -}}
+{{- $pages := $section.RegularPages
+  | lang.Merge (where site.Sites.Default.RegularPages "CurrentSection.Path" "eq" $section.Path) -}}
+
+{{- /* Reverse sort order if set in Front Matter. */ -}}
+{{- if eq .Params.pageSortOrder "reverse" -}}
+  {{- $pages = $pages.Reverse -}}
+{{- end -}}
 
 {{- if $pages -}}
   <footer class="single-footer">
@@ -13,10 +19,21 @@
           href="{{ .RelPermalink -}}#top"
           alt="PREVIOUS ARTICLE"
           title="{{ i18n "previous_article" | default "Previous article" }}">
-          ◀ {{ .LinkTitle | .RenderString }}
-          {{ if not (eq .Lang $.Lang) }}
-            {{ partial "utils/icon.html" "translations" }} {{ .Lang | upper }}
-          {{ end }}
+          {{- with (partial "utils/icon.html" "arrow-left") -}}
+            <span class="icon">{{ . }}</span>
+          {{- end -}}
+          {{- .LinkTitle | .RenderString -}}
+          {{- if not (eq .Lang $.Lang) -}}
+            {{- with (partial "utils/icon.html" "translations") -}}
+              <span class="icon">{{ . }}</span>
+            {{- end -}}
+            {{ .Lang | upper -}}
+          {{- end -}}
+          {{- if not hugo.IsProduction -}}
+            {{- with .Weight -}}
+              <span style="color: red;">{{ . }}</span>
+            {{- end -}}
+          {{- end -}}
         </a>
       {{- end -}}
 
@@ -25,10 +42,20 @@
           href="{{ .RelPermalink -}}#top"
           alt="NEXT ARTICLE"
           title="{{ i18n "next_article" | default "Next article" }}">
-          {{ .LinkTitle | .RenderString }}
-          {{ if not (eq .Lang $.Lang) }}
-            {{ partial "utils/icon.html" "translations" }} {{ .Lang | upper }}
-          {{ end }} ▶
+          {{- .LinkTitle | .RenderString -}}
+          {{- if not (eq .Lang $.Lang) -}}
+            {{- with (partial "utils/icon.html" "translations") -}}
+              <span class="icon">{{ . }}</span>
+            {{- end -}}
+            {{ .Lang | upper -}}
+          {{- end -}}
+          {{- with (partial "utils/icon.html" "arrow-right") -}}
+            <span class="icon">{{ . }}</span>
+          {{- end -}}          {{- if not hugo.IsProduction -}}
+            {{- with .Weight -}}
+              <span style="color: red;">{{ . }}</span>
+            {{- end -}}
+          {{- end -}}
         </a>
       {{- end -}}
     </nav>

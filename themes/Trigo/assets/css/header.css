@@ -62,11 +62,11 @@
   height: var(--l);
 }
 
-body.dark #dark {
+html.dark #dark {
   display: none;
 }
 
-body:not(.dark) #light {
+html:not(.dark) #light {
   display: none;
 }
 

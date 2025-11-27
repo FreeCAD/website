@@ -35,14 +35,18 @@
             <div class="card-metadata">
               {{- with .author  -}}
                 <span class="meta">
-                  {{- partial "utils/icon.html" "authors" -}}
+                  {{- with (partial "utils/icon.html" "authors") -}}
+                    <span class="icon">{{ . }}</span>
+                  {{- end -}}
                   {{- truncate 40 . -}}
                 </span>
               {{- end -}}
 
               {{- with .labels -}}
                 <span class="meta">
-                  {{- partial "utils/icon.html" "tags" -}}
+                  {{- with (partial "utils/icon.html" "tags") -}}
+                    <span class="icon">{{ . }}</span>
+                  {{- end -}}
                   <span class="tags">
                     {{- range . -}}
                       <span>{{- . | title -}}</span>

@@ -2,10 +2,11 @@
 
 env: production # Enables google analytics, opengraph and schema.
 
-description: "Your free and open-source parametric modeler."
-keywords: ["CAD", "parametric", "model", "3D", "BIM", "CAM", "FEM", "free", "open-source"]
+description: Your own free and open-source parametric modeler
+keywords: [CAD, parametric, model, 3D, BIM, CAM, FEM, free, open-source]
 authors: FreeCAD
-logo: /FreeCAD-wordmark.svg
+
+logo: FreeCAD-wordmark.svg
 
 defaultChroma: auto # dark, light
 
@@ -26,12 +27,12 @@ telemetryMaxEntries: 20
 enableCMS: true
 
 # Image processing
-processableFormats: ["jpg", "jpeg", "png", "webp", "gif"]
-resizeFormat: "webp"
+processableFormats: [jpg, jpeg, png, webp, gif]
+resizeFormat: webp
 resizeDimensions:
-  list: ["500x1000", "1000x500", "2000x1000"]
-  single: ["500x250", "1000x500"]
-  card: ["500x250"]
+  list: [500x1000, 1000x500, 2000x1000]
+  single: [500x250, 1000x500]
+  card: [500x250]
 
 # JS scripts
 enableUA: true # NOTE: Enables User Agent sniffing, useful e.g. to provide corresponding download options.
@@ -42,11 +43,11 @@ enableDonateBox: true
 calendar:
   host: "https://open-web-calendar.hosted.quelltext.eu/calendar.html"
   url: "https://calendar.google.com/calendar/ical/6e6cc81260051a3c49fdf915c472f2d62576820129f0e0b2cacb7025ed62f960%40group.calendar.google.com/public/basic.ics"
-  title: "FreeCAD Calendar"
-  tabs: ["month", "week", "agenda"]
-  skin: "terrace"
+  title: FreeCAD Calendar
+  tabs: [month, week, agenda]
+  skin: terrace
   menu: false
-  target: "_blank"
+  target: _blank
 
 # Social Media links
 socials:

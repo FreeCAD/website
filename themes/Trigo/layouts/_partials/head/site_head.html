@@ -5,7 +5,7 @@
 */ -}}
 
 {{- $pageTitle := cond (and .Title (not .IsHome)) (printf "%s | %s" site.Title .Title) site.Title | plainify -}}
-{{- $description := .Description | default (cond (or .IsPage .IsSection) .Summary site.Params.description) | plainify -}}
+{{- $description := cond (or .IsPage .IsSection) (or .Description .Summary) (or site.Params.subtitle site.Params.description) | plainify -}}
 {{- $keywords := .Keywords | default .Params.tags | default site.Params.keywords -}}
 {{- if reflect.IsSlice $keywords -}}
   {{- $keywords = delimit $keywords ", " -}}
@@ -24,12 +24,20 @@
   <link rel="canonical" href="{{ .Permalink }}">
 
   {{- /* Favicons. */ -}}
-  <link rel="icon" href="{{ "favicon.ico" | absURL }}">
-  <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
+  {{- if fileExists "static/favicon.svg" -}}
+    <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
+  {{- end -}}
+  {{- if fileExists "static/favicon.ico" -}}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}">
+  {{- end -}}
+  {{- if fileExists "static/apple-touch-icon.png" -}}
+    <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+  {{- end -}}
 
   {{- range .AllTranslations -}}
     <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
   {{- end -}}
+  <link rel="alternate" hreflang="x-default" href="{{ .Site.Home.Permalink }}">
 
   {{- /* Get chroma script to change between light and dark theme. */ -}}
   {{- partial "scripts/chroma.html" . -}}

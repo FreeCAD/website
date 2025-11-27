@@ -11,7 +11,9 @@
 <header>
 
   <h1 class="title">
-    {{- partial "utils/icon.html" (lower .Title) -}}
+    {{- with (partial "utils/icon.html" (lower .Title)) -}}
+      <span class="icon">{{ . }}</span>
+    {{- end -}}
     {{ .Title | .RenderString }}
   </h1>
 
