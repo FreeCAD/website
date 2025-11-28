@@ -1,6 +1,6 @@
 ---
 title: "Merci!"
-description: "Merci de télécharger FreeCAD!"
+description: "Merci d'utiliser et soutenir FreeCAD!"
 authors: FreeCAD
 cover:
   image: 3.webp
@@ -8,19 +8,19 @@ cover:
   alt: "a cover alternative title"
 params:
   cards:
-    tip:
-      title: "Enjoy!"
-      description: "Have fun with FreeCAD, design great projects and share them with the world!"
-      link: "donate"
+    - title: "Enjoy!"
+      description: "Profitez de FreeCAD, concevez de superbes projets and partagez les avec le monde!"
+      link: "../features"
       weight: 1
-    cv:
-      title: "Documentation"
-      description: "Get started with the user manual, tutorials and guides."
-      link: "documentation"
+      icon: sun
+    - title: "Documentation"
+      description: "Démarrez avec la documentation d'utilisation, les tutorials and guides."
+      link: "../documentation"
       weight: 2
-    external:
-      title: "Donate"
-      description: "Want to see FreeCAD improve? Let's sponsor it!"
-      link: "documentation"
-      weight: 2
+      icon: words
+    - title: "Contribute"
+      description: "Vous souhaitez voir FreeCAD s'améliorer? Parrainez le project et contribuez à son développement!"
+      link: "../donate"
+      weight: 3
+      icon: heart
 ---
