@@ -84,7 +84,7 @@
     {
       "repository": "https://github.com/FredsFactory/FreeCAD_AirPlaneDesign",
       "git_ref": "master",
-      "last_update_time": "2025-09-08T20:43:55+02:00",
+      "last_update_time": "2025-11-30T16:38:53+01:00",
       "metadata": {
         "name": "AirplaneDesign",
         "description": "A FreeCAD workbench dedicated to Airplane Design.",
@@ -99,7 +99,7 @@
     {
       "repository": "https://github.com/KeithSloan/OpenSCAD_Alt_Import",
       "git_ref": "master",
-      "last_update_time": "2025-08-26T08:59:54+01:00",
+      "last_update_time": "2025-11-26T21:15:06+00:00",
       "metadata": {
         "name": "OpenSCAD alternate importer",
         "description": "An alternate OpenSCAD importer - with some experimental features",
@@ -266,26 +266,26 @@
     {
       "repository": "https://github.com/APEbbers/BillOfMaterials-WB",
       "git_ref": "main",
-      "last_update_time": "2025-08-02T12:50:15+02:00",
+      "last_update_time": "2025-11-25T18:50:16+01:00",
       "metadata": {
         "name": "Bill of Materials Workbench",
         "description": "A workbench to create Bill of Materials (BoM) independent of the assembly workbench of your choice.",
         "version": "1.1.0.1",
         "maintainer": "Paul Ebbers",
-        "license": "LGPL-2.1-or-later",
+        "license": "LGPL-3.0-or-later",
         "icon": "Resources/Icons/BillOfMaterialsWB.svg"
       }
     },
     {
       "repository": "https://github.com/APEbbers/BillOfMaterials-WB",
       "git_ref": "Develop",
-      "last_update_time": "2025-08-02T12:40:47+02:00",
+      "last_update_time": "2025-11-25T19:02:00+01:00",
       "metadata": {
         "name": "Bill of Materials Workbench",
         "description": "A workbench to create Bill of Materials (BoM) independent of the assembly workbench of your choice.",
         "version": "1.1.0.1",
         "maintainer": "Paul Ebbers",
-        "license": "LGPL-2.1-or-later",
+        "license": "LGPL-3.0-or-later",
         "icon": "Resources/Icons/BillOfMaterialsWB.svg"
       }
     }
@@ -415,7 +415,7 @@
     {
       "repository": "https://github.com/jaheyns/CfdOF",
       "git_ref": "master",
-      "last_update_time": "2025-11-24T21:45:54+02:00",
+      "last_update_time": "2025-11-26T08:47:18+02:00",
       "metadata": {
         "name": "CfdOF",
         "description": "Computational Fluid Dynamics (CFD) for FreeCAD based on OpenFOAM",
@@ -522,13 +522,13 @@
     {
       "repository": "https://github.com/tomate44/CurvesWB",
       "git_ref": "main",
-      "last_update_time": "2025-10-06T18:31:22+02:00",
+      "last_update_time": "2025-11-26T17:11:29+01:00",
       "metadata": {
         "name": "Curves workbench",
         "description": "A collection of tools mainly dedicated to NURBS curves and surfaces modeling.",
         "version": "0.6.70",
         "maintainer": "Christophe Grellier",
-        "license": "LGPL-2.1",
+        "license": "LGPL-2.1-or-later",
         "icon": "freecad/Curves/resources/icons/blendSurf.svg"
       }
     }
@@ -628,14 +628,14 @@
     {
       "repository": "https://github.com/mwganson/DynamicData",
       "git_ref": "master",
-      "last_update_time": "2025-11-20T11:49:22-06:00",
+      "last_update_time": "2025-11-26T12:46:36-06:00",
       "metadata": {
         "name": "DynamicData",
         "description": "Container object for holding custom properties, alternative to spreadsheet",
-        "version": "2.76",
+        "version": "2.77",
         "maintainer": "TheMarkster",
         "license": "LGPL-2.1-or-later",
-        "icon": "Resources/icons/DynamicDataLogo.svg"
+        "icon": "freecad/Dynamic_Data/Resources/icons/DynamicDataLogo.svg"
       }
     }
   ],
@@ -860,7 +860,7 @@
     {
       "repository": "https://github.com/APEbbers/FreeCAD-Ribbon",
       "git_ref": "Develop",
-      "last_update_time": "2025-11-22T18:57:21+01:00",
+      "last_update_time": "2025-11-26T21:31:02+01:00",
       "metadata": {
         "name": "FreeCAD Ribbon",
         "description": "A Ribbon interface for FreeCAD",
@@ -890,14 +890,14 @@
     {
       "repository": "https://github.com/kwahoo2/freecad-xr-workbench",
       "git_ref": "main",
-      "last_update_time": "2025-11-19T17:56:49+01:00",
+      "last_update_time": "2025-11-29T18:51:32+01:00",
       "metadata": {
         "name": "Virtual Reality",
         "description": "A Virtual Reality (OpenXR) workbench. View your models with VR goggles.",
-        "version": "0.9.97",
+        "version": "0.9.98",
         "maintainer": "Adrian Przekwas",
         "license": "LGPL-3.0-or-later",
-        "icon": "Gui/Resources/icons/preferences-xrworkbench.svg"
+        "icon": "Gui/Resources/icons/preferences-virtual_reality.svg"
       }
     }
   ],
@@ -1033,11 +1033,11 @@
     {
       "repository": "https://github.com/rahix/FusedFilamentDesign.git",
       "git_ref": "release",
-      "last_update_time": "2025-09-20T17:55:15+02:00",
+      "last_update_time": "2025-11-28T11:48:39+01:00",
       "metadata": {
         "name": "FusedFilamentDesign",
         "description": "PartDesign addon for FFF/FDM 3D-printing design",
-        "version": "0.25.380",
+        "version": "0.25.480",
         "maintainer": "rahix",
         "license": "LGPL-2.1-or-later",
         "icon": "Resources/icons/ffDesign_Logo.svg"
@@ -1155,11 +1155,11 @@
     {
       "repository": "https://github.com/easyw/kicadStepUpMod",
       "git_ref": "master",
-      "last_update_time": "2025-11-20T23:00:12+01:00",
+      "last_update_time": "2025-11-30T17:53:38+01:00",
       "metadata": {
         "name": "KicadStepUp Workbench",
         "description": "A bidirectional ECAD/MCAD collaboration between KiCAD and FreeCAD.",
-        "version": "11.07.9",
+        "version": "11.08.0",
         "maintainer": "Maui",
         "license": "AGPLv3.0",
         "icon": "Resources/icons/kicad-StepUp-tools-WB.svg"
@@ -1170,7 +1170,7 @@
     {
       "repository": "https://github.com/DeepSOIC/Lattice2",
       "git_ref": "master",
-      "last_update_time": "2025-11-20T13:09:30+01:00",
+      "last_update_time": "2025-11-30T12:46:55+01:00",
       "metadata": {
         "name": "Lattice2 Workbench",
         "description": "Tools and arrays of all sorts and kinds, and local coordinate systems",
@@ -1193,8 +1193,15 @@
     {
       "repository": "https://github.com/execuc/LCInterlocking",
       "git_ref": "master",
-      "last_update_time": "2025-11-23T20:57:12+01:00",
-      "metadata": {}
+      "last_update_time": "2025-11-29T21:25:51+01:00",
+      "metadata": {
+        "name": "LCInterlocking",
+        "description": "Create interlocking parts for laser cutting or CNC milling",
+        "version": "1.5.1",
+        "maintainer": "execuc",
+        "license": "LGPL-2.1-or-later",
+        "icon": "small_icon.svg"
+      }
     }
   ],
   "parts_library": [
@@ -1724,11 +1731,11 @@
     {
       "repository": "https://github.com/HakanSeven12/Road",
       "git_ref": "main",
-      "last_update_time": "2025-11-24T21:17:48+03:00",
+      "last_update_time": "2025-11-26T21:26:40+03:00",
       "metadata": {
         "name": "Road",
         "description": "Road is the Transportation and Geomatics Engineering workbench for FreeCAD.",
-        "version": "2025.02.22",
+        "version": "2025.11.26",
         "maintainer": "Hakan Seven",
         "license": "LGPL-2.1-or-later",
         "icon": "Road/resources/icons/RoadWorkbench.svg"
@@ -2037,7 +2044,7 @@
     {
       "repository": "https://github.com/KeithSloan/toSketch",
       "git_ref": "main",
-      "last_update_time": "2025-11-24T21:03:34+00:00",
+      "last_update_time": "2025-11-27T22:47:26+00:00",
       "metadata": {
         "name": "toSketch",
         "description": "Tools to help recreate models from STEP files.",
@@ -2150,13 +2157,13 @@
     {
       "repository": "https://github.com/dprojects/Woodworking",
       "git_ref": "master",
-      "last_update_time": "2025-11-25T00:19:14+01:00",
+      "last_update_time": "2025-11-30T17:26:49+01:00",
       "metadata": {
         "name": "Woodworking",
-        "description": "FreeCAD workbench for woodworking purposes.",
-        "version": "1.1.0.dev.1.1.1.2025.11.24",
-        "maintainer": "FreeCAD updates appear every week. Unfortunately, I do not have the ability to consistently follow the changes and wonder if something has been broken.",
-        "license": "MIT, keep author tag without change.",
+        "description": "Woodworking workbench was designed primarily for creating simple cabinets for your home or garage. However, it includes many features that will make everyday carpentry and other CAD projects easier and faster. I hope you will find something you enjoy here.",
+        "version": "2.0.20251130",
+        "maintainer": "Darek L",
+        "license": "MIT",
         "icon": "Icons/Woodworking.png"
       }
     }
