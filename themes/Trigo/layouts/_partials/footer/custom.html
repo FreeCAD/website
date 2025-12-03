@@ -4,7 +4,7 @@
   - Handle external links.
 */ -}}
 
-<section class="footer-custom">
+<div class="footer-custom">
   {{- range . -}}
     {{- $url := .url -}}
     {{- $title := .title | default "Link" -}}
@@ -29,4 +29,4 @@
       </a>
     {{- end -}}
   {{- end -}}
-</section>
+</div>

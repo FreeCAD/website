@@ -11,7 +11,7 @@
 {{- $isExternal := and (strings.HasPrefix $url "http") (not (strings.HasPrefix $url site.BaseURL)) -}}
 {{- $columnStyle := cond (.IsNamedParams) (.Get "style") (.Get 3) -}}
 
-<section class="column"
+<div class="column"
   {{ with $columnStyle }}style="{{ . | safeCSS }}"{{ end }}>
   {{- with $content -}}
     {{- with $url -}}
@@ -28,4 +28,4 @@
       </a>
     {{- end -}}
   {{- end -}}
-</section>
+</div>

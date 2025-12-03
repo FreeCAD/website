@@ -1,4 +1,4 @@
-<section class="cards">
+<div class="cards">
   {{- range . -}}
 
     {{- /* Detect if current object is page or map. */ -}}
@@ -23,7 +23,7 @@
       title="{{ $title | plainify }}">
 
       {{- /* Get article card cover image. */ -}}
-      {{- partial "content/card_image.html" . -}}
+      {{- partial "main/card_image.html" . -}}
 
       {{- if $isMap -}}
         <span class="card-icon">
@@ -78,4 +78,4 @@
     </a>
 
   {{- end -}}
-</section>
+</div>

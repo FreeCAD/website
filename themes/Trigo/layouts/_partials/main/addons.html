@@ -23,7 +23,7 @@
 
 {{- $sorted := sort $entries "item.last_update_time" "desc" -}}
 
-<section class="cards">
+<div class="cards">
   {{- range $sorted -}}
 
     {{- $item := .item -}}
@@ -101,4 +101,4 @@
     </a>
 
   {{- end -}}
-</section>
+</div>

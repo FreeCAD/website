@@ -1,33 +1,78 @@
 {{- /* Homepage:
 
-  - Set header with latest hero article.
+  - Get latest hero article and render its title and cover.
+  - Render custom buttons from homepage section.
   - List selection of latest News articles.
   - Get Content from Homepage Section.
 */ -}}
 
 {{- define "main" -}}
 
-{{- /* Get homepage header. */ -}}
-{{- partial "header/homepage.html" . -}}
-
-{{- /* Get latest News articles by category, excluding those with "hero" param. */ -}}
-{{- $pages := slice -}}
-{{- with site.Sites.Default -}}
-  {{- range .Taxonomies.categories.ByCount -}}
-    {{- $categoryPages := where .Pages "Params.hero" "ne" true | first 1 -}}
-    {{- $pages = $pages | append $categoryPages -}}
+  {{- $homepageButtons := slice -}}
+  {{- with (site.GetPage "section" "homepage" | default (site.Sites.Default.GetPage "section" "homepage")) -}}
+    {{- with .Params.buttons -}}
+      {{- $homepageButtons = . -}}
+    {{- end -}}
   {{- end -}}
-{{- end -}}
-{{- $pages = first (.Params.paginate | default 6) $pages -}}
 
-{{- with $pages -}}
-  {{- partial "content/cards.html" . -}}
-{{- end -}}
+  {{- /* Get the latest article with the "hero" parameters in front matter. */ -}}
+  {{- $hero := index (where (site.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Params.hero" "!=" nil) 0 -}}
 
-{{- /* Get homepage content. */ -}}
-{{- with (site.GetPage "section" "homepage" | default (site.Sites.Default.GetPage "section" "homepage")) -}}
-  {{- partial "content/content.html" . -}}
-{{- end -}}
+  <section class="hero">
+
+    <h1 class="title">{{- $hero.LinkTitle | .RenderString -}}</h1>
+
+    {{- with $hero.Description -}}
+      <h3 class="description">{{- . | $.RenderString -}}</h3>
+    {{- end -}}
+
+    {{- with $homepageButtons -}}
+      <div class="buttons">
+        {{- range $buttons := . -}}
+          {{- $href := $buttons.url -}}
+          {{- $page := site.GetPage $href | default (site.Sites.Default.GetPage $href) -}}
+          {{- $label := $buttons.label | default "" -}}
+
+          {{- with $page -}}
+            {{- $href = .RelPermalink -}}
+            {{- $label = cond (ne (trim $label " ") "") $label (.LinkTitle | .RenderString) -}}
+          {{- else -}}
+            {{- $label = cond (ne (trim $label " ") "") $label (i18n "explore" | default "Explore") -}}
+          {{- end -}}
+
+          <a href="{{ $href }}"
+            title="{{ $label }}"
+            class="hero-button"
+            {{ with $buttons.style }}style="{{ . | safeCSS }}"{{ end }}>
+            {{ $label }}
+          </a>
+        {{- end -}}
+      </div>
+    {{- end -}}
+
+    {{- /* Get cover image. */ -}}
+    {{- partial "hero/cover_image.html" . -}}
+
+  </section>
+
+  {{- /* Get latest News articles by category, excluding those with "hero" param. */ -}}
+  {{- $pages := slice -}}
+  {{- with site.Sites.Default -}}
+    {{- range .Taxonomies.categories.ByCount -}}
+      {{- $categoryPages := where .Pages "Params.hero" "ne" true | first 1 -}}
+      {{- $pages = $pages | append $categoryPages -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $pages = first (.Params.paginate | default 6) $pages -}}
+
+  {{- with $pages -}}
+    {{- partial "main/cards.html" . -}}
+  {{- end -}}
+
+  {{- /* Get homepage content. */ -}}
+  {{- with (site.GetPage "section" "homepage" | default (site.Sites.Default.GetPage "section" "homepage")) -}}
+    {{- partial "main/content.html" . -}}
+  {{- end -}}
 
 {{- end -}}
 {{- /* End main. */ -}}

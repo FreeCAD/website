@@ -1,56 +1,56 @@
 {{- /* Single:
 
-  - Set header with metadata.
+  - Set hero with title, description, optional cards, metadata and cover image.
   - Set Content and Pagination.
 */ -}}
 
 {{- define "main" -}}
 
-<header class="article-header">
+  <section class="hero">
 
-  <h2 class="title">
-    {{ .Title | .RenderString }}
-    {{- if .Draft -}}
-      <sup><span>[{{- i18n "draft" | default "Draft" -}}]</span></sup>
+    <h2 class="title">
+      {{ .Title | .RenderString }}
+      {{- if .Draft -}}
+        <sup><span>[{{- i18n "draft" | default "Draft" -}}]</span></sup>
+      {{- end -}}
+    </h1>
+
+    {{- with .Description  -}}
+      <h3 class="description">{{- . | $.RenderString -}}</h3>
     {{- end -}}
-  </h2>
 
-  {{- with .Description  -}}
-    <h3 class="description">{{- . | $.RenderString -}}</h3>
-  {{- end -}}
+    {{- /* List custom params cards. */ -}}
+    {{- with .Params.cards -}}
+      {{- partial "main/cards.html" . -}}
+    {{- end -}}
 
-  {{- /* List custom params cards. */ -}}
-  {{- with .Params.cards -}}
-    {{- partial "content/cards.html" . -}}
-  {{- end -}}
+    {{- /* Get article metadata. */ -}}
+    {{- partial "main/meta.html" . -}}
 
-  {{- /* Get article metadata. */ -}}
-  {{- partial "header/meta.html" . -}}
+    {{- /* Get article cover image. */ -}}
+    {{- partial "hero/cover_image.html" . -}}
 
-  {{- /* Get article cover image. */ -}}
-  {{- partial "header/cover_image.html" . -}}
-
-</header>
-
-{{- /* Get Table Of Contents. */ -}}
-{{- if .Params.ToC -}}
-  {{ .TableOfContents }}
-{{- end -}}
-
-{{- /* Get page content. */ -}}
-{{- partial "content/content.html" . -}}
-
-{{- /* For Releases, get Download release form. */ -}}
-{{- if eq .Type "releases" -}}
-  <section class="download-release">
-    {{- partial "header/download.html" . -}}
   </section>
-{{- end -}}
 
-{{- /* Get pagination to previous and next pages. */ -}}
-{{- if .Param "showPagination" -}}
-  {{- partial "content/pagination.html" . -}}
-{{- end -}}
+  {{- /* Get Table Of Contents. */ -}}
+  {{- if .Params.ToC -}}
+    {{ .TableOfContents }}
+  {{- end -}}
+
+  {{- /* Get page content. */ -}}
+  {{- partial "main/content.html" . -}}
+
+  {{- /* For Releases, get Download release form. */ -}}
+  {{- if eq .Type "releases" -}}
+    <div class="download-release">
+      {{- partial "hero/download.html" . -}}
+    </div>
+  {{- end -}}
+
+  {{- /* Get pagination to previous and next pages. */ -}}
+  {{- if .Param "showPagination" -}}
+    {{- partial "main/pagination.html" . -}}
+  {{- end -}}
 
 {{- end -}}
 {{- /* End main. */ -}}

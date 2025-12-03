@@ -1,92 +1,92 @@
 {{- /* List:
 
-  - Set header with custom header if available.
-  - Set content with custom content if available.
+  - Set hero with custom partial if available.
+  - Set main content with custom partial if available.
   - List RegularPages or sub-Sections for current Section.
 */ -}}
 
 {{- define "main" -}}
 
-<header>
-  {{- /* List categories. */ -}}
-  {{- if eq .Section "news" -}}
-    {{- partial "header/categories.html" . -}}
-  {{- end -}}
-
-  <h1 class="title">
-    {{ .Title | .RenderString }}
-    {{- if .Draft -}}
-      <sup><span>[{{- i18n "draft" | default "Draft" -}}]</span></sup>
+  <section class="hero">
+    {{- /* List categories. */ -}}
+    {{- if eq .Section "news" -}}
+      {{- partial "hero/categories.html" . -}}
     {{- end -}}
-  </h1>
 
-  {{- with .Description  -}}
-    <h3 class="description">{{- . | $.RenderString -}}</h3>
+    <h1 class="title">
+      {{ .Title | .RenderString }}
+      {{- if .Draft -}}
+        <sup><span>[{{- i18n "draft" | default "Draft" -}}]</span></sup>
+      {{- end -}}
+    </h1>
+
+    {{- with .Description  -}}
+      <h3 class="description">{{- . | $.RenderString -}}</h3>
+    {{- end -}}
+
+    {{/* Dynamically include hero partial based on Type */}}
+    {{- $hero := printf "hero/%s.html" .Type -}}
+    {{- if templates.Exists (printf "_partials/%s" $hero) -}}
+      {{- partial $hero . -}}
+    {{- end -}}
+
+    {{- /* List custom params cards. */ -}}
+    {{- with .Params.cards -}}
+      {{- partial "main/cards.html" . -}}
+    {{- end -}}
+
+    {{- /* Get cover image. */ -}}
+    {{- partial "hero/cover_image.html" . -}}
+
+  </section>
+
+  {{- /* Get Table Of Contents. */ -}}
+  {{- if .Params.ToC -}}
+    {{ .TableOfContents }}
   {{- end -}}
 
-  {{/* Dynamically include header partial based on Type */}}
-  {{- $headerPartial := printf "header/%s.html" .Type -}}
-  {{- if templates.Exists (printf "_partials/%s" $headerPartial) -}}
-    {{- partial $headerPartial . -}}
+  {{- /* For Donate, list Funded Grants and Sponsors. */ -}}
+  {{- if eq .Type "donate" -}}
+    {{- partial "main/grants.html" . -}}
+    {{- partial "main/sponsors.html" . -}}
   {{- end -}}
 
-  {{- /* List custom params cards. */ -}}
-  {{- with .Params.cards -}}
-    {{- partial "content/cards.html" . -}}
+  {{- /* Get page content. */ -}}
+  {{- partial "main/content.html" . -}}
+
+  {{/* Dynamically include main partial based on Type */}}
+  {{- $main := printf "main/%s.html" .Type -}}
+  {{- if templates.Exists (printf "_partials/%s" $main) -}}
+    {{- partial $main . -}}
   {{- end -}}
 
-  {{- /* Get cover image. */ -}}
-  {{- partial "header/cover_image.html" . -}}
+  {{- /* Get latest current sub-Sections or RegularPages, and fill in missing translated pages from default language Site. */ -}}
+  {{- $default := site.Sites.Default.GetPage .Path -}}
+  {{- $pages := slice -}}
 
-</header>
-
-{{- /* Get Table Of Contents. */ -}}
-{{- if .Params.ToC -}}
-  {{ .TableOfContents }}
-{{- end -}}
-
-{{- /* For Donate, list Funded Grants and Sponsors. */ -}}
-{{- if eq .Type "donate" -}}
-  {{- partial "content/grants.html" . -}}
-  {{- partial "content/sponsors.html" . -}}
-{{- end -}}
-
-{{- /* Get page content. */ -}}
-{{- partial "content/content.html" . -}}
-
-{{/* Dynamically include content partial based on Type */}}
-{{- $contentPartial := printf "content/%s.html" .Type -}}
-{{- if templates.Exists (printf "_partials/%s" $contentPartial) -}}
-  {{- partial $contentPartial . -}}
-{{- end -}}
-
-{{- /* Get latest current sub-Sections or RegularPages, and fill in missing translated pages from default language Site. */ -}}
-{{- $default := site.Sites.Default.GetPage .Path -}}
-{{- $pages := slice -}}
-
-{{- range .Sections -}}
-  {{- $pages = $pages | append . -}}
-{{- end -}}
-
-{{- range $default.Sections -}}
-  {{- if not (site.GetPage .Path) -}}
+  {{- range .Sections -}}
     {{- $pages = $pages | append . -}}
   {{- end -}}
-{{- end -}}
 
-{{- if or (not $pages) (not (and .IsSection .Parent.IsHome)) -}}
-  {{- $pages = $pages | append .RegularPages | lang.Merge $default.RegularPages -}}
-{{- end -}}
+  {{- range $default.Sections -}}
+    {{- if not (site.GetPage .Path) -}}
+      {{- $pages = $pages | append . -}}
+    {{- end -}}
+  {{- end -}}
 
-{{- /* For community, list 3 latest event articles. */ -}}
-{{- if eq .Type "community" -}}
-  {{- $news := where .RegularPages "Section" "news" | lang.Merge (where site.Sites.Default.RegularPages "Section" "news") -}}
-  {{- $events := where $news "Params.categories" "eq" "event" -}}
-  {{- $pages = first 3 (sort $events "Date" "desc") -}}
-{{- end -}}
+  {{- if or (not $pages) (not (and .IsSection .Parent.IsHome)) -}}
+    {{- $pages = $pages | append .RegularPages | lang.Merge $default.RegularPages -}}
+  {{- end -}}
 
-{{- /* List RegularPages, sub-Sections or custom pages. */ -}}
-{{- partial "content/paginator.html" (dict "pages" $pages "context" .) -}}
+  {{- /* For community, list 3 latest event articles. */ -}}
+  {{- if eq .Type "community" -}}
+    {{- $news := where .RegularPages "Section" "news" | lang.Merge (where site.Sites.Default.RegularPages "Section" "news") -}}
+    {{- $events := where $news "Params.categories" "eq" "event" -}}
+    {{- $pages = first 3 (sort $events "Date" "desc") -}}
+  {{- end -}}
+
+  {{- /* List RegularPages, sub-Sections or custom pages. */ -}}
+  {{- partial "main/paginator.html" (dict "pages" $pages "context" .) -}}
 
 {{- end -}}
 {{- /* End main. */ -}}

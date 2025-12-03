@@ -2,12 +2,12 @@
 
 {{- define "main" -}}
 
-<div class="not-found">
-  <a href="{{ .Site.Home.RelPermalink }}"
-    title="{{- i18n "return_homepage" | default "Return to Homepage" -}}">
-    🦄
-  </a>
-</div>
+  <div class="not-found">
+    <a href="{{ .Site.Home.RelPermalink }}"
+      title="{{- i18n "return_homepage" | default "Return to Homepage" -}}">
+      🦄
+    </a>
+  </div>
 
 {{- end -}}
 {{- /* End main. */ -}}

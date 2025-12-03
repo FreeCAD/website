@@ -1,20 +1,5 @@
 /* This CSS stylesheet defines the style of archive pages */
 
-
-.archives {
-  margin: auto;
-  background: var(--theme);
-}
-
-.archives header {
-  height: 10rem;
-  background: var(--tone);
-}
-
-.archives a {
-  color: var(--secondary);
-}
-
 .archive-year {
   max-width: var(--width);
   margin: auto;
@@ -61,6 +46,7 @@
 .archive-entry-title {
   margin: 0 auto;
   padding: calc(var(--gap) * 1.5) 0;
+  color: var(--secondary);
 }
 
 .archive-entry-title:hover {

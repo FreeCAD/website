@@ -5,49 +5,49 @@
 
 {{- define "main" -}}
 
-{{- /* Get pages from current Section. */ -}}
-{{- $pages := .RegularPages -}}
+  {{- /* Get pages from current Section. */ -}}
+  {{- $pages := .RegularPages -}}
 
-{{- /* Get pages from default language Site for this Term. */ -}}
-{{- $defaultTerm := index (index site.Sites.Default.Taxonomies .Data.Plural) .Data.Term -}}
+  {{- /* Get pages from default language Site for this Term. */ -}}
+  {{- $defaultTerm := index (index site.Sites.Default.Taxonomies .Data.Plural) .Data.Term -}}
 
-{{- /* Merge current language Term pages and default language Site fallback. */ -}}
-{{- $fallbackPages := slice -}}
-{{- if $defaultTerm -}}
-  {{- range $p := $defaultTerm.Pages -}}
-    {{- if not (in $pages $p.Translations) -}}
-      {{- $fallbackPages = $fallbackPages | append $p -}}
+  {{- /* Merge current language Term pages and default language Site fallback. */ -}}
+  {{- $fallbackPages := slice -}}
+  {{- if $defaultTerm -}}
+    {{- range $p := $defaultTerm.Pages -}}
+      {{- if not (in $pages $p.Translations) -}}
+        {{- $fallbackPages = $fallbackPages | append $p -}}
+      {{- end -}}
     {{- end -}}
   {{- end -}}
-{{- end -}}
 
-{{- $pages = sort (union $pages $fallbackPages) "Date" "desc" -}}
-{{- $count := len $pages -}}
+  {{- $pages = sort (union $pages $fallbackPages) "Date" "desc" -}}
+  {{- $count := len $pages -}}
 
-<header>
-  {{- /* List categories. */ -}}
-  {{- partial "header/categories.html" . -}}
+  <section class="hero">
+    {{- /* List categories. */ -}}
+    {{- partial "hero/categories.html" . -}}
 
-  <h1 class="title">
-    {{- with (partial "utils/icon.html" (lower .Data.Plural)) -}}
-      <span class="icon">{{ . }}</span>
+    <h1 class="title">
+      {{- with (partial "utils/icon.html" (lower .Data.Plural)) -}}
+        <span class="icon">{{ . }}</span>
+      {{- end -}}
+      {{ .Data.Singular | title }}: {{ .Title | .RenderString }} ({{ $count }})
+    </h1>
+
+    {{- with .Description -}}
+      <h3 class="description">{{- . | $.RenderString -}}</h3>
     {{- end -}}
-    {{ .Data.Singular | title }}: {{ .Title | .RenderString }} ({{ $count }})
-  </h1>
 
-  {{- with .Description -}}
-    <h3 class="description">{{- . | $.RenderString -}}</h3>
-  {{- end -}}
+    {{- /* Get news section cover image. */ -}}
+    {{- with site.GetPage "news" -}}
+      {{- partial "hero/cover_image.html" . -}}
+    {{- end -}}
 
-  {{- /* Get news section cover image. */ -}}
-  {{- with site.GetPage "news" -}}
-    {{- partial "header/cover_image.html" . -}}
-  {{- end -}}
+  </section>
 
-</header>
-
-{{- /* List RegularPages for Term. */ -}}
-{{- partial "content/paginator.html" (dict "pages" $pages "context" .) -}}
+  {{- /* List RegularPages for Term. */ -}}
+  {{- partial "main/paginator.html" (dict "pages" $pages "context" .) -}}
 
 {{- end -}}
 {{- /* End main. */ -}}

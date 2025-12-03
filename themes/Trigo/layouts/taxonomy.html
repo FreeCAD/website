@@ -1,49 +1,49 @@
 {{- /* Taxonomy:
 
-  - Set header with list of Terms for current Taxonomy.
+  - Set hero with title, description and list of Terms for current Taxonomy.
 */ -}}
 
 {{- define "main" -}}
 
-{{- $type := .Type -}}
-{{- $terms := .Data.Terms.Alphabetical -}}
+  {{- $type := .Type -}}
+  {{- $terms := .Data.Terms.Alphabetical -}}
 
-<header>
+  <section class="hero">
 
-  <h1 class="title">
-    {{- with (partial "utils/icon.html" (lower .Title)) -}}
-      <span class="icon">{{ . }}</span>
-    {{- end -}}
-    {{ .Title | .RenderString }}
-  </h1>
-
-  {{- with .Description -}}
-    <h3 class="description">{{- . | $.RenderString -}}</h3>
-  {{- end -}}
-
-  {{- with $terms -}}
-    <ul class="terms">
-      {{- range . -}}
-        {{- $name := .Name -}}
-        {{- $count := .Count -}}
-        {{- with site.GetPage (printf "/%s/%s" $type $name) -}}
-          <a href="{{ .RelPermalink }}">
-            {{ .LinkTitle }} ({{ $count }})
-          </a>
-        {{- end -}}
+    <h1 class="title">
+      {{- with (partial "utils/icon.html" (lower .Title)) -}}
+        <span class="icon">{{ . }}</span>
       {{- end -}}
-    </ul>
+      {{ .Title | .RenderString }}
+    </h1>
 
-  {{- else -}}
-    {{- i18n "noterms" | default (printf "No %s found." $type) -}}
-  {{- end -}}
+    {{- with .Description -}}
+      <h3 class="description">{{- . | $.RenderString -}}</h3>
+    {{- end -}}
 
-  {{- /* Get news section cover image. */ -}}
-  {{- with site.GetPage "news" -}}
-    {{- partial "header/cover_image.html" . -}}
-  {{- end -}}
+    {{- with $terms -}}
+      <ul class="terms">
+        {{- range . -}}
+          {{- $name := .Name -}}
+          {{- $count := .Count -}}
+          {{- with site.GetPage (printf "/%s/%s" $type $name) -}}
+            <a href="{{ .RelPermalink }}">
+              {{ .LinkTitle }} ({{ $count }})
+            </a>
+          {{- end -}}
+        {{- end -}}
+      </ul>
 
-</header>
+    {{- else -}}
+      {{- i18n "noterms" | default (printf "No %s found." $type) -}}
+    {{- end -}}
+
+    {{- /* Get news section cover image. */ -}}
+    {{- with site.GetPage "news" -}}
+      {{- partial "hero/cover_image.html" . -}}
+    {{- end -}}
+
+  </section>
 
 {{- end -}}
 {{- /* End main. */ -}}

@@ -24,7 +24,7 @@
   </a>
 
   {{- /* Get Footer Menu Sections. */ -}}
-  <section class="footer-menu">
+  <div class="footer-menu">
     {{- range $menuFooter -}}
       {{- partial "footer/menu.html" (dict
         "Section" .
@@ -34,7 +34,7 @@
         )
       -}}
     {{- end -}}
-  </section>
+  </div>
 
   {{- /* Get social media share links. */ -}}
   {{- partial "share/share.html" . -}}

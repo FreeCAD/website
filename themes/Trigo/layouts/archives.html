@@ -6,15 +6,13 @@
 
 {{- define "main" -}}
 
-<section class="archives">
-
-  <header>
+  <section class="hero">
     <h1 class="title">{{ .Title | .RenderString }}</h1>
 
     {{- with .Description -}}
       <h3 class="description">{{- . | $.RenderString -}}</h3>
     {{- end -}}
-  </header>
+  </section>
 
   {{- /* Get current Section or fallback to default language Site if missing. */ -}}
   {{- $section := .CurrentSection -}}
@@ -45,7 +43,7 @@
                     </h4>
                   </a>
                   {{- /* Get article metadata. */ -}}
-                  {{- partial "header/meta.html" . -}}
+                  {{- partial "main/meta.html" . -}}
                 </article>
               {{- end -}}
 
@@ -56,8 +54,6 @@
       </div>
     {{- end -}}
   {{- end -}}
-
-</section>
 
 {{- end -}}
 {{- /* End main. */ -}}

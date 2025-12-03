@@ -9,10 +9,9 @@ main {
 }
 
 
-/* Page header and hero cover.
-For the Site header, see header.css stylesheet. */
+/* Page hero section. */
 
-main header {
+.hero {
   min-height: calc(var(--width) * 0.5);
   height: auto;
   overflow: visible;
@@ -26,12 +25,14 @@ main header {
   gap: var(--gap);
   text-align: center;
   position: relative;
+  background: var(--tone);
 }
 
 .title,
 .description,
 .hero-button,
 .metadata {
+  margin: 0 auto;
   display: inline-flex;
   gap: calc(var(--gap) * 0.25);
   max-width: var(--width);
@@ -39,11 +40,18 @@ main header {
   z-index: 2;
 }
 
+.kind-page :is(.title, .description) {
+  color: var(--secondary);
+}
+
+.description {
+  font-weight: 400;
+}
+
 .title svg {
   width: var(--xxl);
   height: var(--xxl);
 }
-
 
 .releases, .category, .categories-list {
   position: absolute;
@@ -78,15 +86,6 @@ article .category {
 
 :is(.releases, .category, .categories-list) a:hover {
   color: var(--link-hover-color);
-}
-
-.description {
-  font-weight: 400;
-}
-
-.title,
-.description {
-  margin: 0 auto;
 }
 
 .buttons {
@@ -140,7 +139,7 @@ article .category {
   content: " · ";
 }
 
-main header .entry-cover img {
+.hero .entry-cover img {
   position: absolute;
   left: 0;
   top: 0;
@@ -148,32 +147,6 @@ main header .entry-cover img {
   width: 100%;
   height: calc(var(--width) * 0.5);
   z-index: 1;
-}
-
-.article-header {
-  gap: calc(var(--gap) * 2);
-  background: var(--tone);
-  min-height: calc(var(--width) * 0.25);
-}
-
-.article-header :is(.title,
-.description,
-.hero-button,
-.metadata) {
-  color: var(--secondary);
-}
-
-.article-header :is(.category, .categories-list) {
-  position: relative;
-  top: 0;
-  width: 100%;
-  color: var(--secondary);
-  z-index: 2;
-}
-
-.article-header :is(.category, .categories-list) a {
-  padding: calc(var(--gap) * 0.5);
-  color: var(--secondary);
 }
 
 .article-cover {

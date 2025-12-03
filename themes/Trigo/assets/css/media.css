@@ -60,11 +60,11 @@
 
 
   /* List and Single pages */
-  main header {
+  .hero {
     min-height: calc(100dvh - var(--header-height));
   }
 
-  .article-header {
+  .kind-page .hero {
     min-height: calc(var(--width) * 0.5);
   }
 
@@ -78,11 +78,11 @@
     min-height: calc(var(--width) * 0.25);
   }
 
-  main header .entry-cover img {
+  .hero .entry-cover img {
     height: calc(100dvh - var(--header-height));
   }
 
-  main header .article-cover img {
+  .hero .article-cover img {
     width: 100%;
     height: auto;
     max-height: var(--width);

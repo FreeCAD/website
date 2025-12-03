@@ -10,7 +10,7 @@
 {{- $boxStyle := cond (.IsNamedParams) (.Get "style") (.Get 2) -}}
 {{- $contentStyle := cond (.IsNamedParams) (.Get "content-style") (.Get 3) -}}
 
-<section class="box"
+<div class="box"
   {{ with $boxStyle }}style="{{ . | safeCSS }}"{{ end }}>
   {{- with $title -}}
     <div class="box-title">
@@ -23,4 +23,4 @@
       {{- . | $.Page.RenderString -}}
     </div>
   {{- end -}}
-</section>
+</div>

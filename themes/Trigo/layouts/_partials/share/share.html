@@ -1,6 +1,6 @@
 {{- /* Share on Social medias. */ -}}
 
-<section class="share-links">
+<div class="share-links">
   {{- with site.Params.socials -}}
     {{- range . -}}
       {{- range $social, $url := . -}}
@@ -58,4 +58,4 @@
       {{- end -}}
     </a>
   {{- end -}}
-</section>
+</div>

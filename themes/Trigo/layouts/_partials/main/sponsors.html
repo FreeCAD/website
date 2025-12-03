@@ -15,14 +15,14 @@
 {{- $tiers := slice "corporate" "gold" "silver" "bronze" -}}
 
 {{- with $sponsors -}}
-  <section class="sponsors">
+  <div class="sponsors">
     <h2 class="sponsors-title">{{ i18n "sponsors_list" | default "Current Sponsors" }}</h2>
 
     {{- range $tier := $tiers -}}
       {{- $tierSponsors := where $sponsors "tier" $tier -}}
       {{- if gt (len $tierSponsors) 0 -}}
         <h3>{{ $tier | title }}</h3>
-        <section class="sponsors-tier">
+        <div class="sponsors-tier">
 
           {{- range $sponsor := sort $tierSponsors "label" -}}
             {{- with $sponsor.link }}
@@ -58,9 +58,9 @@
             {{- end -}}
           {{- end -}}
 
-        </section>
+        </div>
       {{- end -}}
     {{- end -}}
 
-  </section>
+  </div>
 {{- end -}}
