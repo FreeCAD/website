@@ -1,69 +1,57 @@
-<div class="cards">
-  {{- range . -}}
+<div class="card-list">
+  <div class="cards">
+    {{- range . -}}
 
-    {{- /* Detect if current object is page or map. */ -}}
-    {{- $isMap := reflect.IsMap . -}}
-    {{- $href := "" -}}
-    {{- $title := "" -}}
-    {{- $description := "" -}}
+      <a class="card"
+        href="{{ .RelPermalink }}"
+        title="{{ .Title }}">
 
-    {{- if $isMap -}}
-      {{- $href = index . "link" -}}
-      {{- $title = index . "title" -}}
-      {{- $description = index . "description" -}}
-    {{- else -}}
-      {{- $href = .RelPermalink -}}
-      {{- $title = .Title -}}
-      {{- $description = .Description -}}
-    {{- end -}}
+        {{- /* Get article card cover image. */ -}}
+        {{- $cardImage := partial "main/card_image.html" . -}}
+        {{- $cardIcon := partial "utils/icon.html" .Params.icon -}}
 
-    <a class="card"
-      href="{{ $href }}"
-      alt="{{ $title | plainify }}"
-      title="{{ $title | plainify }}">
-
-      {{- /* Get article card cover image. */ -}}
-      {{- partial "main/card_image.html" . -}}
-
-      {{- if $isMap -}}
-        <span class="card-icon">
-          {{- with (partial "utils/icon.html" .icon) -}}
+        {{- with $cardImage -}}
+          {{- . -}}
+        {{- else with $cardIcon -}}
+          <span class="card-icon">
             <span class="icon">{{ . }}</span>
-          {{- end -}}
-        </span>
-      {{- end -}}
-
-      <h3 class="card-title">
-        {{- $title -}}
-        {{- if .Draft }}
-          <sup><span>[{{- i18n "draft" | default "Draft" -}}]</span></sup>
+          </span>
+        {{- else -}}
+          {{- $page := index (.GetTerms "categories") 0 | default . -}}
+          {{- $cardCode := partial "utils/index_code.html" $page -}}
+          <div class="card-color" style="--card: {{ $cardCode }};"></div>
         {{- end -}}
-      </h3>
 
-      {{- with $description -}}
-        <p class="card-description">{{- . -}}</p>
-      {{- end -}}
-
-      {{- if not hugo.IsProduction -}}
-        {{- with .Weight -}}
-          <h2 style="color: red;">{{ . }}</h2>
-        {{- end -}}
-      {{- end -}}
-
-      {{- if not $isMap -}}
-        <div class="card-metadata">
-          {{- if not .Date.IsZero -}}
-            <span class="meta">
-              {{- with (partial "utils/icon.html" "date") -}}
-                <span class="icon">{{ . }}</span>
-              {{- end -}}
-              <time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z" }}">
-                {{- .Date | time.Format ":date_long" -}}
-              </time>
-            </span>
+        <h3 class="card-title">
+          {{- .Title -}}
+          {{- if .Draft }}
+            <sup><span>[{{- i18n "draft" | default "Draft" -}}]</span></sup>
           {{- end -}}
+        </h3>
 
-          {{- if .Params.categories -}}
+        {{- with .Description -}}
+          <p class="card-description">{{- . -}}</p>
+        {{- end -}}
+
+        {{- if not hugo.IsProduction -}}
+          {{- with .Weight -}}
+            <h2 style="color: crimson;">Weight: {{ . }}</h2>
+          {{- end -}}
+        {{- end -}}
+
+        {{- if and .Date .Params.categories -}}
+          <div class="card-metadata">
+            {{- if not .Date.IsZero -}}
+              <span class="meta">
+                {{- with (partial "utils/icon.html" "date") -}}
+                  <span class="icon">{{ . }}</span>
+                {{- end -}}
+                <time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z" }}">
+                  {{- .Date | time.Format ":date_long" -}}
+                </time>
+              </span>
+            {{- end -}}
+
             {{- with index (.GetTerms "categories") 0 -}}
               <span class="meta">
                 {{- with (partial "utils/icon.html" "categories") -}}
@@ -72,10 +60,10 @@
                 {{ .LinkTitle }}
               </span>
             {{- end -}}
-          {{- end -}}
-        </div>
-      {{- end -}}
-    </a>
+          </div>
+        {{- end -}}
+      </a>
 
-  {{- end -}}
+    {{- end -}}
+  </div>
 </div>

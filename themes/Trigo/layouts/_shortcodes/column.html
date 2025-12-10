@@ -9,7 +9,8 @@
 {{- $title := cond (.IsNamedParams) (.Get "title") (.Get 1) | replaceRE "^#+\\s*" "" -}}
 {{- $url := cond (.IsNamedParams) (.Get "url") (.Get 2) -}}
 {{- $isExternal := and (strings.HasPrefix $url "http") (not (strings.HasPrefix $url site.BaseURL)) -}}
-{{- $columnStyle := cond (.IsNamedParams) (.Get "style") (.Get 3) -}}
+{{- $icon := cond (.IsNamedParams) (.Get "icon") (.Get 3) -}}
+{{- $columnStyle := cond (.IsNamedParams) (.Get "style") (.Get 4) -}}
 
 <div class="column"
   {{ with $columnStyle }}style="{{ . | safeCSS }}"{{ end }}>
@@ -23,7 +24,15 @@
           target="_blank" rel="external noreferrer"
         {{- end -}}>
     {{- end -}}
+
+    {{- with partial "utils/icon.html" $icon -}}
+      <span class="card-icon">
+        <span class="icon">{{ . }}</span>
+      </span>
+    {{- end -}}
+
     {{- . | $.Page.RenderString -}}
+
     {{- with $url -}}
       </a>
     {{- end -}}

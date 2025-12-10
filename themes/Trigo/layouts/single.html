@@ -32,6 +32,11 @@
 
   </section>
 
+  {{- /* Get Breadcrumbs. */ -}}
+  {{- if .Params.breadcrumbs -}}
+    {{- partial "main/breadcrumbs.html" . -}}
+  {{- end -}}
+
   {{- /* Get Table Of Contents. */ -}}
   {{- if .Params.ToC -}}
     {{ .TableOfContents }}

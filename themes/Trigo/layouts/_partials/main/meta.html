@@ -35,6 +35,19 @@
     </span>
   {{- end -}}
 
+  {{- if and .Params.versions site.Params.showVersions -}}
+    {{- $versions := site.Sites.Default.Taxonomies.versions -}}
+    <span class="meta">
+      {{- with (partial "utils/icon.html" "merge") -}}
+        <span class="icon">{{ . }}</span>
+      {{- end -}}
+      {{- range .GetTerms "versions" -}}
+        {{- $count := len ($versions.Get .Title) -}}
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }} ({{ $count }})</a>
+      {{- end -}}
+    </span>
+  {{- end -}}
+
   {{- if site.Params.showWordCount -}}
     <span class="meta">
       {{- with (partial "utils/icon.html" "words") -}}

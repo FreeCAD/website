@@ -28,8 +28,10 @@
           <img src="{{ $logo.RelPermalink }}"
             alt="LOGO"
             aria-label="logo">
+
         {{- else if eq $logoType "svg" -}}
           {{- .Content | safeHTML -}}
+
         {{- else -}}
           {{- $logoText | plainify -}}
           {{- errorf "Unsupported logo format: %s" $logoType -}}
@@ -62,82 +64,108 @@
       </button>
 
       <ul popover id="menu-list" class="menu-list">
+
         {{- range $menuMain -}}
-          {{- $classes := slice -}}
-          {{- with .Params.style -}}
-            {{- $classes = $classes | append . -}}
+
+          {{- $menuSection := "" -}}
+          {{- with .Page.Section -}}
+            {{- $menuSection = . -}}
+          {{- else -}}
+            {{- $menuURL := trim (.URL | relURL) "/" -}}
+            {{- $menuSection = index (split $menuURL "/") 0 -}}
           {{- end -}}
-          {{- $sectionKey := trim (.URL | relURL) "/" | lower -}}
+          {{- $menuSection = lower $menuSection -}}
+
           {{- $isActive := false -}}
-          {{- if strings.HasPrefix $.RelPermalink .URL -}}
+
+          {{- if or
+            (eq $.Page.Section $menuSection)
+            (eq $.Page.Type $menuSection)
+            (strings.HasPrefix $.Page.RelPermalink (printf "/%s/" $menuSection)) -}}
             {{- $isActive = true -}}
-          {{- else if strings.HasSuffix $sectionKey "news" -}}
-            {{- if and
-              (or (eq $.Kind "term")
-              (eq $.Kind "taxonomy"))
-              (or (eq $.Type "categories")
+
+          {{- /* News taxonomy, term and archives pages. */ -}}
+          {{- else if (eq $menuSection "news") -}}
+            {{- if or
+              (eq $.Type "categories")
               (eq $.Type "tags")
-              (eq $.Type "series")) -}}
+              (eq $.Type "series")
+              (eq $.Type "authors")
+              (strings.HasPrefix $.Page.RelPermalink "/news/") -}}
+              {{- $isActive = true -}}
+            {{- end -}}
+
+          {{- /* Releases taxonomy, term and archives pages. */ -}}
+          {{- else if (eq $menuSection "download") -}}
+            {{- if or
+              (eq $.Type "releases")
+              (eq $.Type "versions")
+              (strings.HasPrefix $.Page.RelPermalink "/download/")
+              (strings.HasPrefix $.Page.RelPermalink "/releases/") -}}
               {{- $isActive = true -}}
             {{- end -}}
           {{- end -}}
+
+          {{- $classes := slice -}}
           {{- if $isActive -}}
             {{- $classes = $classes | append "menu-active" -}}
           {{- end -}}
+          {{- with .Params.style -}}
+            {{- $classes = $classes | append . -}}
+          {{- end -}}
 
           <li>
-              <a href="{{ .URL }}"
-                title="{{ .Title | default .Name | plainify }}"
-                aria-label="{{ .Title | default .Name | plainify }}"
-                class="{{ delimit $classes " " }}"
-                {{- if $isActive -}}
-                  aria-current="page"
-                {{- end -}}>
-                <span>
-                  {{ .Title | $.RenderString }}
-                </span>
-              </a>
+            <a href="{{ .URL }}"
+              class="{{ delimit $classes " " }}"
+              title="{{ .Title | default .Name | plainify }}"
+              aria-label="{{ .Title | default .Name | plainify }}"
+              {{ if $isActive }}aria-current="page"{{ end }}>
+              <span>{{ .Title | $.RenderString }}</span>
+            </a>
           </li>
         {{- end -}}
+
       </ul>
     </nav>
 
     {{- if hugo.IsMultilingual -}}
-    <div class="language-dropdown">
-      <button popovertarget="lang-list"
-        popovertargetaction="toggle"
-        class="lang-toggle"
-        accesskey="l"
-        title="{{ i18n "choose_language" | default "Choose language" }} (Alt + L)"
-        aria-label="{{ i18n "choose_language" | default "Choose language" }} (Alt + L)">
-        {{- with (partial "utils/icon.html" "language") -}}
-          <span class="icon">{{ . }}</span>
-        {{- end -}}
-      </button>
+      <div class="language-dropdown">
+        <button popovertarget="lang-list"
+          popovertargetaction="toggle"
+          class="lang-toggle"
+          accesskey="l"
+          title="{{ i18n "choose_language" | default "Choose language" }} (Alt + L)"
+          aria-label="{{ i18n "choose_language" | default "Choose language" }} (Alt + L)">
+          {{- with (partial "utils/icon.html" "language") -}}
+            <span class="icon">{{ . }}</span>
+          {{- end -}}
+        </button>
 
-      <ul popover id="lang-list" class="language-list">
-        {{- range .Page.AllTranslations -}}
-          {{- $translation := . -}}
-          {{- range sort site.Languages "Weight" "asc" -}}
-            {{- if eq $translation.Lang .Lang -}}
-              {{- if eq $pageLang .Lang -}}
-                <li>
-                  <a class="language-active" href="{{ $translation.RelPermalink }}">
-                    {{ .LanguageName }} {{ .Params.languageFlag }}
-                  </a>
-                </li>
-              {{- else -}}
-                <li>
-                  <a class="language-not-active" href="{{ $translation.RelPermalink }}">
-                    {{ .LanguageName }} {{ .Params.languageFlag }}
-                  </a>
-                </li>
+        <ul popover id="lang-list" class="language-list">
+          {{- range .Page.AllTranslations -}}
+            {{- $translation := . -}}
+
+            {{- range sort site.Languages "Weight" "asc" -}}
+              {{- if eq $translation.Lang .Lang -}}
+                {{- if eq $pageLang .Lang -}}
+                  <li>
+                    <a class="language-active" href="{{ $translation.RelPermalink }}">
+                      {{ .LanguageName }} {{ .Params.languageFlag }}
+                    </a>
+                  </li>
+
+                {{- else -}}
+                  <li>
+                    <a class="language-not-active" href="{{ $translation.RelPermalink }}">
+                      {{ .LanguageName }} {{ .Params.languageFlag }}
+                    </a>
+                  </li>
+                {{- end -}}
               {{- end -}}
             {{- end -}}
           {{- end -}}
-        {{- end -}}
-      </ul>
-    </div>
+        </ul>
+      </div>
     {{- end -}}
 
     <div class="chroma-toggle">
@@ -157,5 +185,6 @@
         </span>
       </button>
     </div>
+
   </div>
 </header>

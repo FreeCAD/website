@@ -1,0 +1,14 @@
+{{- $ancestors := where .Ancestors "IsHome" "!=" true -}}
+
+<nav aria-label="breadcrumb" class="breadcrumb">
+  <ol>
+    {{- range $ancestors.Reverse -}}
+      <li>
+        <a href="{{ .RelPermalink }}">{{- .LinkTitle -}}</a>
+      </li>
+    {{- end -}}
+    <li class="active">
+      <a  href="{{ .RelPermalink }}">{{- .LinkTitle -}}</a>
+    </li>
+  </ol>
+</nav>

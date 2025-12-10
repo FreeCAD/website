@@ -19,7 +19,8 @@
   {{- /* Get site head. */ -}}
   {{- partial "head/site_head.html" . -}}
 
-  <body class="{{ delimit $classes " " }}" id="top">
+  <body class="{{ delimit $classes " " }}"
+    id="top">
 
     {{- /* Notice for old browser, e.g. IE. */ -}}
     {{- partial "utils/unsupported_browser.html" . -}}

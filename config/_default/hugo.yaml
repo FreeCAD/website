@@ -1,4 +1,4 @@
-# General Hugo configuration. For Theme or CMS, go to params.yaml
+# General Hugo config. For Theme see params.yaml. For CMS see data/cms_config.yaml in Theme dir.
 
 baseURL: https://marcuspollio.github.io/FreeCAD-website/
 title: FreeCAD
@@ -7,36 +7,73 @@ defaultContentLanguage: en
 
 theme: Trigo
 
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
+  author: authors
+  version: versions
+
+mainSections: news
+
 enableInlineShortcodes: true
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
 enableEmoji: true
-mainSections: news
 
 summaryLength: 20
 
+# Set max number of listed pages (split) on lists (unless overridden).
 pagination:
-  pagerSize: 6 # Sets the max number of listed posts (split) on home, section, taxonomy, and term pages
+  pagerSize: 12
 
+# Override url scheme. Omit top-level section on docs to have /api instead of /docs/api.
 permalinks:
   page:
-    news: /news/:slugorcontentbasename/
+    docs: /:sections[1:]/:slugorcontentbasename
+    news: /:sections[0]/:slugorcontentbasename
+  section:
+    docs: /:sections[1:]
+
+cascade:
+  - params:
+      pageSortOrder: reverse
+      breadcrumbs: true
+    target:
+      path: /docs/*/**
+  - url: docs
+    target:
+      path: /docs
+
+module:
+  mounts:
+    - source: assets
+      target: assets
+    - source: static # Allow to pipe process static files.
+      target: assets
+
+outputs:
+  home:
+    - HTML
+    - CMS_Config
+
+outputFormats:
+  CMS_Config:
+    baseName: cms-config
+    isHTML: false
+    isPlainText: true
+    notAlternative: true
+    mediaType: application/yaml
 
 minify:
   disableXML: true
-  # minifyOutput: true
-
-taxonomies:
-  category: categories
-  tag: tags
-  series: series
-  author: authors
+  minifyOutput: false
 
 markup:
   goldmark:
-    duplicateResourceFiles: false # NOTE: False by default for Markdown files since Hugo 0.123, keep this setting for now
+    duplicateResourceFiles: false
     parser:
       attribute:
         block: true
@@ -64,7 +101,7 @@ markup:
         superscript:
           enable: true
   highlight:
-    style: dracula # NOTE: Currently overriden by Trigo/assets/css/highlight.css, keep this setting for now
+    style: dracula # NOTE: Currently overridden by highlight.css. Keep for now.
     lineNos: false
     noClasses: false
   tableOfContents:
@@ -72,31 +109,16 @@ markup:
     endLevel: 3
     ordered: false
 
-module:
-  mounts:
-    - source: assets
-      target: assets
-    - source: static # Allows to perform modifications via pipes on files in static folder
-      target: assets
-
-outputs:
-  home:
-    - HTML
-    - CMS_Config
-
-outputFormats:
-  CMS_Config:
-    baseName: cms-config
-    isHTML: false
-    isPlainText: true
-    notAlternative: true
-    mediaType: application/yaml
+imaging:
+  hint: drawing
+  quality: 90
+  resampleFilter: lanczos
 
 services:
   googleAnalytics:
-    id: # Sets Google Analytics G-MEASUREMENT_ID
+    id: # Set Google Analytics G-MEASUREMENT_ID.
 
-privacy: # See https://gohugo.io/about/privacy/
+privacy: # See https://gohugo.io/about/privacy/.
   googleAnalytics:
     disable: true
     respectDoNotTrack: true
@@ -117,8 +139,3 @@ caches:
     maxAge: 24h
   images:
     dir: :cacheDir/images
-
-imaging:
-  hint: drawing
-  quality: 90
-  resampleFilter: lanczos

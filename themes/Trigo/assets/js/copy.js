@@ -5,7 +5,7 @@ document.querySelectorAll('pre > code').forEach((codeblock) => {
   const container = pre.parentNode;
 
   const copybutton = document.createElement('button');
-  copybutton.classList.add('copy-code');
+  copybutton.classList.add('copy');
   copybutton.innerText = '{{- i18n "code_copy" | default "copy" -}}';
 
   function copyingDone() {

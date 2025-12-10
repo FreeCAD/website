@@ -13,17 +13,6 @@
 
   <div class="grants">
 
-    {{- with $grantsLink -}}
-      <a href="{{ . }}"
-        class="grants-link"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="{{ $grantsTitle }}"
-        title="{{ $grantsTitle }}">
-        {{- $grantsTitle -}}
-      </a>
-    {{- end -}}
-
     <div class="cards">
       {{- range (first 6 $sorted) -}}
           <a class="card"
@@ -58,6 +47,17 @@
           </a>
       {{- end -}}
     </div>
+
+    {{- with $grantsLink -}}
+      <a href="{{ . }}"
+        class="hero-button"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="{{ $grantsTitle }}"
+        title="{{ $grantsTitle }}">
+        {{- $grantsTitle -}}
+      </a>
+    {{- end -}}
 
   </div>
 {{- end -}}

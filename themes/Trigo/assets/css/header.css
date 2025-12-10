@@ -155,10 +155,11 @@ html:not(.dark) #light {
   inset: auto;
   flex-direction: column;
   max-height: calc(100vh - (var(--header-height) + (var(--gap) * 4)));
+  min-width: calc(var(--width) * 0.25);
   top: calc(var(--header-height) + var(--gap));
   right: calc((100vw - var(--width)) * 0.5);
   text-align: center;
-  background: var(--theme);
+  background: var(--entry);
   border: none;
   border-radius: var(--radius);
   padding: var(--gap);

@@ -22,27 +22,15 @@
 
 - title: "Report bugs"
   url: "https://github.com/FreeCAD/FreeCAD/issues"
-  parent: "contribute"
+  parent: "community"
 
 - title: "Test feature and fixes"
   url: "https://github.com/FreeCAD/FreeCAD/pulls"
-  parent: "contribute"
+  parent: "community"
 
 - title: "Translations"
   url: "https://wiki.freecad.org"
-  parent: "contribute"
-
-- title: "Developer handbook"
-  url: "dev"
-  parent: "contribute"
-
-- title: "Addons"
-  url: "addons"
-  parent: "contribute"
-
-- title: "Telemetry"
-  url: "telemetry"
-  parent: "contribute"
+  parent: "community"
 
 - title: "About"
   url: "about"

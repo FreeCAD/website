@@ -16,37 +16,39 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica, 'Helvetica Neue', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+  font-family: var(--sans);
   color: var(--secondary);
   margin: 0;
   overflow-x: clip;
-  background: var(--theme);
 }
 
 h1 {
   font-size: var(--xxl);
-  margin: 1.5rem auto;
+  margin: calc(var(--gap) * 1.5) auto;
   scroll-margin-top: 25vh;
 }
 
 h2 {
   font-size: var(--xl);
-  margin: 1.5rem auto;
+  margin: calc(var(--gap) * 1.25) auto;
   scroll-margin-top: 25vh;
 }
 
 h3 {
   font-size: var(--l);
-  margin: 1.25rem auto;
+  margin: var(--gap) auto;
   scroll-margin-top: 25vh;
 }
 
-h4,
-h5,
-h6,
+h4, h5,h6 {
+  font-size: var(--m);
+  margin: calc(var(--gap) * 0.75) auto;
+  scroll-margin-top: 25vh;
+}
+
 p {
   font-size: var(--m);
-  margin: var(--gap) auto;
+  margin: calc(var(--gap) * 0.5) auto;
   scroll-margin-top: 25vh;
   text-align-last: auto;
 }
@@ -190,7 +192,7 @@ details > * {
   padding: 0 var(--gap);
 }
 
-details .copy-code {
+details .copy {
   margin-inline-end: var(--gap);
 }
 

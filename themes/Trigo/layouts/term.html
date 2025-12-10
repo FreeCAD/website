@@ -24,7 +24,17 @@
   {{- $pages = sort (union $pages $fallbackPages) "Date" "desc" -}}
   {{- $count := len $pages -}}
 
-  <section class="hero">
+  {{- /* Get cover image. */ -}}
+  {{- $coverImage := partial "hero/cover_image.html" . -}}
+
+  {{- $sectionCode := "" -}}
+  {{- if not $coverImage}}
+    {{- $sectionCode = partial "utils/index_code.html" . -}}
+  {{- end -}}
+
+  <section class="hero"
+    {{ if $sectionCode }}style="--section: {{ $sectionCode }};"{{ end }}>
+
     {{- /* List categories. */ -}}
     {{- partial "hero/categories.html" . -}}
 
@@ -39,10 +49,7 @@
       <h3 class="description">{{- . | $.RenderString -}}</h3>
     {{- end -}}
 
-    {{- /* Get news section cover image. */ -}}
-    {{- with site.GetPage "news" -}}
-      {{- partial "hero/cover_image.html" . -}}
-    {{- end -}}
+    {{- $coverImage -}}
 
   </section>
 

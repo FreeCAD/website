@@ -1,48 +1,65 @@
-{{- $selectedCurrency := true -}}
-{{- with .Params.currencies -}}
-  {{- range . -}}
-    {{- if .selected -}}
-      {{- $selectedCurrency = .currencySymbol -}}
-    {{- end -}}
+{{- $default := site.Sites.Default.GetPage .Path -}}
+{{- $donate := merge $default.Params.donate .Params.donate | default dict -}}
+
+{{- $monthlyTiers := slice -}}
+{{- range $tier := site.Sites.Default.Params.donate.monthly.tiers -}}
+  {{- $local := dict -}}
+  {{- with $donate.monthly.tiers -}}
+    {{- $local = index (where . "type" $tier.type) 0 -}}
   {{- end -}}
+  {{- $monthlyTiers = $monthlyTiers | append (merge $tier $local) -}}
 {{- end -}}
 
-<form id="donation-form" method="get" action="">
+{{- $selectedCurrency := "€" -}}
+{{- with index (where site.Params.donate.currencies "selected" true) 0 -}}
+  {{- $selectedCurrency = .symbol -}}
+{{- end -}}
+
+<form id="donation-form"
+  method="get"
+  action="">
 
   <div id="donation-type">
-    <input type="radio" id="once" name="donation-type" value="once" checked>
-    {{- with .Params.onceLabel -}}
+    <input type="radio"
+      id="once"
+      name="donation-type"
+      value="once"
+      checked>
+    {{- with $donate.once.label -}}
       <label for="once">{{ . }}</label>
     {{- end -}}
 
-    <input type="radio" id="monthly" name="donation-type" value="monthly">
-    {{- with .Params.monthlyLabel -}}
+    <input type="radio"
+      id="monthly"
+      name="donation-type"
+      value="monthly">
+    {{- with $donate.monthly.label -}}
       <label for="monthly">{{ . }}</label>
     {{- end -}}
   </div>
 
   <div id="donation-amount">
-    {{- with .Params.once -}}
-      <div class="tiers once">
-        {{- range $index, $tier := sort . "amount" -}}
-          <input type="radio" id="once-{{ $index }}" name="amount" value="{{ $tier.amount }}" {{ if $tier.default }}checked{{ end }}>
-          <label for="once-{{ $index }}">
-            {{- printf "%s %v" $selectedCurrency $tier.amount -}}
-          </label>
-        {{- end -}}
-      </div>
-    {{- end -}}
+    <div class="tiers once">
+      {{- range $index, $tier := sort site.Params.donate.once.tiers "amount" -}}
+        <input type="radio"
+          id="once-{{ $index }}"
+          name="amount"
+          value="{{ $tier.amount }}"
+          {{ if .checked }}checked{{ end }}>
+        <label for="once-{{ $index }}">{{- printf "%s %v" $selectedCurrency $tier.amount -}}</label>
+      {{- end -}}
+    </div>
 
-    {{- with .Params.monthly -}}
-      <div class="tiers monthly" hidden>
-        {{- range $index, $tier := sort . "amount" -}}
-          <input type="radio" id="monthly-{{ $index }}" name="amount" value="{{ $tier.amount }}" {{ if $tier.default }}checked{{ end }}>
-          <label for="monthly-{{ $index }}">
-            {{- printf "%s %v /mo" $selectedCurrency $tier.amount -}}
-          </label>
-        {{- end -}}
-      </div>
-    {{- end -}}
+    <div class="tiers monthly" hidden>
+      {{- range $index, $tier := sort $monthlyTiers "amount" -}}
+        <input type="radio"
+          id="monthly-{{ $index }}"
+          name="amount"
+          value="{{ $tier.amount }}"
+          {{ if .checked }}checked{{ end }}>
+        <label for="monthly-{{ $index }}">{{- printf "%s %v /mo" $selectedCurrency $tier.amount -}}</label>
+      {{- end -}}
+    </div>
 
     <div class="custom">
       <div id="custom-amount-box">
@@ -50,87 +67,79 @@
         <input
           type="number"
           id="custom-amount"
-          min="1"
+          min="5"
           step="1"
           inputmode="numeric"
           pattern="[0-9]+"
           placeholder="{{ i18n "amount" | default "Amount" }}">
       </div>
 
-      {{- with .Params.corporateLabel -}}
+      {{- with $donate.corporateLabel -}}
         <a href="#corporate" id="corporate-sponsor" data-details-link>{{ . }}</a>
       {{- end -}}
 
-      {{- with .Params.currencies -}}
-        <select id="currency-toggle" name="currency" aria-label="Currency">
-          {{- range . -}}
-            <option value="{{ .currencyCode }}" {{ if .selected }}selected{{ end }}>
-              {{- printf "%s %v" .currencySymbol .currencyCode -}}
-            </option>
-          {{- end -}}
-        </select>
-      {{- end -}}
+      <select id="currency-toggle"
+        name="currency"
+        aria-label="Currency">
+        {{- range site.Params.donate.currencies -}}
+          <option value="{{ .code }}" {{ if .selected }}selected{{ end }}>{{- printf "%s %v" .symbol .code -}}</option>
+        {{- end -}}
+      </select>
     </div>
   </div>
 
-  <div id="donation-message">
-    {{- with .Params.onceDefaultMessage -}}
-      <p id="message-once-default">{{ . | safeHTML }}</p>
-    {{- end -}}
-    {{- with .Params.onceChoiceMessage -}}
-      <p id="message-once-choice">{{ . | safeHTML }}</p>
-    {{- end -}}
-    {{- with .Params.onceErrorMessage -}}
-      <p id="message-once-error">{{ . | safeHTML }}</p>
-    {{- end -}}
-    {{- with .Params.monthlyDefaultMessage -}}
-      <p id="message-monthly-default">
-        {{ . | safeHTML }} <a href="#tiers" title="Tiers info" data-details-link>🛈</a>
-      </p>
-    {{- end -}}
-    {{- with .Params.monthly -}}
-      {{- range $index, $tier := sort . "amount" }}
-        <p id="message-monthly-{{ $index }}">
-          {{ $tier.message | safeHTML }} <a href="#tiers" title="Tiers info" data-details-link>🛈</a>
-        </p>
-      {{- end -}}
-    {{- end -}}
-  </div>
-
   <div id="donation-payment">
-    <input type="checkbox" id="donate-checkbox" name="donate" value="donate" required>
-    {{- with .Params.donateLabel -}}
-      <label for="donate-checkbox">{{ . }}</label>
+    <input type="checkbox"
+      id="donate-checkbox"
+      name="donate"
+      value="donate"
+      required>
+
+    {{- range $key, $value := $donate.once.messages -}}
+      <label for="donate-checkbox" id="message-once-{{ $key }}">{{ $value | safeHTML }}</label>
     {{- end -}}
 
-    {{- with .Params.payment -}}
-      {{- range $index, $platform := sort . "weight" -}}
-        {{- with $platform.url -}}
-          <button type="submit"
-            id="payment-{{ lower $platform.platform }}"
-            formaction="{{ . }}"
-            formmethod="get">
-            {{ $platform.platform }}
-          </button>
+    {{- range $key, $value := $donate.monthly.messages -}}
+      <label for="donate-checkbox" id="message-monthly-{{ $key }}">{{ $value | safeHTML }}</label>
+    {{- end -}}
 
-        {{- else -}}
-          <button type="button"
-            id="payment-{{ lower $platform.platform }}"
+    {{- range $index, $tier := sort $monthlyTiers "amount" -}}
+      <label for="donate-checkbox" id="message-monthly-{{ $index }}">{{ $tier.message | safeHTML }}</label>
+    {{- end -}}
+
+    {{- range sort site.Params.donate.payment "weight" -}}
+      {{- if .url -}}
+        <button type="submit"
+          id="payment-{{ lower .platform }}"
+          formaction="{{ .url }}"
+          formmethod="get">
+          {{ .platform }}
+        </button>
+
+      {{- else -}}
+        <button type="button"
+          id="payment-{{ lower .platform }}"
+          popovertarget="donation-popover"
+          popovertargetaction="toggle">
+          {{ .platform }}
+        </button>
+
+        <div id="donation-popover" popover>
+          <p><strong>{{ .title }}</strong></p>
+          {{- range .details -}}
+            {{- range $key, $value := . -}}
+              <p><strong>{{ $key }}:</strong> {{ $value }}</p>
+            {{- end -}}
+          {{- end -}}
+
+          <button class="close"
             popovertarget="donation-popover"
-            popovertargetaction="toggle">
-            {{ $platform.platform }}
+            popovertargetaction="hide">
+            {{- with (partial "utils/icon.html" "cross") -}}
+              <span class="icon">{{ . }}</span>
+            {{- end -}}
           </button>
-          <div id="donation-popover" popover>
-            {{ $platform.info | safeHTML }}
-            <button class="close"
-              popovertarget="donation-popover"
-              popovertargetaction="hide">
-              {{- with (partial "utils/icon.html" "cross") -}}
-                <span class="icon">{{ . }}</span>
-              {{- end -}}
-            </button>
-          </div>
-        {{- end -}}
+        </div>
       {{- end -}}
     {{- end -}}
   </div>
@@ -142,8 +151,11 @@
 </form>
 
 <!-- Generates Style for Custom messages. -->
-{{- with .Params.monthly -}}
-  {{- range $index, $item := sort . "amount" -}}
-    <style>#donation-form:has(#monthly-{{ $index }}:checked) #message-monthly-{{ $index }} { display: block; }</style>
+<style>
+  {{- range $index, $tier := sort $monthlyTiers "amount" -}}
+    #donation-form:has(#monthly-{{ $index }}:checked):not(:has(#donate-checkbox:checked)) #message-monthly-{{ $index }} {
+      display: block;
+      {{ with $tier.color }}background: {{ . }}{{ end }};
+    }
   {{- end -}}
-{{- end -}}
+</style>

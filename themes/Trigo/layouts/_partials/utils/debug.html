@@ -8,23 +8,45 @@
   <summary><h3>DEBUG INFOS</h3></summary>
 
   {{- $debug := slice
-    (slice "Kind"           .Kind)
-    (slice "Type"           .Type)
-    (slice "Section"        .Section)
-    (slice "CurrentSection" .CurrentSection.Path)
-    (slice "Parent"         .Parent)
-    (slice "BundleType"     .BundleType)
-    (slice "Layout"         .Layout)
-    (slice "Path"           .Path)
-    (slice "RelPermalink"   .RelPermalink)
-    (slice "Slug"           .Slug)
-    (slice "Lang"           .Language.Lang)
+    (slice "Kind"             .Kind)
+    (slice "Type"             .Type)
+    (slice "Section"          .Section)
+    (slice "CurrentSection"   .CurrentSection.Path)
+    (slice "Parent"           .Parent)
+    (slice "BundleType"       .BundleType)
+    (slice "Layout"           .Layout)
+    (slice "Path"             .Path)
+    (slice "RelPermalink"     .RelPermalink)
+    (slice "Slug"             .Slug)
+    (slice "Lang"             .Language.Lang)
   -}}
 
+  {{- with .File -}}
+    {{- $fileDebug := slice
+      (slice "File BaseFileName" .BaseFileName)
+      (slice "File ContentBaseName" .ContentBaseName)
+      (slice "File Dir" .Dir)
+      (slice "File Ext" .Ext)
+      (slice "File Filename" .Filename)
+      (slice "File IsContentAdapter" .IsContentAdapter)
+      (slice "File LogicalName" .LogicalName)
+      (slice "File Path" .Path)
+      (slice "File Section" .Section)
+      (slice "File TranslationBaseName" .TranslationBaseName)
+      (slice "File UniqueID" .UniqueID)
+    -}}
+    {{- $debug = $debug | append $fileDebug -}}
+  {{- end -}}
+
   {{- range $debug -}}
-    <p class="{{ if index . 1 }}ok{{ else }}fail{{ end }}">
-      {{ index . 0 }}: <b>{{ with index . 1 }}{{ . }}{{ else }}<i>nil</i>{{ end }}</b>
-    </p>
+    {{- $pair := . -}}
+    {{- if and (reflect.IsSlice $pair) (ge (len $pair) 2) -}}
+      {{- $key := index $pair 0 -}}
+      {{- $val := index $pair 1 -}}
+      <p class="{{ if $val }}ok{{ else }}fail{{ end }}">
+        {{ $key }}: <b>{{ if $val }}{{ printf "%v" $val }}{{ else }}<i>nil</i>{{ end }}</b>
+      </p>
+    {{- end -}}
   {{- end -}}
 
   <hr>
@@ -48,27 +70,27 @@
     </p>
   {{- end -}}
 
-<style>
-.debug {
-  text-align: center;
-  width: var(--width);
-  margin: auto;
-  border: 2px solid crimson;
-  line-height: 1rem;
-}
+  <style>
+  .debug {
+    text-align: center;
+    width: var(--width);
+    margin: auto;
+    border: 2px solid crimson;
+    line-height: 1rem;
+  }
 
-.debug summary {
-  list-style: none;
-}
+  .debug summary {
+    list-style: none;
+  }
 
-.debug h3,
-.debug p.fail {
-  color: crimson;
-}
+  .debug h3,
+  .debug p.fail {
+    color: crimson;
+  }
 
-.debug p.ok {
-  color: green;
-}
-</style>
+  .debug p.ok {
+    color: green;
+  }
+  </style>
 
 </details>

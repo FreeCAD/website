@@ -60,12 +60,12 @@
 
 
   /* List and Single pages */
-  .hero {
+  .kind-home .hero {
     min-height: calc(100dvh - var(--header-height));
   }
 
-  .kind-page .hero {
-    min-height: calc(var(--width) * 0.5);
+  .hero {
+    min-height: 50dvh;
   }
 
   .buttons,
@@ -112,6 +112,10 @@
     height: 3rem;
   }
 
+  .breadcrumb li {
+    display: inline-block;
+  }
+
   .box {
     padding: calc(var(--gap) * 2) 0;
   }
@@ -137,7 +141,7 @@
   }
 
   .card-icon svg {
-    height: calc(var(--width) * 0.2);
+    height: calc(var(--card-width) * 0.2);
   }
 
   .chart {

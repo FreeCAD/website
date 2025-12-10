@@ -18,7 +18,26 @@
   {{- /* Get the latest article with the "hero" parameters in front matter. */ -}}
   {{- $hero := index (where (site.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Params.hero" "!=" nil) 0 -}}
 
-  <section class="hero">
+  {{- /* Get latest News articles by category, excluding those with "hero" param. */ -}}
+  {{- $pages := slice -}}
+  {{- with site.Sites.Default -}}
+    {{- range .Taxonomies.categories.ByCount -}}
+      {{- $categoryPages := where .Pages "Params.hero" "ne" true | first 1 -}}
+      {{- $pages = $pages | append $categoryPages -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $pages = first (.Params.paginate | default 6) $pages -}}
+
+  {{- /* Get cover image. */ -}}
+  {{- $coverImage := partial "hero/cover_image.html" . -}}
+
+  {{- $sectionCode := "" -}}
+  {{- if not $coverImage}}
+    {{- $sectionCode = partial "utils/index_code.html" . -}}
+  {{- end -}}
+
+  <section class="hero"
+    {{ if $sectionCode }}style="--section: {{ $sectionCode }};"{{ end }}>
 
     <h1 class="title">{{- $hero.LinkTitle | .RenderString -}}</h1>
 
@@ -50,20 +69,9 @@
       </div>
     {{- end -}}
 
-    {{- /* Get cover image. */ -}}
-    {{- partial "hero/cover_image.html" . -}}
+    {{- $coverImage -}}
 
   </section>
-
-  {{- /* Get latest News articles by category, excluding those with "hero" param. */ -}}
-  {{- $pages := slice -}}
-  {{- with site.Sites.Default -}}
-    {{- range .Taxonomies.categories.ByCount -}}
-      {{- $categoryPages := where .Pages "Params.hero" "ne" true | first 1 -}}
-      {{- $pages = $pages | append $categoryPages -}}
-    {{- end -}}
-  {{- end -}}
-  {{- $pages = first (.Params.paginate | default 6) $pages -}}
 
   {{- with $pages -}}
     {{- partial "main/cards.html" . -}}

@@ -7,7 +7,55 @@
 
 {{- define "main" -}}
 
-  <section class="hero">
+  {{- $default := site.Sites.Default.GetPage .Path -}}
+
+  {{/* Hero cards on top-level sections. */}}
+  {{- $heroCards := slice -}}
+  {{- if and .IsSection (or .Parent.IsHome (eq .Params.heroCards true)) (ne .Params.heroCards false) -}}
+    {{- range .Sections -}}
+      {{- $heroCards = $heroCards | append . -}}
+    {{- end -}}
+
+    {{- range $default.Sections -}}
+      {{- if not (site.GetPage .Path) -}}
+        {{- $heroCards = $heroCards | append . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* Get latest current sub-Sections or RegularPages, and fill in missing translated pages from default language Site. */ -}}
+  {{- $pages := slice | append .RegularPages | lang.Merge $default.RegularPages -}}
+  {{- if not (and .IsSection (or .Parent.IsHome (eq .Params.heroCards true))) -}}
+    {{- range .Sections -}}
+      {{- $pages = $pages | append . -}}
+    {{- end -}}
+
+    {{- range $default.Sections -}}
+      {{- if not (site.GetPage .Path) -}}
+        {{- $pages = $pages | append . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* For community, list 3 latest event articles. */ -}}
+  {{- if eq .File.ContentBaseName "community" -}}
+    {{- $news := where .RegularPages "Section" "news" | lang.Merge (where site.Sites.Default.RegularPages "Section" "news") -}}
+    {{- $events := where $news "Params.categories" "eq" "event" -}}
+    {{- $pages = first 3 (sort $events "Date" "desc") -}}
+  {{- end -}}
+
+
+  {{- /* Get cover image. */ -}}
+  {{- $coverImage := partial "hero/cover_image.html" . -}}
+
+  {{- $sectionCode := "" -}}
+  {{- if not $coverImage}}
+    {{- $sectionCode = partial "utils/index_code.html" . -}}
+  {{- end -}}
+
+  <section class="hero"
+    {{ if $sectionCode }}style="--section: {{ $sectionCode }};"{{ end }}>
+
     {{- /* List categories. */ -}}
     {{- if eq .Section "news" -}}
       {{- partial "hero/categories.html" . -}}
@@ -24,21 +72,30 @@
       <h3 class="description">{{- . | $.RenderString -}}</h3>
     {{- end -}}
 
+    {{- if not hugo.IsProduction -}}
+      {{- with .Page.Menus.main -}}
+        <h2 style="color: crimson; z-index:2;">Weight: {{ .Weight }}</h2>
+      {{- end -}}
+    {{- end -}}
+
     {{/* Dynamically include hero partial based on Type */}}
-    {{- $hero := printf "hero/%s.html" .Type -}}
+    {{- $hero := printf "hero/%s.html" .File.ContentBaseName -}}
     {{- if templates.Exists (printf "_partials/%s" $hero) -}}
       {{- partial $hero . -}}
     {{- end -}}
 
-    {{- /* List custom params cards. */ -}}
-    {{- with .Params.cards -}}
+    {{- with $heroCards -}}
       {{- partial "main/cards.html" . -}}
-    {{- end -}}
+    {{- end }}
 
-    {{- /* Get cover image. */ -}}
-    {{- partial "hero/cover_image.html" . -}}
+    {{- $coverImage -}}
 
   </section>
+
+  {{- /* Get Breadcrumbs. */ -}}
+  {{- if .Params.breadcrumbs -}}
+    {{- partial "main/breadcrumbs.html" . -}}
+  {{- end -}}
 
   {{- /* Get Table Of Contents. */ -}}
   {{- if .Params.ToC -}}
@@ -46,7 +103,7 @@
   {{- end -}}
 
   {{- /* For Donate, list Funded Grants and Sponsors. */ -}}
-  {{- if eq .Type "donate" -}}
+  {{- if eq .File.ContentBaseName "donate" -}}
     {{- partial "main/grants.html" . -}}
     {{- partial "main/sponsors.html" . -}}
   {{- end -}}
@@ -55,34 +112,9 @@
   {{- partial "main/content.html" . -}}
 
   {{/* Dynamically include main partial based on Type */}}
-  {{- $main := printf "main/%s.html" .Type -}}
+  {{- $main := printf "main/%s.html" .File.ContentBaseName -}}
   {{- if templates.Exists (printf "_partials/%s" $main) -}}
     {{- partial $main . -}}
-  {{- end -}}
-
-  {{- /* Get latest current sub-Sections or RegularPages, and fill in missing translated pages from default language Site. */ -}}
-  {{- $default := site.Sites.Default.GetPage .Path -}}
-  {{- $pages := slice -}}
-
-  {{- range .Sections -}}
-    {{- $pages = $pages | append . -}}
-  {{- end -}}
-
-  {{- range $default.Sections -}}
-    {{- if not (site.GetPage .Path) -}}
-      {{- $pages = $pages | append . -}}
-    {{- end -}}
-  {{- end -}}
-
-  {{- if or (not $pages) (not (and .IsSection .Parent.IsHome)) -}}
-    {{- $pages = $pages | append .RegularPages | lang.Merge $default.RegularPages -}}
-  {{- end -}}
-
-  {{- /* For community, list 3 latest event articles. */ -}}
-  {{- if eq .Type "community" -}}
-    {{- $news := where .RegularPages "Section" "news" | lang.Merge (where site.Sites.Default.RegularPages "Section" "news") -}}
-    {{- $events := where $news "Params.categories" "eq" "event" -}}
-    {{- $pages = first 3 (sort $events "Date" "desc") -}}
   {{- end -}}
 
   {{- /* List RegularPages, sub-Sections or custom pages. */ -}}

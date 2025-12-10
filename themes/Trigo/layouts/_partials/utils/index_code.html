@@ -1,0 +1,46 @@
+{{- $indexCode := 0 -}}
+{{- $key := "" -}}
+
+{{- if .IsHome -}}
+  {{- $key = "home" -}}
+{{- else if .IsSection -}}
+  {{- $key = .Section -}}
+{{- else if .IsPage -}}
+  {{- $key = .Section -}}
+{{- else if eq .Kind "taxonomy" -}}
+  {{- $key = .Type -}}
+{{- else if eq .Kind "term" -}}
+  {{- if eq .Type "categories" -}}
+    {{- $key = printf "%s/%s" .Type .Data.Term -}}
+  {{- else -}}
+    {{- $key = .Type -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $keys := slice -}}
+{{- range site.Sections -}}
+  {{- $keys = $keys | append .Section -}}
+{{- end -}}
+{{- range $name, $taxonomy := site.Taxonomies -}}
+  {{- $keys = $keys | append $name -}}
+  {{- if eq $name "categories" -}}
+    {{- range $term, $key := $taxonomy -}}
+      {{- $keys = $keys | append (printf "%s/%s" $name $term) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $keys = sort (uniq $keys) -}}
+
+{{- if eq $key "home" -}}
+  {{- $indexCode = 1 -}}
+{{- else if .Weight -}}
+  {{- $indexCode = mul .Weight 10 -}}
+{{- else -}}
+  {{- range $index, $name := $keys -}}
+    {{- if eq $name $key -}}
+      {{- $indexCode = mul (add $index 2) 10 -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $indexCode -}}

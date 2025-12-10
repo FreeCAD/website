@@ -22,6 +22,8 @@
           </a>
         {{- end -}}
 
+        <p class="page-number">{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</p>
+
         {{- if $paginator.HasNext -}}
           <a class="next"
             href="{{ $paginator.Next.URL }}"

@@ -12,6 +12,14 @@
 {{- end -}}
 
 {{- if $pages -}}
+  {{- $pageNumber := 0 -}}
+  {{- range $index, $page := $pages -}}
+    {{- if eq $page.File.Path $.File.Path -}}
+      {{- $pageNumber = add $index 1 -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $totalPages := len $pages -}}
+
   <footer class="single-footer">
     <nav class="pagination">
       {{- with $pages.Prev . -}}
@@ -31,11 +39,13 @@
           {{- end -}}
           {{- if not hugo.IsProduction -}}
             {{- with .Weight -}}
-              <span style="color: red;">{{ . }}</span>
+              <span style="color: crimson;">Weight: {{ . }}</span>
             {{- end -}}
           {{- end -}}
         </a>
       {{- end -}}
+
+      <p class="page-number">{{ $pageNumber }} / {{ $totalPages }}</p>
 
       {{- with $pages.Next . -}}
         <a class="next"
@@ -54,7 +64,7 @@
           {{- end -}}
           {{- if not hugo.IsProduction -}}
             {{- with .Weight -}}
-              <span style="color: red;">{{ . }}</span>
+              <span style="color: crimson;">Weight: {{ . }}</span>
             {{- end -}}
           {{- end -}}
         </a>

@@ -22,7 +22,7 @@
 </script>
 
 {{- /* Detect User Agent and provide corresponding download options. */ -}}
-{{- if and (in (slice "download" "releases") .Section) site.Params.enableUA -}}
+{{- if and (in (slice "download" "releases") .Section) site.Params.enableJSua -}}
   {{- with resources.Get "js/ua-download.js" }}
     {{- $ua := . -}}
     {{- if hugo.IsProduction -}}
@@ -38,7 +38,7 @@
 
 {{- /* Copy Code block content to clipboard. */ -}}
 {{- if and (eq .Kind "page") (ne .Layout "archives") site.Params.showCopyCodeButton -}}
-  {{- with resources.Get "js/copy-code.js" -}}
+  {{- with resources.Get "js/copy.js" -}}
     {{- $codeCopy := resources.ExecuteAsTemplate "js/code-copy.js" $ . -}}
     {{- if hugo.IsProduction -}}
       {{- $codeCopy = $codeCopy | minify | fingerprint -}}
@@ -52,7 +52,7 @@
 {{- end -}}
 
 {{- /* Open Details block with anchor link. */ -}}
-{{- if and (in .Content "<details") site.Params.enableOpenDetails -}}
+{{- if and (in .Content "<details") site.Params.enableJSdetails -}}
   {{- with resources.Get "js/open-details.js" -}}
     {{- $detailsToggle := . -}}
     {{- if hugo.IsProduction -}}
@@ -67,8 +67,8 @@
 {{- end -}}
 
 {{- /* Validate and submit Donation Box form. */ -}}
-{{- if and (eq .Section "donate") site.Params.enableDonateBox -}}
-  {{- with resources.Get "js/donate-box.js" -}}
+{{- if and (eq .Section "donate") site.Params.enableJSdonate -}}
+  {{- with resources.Get "js/donate.js" -}}
     {{- $donateBox := . -}}
     {{- if hugo.IsProduction -}}
       {{- $donateBox = $donateBox | minify | fingerprint -}}
