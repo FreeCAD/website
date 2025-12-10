@@ -2,10 +2,6 @@
 title: "Merci!"
 description: "Merci d'utiliser et soutenir FreeCAD!"
 authors: FreeCAD
-cover:
-  image: 3.webp
-  caption: "a cover caption"
-  alt: "a cover alternative title"
 params:
   cards:
     - title: "Enjoy!"

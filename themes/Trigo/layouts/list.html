@@ -78,7 +78,7 @@
       {{- end -}}
     {{- end -}}
 
-    {{/* Dynamically include hero partial based on Type */}}
+    {{/* Dynamically include hero partial. */}}
     {{- $hero := printf "hero/%s.html" .File.ContentBaseName -}}
     {{- if templates.Exists (printf "_partials/%s" $hero) -}}
       {{- partial $hero . -}}
@@ -111,7 +111,7 @@
   {{- /* Get page content. */ -}}
   {{- partial "main/content.html" . -}}
 
-  {{/* Dynamically include main partial based on Type */}}
+  {{/* Dynamically include main partial. */}}
   {{- $main := printf "main/%s.html" .File.ContentBaseName -}}
   {{- if templates.Exists (printf "_partials/%s" $main) -}}
     {{- partial $main . -}}

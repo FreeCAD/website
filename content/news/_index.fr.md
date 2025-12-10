@@ -3,11 +3,6 @@ title: "Actualités"
 description: "Parcourir les dernières actualités"
 date: 2024-05-22T08:04:23+12:00
 authors: FreeCAD
-paginate: 12
-cover:
-  image: 6.webp
-  caption: "a cover caption"
-  alt: "a cover alternative title"
 menus:
   main:
     weight: 4

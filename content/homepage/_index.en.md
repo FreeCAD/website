@@ -9,18 +9,51 @@ date: 2024-05-22T08:04:23+12:00
 params:
   buttons:
     - url: download
-      style: "background: var(--secondary); color: var(--theme); box-shadow: 0 0 0 0.25em var(--theme);"
+      style: "background: var(--secondary); color: var(--theme);"
     - url: releases/1-0
       label: "See what's new"
 ---
 
-{{< box style="text-align: center; background: var(--entry);" >}}
+
+{{< box >}}
+
+{{< column icon="heart" >}}
+
+## Freedom by Design
+
+FreeCAD is free and open-source licensed software.
+Local and private, no lock-in, no fees.
+Freedom to use for any project.
+
+{{< /column >}}
+
+{{< column icon="time" >}}
+
+## Parametric Precision
+
+Model, simulate and fabricate complex real-world objects.
+Modular workbenches and specialized tools allow for extensible designs and fast iterations.
+
+{{< /column >}}
+
+{{< column icon="authors" >}}
+
+## Community Power
+
+Multilingual, peer-reviewed and a rich open ecosystem make FreeCAD the safe choice for today and tomorrow.
+
+{{< /column >}}
+
+{{< /box >}}
+
+
+{{< box >}}
 
 {{< column content="![An image text](assembly2.webp 'An image caption')" />}}
 
 {{< column >}}
 
-## First Box {style="background: var(--secondary); color: var(--theme); padding: 1rem; box-shadow: 0 0 0 0.25em var(--theme); border-radius: var(--radius);"}
+## Some awesome stuff
 
 This is a text in the first box.
 
@@ -29,11 +62,11 @@ This is a text in the first box.
 {{< /box >}}
 
 
-{{< box style="text-align: center; background: var(--theme);" >}}
+{{< box >}}
 
-{{< column title="Second box title" style="background: var(--tone)" content-style="background: var(--theme);" >}}
+{{< column title="Second box title" >}}
 
-## Second Box
+## More nice stuff
 
 This is a text in the second box.
 
@@ -44,13 +77,13 @@ This is a text in the second box.
 {{< /box >}}
 
 
-{{< box style="text-align: center; background: var(--entry);" >}}
+{{< box >}}
 
 {{< column content="![An image text](assembly1.webp 'An image caption')" />}}
 
 {{< column >}}
 
-## Third Box
+## Even more cool stuff
 
 This is a text in the third box.
 
@@ -59,11 +92,11 @@ This is a text in the third box.
 {{< /box >}}
 
 
-{{< box style="text-align: center; background: var(--theme);" >}}
+{{< box >}}
 
 {{< column >}}
 
-## Fourth Box
+## Want some more?
 
 This is a text in the fourth box.
 

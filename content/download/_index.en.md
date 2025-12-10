@@ -3,10 +3,6 @@ title: "Download"
 description: "Launch Into Design!"
 date: 2024-05-22T08:04:23+12:00
 authors: FreeCAD
-cover:
-  image: 4.webp
-  caption: "a cover caption"
-  alt: "a cover alternative title"
 menus:
   main:
     weight: 3
@@ -46,7 +42,8 @@ params:
           alt: LINUX-AARCH64
 ---
 
-{{< box style="text-align: justify; background: var(--tone);" >}}
+
+{{< box >}}
 
 {{< column content="![A image text alt text](4.webp 'An image caption')" />}}
 
@@ -54,20 +51,20 @@ params:
 
 ## Column shortcode in first box shortcode
 
-This is a text in first column of the second box with `text-align="justify" background="var(--tone)"`. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 {{< /column >}}
 
 {{< /box >}}
 
 
-{{< box title="Second box shortcode" style="text-align: center; background: gold; color: red;" >}}
+{{< box title="Second box shortcode" >}}
 
 {{< column >}}
 
 ## First column shortcode in second box shortcode
 
-This is a text in the first column shortcode of the second box shortcode with `text-align="center"`.
+This is a text in the first column shortcode of the second box shortcode.
 
 {{< /column >}}
 

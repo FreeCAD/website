@@ -1,0 +1,160 @@
+---
+title: "FAQs"
+description: "Frequently Asked Questions"
+date: 2021-01-20
+authors: FreeCAD
+weight: 10
+---
+
+
+> [!NOTE]
+> The content below is a placeholder and will be changed soon.
+
+
+## Override theme template
+
+By Hugo's Lookup Order, you can override any part of a theme that you want. The following is a quick example.
+
+Let's say you wish the `list` was different. All you have to do is copy the `list` template:
+
+```shell
+your-site/themes/Trigo/layouts/_defaults/list.html
+```
+
+And paste it under your own `layouts` folder:
+
+```shell
+your-site/layouts/_defaults/list.html
+```
+
+Then you're free to make any changes you want to the `list`.
+When Hugo builds your site, your copy of `list.html` will be used instead of the theme's `list.html`.
+
+We'll be using `yaml` format for all examples down below, as it is easier to read.
+
+
+## Enable SEO
+
+These include OpenGraph and Schema.
+
+```yml
+params:
+  env: production
+```
+
+or set `HUGO_ENV` as "production" in system env-vars
+
+
+## Failed to find a valid digest in the "integrity" attribute for resource ... ?
+
+Read about How Subresource Integrity helps: [Subresource_Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)
+
+Why was the `asset` not loading ? : [How_browsers_handle_Subresource_Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity#how_browsers_handle_subresource_integrity)
+
+**Solution:**
+
+Set the following in `config.yml`
+
+```yml
+params:
+  assets:
+    disableFingerprinting: true
+```
+
+Linked Issues:
+
+-   https://stackoverflow.com/questions/65056585/hugo-theme-not-loading
+-   https://stackoverflow.com/questions/65040931/hugo-failed-to-find-a-valid-digest-in-the-integrity-attribute-for-resource
+-   https://blog.gerardbeckerleg.com/posts/hugo-failed-to-find-a-valid-digest-in-the-integrity-attribute-for-resource/
+
+
+## Add menu to site
+
+You can add menu entries which will appear in the header of every page.
+
+To do so, add a `menu` section to your site's `config.yml`:
+
+```yml
+menu:
+  main:
+    - identifier: categories
+      name: categories
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 20
+    - identifier: example
+      name: example.org
+      url: https://example.org
+      weight: 30
+```
+
+`name` controls what will be displayed for the menu entry.
+`url` sets the URL that the entry points to.
+`weight` is used to control the positioning of entries.
+
+For more information on menus, see the [Hugo wiki page](https://gohugo.io/content-management/menus/).
+
+
+## Pin a Post
+
+Post can be pinned/ displayed top on the list by adding a `weight=<num>` var to page-variables
+
+example:
+
+```yml
+---
+title: "My Important post"
+date: 2020-09-15T11:30:03+00:00
+weight: 1
+---
+```
+
+```yml
+---
+title: "My 2nd Important post"
+date: 2020-09-15T11:30:03+00:00
+weight: 2
+---
+```
+
+
+## Adding Custom Favicon(s)
+
+We support the following paths under `/static` directory
+and can be added accordingly.
+
+- `favicon.ico`
+- `favicon-16x16.webp`
+- `favicon-32x32.webp`
+- `apple-touch-icon.webp`
+- `safari-pinned-tab.svg`
+
+
+## Centering image in markdown
+
+Add `#center` after image to center align an image
+
+```md
+![name](path/to/image.webp#center)
+```
+
+
+## Using Hugo's Syntax highlighter "chroma"
+
+Set hugo's markdown styling in site `config.yml`
+
+```yml
+markup:
+  highlight:
+    noClasses: false
+```
+
+`noClasses` has to be `false` to make highlight color follows the theme.
+
+
+## References
+
+- [Override a Hugo theme](https://gohugo.io/templates/lookup-order)

@@ -52,6 +52,12 @@
     </div>
   {{- end -}}
 
+  {{/* Dynamically include main partial. */}}
+  {{- $main := printf "main/%s.html" .File.ContentBaseName -}}
+  {{- if templates.Exists (printf "_partials/%s" $main) -}}
+    {{- partial $main . -}}
+  {{- end -}}
+
   {{- /* Get pagination to previous and next pages. */ -}}
   {{- if .Param "showPagination" -}}
     {{- partial "main/pagination.html" . -}}

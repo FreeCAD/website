@@ -37,9 +37,9 @@ The FPN brings professionals together to:
 This is where professionals make their voice heard and pool their strengths to move FreeCAD forward.
 
 
-{{< box title="Membership Tiers" style="text-align: center; background: var(--entry);" >}}
+{{< box title="Membership Tiers" >}}
 
-{{< column style="background: var(--theme); border: solid var(--link-color);" url="https://buy.stripe.com/eVqaEX2IteaO8bc7zVdZ602" >}}
+{{< column url="https://buy.stripe.com/eVqaEX2IteaO8bc7zVdZ602" style="text-align: center; border: solid var(--link-color);" >}}
 
 <h3>Individual</h3>
 
@@ -52,7 +52,7 @@ This is where professionals make their voice heard and pool their strengths to m
 
 {{< /column >}}
 
-{{< column style="background: var(--theme); border: solid var(--link-color);" url="https://buy.stripe.com/aFa9AT2It7MqfDE4nJdZ603" >}}
+{{< column url="https://buy.stripe.com/aFa9AT2It7MqfDE4nJdZ603" style="text-align: center; border: solid var(--link-color);" >}}
 
 <h3>Organization</h3>
 
