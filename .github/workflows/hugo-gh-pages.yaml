@@ -1,6 +1,7 @@
 # Sample workflow for building and deploying a Hugo site to GitHub Pages
 # https://github.com/actions/starter-workflows/blob/main/pages/hugo.yml
-name: Deploy Hugo site to Pages
+
+name: Deploy Hugo site to GitHub Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -44,13 +45,8 @@ jobs:
       TZ: Europe/Berlin
 
     steps:
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
-
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           submodules: recursive
           fetch-depth: 0
@@ -59,20 +55,36 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Install Node.js dependencies
-        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Create dir for executables
+        run: |
+          mkdir -p "${HOME}/.local"
+
+      - name: Install Hugo
+        run: |
+          curl -sLJO "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
+          mkdir "${HOME}/.local/hugo"
+          tar -C "${HOME}/.local/hugo" -xf "hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
+          rm "hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
+          echo "${HOME}/.local/hugo" >> "${GITHUB_PATH}"
+
+      - name: Verify installations
+        run: |
+          echo "Hugo: $(hugo version)"
+
+      - name: Configure Git
+        run: |
+          git config core.quotepath false
 
       - name: Cache Restore
         id: cache-restore
         uses: actions/cache/restore@v4
         with:
-          path: |
-            ${{ runner.temp }}/hugo_cache
+          path: ${{ runner.temp }}/hugo_cache
           key: hugo-${{ github.run_id }}
           restore-keys:
             hugo-
 
-      - name: Build with Hugo
+      - name: Build the site with Hugo
         run: |
           hugo \
             --gc \
@@ -84,8 +96,7 @@ jobs:
         id: cache-save
         uses: actions/cache/save@v4
         with:
-          path: |
-            ${{ runner.temp }}/hugo_cache
+          path: ${{ runner.temp }}/hugo_cache
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
 
       - name: Upload artifact
