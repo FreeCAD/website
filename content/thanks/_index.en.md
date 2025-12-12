@@ -1,7 +1,6 @@
 ---
 title: "Thank you!"
 description: "Thanks for using and supporting FreeCAD!"
-authors: FreeCAD
 params:
   cards:
     - title: "Enjoy!"

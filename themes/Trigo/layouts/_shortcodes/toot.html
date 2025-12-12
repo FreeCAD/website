@@ -55,9 +55,9 @@
           {{- end -}}
         {{- end -}}
 
-        {{- if gt (len $images) 0 -}}
+        {{- with $images -}}
           <div class="toot-img-grid-{{ len $images }}">
-            {{- range $img := $images -}}
+            {{- range $img := . -}}
               <img src="{{ $img.url }}"
                 alt="Image {{ $img.id }} from toot {{ $id }} on {{ $host }}"
                 class="toot-media-img {{ if $json.sensitive }}toot-sens-blur{{ end }}"

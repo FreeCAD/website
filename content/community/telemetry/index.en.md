@@ -2,5 +2,4 @@
 title: "Telemetry"
 description: "Data from the FreeCAD Telemetry addon"
 date: 2024-05-22T08:04:23+12:00
-authors: FreeCAD
 ---

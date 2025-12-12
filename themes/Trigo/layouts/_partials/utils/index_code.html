@@ -18,10 +18,10 @@
 {{- end -}}
 
 {{- $keys := slice -}}
-{{- range site.Sections -}}
+{{- range site.Sites.Default.Sections -}}
   {{- $keys = $keys | append .Section -}}
 {{- end -}}
-{{- range $name, $taxonomy := site.Taxonomies -}}
+{{- range $name, $taxonomy := site.Sites.Default.Taxonomies -}}
   {{- $keys = $keys | append $name -}}
   {{- if eq $name "categories" -}}
     {{- range $term, $key := $taxonomy -}}

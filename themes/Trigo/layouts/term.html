@@ -12,16 +12,16 @@
   {{- $defaultTerm := index (index site.Sites.Default.Taxonomies .Data.Plural) .Data.Term -}}
 
   {{- /* Merge current language Term pages and default language Site fallback. */ -}}
-  {{- $fallbackPages := slice -}}
+  {{- $fallback := slice -}}
   {{- if $defaultTerm -}}
-    {{- range $p := $defaultTerm.Pages -}}
-      {{- if not (in $pages $p.Translations) -}}
-        {{- $fallbackPages = $fallbackPages | append $p -}}
+    {{- range $page := $defaultTerm.Pages -}}
+      {{- if not (in $pages $page.Translations) -}}
+        {{- $fallback = $fallback | append $page -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
 
-  {{- $pages = sort (union $pages $fallbackPages) "Date" "desc" -}}
+  {{- $pages = sort (union $pages $fallback) "Date" "desc" -}}
   {{- $count := len $pages -}}
 
   {{- /* Get cover image. */ -}}

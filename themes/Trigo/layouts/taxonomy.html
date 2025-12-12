@@ -5,8 +5,23 @@
 
 {{- define "main" -}}
 
-  {{- $type := .Type -}}
-  {{- $terms := .Data.Terms.Alphabetical -}}
+  {{- $taxonomy := .Type -}}
+  {{- $terms := .Data.Terms -}}
+
+  {{- /* Get terms from default language Site for this Taxonomy. */ -}}
+  {{- $defaultTerms := (index site.Sites.Default.Taxonomies $taxonomy) -}}
+
+  {{- /* Merge current language Taxonomy terms and default language Site fallback. */ -}}
+  {{- $merged := slice -}}
+  {{- range $terms.Alphabetical -}}
+    {{- $merged = $merged | append . -}}
+  {{- end -}}
+
+  {{- range $term := $defaultTerms.Alphabetical -}}
+    {{- if not (in $merged $term) -}}
+      {{- $merged = $merged | append . -}}
+    {{- end -}}
+  {{- end -}}
 
   {{- /* Get cover image. */ -}}
   {{- $coverImage := partial "hero/cover_image.html" . -}}
@@ -23,19 +38,18 @@
       {{- with (partial "utils/icon.html" (lower .Title)) -}}
         <span class="icon">{{ . }}</span>
       {{- end -}}
-      {{ .Title | .RenderString }}
+      {{ .Title | .RenderString }} ({{ len $merged }})
     </h1>
 
     {{- with .Description -}}
       <h3 class="description">{{- . | $.RenderString -}}</h3>
     {{- end -}}
 
-    {{- with $terms -}}
+    {{- with $merged -}}
       <ul class="terms">
         {{- range . -}}
-          {{- $name := .Name -}}
-          {{- $count := .Count -}}
-          {{- with site.GetPage (printf "/%s/%s" $type $name) -}}
+          {{- $count := len .Pages -}}
+          {{- with .Page -}}
             <a href="{{ .RelPermalink }}">
               {{ .LinkTitle }} ({{ $count }})
             </a>
@@ -44,7 +58,7 @@
       </ul>
 
     {{- else -}}
-      {{- i18n "noterms" | default (printf "No %s found." $type) -}}
+      {{- i18n "noterms" | default (printf "No %s found." $taxonomy) -}}
     {{- end -}}
 
     {{- $coverImage -}}

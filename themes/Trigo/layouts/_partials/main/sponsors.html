@@ -20,11 +20,11 @@
 
     {{- range $tier := $tiers -}}
       {{- $tierSponsors := where $sponsors "tier" $tier -}}
-      {{- if gt (len $tierSponsors) 0 -}}
+      {{- with $tierSponsors -}}
         <h3>{{ $tier | title }}</h3>
         <div class="sponsors-tier">
 
-          {{- range $sponsor := sort $tierSponsors "label" -}}
+          {{- range $sponsor := sort . "label" -}}
             {{- with $sponsor.link }}
               <a href="{{ . }}" target="_blank">
             {{- end -}}

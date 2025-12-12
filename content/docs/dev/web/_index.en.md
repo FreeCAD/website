@@ -2,7 +2,6 @@
 title: Website Content and Theme
 description: How to improve the website and use the Trigo Theme for Hugo.
 date: 2020-01-01
-authors: FreeCAD
 weight: 9
 ---
 

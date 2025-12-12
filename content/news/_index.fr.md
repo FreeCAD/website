@@ -2,7 +2,6 @@
 title: "Actualités"
 description: "Parcourir les dernières actualités"
 date: 2024-05-22T08:04:23+12:00
-authors: FreeCAD
 menus:
   main:
     weight: 4

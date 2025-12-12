@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (getType() === "once") {
       const selected = getTier();
       customInput.value = selected ? selected.value : "";
-      customInput.focus();
       document.getElementById("custom-amount-box").classList.remove("active");
     }
     updateDonateButton();

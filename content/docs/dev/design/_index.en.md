@@ -2,7 +2,6 @@
 title: "Design Guide"
 description: "Guidelines for designers and developers about FreeCAD design."
 date: 2024-05-22T08:04:23+12:00
-authors: FreeCAD
 weight: 5
 ---
 

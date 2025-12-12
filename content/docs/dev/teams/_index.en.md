@@ -2,7 +2,6 @@
 title: "Teams"
 description: "The Teams of contributors making FreeCAD happen."
 date: 2024-05-22T08:04:23+12:00
-authors: FreeCAD
 weight: 2
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: "Merci!"
 description: "Merci d'utiliser et soutenir FreeCAD!"
-authors: FreeCAD
 params:
   cards:
     - title: "Enjoy!"

@@ -2,7 +2,6 @@
 title: "Code guidelines"
 description: "Guidelines for code best practices."
 date: 2024-05-22T08:04:23+12:00
-authors: FreeCAD
 weight: 4
 ---
 
