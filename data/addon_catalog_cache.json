@@ -56,11 +56,11 @@
     {
       "repository": "https://github.com/FreeCAD/AddonManager",
       "git_ref": "main",
-      "last_update_time": "2025-11-04T11:29:20-06:00",
+      "last_update_time": "2025-12-19T19:17:26-06:00",
       "metadata": {
         "name": "Addon Manager",
         "description": "Tool to install workbenches, macros, themes, etc.",
-        "version": "2025.11.04",
+        "version": "2025.12.19",
         "maintainer": "Chris Hennes",
         "license": "LGPL-2.1-or-later",
         "icon": "Resources/icons/addon_manager.svg"
@@ -69,11 +69,11 @@
     {
       "repository": "https://github.com/FreeCAD/AddonManager",
       "git_ref": "dev",
-      "last_update_time": "2025-11-10T16:39:24-06:00",
+      "last_update_time": "2025-12-19T19:19:00-06:00",
       "metadata": {
         "name": "Addon Manager",
         "description": "Development branch of a tool to install workbenches, macros, themes, etc.",
-        "version": "2025.11.04dev",
+        "version": "2025.12.19dev",
         "maintainer": "Chris Hennes",
         "license": "LGPL-2.1-or-later",
         "icon": "Resources/icons/addon_manager.svg"
@@ -99,13 +99,13 @@
     {
       "repository": "https://github.com/KeithSloan/OpenSCAD_Alt_Import",
       "git_ref": "master",
-      "last_update_time": "2025-11-26T21:15:06+00:00",
+      "last_update_time": "2025-12-21T15:09:30+00:00",
       "metadata": {
-        "name": "OpenSCAD alternate importer",
-        "description": "An alternate OpenSCAD importer - with some experimental features",
+        "name": "OpenSCAD Alternate Importer",
+        "description": "An alternate OpenSCAD importer with some experimental features.",
         "version": "1.0.0",
         "maintainer": "Keith Sloan",
-        "license": "LGPL-2.1",
+        "license": "LGPL-2.1-or-later",
         "icon": "freecad/OpenSCAD_Alt_Import/Resources/icons/OpenSCAD_Alternate.png"
       }
     }
@@ -183,11 +183,11 @@
     {
       "repository": "https://codeberg.org/Zolko/Assembly4",
       "git_ref": "main",
-      "last_update_time": "2025-11-18T17:19:17+01:00",
+      "last_update_time": "2025-12-19T17:55:31+01:00",
       "metadata": {
         "name": "Assembly4",
-        "description": "This assembly workbench allows you to assemble various FreeCAD parts (of type Part or Body) into a standard assembly container using links, and place them relative to the assembly and to each other.",
-        "version": "0.60.3",
+        "description": "This assembly workbench allows you to assemble various native FreeCAD parts (of type Part or Body) into a standard assembly container using links, and place them relative to the assembly and to each other using LCS connectors.",
+        "version": "0.60.4",
         "maintainer": "Zolko-123",
         "license": "LGPL-2.1-only",
         "icon": "../Resources/icons/Assembly4.svg"
@@ -476,11 +476,11 @@
     {
       "repository": "https://github.com/altangarts/FreeCAD-Themes-ColorPalette",
       "git_ref": "main",
-      "last_update_time": "2025-12-14T20:03:37+03:00",
+      "last_update_time": "2025-12-21T19:56:21+03:00",
       "metadata": {
         "name": "ColorPaletteTheme",
         "description": "2D-3D ColorPalette Theme",
-        "version": "1.3.9",
+        "version": "1.4.6",
         "maintainer": "altangarts@gmail",
         "license": "LGPL-2.1-or-later",
         "icon": "resources/icons/ColorPaletteTheme.svg"
@@ -522,7 +522,7 @@
     {
       "repository": "https://github.com/tomate44/CurvesWB",
       "git_ref": "main",
-      "last_update_time": "2025-11-26T17:11:29+01:00",
+      "last_update_time": "2025-12-15T18:32:46+01:00",
       "metadata": {
         "name": "Curves workbench",
         "description": "A collection of tools mainly dedicated to NURBS curves and surfaces modeling.",
@@ -610,9 +610,9 @@
   ],
   "drawing_dimensioning": [
     {
-      "repository": "https://github.com/hamish2014/FreeCAD_drawing_dimensioning",
-      "git_ref": "master",
-      "last_update_time": "2019-05-16T15:56:23+02:00",
+      "repository": "https://github.com/Addon-Shelter/Drawing-Dimensioning",
+      "git_ref": "v0.19.4",
+      "last_update_time": "2025-11-03T12:30:39-05:00",
       "metadata": {}
     }
   ],
@@ -890,11 +890,11 @@
     {
       "repository": "https://github.com/kwahoo2/freecad-xr-workbench",
       "git_ref": "main",
-      "last_update_time": "2025-12-14T11:35:10+01:00",
+      "last_update_time": "2025-12-21T12:14:35+01:00",
       "metadata": {
         "name": "Virtual Reality",
         "description": "A Virtual Reality (OpenXR) workbench. View your models with VR goggles.",
-        "version": "0.9.991",
+        "version": "0.9.992",
         "maintainer": "Adrian Przekwas",
         "license": "LGPL-3.0-or-later",
         "icon": "Gui/Resources/icons/preferences-virtual_reality.svg"
@@ -950,11 +950,11 @@
     {
       "repository": "https://github.com/Serince/FEMbyGEN",
       "git_ref": "master",
-      "last_update_time": "2025-10-20T14:00:12+03:00",
+      "last_update_time": "2025-12-17T15:31:17+03:00",
       "metadata": {
         "name": "FEMbyGEN",
         "description": "Parametric Finite Element Analysis(FEM)",
-        "version": "2.5.1",
+        "version": "2.5.2",
         "maintainer": "Serdar T. Ince",
         "license": "LGPL-2.1-only",
         "icon": "fembygen/icons/icon.svg"
@@ -1033,11 +1033,11 @@
     {
       "repository": "https://github.com/rahix/FusedFilamentDesign.git",
       "git_ref": "release",
-      "last_update_time": "2025-11-28T11:48:39+01:00",
+      "last_update_time": "2025-12-19T12:15:28+01:00",
       "metadata": {
         "name": "FusedFilamentDesign",
         "description": "PartDesign addon for FFF/FDM 3D-printing design",
-        "version": "0.25.480",
+        "version": "0.25.510",
         "maintainer": "rahix",
         "license": "LGPL-2.1-or-later",
         "icon": "Resources/icons/ffDesign_Logo.svg"
@@ -1731,7 +1731,7 @@
     {
       "repository": "https://github.com/HakanSeven12/Road",
       "git_ref": "main",
-      "last_update_time": "2025-12-13T20:21:38+03:00",
+      "last_update_time": "2025-12-16T20:42:00+03:00",
       "metadata": {
         "name": "Road",
         "description": "Road is the Transportation and Geomatics Engineering workbench for FreeCAD.",
@@ -1759,11 +1759,11 @@
     {
       "repository": "https://github.com/davesrocketshop/Rocket",
       "git_ref": "master",
-      "last_update_time": "2025-11-01T23:35:57+00:00",
+      "last_update_time": "2025-12-18T11:34:25+00:00",
       "metadata": {
         "name": "Rocket",
         "description": "A workbench for designing model rockets.",
-        "version": "5.0.4",
+        "version": "5.1.0",
         "maintainer": "David Carter",
         "license": "LGPL-2.1-or-later",
         "icon": "Resources/icons/RocketWorkbench.svg"
@@ -1838,7 +1838,7 @@
     {
       "repository": "https://github.com/shaise/FreeCAD_SheetMetal",
       "git_ref": "master",
-      "last_update_time": "2025-10-25T20:35:24+03:00",
+      "last_update_time": "2025-12-18T12:00:45+02:00",
       "metadata": {
         "name": "SheetMetal Workbench",
         "description": "A simple sheet metal tools workbench for FreeCAD.",
@@ -2157,11 +2157,11 @@
     {
       "repository": "https://github.com/dprojects/Woodworking",
       "git_ref": "master",
-      "last_update_time": "2025-12-10T18:44:06+01:00",
+      "last_update_time": "2025-12-16T13:27:18+01:00",
       "metadata": {
         "name": "Woodworking",
         "description": "Woodworking workbench was designed primarily for creating simple cabinets for your home or garage. However, it includes many features that will make everyday carpentry and other CAD projects easier and faster. I hope you will find something you enjoy here.",
-        "version": "2.1.20251210",
+        "version": "2.1.20251216",
         "maintainer": "Darek L",
         "license": "MIT",
         "icon": "Icons/Woodworking.png"
