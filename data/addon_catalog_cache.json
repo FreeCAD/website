@@ -251,12 +251,12 @@
     {
       "repository": "https://github.com/Simturb/Beltrami",
       "git_ref": "main",
-      "last_update_time": "2024-08-04T16:59:42-04:00",
+      "last_update_time": "2025-12-28T11:30:10-05:00",
       "metadata": {
         "name": "Beltrami",
-        "description": "A workbench for designing turbomachine blades.",
-        "version": "1.1-alpha",
-        "maintainer": "Michel Sabourin (Sabm01)",
+        "description": "Workbench for designing Turbomachine blades.",
+        "version": "1.0.8",
+        "maintainer": "Michel Sabourin",
         "license": "LGPL-2.1-or-later",
         "icon": "Resources/icons/Beltrami_workbench_icon.svg"
       }
@@ -476,7 +476,7 @@
     {
       "repository": "https://github.com/altangarts/FreeCAD-Themes-ColorPalette",
       "git_ref": "main",
-      "last_update_time": "2025-12-21T19:56:21+03:00",
+      "last_update_time": "2025-12-22T02:11:31+03:00",
       "metadata": {
         "name": "ColorPaletteTheme",
         "description": "2D-3D ColorPalette Theme",
@@ -745,6 +745,21 @@
       }
     }
   ],
+  "FileExplorerExt": [
+    {
+      "repository": "https://github.com/mnesarco/FileExplorerExt",
+      "git_ref": "main",
+      "last_update_time": "2025-12-28T14:07:58-05:00",
+      "metadata": {
+        "name": "File Explorer",
+        "description": "Integrated file system viewer.",
+        "version": "1.0.0-dev.2",
+        "maintainer": "Frank David Mart\u00ednez Mu\u00f1oz",
+        "license": "LGPL-3.0-or-later",
+        "icon": "freecad/FileExplorerExt/resources/icon.svg"
+      }
+    }
+  ],
   "FoamCut": [
     {
       "repository": "https://github.com/Shkolik/Foamcut",
@@ -890,11 +905,11 @@
     {
       "repository": "https://github.com/kwahoo2/freecad-xr-workbench",
       "git_ref": "main",
-      "last_update_time": "2025-12-21T12:14:35+01:00",
+      "last_update_time": "2025-12-26T00:00:46+01:00",
       "metadata": {
         "name": "Virtual Reality",
         "description": "A Virtual Reality (OpenXR) workbench. View your models with VR goggles.",
-        "version": "0.9.992",
+        "version": "1.0",
         "maintainer": "Adrian Przekwas",
         "license": "LGPL-3.0-or-later",
         "icon": "Gui/Resources/icons/preferences-virtual_reality.svg"
@@ -920,13 +935,13 @@
     {
       "repository": "https://github.com/dubstar-04/FeedsAndSpeeds",
       "git_ref": "master",
-      "last_update_time": "2024-12-12T20:32:51+00:00",
+      "last_update_time": "2025-12-22T09:24:59+00:00",
       "metadata": {
-        "name": "FeedsAndSpeeds",
-        "description": "A FreeCAD CAM Addon to help generate basic feeds and speeds for machining.",
+        "name": "Feeds & Speeds",
+        "description": "CAM addon to help generate basic feeds and speeds for machining.",
         "version": "0.6",
         "maintainer": "Daniel Wood",
-        "license": "LGPL-2.1",
+        "license": "LGPL-2.1-or-later",
         "icon": "Icons/CAM_FeedsAndSpeeds.svg"
       }
     }
@@ -1003,11 +1018,11 @@
     {
       "repository": "https://github.com/30350n/free2ki",
       "git_ref": "freecad-addons",
-      "last_update_time": "2025-06-08T12:43:56+02:00",
+      "last_update_time": "2025-12-27T14:58:20+01:00",
       "metadata": {
         "name": "free2ki",
         "description": "Export your 3D models to VRML files, with correctly applied rotation and scaling, for use in KiCad as well as Blender.",
-        "version": "1.1.1",
+        "version": "1.1.2",
         "maintainer": "30350n",
         "license": "GPL-3.0-or-later",
         "icon": "freecad/free2ki/icons/kicad-export.svg"
@@ -1170,7 +1185,7 @@
     {
       "repository": "https://github.com/DeepSOIC/Lattice2",
       "git_ref": "master",
-      "last_update_time": "2025-12-13T14:02:41+01:00",
+      "last_update_time": "2025-12-26T16:26:19+01:00",
       "metadata": {
         "name": "Lattice2 Workbench",
         "description": "Tools and arrays of all sorts and kinds, and local coordinate systems",
@@ -1254,13 +1269,13 @@
     {
       "repository": "https://github.com/mnesarco/MarzWorkbench",
       "git_ref": "master",
-      "last_update_time": "2025-07-14T12:15:19-05:00",
+      "last_update_time": "2025-12-26T11:08:17-05:00",
       "metadata": {
         "name": "Marz Workbench",
         "description": "Parametric Guitar design workbench",
         "version": "0.1.16",
         "maintainer": "Frank Martinez",
-        "license": "GPL-3.0",
+        "license": "GPL-3.0-or-later",
         "icon": "Resources/icons/Marz.svg"
       }
     }
@@ -1391,11 +1406,11 @@
     {
       "repository": "https://github.com/FreeCAD/Ondsel-Lens-Addon",
       "git_ref": "main",
-      "last_update_time": "2025-11-21T09:31:56+00:00",
+      "last_update_time": "2025-12-22T16:44:21+00:00",
       "metadata": {
         "name": "Ondsel Lens Addon",
         "description": "Workspace manager for Ondsel Lens workspaces",
-        "version": "2025.11.21.01",
+        "version": "2025.12.22.01",
         "maintainer": "Pieter Hijma",
         "license": "LGPL-2.0-or-later",
         "icon": "Resources/icons/OndselWorkbench.svg"
@@ -1759,11 +1774,11 @@
     {
       "repository": "https://github.com/davesrocketshop/Rocket",
       "git_ref": "master",
-      "last_update_time": "2025-12-18T11:34:25+00:00",
+      "last_update_time": "2025-12-26T15:46:49+00:00",
       "metadata": {
         "name": "Rocket",
         "description": "A workbench for designing model rockets.",
-        "version": "5.1.0",
+        "version": "5.1.1",
         "maintainer": "David Carter",
         "license": "LGPL-2.1-or-later",
         "icon": "Resources/icons/RocketWorkbench.svg"
@@ -2157,11 +2172,11 @@
     {
       "repository": "https://github.com/dprojects/Woodworking",
       "git_ref": "master",
-      "last_update_time": "2025-12-16T13:27:18+01:00",
+      "last_update_time": "2025-12-25T00:19:14+01:00",
       "metadata": {
         "name": "Woodworking",
         "description": "Woodworking workbench was designed primarily for creating simple cabinets for your home or garage. However, it includes many features that will make everyday carpentry and other CAD projects easier and faster. I hope you will find something you enjoy here.",
-        "version": "2.1.20251216",
+        "version": "2.1.20251225",
         "maintainer": "Darek L",
         "license": "MIT",
         "icon": "Icons/Woodworking.png"
