@@ -41,6 +41,10 @@ main {
   );
 }
 
+main > .hero:only-child {
+  min-height: calc(100vh - var(--header-height) - (var(--footer-height) * 5));
+}
+
 .kind-home .hero {
   min-height: calc(var(--width) * 0.5);
 }
