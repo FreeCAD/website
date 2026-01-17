@@ -7,14 +7,18 @@ menus:
     weight: 5
   footer:
     weight: 5
-params:
-  heroCards: false
 ---
 
-{{< box >}}
+{{< block >}}
 
-{{< column url="https://fpa.freecad.org" content="![FreeCAD Project Association](fpa.svg 'The Association supporting the development of FreeCAD')" />}}
+{{< card url="https://fpa.freecad.org" icon="fpa.svg" >}}
 
-{{< column url="fpn" content="![FreeCAD Professional Network](fpn.svg 'The Network of professional users contributing to FreeCAD development.')" />}}
+The Association supporting the development of FreeCAD
 
-{{< /box >}}
+{{< /card >}}
+
+{{< card url="fpn" />}}
+
+{{< /block >}}
+
+{{< collection "event" 3 >}}

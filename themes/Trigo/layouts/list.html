@@ -11,7 +11,7 @@
 
   {{/* Hero cards on top-level sections. */}}
   {{- $heroCards := slice -}}
-  {{- if and .IsSection (or .Parent.IsHome (eq .Params.heroCards true)) (ne .Params.heroCards false) -}}
+  {{- if and .IsSection .Parent.IsHome -}}
     {{- range .Sections -}}
       {{- $heroCards = $heroCards | append . -}}
     {{- end -}}
@@ -25,7 +25,7 @@
 
   {{- /* Get latest current sub-Sections or RegularPages, and fill in missing translated pages from default language Site. */ -}}
   {{- $pages := slice | append .RegularPages | lang.Merge $default.RegularPages -}}
-  {{- if not (and .IsSection (or .Parent.IsHome (eq .Params.heroCards true))) -}}
+  {{- if not (and .IsSection .Parent.IsHome) -}}
     {{- range .Sections -}}
       {{- $pages = $pages | append . -}}
     {{- end -}}
@@ -36,14 +36,6 @@
       {{- end -}}
     {{- end -}}
   {{- end -}}
-
-  {{- /* For community, list 3 latest event articles. */ -}}
-  {{- if eq .File.ContentBaseName "community" -}}
-    {{- $news := where .RegularPages "Section" "news" | lang.Merge (where site.Sites.Default.RegularPages "Section" "news") -}}
-    {{- $events := where $news "Params.categories" "eq" "event" -}}
-    {{- $pages = first 3 (sort $events "Date" "desc") -}}
-  {{- end -}}
-
 
   {{- /* Get cover image. */ -}}
   {{- $coverImage := partial "hero/cover_image.html" . -}}

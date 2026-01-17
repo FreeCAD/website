@@ -7,66 +7,34 @@ menus:
     weight: 3
   footer:
     weight: 3
-params:
-  platforms:
-    - id: windows
-      label: Windows
-      order: 1
-      downloads:
-        - key: msi
-          label: x86_64 Installer
-          alt: WINDOWS-MSI
-        - key: zip
-          label: x86_64 Portable
-          alt: WINDOWS-ZIP
-    - id: mac
-      label: macOS
-      order: 2
-      downloads:
-        - key: x86
-          label: Intel x86
-          alt: MACOS-X86
-        - key: arm
-          label: Apple Silicon
-          alt: MACOS-ARM
-    - id: linux
-      label: GNU/Linux
-      order: 3
-      downloads:
-        - key: x86
-          label: x86_64 AppImage
-          alt: LINUX-X86
-        - key: arm
-          label: AArch64 AppImage
-          alt: LINUX-AARCH64
 ---
 
 
-{{< box >}}
+{{< block >}}
 
-{{< column content="![A image text alt text](4.webp 'An image caption')" />}}
+{{< card content="![A image text alt text](4.webp 'An image caption')" />}}
 
-{{< column >}}
+{{< card >}}
 
-## Column shortcode in first box shortcode
+## Some title
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-{{< /column >}}
+{{< /card >}}
 
-{{< /box >}}
+{{< /block >}}
 
 
-{{< box title="Second box shortcode" >}}
+{{< block title="Some title" >}}
 
-{{< column >}}
+{{< card >}}
 
-## First column shortcode in second box shortcode
+### Some title
 
-This is a text in the first column shortcode of the second box shortcode.
+Some text.
 
-{{< /column >}}
+{{< /card >}}
 
-{{< column content="![An image in the second column of the second box alt text](4.webp 'An image in the second column shortcode of the second box shortcode caption')" />}}
+{{< card content="![An image alt text](4.webp 'An image caption')" />}}
 
-{{< /box >}}
+{{< /block >}}

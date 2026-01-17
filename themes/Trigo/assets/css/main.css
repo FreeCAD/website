@@ -24,7 +24,7 @@ main {
   gap: var(--gap);
   text-align: center;
   position: relative;
-  --section-hue: calc(var(--section) * 3deg);
+  --section-hue: calc(var(--section) * 4deg);
   background: linear-gradient(
     135deg,
     hsl(var(--section-hue), 60%, 70%) 0%,
@@ -50,7 +50,7 @@ main > .hero:only-child {
 }
 
 .kind-page .hero {
-  background: var(--tone);
+  background: var(--footer);
 }
 
 .title,
@@ -179,19 +179,15 @@ main > .hero:only-child {
 
 /* Cards on list pages and custom sections. */
 
-.card-list:not(.hero .card-list) {
-  background: var(--tone);
-}
-
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--card-width), 1fr));
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
   gap: calc(var(--gap) * 2);
   max-width: var(--width);
   margin: 0 auto;
   padding: calc(var(--gap) * 2) 0;
-  justify-items: center;
-  justify-content: center;
   z-index: 2;
 }
 
@@ -282,6 +278,7 @@ main > .hero:only-child {
   display: flex;
   gap: var(--gap);
   align-items: center;
+  text-align: center;
 }
 
 .card-title:has([class^="addon-"]) {
@@ -412,7 +409,7 @@ main > .hero:only-child {
   opacity: 0;
 }
 
-.content :is(h1, h2):not(.box *, .column *) {
+.content :is(h1, h2):not(.block *, .card-shortcode *) {
   border-bottom: var(--border);
 }
 
@@ -646,8 +643,7 @@ sup:target {
 .content img:not([popover] img, blockquote img) {
   display: inherit;
   max-width: 100%;
-  height: auto;
-  max-height: calc(var(--width) * 0.5);
+  max-height: calc(var(--width) * 0.25);
   border-radius: var(--radius);
   margin: auto;
 }
@@ -682,7 +678,7 @@ figcaption svg {
   display: inline-block;
 }
 
-.content a img:not(blockquote img, .column img):hover {
+.content a img:not(blockquote img, .card-shortcode img, .card-cover img):hover {
   filter: var(--filter);
   transform: var(--transform-hover);
 }
@@ -737,6 +733,42 @@ figcaption svg {
   filter: var(--filter);
   transform: var(--transform-hover);
 }
+
+.content > .wide {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.content:has(> :first-child:not(.wide)) {
+  padding-block-start: var(--gap);
+}
+
+.content:has(> :last-child:not(.wide)) {
+  padding-block-end: var(--gap);
+}
+
+.content > :not(.wide):first-child,
+.content > :is(.wide) + :not(.wide) {
+  margin-block-start: calc(var(--gap) * 2);
+}
+
+.content > :not(.wide):last-child,
+.content > :not(.wide):has( + .block) {
+  margin-block-end: calc(var(--gap) * 2);
+}
+
+.wide:not(.hero .wide):nth-child(3n + 1) {
+  background: rgb(232, 232 , 232);
+}
+
+.wide:not(.hero .wide):nth-child(3n + 2) {
+  background: rgb(224, 224 , 224);
+}
+
+.wide:not(.hero .wide):nth-child(3n) {
+  background: rgb(208, 208 , 208);
+}
+
 
 /* Download box */
 

@@ -10,6 +10,7 @@ menus:
   footer:
     weight: 7
 params:
+  grantsTitle: Funded Grants Projects
   donate:
     once:
       label: "One-time"
@@ -19,13 +20,20 @@ params:
         error: "Please choose a natural number of at least 5"
     monthly:
       label: "Monthly sponsor"
+      tiers:
+        - type: normal
+          message: Become a sponsor
+        - type: bronze
+          message: Become a Bronze sponsor
+        - type: silver
+          message: Become a Silver sponsor
+        - type: gold
+          message: Become a Gold sponsor
       messages:
         default: "Choose the monthly sponsorship level"
     corporateLabel: "Corporate"
-
-  grantsLink: https://github.com/FreeCAD/FPA-grant-proposals/issues
-  grantsTitle: Funded Grants Projects
 ---
+
 
 ### Donations Frequently Asked Questions
 

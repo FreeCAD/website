@@ -5,7 +5,7 @@
   - Link to all grants at the bottom. */ -}}
 
 {{- $list := site.Data.grant_list -}}
-{{- $grantsLink := .Params.grantsLink -}}
+{{- $grantsLink := site.Params.grantsLink -}}
 {{- $grantsTitle := .Params.grantsTitle | default "Funded Grants Projects" -}}
 
 {{- with $list -}}

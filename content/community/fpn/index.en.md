@@ -1,8 +1,10 @@
 ---
 title: "FreeCAD Professional Network"
-description: "Join the community of professionals shaping the future of FreeCAD"
+description: "The community of professional users shaping the future of FreeCAD"
 date: 2024-05-22T08:04:23+12:00
+icon: fpn.svg
 ---
+
 
 The FreeCAD Professional Network (FPN) is a voluntary association of professionals committed to strengthening the FreeCAD ecosystem for long-term growth and success.
 
@@ -36,9 +38,21 @@ The FPN brings professionals together to:
 This is where professionals make their voice heard and pool their strengths to move FreeCAD forward.
 
 
-{{< box title="Membership Tiers" >}}
+### Why Join?
 
-{{< column url="https://buy.stripe.com/eVqaEX2IteaO8bc7zVdZ602" style="text-align: center; border: solid var(--link-color);" >}}
+Because FreeCAD is already part of your professional life. Together, we can:
+
+- Influence its direction
+- Create an ecosystem that is friendly to commercial interest
+- Build stronger connections across industries
+- Ensure FreeCAD continues to thrive as a tool you can rely on
+
+Membership isn't just a fee—it's an investment in FreeCAD's future and in your own professional ecosystem.
+
+
+{{< block title="Membership Tiers" >}}
+
+{{< card url="https://buy.stripe.com/eVqaEX2IteaO8bc7zVdZ602" style="text-align: center; border: solid var(--link-color);" >}}
 
 <h3>Individual</h3>
 
@@ -49,9 +63,9 @@ This is where professionals make their voice heard and pool their strengths to m
 ✓ Voting rights on FPN initiatives<br>
 ✓ Quarterly newsletter
 
-{{< /column >}}
+{{< /card >}}
 
-{{< column url="https://buy.stripe.com/aFa9AT2It7MqfDE4nJdZ603" style="text-align: center; border: solid var(--link-color);" >}}
+{{< card url="https://buy.stripe.com/aFa9AT2It7MqfDE4nJdZ603" style="text-align: center; border: solid var(--link-color);" >}}
 
 <h3>Organization</h3>
 
@@ -62,19 +76,6 @@ This is where professionals make their voice heard and pool their strengths to m
 ✓ Unlimited employee memberships included<br>
 ✓ Logo recognition as FPN supporter
 
-{{< /column >}}
+{{< /card >}}
 
-{{< /box >}}
-
-
-Membership isn't just a fee—it's an investment in FreeCAD's future and in your own professional ecosystem.
-
-
-### Why Join?
-
-Because FreeCAD is already part of your professional life. Together, we can:
-
-- Influence its direction
-- Create an ecosystem that is friendly to commercial interest
-- Build stronger connections across industries
-- Ensure FreeCAD continues to thrive as a tool you can rely on
+{{< /block >}}

@@ -14,9 +14,12 @@ params:
 ---
 
 
-{{< box >}}
+{{< collection "news" 6 >}}
 
-{{< column icon="heart" >}}
+
+{{< block >}}
+
+{{< card icon="heart" >}}
 
 ## Freedom by Design
 
@@ -24,83 +27,83 @@ FreeCAD is free and open-source licensed software.
 Local and private, no lock-in, no fees.
 Freedom to use for any project.
 
-{{< /column >}}
+{{< /card >}}
 
-{{< column icon="time" >}}
+{{< card icon="time" >}}
 
 ## Parametric Precision
 
 Model, simulate and fabricate complex real-world objects.
 Modular workbenches and specialized tools allow for extensible designs and fast iterations.
 
-{{< /column >}}
+{{< /card >}}
 
-{{< column icon="authors" >}}
+{{< card icon="authors" >}}
 
 ## Community Power
 
 Multilingual, peer-reviewed and a rich open ecosystem make FreeCAD the safe choice for today and tomorrow.
 
-{{< /column >}}
+{{< /card >}}
 
-{{< /box >}}
+{{< /block >}}
 
 
-{{< box >}}
+{{< block >}}
 
-{{< column content="![An image text](assembly2.webp 'An image caption')" />}}
+{{< card content="![An image text](assembly2.webp 'An image caption')" />}}
 
-{{< column >}}
+{{< card >}}
 
 ## Some awesome stuff
 
-This is a text in the first box.
+This is a text.
 
-{{< /column >}}
+{{< /card >}}
 
-{{< /box >}}
+{{< /block >}}
 
 
-{{< box >}}
+{{< block >}}
 
-{{< column title="Second box title" >}}
+{{< card title="Second title" >}}
 
 ## More nice stuff
 
-This is a text in the second box.
+This is another text.
 
-{{< /column >}}
+{{< /card >}}
 
-{{< column content="![An image text](bulb.webp 'An image caption')" />}}
+{{< card content="![An image text](bulb.webp 'An image caption')" />}}
 
-{{< /box >}}
+{{< /block >}}
 
 
-{{< box >}}
+{{< block >}}
 
-{{< column content="![An image text](assembly1.webp 'An image caption')" />}}
+{{< card content="![An image text](assembly1.webp 'An image caption')" />}}
 
-{{< column >}}
+{{< card >}}
 
 ## Even more cool stuff
 
-This is a text in the third box.
+This is a text.
 
-{{< /column >}}
+{{< /card >}}
 
-{{< /box >}}
+{{< /block >}}
 
 
-{{< box >}}
+{{< block >}}
 
-{{< column >}}
+{{< card >}}
 
 ## Want some more?
 
-This is a text in the fourth box.
+This is yet another text.
 
-{{< /column >}}
+{{< /card >}}
 
-{{< column content="![An image text](fem.webp 'An image caption')" />}}
+{{< card content="![An image text](fem.webp 'An image caption')" />}}
 
-{{< /box >}}
+{{< /block >}}

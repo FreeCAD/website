@@ -5,6 +5,7 @@ keywords: [CAD, parametric, model, 3D, BIM, CAM, FEM, free, open-source]
 authors: FreeCAD
 
 logo: FreeCAD-wordmark.svg
+defaultIcon: FreeCAD-symbol-mono.svg
 
 defaultChroma: auto # dark or light
 
@@ -73,6 +74,42 @@ assets:
 
 
 # Custom section params. For localized strings, see relevant content files.
+
+# Download
+platforms:
+  - id: windows
+    label: Windows
+    order: 1
+    downloads:
+      - key: msi
+        label: x86_64 Installer
+        alt: WINDOWS-MSI
+      - key: zip
+        label: x86_64 Portable
+        alt: WINDOWS-ZIP
+  - id: mac
+    label: macOS
+    order: 2
+    downloads:
+      - key: x86
+        label: Intel x86
+        alt: MACOS-X86
+      - key: arm
+        label: Apple Silicon
+        alt: MACOS-ARM
+  - id: linux
+    label: GNU/Linux
+    order: 3
+    downloads:
+      - key: x86
+        label: x86_64 AppImage
+        alt: LINUX-X86
+      - key: arm
+        label: AArch64 AppImage
+        alt: LINUX-AARCH64
+
+# Donate
+grantsLink: https://github.com/FreeCAD/FPA-grant-proposals/issues
 donate:
   currencies:
     - code: EUR
@@ -90,19 +127,15 @@ donate:
     tiers:
       - type: normal
         amount: 5
-        message: Become a sponsor
       - type: bronze
         amount: 25
         color: "#A86A27"
-        message: Become a Bronze sponsor
       - type: silver
         amount: 100
         color: "#9A9A9A"
-        message: Become a Silver sponsor
       - type: gold
         amount: 200
         color: "#D4A715"
-        message: Become a Gold sponsor
   payment:
     - platform: Paypal
       weight: 0
@@ -126,7 +159,7 @@ donate:
         - Bank: BNP Paribas Fortis
         - Address: Rue de la Station 64, 1360 Perwez, Belgium
 
-# Calendar on Community Page
+# Community
 calendar:
   host: "https://open-web-calendar.hosted.quelltext.eu/calendar.html"
   url: "https://calendar.google.com/calendar/ical/6e6cc81260051a3c49fdf915c472f2d62576820129f0e0b2cacb7025ed62f960%40group.calendar.google.com/public/basic.ics"

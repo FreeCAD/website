@@ -1,0 +1,106 @@
+{{- /* Card Shortcode:
+
+  - Separate content in standalone cards.
+  - Optional title, link to internal page or external url, icon and custom CSS style.
+  - Can be nested in a block shortcode to form columns or a grid.
+  - Support content via argument "content" or inner content.
+*/ -}}
+
+{{- $content := .InnerDeindent | default (cond (.IsNamedParams) (.Get "content") (.Get 0)) | strings.TrimSpace -}}
+{{- $title := cond (.IsNamedParams) (.Get "title") (.Get 1) | replaceRE "^#+\\s*" "" -}}
+{{- $url := cond (.IsNamedParams) (.Get "url") (.Get 2) | default "" -}}
+{{- $icon := cond (.IsNamedParams) (.Get "icon") (.Get 3) -}}
+{{- $style := cond (.IsNamedParams) (.Get "style") (.Get 4) -}}
+
+{{- $disableContent := or (eq (lower $content) "none") (eq (lower $content) "false") -}}
+{{- $disableTitle := or (eq (lower $title) "none") (eq (lower $title) "false") -}}
+{{- $disableIcon := or (eq (lower $icon) "none") (eq (lower $icon) "false") -}}
+
+{{- $page := "" -}}
+{{- $isExternal := and (strings.HasPrefix $url "http") (not (strings.HasPrefix $url site.BaseURL)) -}}
+
+{{- if and $url (not $isExternal) -}}
+  {{- $clean := $url | replaceRE "[?#].*$" "" -}}
+  {{- $page = site.GetPage $clean | default (site.Sites.Default.GetPage $clean) -}}
+{{- end -}}
+
+{{- if $disableTitle -}}
+  {{- $title = "" -}}
+{{- else if $page -}}
+  {{- $title = $title | default $page.Title -}}
+{{- end -}}
+
+{{- if $disableContent -}}
+  {{- $content = "" -}}
+{{- else -}}
+  {{- if and $page (not $content) -}}
+    {{- $content = $page.Params.description | default $page.Description | default $page.Summary -}}
+  {{- end -}}
+  {{- $content = $content | default "No content provided" -}}
+{{- end -}}
+
+{{- $iconResource := "" -}}
+{{- $iconExternal := "" -}}
+{{- if not $disableIcon -}}
+  {{- if and $page (not $icon) -}}
+    {{- with $page.Params.icon -}}
+      {{- $icon = . -}}
+      {{- $iconResource = $page.Resources.GetMatch . -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if $icon -}}
+    {{- if strings.HasPrefix $icon "http" -}}
+      {{- $iconExternal = $icon -}}
+    {{- else -}}
+      {{- with $.Page.Resources.GetMatch $icon -}}
+        {{- $iconResource = . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+<div class="card-shortcode"
+  {{- with $style -}}style="{{ . | safeCSS }}"{{- end -}}>
+
+  {{- if $url -}}
+    <a href="{{ if $page }}{{ $page.RelPermalink }}{{ else }}{{ $url }}{{ end }}"
+      {{ if $isExternal }}target="_blank" rel="external noreferrer"{{ end }}>
+  {{- end -}}
+
+  {{- if and (not $disableIcon) (or $iconResource $iconExternal) -}}
+    <span class="card-icon">
+      <span class="icon">
+        {{- with $iconResource -}}
+          {{- if eq .MediaType.SubType "svg" -}}
+            {{ .Content | safeHTML }}
+          {{- else -}}
+            <img src="{{ .RelPermalink }}" alt="Icon" loading="lazy">
+          {{- end -}}
+        {{- else with $iconExternal -}}
+          <img src="{{ . }}" alt="Icon" loading="lazy">
+        {{- end -}}
+      </span>
+    </span>
+  {{- else if not $disableIcon -}}
+    {{- with partial "utils/icon.html" $icon -}}
+      <span class="card-icon">
+        <span class="icon">{{ . }}</span>
+      </span>
+    {{- end -}}
+  {{- end -}}
+
+  {{- if not $disableTitle -}}
+    {{- with $title -}}
+      <h3 class="card-title">{{ . | $.Page.RenderString }}</h3>
+    {{- end -}}
+  {{- end -}}
+
+  {{- if not $disableContent -}}
+    {{- with $content -}}
+      {{- . | $.Page.RenderString -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if $url -}}</a>{{- end -}}
+</div>

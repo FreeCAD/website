@@ -14,9 +14,12 @@ params:
 ---
 
 
-{{< box >}}
+{{< collection "news" 6 >}}
 
-{{< column icon="heart" >}}
+
+{{< block >}}
+
+{{< card icon="heart" >}}
 
 ## Libre par nature
 
@@ -24,83 +27,83 @@ FreeCAD est un logiciel à license libre et open-source.
 Local et privé, sans restriction ni frais.
 Libre d'utilisation pour tout projet.
 
-{{< /column >}}
+{{< /card >}}
 
-{{< column icon="time" >}}
+{{< card icon="time" >}}
 
 ## Précision paramétrique
 
 Modélisez, simulez et fabriquez des objets complexes.
 Ateliers modulaires et outils spécialisés de conception extensible et d'itérations rapides.
 
-{{< /column >}}
+{{< /card >}}
 
-{{< column icon="authors" >}}
+{{< card icon="authors" >}}
 
 ## Puissance collective
 
 Multilingue, expertisé par la communauté et doté d'un riche écosystème ouvert, FreeCAD est le choix sûr pour aujourd'hui et demain.
 
-{{< /column >}}
+{{< /card >}}
 
-{{< /box >}}
-
-
-{{< box >}}
-
-{{< column content="![An image text](assembly2.webp 'An image caption')" />}}
-
-{{< column >}}
-
-## Première boîte
-
-This is a text in the first box.
-
-{{< /column >}}
-
-{{< /box >}}
+{{< /block >}}
 
 
-{{< box >}}
+{{< block >}}
 
-{{< column >}}
+{{< card content="![An image text](assembly2.webp 'An image caption')" />}}
 
-## Deuxième boîte
+{{< card >}}
 
-This is a text in the second box.
+## Some awesome stuff
 
-{{< /column >}}
+This is a text.
 
-{{< column content="![An image text](bulb.webp 'An image caption')" />}}
+{{< /card >}}
 
-{{< /box >}}
-
-
-{{< box >}}
-
-{{< column content="![An image text](assembly1.webp 'An image caption')" />}}
-
-{{< column >}}
-
-## Troisième boîte
-
-This is a text in the third box.
-
-{{< /column >}}
-
-{{< /box >}}
+{{< /block >}}
 
 
-{{< box >}}
+{{< block >}}
 
-{{< column >}}
+{{< card title="Second title" >}}
 
-## Quatrième boîte
+## More nice stuff
 
-This is a text in the fourth box.
+This is another text.
 
-{{< /column >}}
+{{< /card >}}
 
-{{< column content="![An image text](fem.webp 'An image caption')" />}}
+{{< card content="![An image text](bulb.webp 'An image caption')" />}}
 
-{{< /box >}}
+{{< /block >}}
+
+
+{{< block >}}
+
+{{< card content="![An image text](assembly1.webp 'An image caption')" />}}
+
+{{< card >}}
+
+## Even more cool stuff
+
+This is a text.
+
+{{< /card >}}
+
+{{< /block >}}
+
+
+{{< block >}}
+
+{{< card >}}
+
+## Want some more?
+
+This is yet another text.
+
+{{< /card >}}
+
+{{< card content="![An image text](fem.webp 'An image caption')" />}}
+
+{{< /block >}}

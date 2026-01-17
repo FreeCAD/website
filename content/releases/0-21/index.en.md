@@ -1,15 +1,13 @@
 ---
-title: "FreeCAD 0.21"
+title: "FreeCAD 0.21 release notes"
 description: "The good old days..."
-date: 2024-04-18T21:22:57+12:00
+date: 2023-11-19
+lastmod: 2024-11-19
 authors: FreeCAD
-tags:
-  - 0.21
-versions: 0.21
+versions: "0.21.2"
 cover:
   image: 8.webp
   caption: "a cover caption"
-  alt: "a cover alternative title"
 params:
   windows_msi: https://github.com/FreeCAD/FreeCAD/releases/
   windows_zip: https://github.com/FreeCAD/FreeCAD/releases/
@@ -19,4 +17,4 @@ params:
   linux_arm: https://github.com/FreeCAD/FreeCAD/releases/
 ---
 
-## This is the 0.21.2 release notes page.
+## This is the 0.21 release notes page.

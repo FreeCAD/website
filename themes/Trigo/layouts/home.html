@@ -18,7 +18,7 @@
   {{- /* Get the latest article with the "hero" parameters in front matter. */ -}}
   {{- $hero := index (where (site.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Params.hero" "!=" nil) 0 -}}
 
-  {{- /* Get latest News articles by category, excluding those with "hero" param. */ -}}
+  {{- /* NOTE: Keep for now. Get latest News articles by category, excluding those with "hero" param.
   {{- $pages := slice -}}
   {{- with site.Sites.Default -}}
     {{- range .Taxonomies.categories.ByCount -}}
@@ -27,6 +27,7 @@
     {{- end -}}
   {{- end -}}
   {{- $pages = first (.Params.paginate | default 6) $pages -}}
+  */ -}}
 
   {{- /* Get cover image. */ -}}
   {{- $coverImage := partial "hero/cover_image.html" . -}}
@@ -72,10 +73,6 @@
     {{- $coverImage -}}
 
   </section>
-
-  {{- with $pages -}}
-    {{- partial "main/cards.html" . -}}
-  {{- end -}}
 
   {{- /* Get homepage content. */ -}}
   {{- with (site.GetPage "section" "homepage" | default (site.Sites.Default.GetPage "section" "homepage")) -}}

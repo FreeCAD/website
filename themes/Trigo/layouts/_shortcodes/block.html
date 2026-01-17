@@ -1,24 +1,24 @@
-{{- /* Box Shortcode:
+{{- /* Block Shortcode:
 
-  - Full-width box layout.
+  - Full-width block layout.
   - Optional custom CSS styles and Markdown title.
 
 */ -}}
 
 {{- $content := .InnerDeindent | default (cond (.IsNamedParams) (.Get "content") (.Get 0)) | default "No content provided" | strings.TrimSpace -}}
 {{- $title := cond (.IsNamedParams) (.Get "title") (.Get 1) | replaceRE "^#+\\s*" "" -}}
-{{- $boxStyle := cond (.IsNamedParams) (.Get "style") (.Get 2) -}}
+{{- $blockStyle := cond (.IsNamedParams) (.Get "style") (.Get 2) -}}
 {{- $contentStyle := cond (.IsNamedParams) (.Get "content-style") (.Get 3) -}}
 
-<div class="box"
-  {{ with $boxStyle }}style="{{ . | safeCSS }}"{{ end }}>
+<div class="block wide"
+  {{ with $blockStyle }}style="{{ . | safeCSS }}"{{ end }}>
   {{- with $title -}}
-    <div class="box-title">
+    <div class="block-title">
       {{- printf "## %s" . | $.Page.RenderString -}}
     </div>
   {{- end -}}
   {{- with $content -}}
-    <div class="box-content"
+    <div class="block-content"
       {{ with $contentStyle }}style="{{ . | safeCSS }}"{{ end }}>
       {{- . | $.Page.RenderString -}}
     </div>

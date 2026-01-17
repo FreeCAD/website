@@ -1,0 +1,89 @@
+{{/*
+Inputs:
+- path: section path (optional)
+- first: limit (optional)
+- sort: date | weight | title (optional)
+- reverse: bool (optional)
+*/}}
+
+{{- $collection := .Get "collection" | default (.Get 0) | default "" -}}
+{{- $taxonomy := .Get "taxonomy" | default "" -}}
+{{- $term := .Get "term" | default "" -}}
+{{- $path := .Get "path" | default "" -}}
+{{- $sort := .Get "sort" | default "" -}}
+{{- $first := .Get "first" | default (.Get 1) | default 0 | int -}}
+{{- $reverse := .Get "reverse" | default false -}}
+
+{{- $pages := slice -}}
+
+{{- if and $collection (not $taxonomy) (not $term) (not $path) -}}
+  {{- /* Collection is an existing taxonomy term. */ -}}
+  {{- range $name, $terms := site.Taxonomies -}}
+    {{- if in $terms $collection -}}
+      {{- $taxonomy = $name -}}
+      {{- $term = $collection -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* Collection is an existing taxonomy name. */ -}}
+  {{- if and (not $taxonomy) (in site.Taxonomies $collection) -}}
+    {{- $taxonomy = $collection -}}
+    {{- $term = "" -}}
+  {{- end -}}
+
+  {{- /* Collection is not an integer. */ -}}
+  {{- if and (not $taxonomy) (not (findRE "^[1-9][0-9]*$" $collection)) -}}
+    {{- $path = $collection -}}
+  {{- end -}}
+
+  {{- /* Collection is an integer. */ -}}
+  {{- if findRE "^[1-9][0-9]*$" $collection -}}
+    {{- $first = int $collection -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Get pages based on collection content. */ -}}
+{{- if and $taxonomy $term -}}
+  {{- with index site.Taxonomies $taxonomy -}}
+    {{- $pages = .Get $term -}}
+  {{- end -}}
+
+{{- else if $taxonomy -}}
+  {{- with index site.Taxonomies $taxonomy -}}
+    {{- $pages = .Pages -}}
+  {{- end -}}
+
+{{- else if $path -}}
+  {{- with (site.GetPage $path).RegularPages -}}
+    {{- $pages = . -}}
+  {{- else with (site.Sites.Default.GetPage $path).RegularPages }}
+    {{- $pages = . -}}
+  {{- end -}}
+
+{{- else -}}
+  {{- $pages = .Page.RegularPages | default .Page.CurrentSection.RegularPages | default (where .Site.RegularPages "Section" "in" .Site.MainSections) -}}
+{{- end -}}
+
+{{- /* Sort pages. */ -}}
+{{- if $sort -}}
+  {{- if eq $sort "date" -}}
+    {{- $pages = $pages.ByDate.Reverse -}}
+  {{- else if eq $sort "weight" -}}
+    {{- $pages = $pages.ByWeight -}}
+  {{- else if eq $sort "title" -}}
+    {{- $pages = $pages.ByTitle -}}
+  {{- end -}}
+{{- end -}}
+{{- if $reverse -}}
+  {{- $pages = $pages.Reverse -}}
+{{- end -}}
+
+{{- /* Filter pages number. */ -}}
+{{- if gt $first 0 -}}
+  {{- $pages = first $first $pages -}}
+{{- end -}}
+
+{{- /* Render pages as cards. */ -}}
+{{- with $pages -}}
+  {{- partial "main/cards.html" . -}}
+{{- end -}}

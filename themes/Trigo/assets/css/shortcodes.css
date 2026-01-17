@@ -1,54 +1,19 @@
 /* Shortcodes stylesheet. */
 
 
-/* Box and column shortcodes */
+/* Block and card shortcodes */
 
-.box {
+.block {
   padding: calc(var(--gap) * 2);
 }
 
-.content > .box {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-}
-
-.content:has(> :first-child:not(.box)) {
-  padding-block-start: var(--gap);
-}
-
-.content:has(> :last-child:not(.box)) {
-  padding-block-end: var(--gap);
-}
-
-.content > :not(.box):first-child,
-.content > .box + :not(.box) {
-  margin-block-start: calc(var(--gap) * 2);
-}
-
-.content > :not(.box):last-child,
-.content > :not(.box):has( + .box) {
-  margin-block-end: calc(var(--gap) * 2);
-}
-
-.box:nth-child(3n + 1) {
-  background: var(--entry);
-}
-
-.box:nth-child(3n + 2) {
-  background: var(--tone);
-}
-
-.box:nth-child(3n) {
-  background: var(--footer);
-}
-
-.box-title {
+.block-title {
   text-align: center;
   max-width: var(--width);
   margin: auto;
 }
 
-.box-content {
+.block-content {
   display: flex;
   flex-direction: column;
   gap: var(--gap);
@@ -58,29 +23,30 @@
   border-radius: var(--radius);
 }
 
-.box-content:has(.column) {
+.block-content:has(.card-shortcode) {
   flex-direction: row;
 }
 
-.column {
+.card-shortcode, .card-shortcode > a {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: calc(var(--gap) * 0.5);
   flex: 1;
   padding: var(--gap);
+  color: var(--secondary);
   border-radius: var(--radius);
   text-align-last: center;
   transition: var(--link-transition);
 }
 
-.column:has(.column-link):hover {
-  filter: var(--filter);
-  transform: var(--transform-hover);
+.card-shortcode:has(> a) {
+  background: var(--theme);
 }
 
-.column:has(.column-link):hover figcaption {
-  color: var(--link-color);
+.card-shortcode:has(> a):hover {
+  filter: var(--filter);
+  transform: var(--transform-hover);
 }
 
 

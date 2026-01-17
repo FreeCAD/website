@@ -1,4 +1,4 @@
-<div class="card-list">
+<div class="card-list wide">
   <div class="cards">
     {{- range . -}}
 
@@ -7,12 +7,9 @@
         title="{{ .Title }}">
 
         {{- /* Get article card cover image. */ -}}
-        {{- $cardImage := partial "main/card_image.html" . -}}
-        {{- $cardIcon := partial "utils/icon.html" .Params.icon -}}
-
-        {{- with $cardImage -}}
+        {{- with (partial "main/card_image.html" .) -}}
           {{- . -}}
-        {{- else with $cardIcon -}}
+        {{- else with (partial "utils/icon.html" .Params.icon) -}}
           <span class="card-icon">
             <span class="icon">{{ . }}</span>
           </span>

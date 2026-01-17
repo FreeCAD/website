@@ -10,6 +10,7 @@ menus:
   footer:
     weight: 7
 params:
+  grantsTitle: Projets soutenus par un grant
   donate:
     once:
       label: "Don ponctuel"
@@ -30,8 +31,34 @@ params:
           message: "Devenir un sponsor Or"
       messages:
         default: "Choisir le montant du don mensuel"
-  grantsLink: https://github.com/FreeCAD/FPA-grant-proposals/issues
-  grantsTitle: Projets soutenus par un grant
+    corporateLabel: "Corporate"
 ---
 
-[comment]: # (Please do not add content in this Donate _index file. The layout of the Donate page is generated from template rules by the theme.)
+
+### Donations Frequently Asked Questions
+
+{{< details summary="Why donate to FreeCAD?" name="faq" >}}
+Why donate to FreeCAD?
+{{< /details >}}
+
+{{< details summary="How to donate?" name="faq" >}}
+How to donate?
+{{< /details >}}
+
+{{< details summary="Sponsorship Tiers" name="faq" id="tiers" >}}
+Normal Sponsorship info.
+
+Bronze Sponsorship info.
+
+Silver Sponsorship info.
+
+Gold Sponsorship info.
+{{< /details >}}
+
+{{< details summary="Corporate Sponsorship" name="faq" id="corporate" >}}
+Corporate Sponsorship info.
+{{< /details >}}
+
+{{< details summary="Payment options" name="faq" >}}
+Payment options info.
+{{< /details >}}

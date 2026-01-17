@@ -10,34 +10,34 @@ menus:
 ---
 
 
-{{< box >}}
+{{< block >}}
 
-{{< column >}}
+{{< card >}}
 
 ### Feature One
 
 This is **bold**, *italic*, and includes a [link](https://example.com). Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-{{< /column >}}
+{{< /card >}}
 
-{{< column content="![An image text](5.webp 'An image caption')" />}}
+{{< card content="![An image text](5.webp 'An image caption')" />}}
 
-{{< /box >}}
+{{< /block >}}
 
 
-{{< box >}}
+{{< block >}}
 
-{{< column content="![An image text](5.webp 'An image caption')" />}}
+{{< card content="![An image text](5.webp 'An image caption')" />}}
 
-{{< column >}}
+{{< card >}}
 
 ### Feature Two
 
 This is **bold**, *italic*, and includes a [link](https://example.com). Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-{{< /column >}}
+{{< /card >}}
 
-{{< /box >}}
+{{< /block >}}
 
 
 ![An image text](5.webp "An image caption")

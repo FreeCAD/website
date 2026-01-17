@@ -1,18 +1,14 @@
 ---
-title: "FreeCAD 1.0"
+title: "FreeCAD 1.0 release notes"
 description: "A new chapter for free and open-source CAD!"
-date: 2024-11-19T00:00:00+12:00
+date: 2024-11-19
+lastmod: 2025-11-19
 authors: FreeCAD
-tags:
-  - "1.0"
-versions: "1.0"
+versions: "1.0.2"
 cover:
   image: 9.webp
   caption: "a cover caption"
-  alt: "a cover alternative title"
 params:
-  version: 1.0.2
-  version_date: 2025-08-06T00:00:00+12:00
   windows_msi: https://github.com/FreeCAD/FreeCAD/releases/
   windows_zip: https://github.com/FreeCAD/FreeCAD/releases/
   mac_x86: https://github.com/FreeCAD/FreeCAD/releases/

@@ -116,28 +116,24 @@
     display: inline-block;
   }
 
-  .box {
+  .block {
     padding: calc(var(--gap) * 2) 0;
   }
 
-  .box-content:has(.column) {
+  .block-content:has(.card-shortcode) {
     flex-direction: column;
   }
 
-  .box img:not([popover] img, blockquote img) {
+  .block img:not([popover] img, blockquote img) {
     max-height: calc(var(--width) - (var(--gap) * 2));
   }
 
-  .column:has([popovertarget]) {
+  .card-shortcode:has([popovertarget]) {
     padding: 0;
   }
 
   .download-box {
     flex-direction: column;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
   }
 
   .card-icon svg {

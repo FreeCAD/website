@@ -1,16 +1,9 @@
-{{- $release := slice -}}
-{{- if eq .Type "release" -}}
-  {{- $release = . -}}
-{{- else -}}
-  {{- $release = index (where site.RegularPages "Type" "releases") 0 | default (index (where site.Sites.Default.RegularPages "Type" "releases") 0) -}}
-{{- end -}}
+{{- $page := cond (eq .Type "releases") .
+  (index (where site.RegularPages "Type" "releases") 0
+  | default (index (where site.Sites.Default.RegularPages "Type" "releases") 0)) -}}
 
-{{- $params := $release.Params -}}
-{{- $platforms := slice -}}
-{{- $downloadPage := site.GetPage "download" | default (site.Sites.Default.GetPage "download") -}}
-{{- with $downloadPage.Params.platforms -}}
-  {{- $platforms = . -}}
-{{- end -}}
+{{- $release := $page.Params -}}
+{{- $platforms := site.Params.platforms -}}
 
 <div class="download-box">
   {{- range $platform := $platforms -}}
@@ -29,7 +22,7 @@
       </button>
 
       {{- range $download := $platform.downloads -}}
-        {{- with index $params (printf "%s_%s" $platform.id $download.key) -}}
+        {{- with index $release (printf "%s_%s" $platform.id $download.key) -}}
           <a class="card-icon app-build"
             href="{{ . }}"
             data-url="{{ . }}"
@@ -54,8 +47,8 @@
 <h4 class="description">
   {{- printf "%s %s · %s"
     (i18n "download" | default "Download")
-    $params.version
-    ($params.version_date | time.Format ":date_long")
+    $page.Params.versions
+    ($page.Lastmod | time.Format ":date_long")
   -}}
 </h4>
 

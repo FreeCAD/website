@@ -111,7 +111,7 @@ markup:
 
 imaging:
   hint: drawing
-  quality: 90
+  quality: 80
   resampleFilter: lanczos
 
 services:

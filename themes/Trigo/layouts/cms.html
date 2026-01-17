@@ -35,7 +35,6 @@
             {{- warnf "Serving cached resource: %q" .RelPermalink -}}
             <script
               src="{{ .RelPermalink }}"
-              onload="{{ printf "%s.start()" (upper $cms) | safeJS }}"
               onerror="document.body.innerHTML='Failed to load {{ title $cms }} CMS'">
             </script>
           {{- else -}}

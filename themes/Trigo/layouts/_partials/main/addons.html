@@ -7,7 +7,7 @@
   - Display Addon data in cards.
 */ -}}
 
-{{- $defaultIcon := resources.Get .Params.defaultIcon -}}
+{{- $defaultIcon := resources.Get site.Params.defaultIcon -}}
 {{- $catalog := site.Data.addon_catalog_cache -}}
 
 {{- if not $catalog -}}{{- return -}}{{- end -}}
