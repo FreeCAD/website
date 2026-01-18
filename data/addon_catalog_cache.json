@@ -26,7 +26,7 @@
     {
       "repository": "https://github.com/kbwbe/A2plus",
       "git_ref": "master",
-      "last_update_time": "2025-01-11T17:43:16+01:00",
+      "last_update_time": "2026-01-13T18:03:16+01:00",
       "metadata": {
         "name": "A2plus",
         "description": "Another assembly workbench for FreeCAD, following and extending Hamish's Assembly 2 workbench hence Assembly2plus. The main goal of A2plus is to create a very simple, easy to use, and not over-featured workbench for FreeCAD assemblies. Using the KISS principle: KEEP IT SIMPLE, STUPID",
@@ -69,7 +69,7 @@
     {
       "repository": "https://github.com/FreeCAD/AddonManager",
       "git_ref": "dev",
-      "last_update_time": "2026-01-08T20:40:52-06:00",
+      "last_update_time": "2026-01-17T10:04:37-06:00",
       "metadata": {
         "name": "Addon Manager",
         "description": "Development branch of a tool to install workbenches, macros, themes, etc.",
@@ -251,14 +251,14 @@
     {
       "repository": "https://github.com/Simturb/Beltrami",
       "git_ref": "main",
-      "last_update_time": "2025-12-29T19:32:27-05:00",
+      "last_update_time": "2026-01-16T10:41:45-05:00",
       "metadata": {
         "name": "Beltrami",
         "description": "Workbench for designing Turbomachine blades.",
-        "version": "1.2.0",
+        "version": "1.2.1",
         "maintainer": "Michel Sabourin",
         "license": "LGPL-2.1-or-later",
-        "icon": "Resources/icons/Beltrami_workbench_icon.svg"
+        "icon": "freecad/Beltrami/Resources/Icons/Logo.svg"
       }
     }
   ],
@@ -347,11 +347,11 @@
     {
       "repository": "https://github.com/sargo-devel/Cables",
       "git_ref": "master",
-      "last_update_time": "2025-11-11T22:10:44+01:00",
+      "last_update_time": "2026-01-17T22:55:48+01:00",
       "metadata": {
         "name": "Cables Workbench",
         "description": "Electrical cables drawing tools workbench for FreeCAD.",
-        "version": "0.3.2",
+        "version": "0.3.3",
         "maintainer": "SargoDevel",
         "license": "LGPL-3.0-or-later",
         "icon": "freecad/cables/resources/icons/CablesLogo.svg"
@@ -476,12 +476,12 @@
     {
       "repository": "https://github.com/altangarts/FreeCAD-Themes-ColorPalette",
       "git_ref": "main",
-      "last_update_time": "2026-01-09T18:49:12+03:00",
+      "last_update_time": "2026-01-17T18:05:11+03:00",
       "metadata": {
         "name": "ColorPaletteTheme",
-        "description": "2D-3D ColorPalette Theme",
-        "version": "1.5.1",
-        "maintainer": "altangarts@gmail",
+        "description": "Choose your colors with the \"ColorPalette\" Theme and increase the focus on objects and text",
+        "version": "1.5.6",
+        "maintainer": "altangarts",
         "license": "LGPL-2.1-or-later",
         "icon": "resources/icons/ColorPaletteTheme.svg"
       }
@@ -567,7 +567,7 @@
     {
       "repository": "https://github.com/DualSPHysics/DesignSPHysics",
       "git_ref": "master",
-      "last_update_time": "2025-06-09T16:46:50+02:00",
+      "last_update_time": "2026-01-18T17:28:50+01:00",
       "metadata": {
         "name": "DesignSPHysics",
         "description": "DesignSPHysics is a macro/addon for FreeCAD that provides a Graphical User Interface for fluid and multi-physics solver DualSPHysics",
@@ -862,11 +862,11 @@
     {
       "repository": "https://github.com/APEbbers/FreeCAD-Ribbon",
       "git_ref": "main",
-      "last_update_time": "2025-12-13T19:08:10+01:00",
+      "last_update_time": "2026-01-18T16:58:43+01:00",
       "metadata": {
         "name": "FreeCAD Ribbon",
         "description": "A Ribbon interface for FreeCAD",
-        "version": "1.10.7",
+        "version": "1.10.10.1",
         "maintainer": "Paul Ebbers",
         "license": "GPL-3.0-or-later",
         "icon": "Resources/icons/FreecadNew.svg"
@@ -875,7 +875,7 @@
     {
       "repository": "https://github.com/APEbbers/FreeCAD-Ribbon",
       "git_ref": "Develop",
-      "last_update_time": "2026-01-10T19:32:27+01:00",
+      "last_update_time": "2026-01-18T16:25:10+01:00",
       "metadata": {
         "name": "FreeCAD Ribbon",
         "description": "A Ribbon interface for FreeCAD",
@@ -905,14 +905,14 @@
     {
       "repository": "https://github.com/kwahoo2/freecad-xr-workbench",
       "git_ref": "main",
-      "last_update_time": "2025-12-26T00:00:46+01:00",
+      "last_update_time": "2026-01-13T16:40:13+01:00",
       "metadata": {
         "name": "Virtual Reality",
         "description": "A Virtual Reality (OpenXR) workbench. View your models with VR goggles.",
         "version": "1.0",
         "maintainer": "Adrian Przekwas",
         "license": "LGPL-3.0-or-later",
-        "icon": "Gui/Resources/icons/preferences-virtual_reality.svg"
+        "icon": "Resources/Gui/Resources/icons/preferences-virtual_reality.svg"
       }
     }
   ],
@@ -1003,11 +1003,11 @@
     {
       "repository": "https://github.com/lukh/frameforge",
       "git_ref": "main",
-      "last_update_time": "2026-01-06T18:38:56+01:00",
+      "last_update_time": "2026-01-16T14:29:34+01:00",
       "metadata": {
         "name": "FrameForge",
         "description": "FrameForge is dedicated for creating Frames and Beams, and apply operations (miter cuts, trim cuts) on these profiles.",
-        "version": "0.1.6",
+        "version": "0.1.7",
         "maintainer": "Vivien Henry",
         "license": "LGPL-3.0-only",
         "icon": "freecad/frameforge/resources/icons/metalwb.svg"
@@ -1063,7 +1063,7 @@
     {
       "repository": "https://github.com/KeithSloan/GDML",
       "git_ref": "Main",
-      "last_update_time": "2025-12-13T11:27:43+00:00",
+      "last_update_time": "2025-12-20T10:22:06+00:00",
       "metadata": {
         "name": "GDML workbench",
         "description": "An external workbench for creating GDML models for Geant4 and Root",
@@ -1421,7 +1421,7 @@
     {
       "repository": "https://github.com/obelisk79/OpenTheme",
       "git_ref": "main",
-      "last_update_time": "2025-09-01T18:27:44-04:00",
+      "last_update_time": "2026-01-14T10:12:59-05:00",
       "metadata": {
         "name": "OpenTheme",
         "description": "An accessible and coordinated set of Light and Dark themes for FreeCAD",
@@ -1646,7 +1646,7 @@
     {
       "repository": "https://salsa.debian.org/mess42/pyrate",
       "git_ref": "master",
-      "last_update_time": "2024-11-28T21:53:24+01:00",
+      "last_update_time": "",
       "metadata": {}
     }
   ],
@@ -1774,10 +1774,10 @@
     {
       "repository": "https://github.com/davesrocketshop/Rocket",
       "git_ref": "master",
-      "last_update_time": "2025-12-26T15:46:49+00:00",
+      "last_update_time": "2026-01-12T14:03:43+00:00",
       "metadata": {
         "name": "Rocket",
-        "description": "A workbench for designing model rockets.",
+        "description": "Workbench for designing model rockets.",
         "version": "5.1.1",
         "maintainer": "David Carter",
         "license": "LGPL-2.1-or-later",
@@ -1929,14 +1929,14 @@
     {
       "repository": "https://github.com/loobric/smooth-freecad.git",
       "git_ref": "master",
-      "last_update_time": "2025-11-07T15:18:01-06:00",
+      "last_update_time": "2026-01-13T12:01:35-06:00",
       "metadata": {
         "name": "Smooth",
         "description": "The Smooth addon provides bidirectional synchronization between FreeCAD's CAM tool \nlibraries and the Smooth tool data exchange system.\n    \nThis addon adds a \"Sync with Smooth\" button to the CAM workbench toolbar and \na preference page to FreeCAD settings for server configuration.\n    \nFeatures:\n- Bidirectional sync: Import and export tools in one operation\n- Bulk operations: Efficiently sync entire tool libraries\n- FreeCAD Path integration: Works directly within CAM workflow\n- Preserves tool metadata and parameters\n- API key authentication support\n    \nRequirements:\n- FreeCAD 0.21 or later with CAM (Path) workbench\n- Access to a Smooth server instance\n- Network connectivity for API access\n- Python requests library (usually included with FreeCAD)",
         "version": "0.1.0",
         "maintainer": "Brad Collette",
         "license": "MIT",
-        "icon": "Resources/icons/Smooth.svg"
+        "icon": "freecad/Smooth/Resources/icons/Smooth.svg"
       }
     }
   ],
@@ -2187,11 +2187,11 @@
     {
       "repository": "https://github.com/dprojects/Woodworking",
       "git_ref": "master",
-      "last_update_time": "2026-01-03T17:32:54+01:00",
+      "last_update_time": "2026-01-17T19:00:06+01:00",
       "metadata": {
         "name": "Woodworking",
         "description": "Woodworking workbench was designed primarily for creating simple cabinets for your home or garage. However, it includes many features that will make everyday carpentry and other CAD projects easier and faster. I hope you will find something you enjoy here.",
-        "version": "2.1.20260103",
+        "version": "2.2.20260117",
         "maintainer": "Darek L",
         "license": "MIT",
         "icon": "Icons/Woodworking.png"
