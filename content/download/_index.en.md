@@ -10,7 +10,7 @@ menus:
 ---
 
 
-{{< collection "releases" 1 >}}
+{{< collection "download/releases" 1 >}}
 
 
 {{< block >}}

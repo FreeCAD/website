@@ -1,6 +1,7 @@
-{{- $page := cond (eq .Type "releases") .
-  (index (where site.RegularPages "Type" "releases") 0
-  | default (index (where site.Sites.Default.RegularPages "Type" "releases") 0)) -}}
+{{- $default := site.Sites.Default.GetPage "download/releases" -}}
+{{- $releases := site.GetPage "download/releases" | default $default -}}
+
+{{- $page := cond ($releases.InSection .) . (index ($releases.RegularPages | default $default.RegularPages) 0) -}}
 
 {{- $release := $page.Params -}}
 {{- $platforms := site.Params.platforms -}}

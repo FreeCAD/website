@@ -9,43 +9,24 @@
     </span>
   {{- end -}}
 
-  {{- if and .Params.categories site.Params.showCategories -}}
-    {{- $categories := site.Sites.Default.Taxonomies.categories -}}
-    <span class="meta">
-      {{- with (partial "utils/icon.html" "categories") -}}
-        <span class="icon">{{ . }}</span>
-      {{- end -}}
-      {{- range .GetTerms "categories" -}}
-        {{- $count := len ($categories.Get .Title) -}}
-        <a href="{{ .RelPermalink }}">{{ .LinkTitle }} ({{ $count }})</a>
-      {{- end -}}
-    </span>
-  {{- end -}}
+  {{- range $taxonomy, $map := site.Taxonomies -}}
+    {{- $show := index site.Params (printf "show%s" (title $taxonomy)) | default false  -}}
 
-  {{- if and .Params.tags site.Params.showTags -}}
-    {{- $tags := site.Sites.Default.Taxonomies.tags -}}
-    <span class="meta">
-      {{- with (partial "utils/icon.html" "tags") -}}
-        <span class="icon">{{ . }}</span>
-      {{- end -}}
-      {{- range .GetTerms "tags" -}}
-        {{- $count := len ($tags.Get .Title) -}}
-        <a href="{{ .RelPermalink }}">{{ .LinkTitle }} ({{ $count }})</a>
-      {{- end -}}
-    </span>
-  {{- end -}}
+    {{- if and $show (index $.Params $taxonomy) -}}
+      {{- $terms := $.GetTerms $taxonomy -}}
 
-  {{- if and .Params.versions site.Params.showVersions -}}
-    {{- $versions := site.Sites.Default.Taxonomies.versions -}}
-    <span class="meta">
-      {{- with (partial "utils/icon.html" "merge") -}}
-        <span class="icon">{{ . }}</span>
+      {{- if gt (len $terms) 0 -}}
+        <span class="meta {{ $taxonomy }}">
+          {{- with (partial "utils/icon.html" $taxonomy) -}}
+            <span class="icon">{{ . }}</span>
+          {{- end -}}
+
+          {{- range $terms -}}
+            <a href="{{ .RelPermalink }}">{{ .LinkTitle }} ({{ len .Pages }})</a>
+          {{- end -}}
+        </span>
       {{- end -}}
-      {{- range .GetTerms "versions" -}}
-        {{- $count := len ($versions.Get .Title) -}}
-        <a href="{{ .RelPermalink }}">{{ .LinkTitle }} ({{ $count }})</a>
-      {{- end -}}
-    </span>
+    {{- end -}}
   {{- end -}}
 
   {{- if site.Params.showWordCount -}}
@@ -63,19 +44,6 @@
         <span class="icon">{{ . }}</span>
       {{- end -}}
       {{ i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime) }}
-    </span>
-  {{- end -}}
-
-  {{- if and .Params.authors site.Params.showAuthors -}}
-    {{- $authors := site.Sites.Default.Taxonomies.authors -}}
-    <span class="meta">
-      {{- with (partial "utils/icon.html" "authors") -}}
-        <span class="icon">{{ . }}</span>
-      {{- end -}}
-      {{- range .GetTerms "authors" -}}
-        {{- $count := len ($authors.Get .Title) -}}
-        <a href="{{ .RelPermalink }}">{{ .LinkTitle }} ({{ $count }})</a>
-      {{- end -}}
     </span>
   {{- end -}}
 

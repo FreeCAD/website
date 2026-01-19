@@ -3,8 +3,8 @@
 {{- define "main" -}}
 
   <div class="not-found">
-    <a href="{{ .Site.Home.RelPermalink }}"
-      title="{{- i18n "return_homepage" | default "Return to Homepage" -}}">
+    <a href="{{ site.Home.RelPermalink }}"
+      title="{{ i18n "return_homepage" | default "Return to Homepage" }}">
       🦄
     </a>
   </div>

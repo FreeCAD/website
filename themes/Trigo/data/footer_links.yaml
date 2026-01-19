@@ -1,9 +1,5 @@
 # Custom Footer links
 
-- title: "Releases"
-  url: "releases"
-  parent: "download"
-
 - title: "Archives"
   url: "news/archives"
   parent: "news"
@@ -31,6 +27,3 @@
 - title: "Translations"
   url: "https://wiki.freecad.org"
   parent: "community"
-
-- title: "About"
-  url: "about"

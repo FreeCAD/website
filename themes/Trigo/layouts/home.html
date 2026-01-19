@@ -1,82 +1,78 @@
 {{- /* Homepage:
 
   - Get latest hero article and render its title and cover.
-  - Render custom buttons from homepage section.
-  - List selection of latest News articles.
-  - Get Content from Homepage Section.
+  - Render custom buttons from homepage front matter.
 */ -}}
 
 {{- define "main" -}}
 
-  {{- $homepageButtons := slice -}}
-  {{- with (site.GetPage "section" "homepage" | default (site.Sites.Default.GetPage "section" "homepage")) -}}
-    {{- with .Params.buttons -}}
-      {{- $homepageButtons = . -}}
-    {{- end -}}
-  {{- end -}}
+  {{- $buttons := .Params.buttons | default site.Sites.Default.Home.Params.buttons -}}
 
   {{- /* Get the latest article with the "hero" parameters in front matter. */ -}}
-  {{- $hero := index (where (site.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Params.hero" "!=" nil) 0 -}}
-
-  {{- /* NOTE: Keep for now. Get latest News articles by category, excluding those with "hero" param.
-  {{- $pages := slice -}}
-  {{- with site.Sites.Default -}}
-    {{- range .Taxonomies.categories.ByCount -}}
-      {{- $categoryPages := where .Pages "Params.hero" "ne" true | first 1 -}}
-      {{- $pages = $pages | append $categoryPages -}}
-    {{- end -}}
-  {{- end -}}
-  {{- $pages = first (.Params.paginate | default 6) $pages -}}
-  */ -}}
+  {{- $heroes := where (site.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Params.hero" "!=" nil -}}
+  {{- $hero := cond (gt (len $heroes) 0) (index $heroes 0) nil -}}
 
   {{- /* Get cover image. */ -}}
   {{- $coverImage := partial "hero/cover_image.html" . -}}
 
-  {{- $sectionCode := "" -}}
-  {{- if not $coverImage}}
-    {{- $sectionCode = partial "utils/index_code.html" . -}}
-  {{- end -}}
+  {{- $sectionCode := partial "utils/index_code.html" . -}}
 
   <section class="hero"
     {{ if $sectionCode }}style="--section: {{ $sectionCode }};"{{ end }}>
 
-    <h1 class="title">{{- $hero.LinkTitle | .RenderString -}}</h1>
+    <div class="hero-column">
+      <h1 class="title">{{- .Title | .RenderString -}}</h1>
 
-    {{- with $hero.Description -}}
-      <h3 class="description">{{- . | $.RenderString -}}</h3>
-    {{- end -}}
+      {{- with (.Description | default site.Sites.Default.Home.Description) -}}
+        <h3 class="description">{{- . | $.RenderString -}}</h3>
+      {{- end -}}
 
-    {{- with $homepageButtons -}}
-      <div class="buttons">
-        {{- range $buttons := . -}}
-          {{- $href := $buttons.url -}}
-          {{- $page := site.GetPage $href | default (site.Sites.Default.GetPage $href) -}}
-          {{- $label := $buttons.label | default "" -}}
+      {{- with $buttons -}}
+        <div class="buttons">
+          {{- range . -}}
+            {{- $href := .url -}}
+            {{- $label := .label -}}
 
-          {{- with $page -}}
-            {{- $href = .RelPermalink -}}
-            {{- $label = cond (ne (trim $label " ") "") $label (.LinkTitle | .RenderString) -}}
-          {{- else -}}
-            {{- $label = cond (ne (trim $label " ") "") $label (i18n "explore" | default "Explore") -}}
+            {{- if and $href (not (hasPrefix $href "http")) -}}
+              {{- with (site.GetPage $href | default (site.Sites.Default.GetPage $href)) -}}
+                {{- $href = .RelPermalink -}}
+                {{- if not $label -}}
+                  {{- $label = .LinkTitle -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+
+            {{- if not $label -}}
+              {{- $label = i18n "explore" | default "Explore" -}}
+            {{- end -}}
+
+            <a href="{{ $href }}"
+              title="{{ trim $label " " }}"
+              class="hero-button"
+              {{- with .style -}}style="{{ . | safeCSS }}"{{- end -}}>
+              {{ $label }}
+            </a>
           {{- end -}}
+        </div>
+      {{- end -}}
+    </div>
 
-          <a href="{{ $href }}"
-            title="{{ $label }}"
-            class="hero-button"
-            {{ with $buttons.style }}style="{{ . | safeCSS }}"{{ end }}>
-            {{ $label }}
-          </a>
-        {{- end -}}
-      </div>
+    {{- with $hero -}}
+      <a class="hero-column"
+        href="{{ .RelPermalink }}">
+        <h2 class="title">{{- .LinkTitle | .RenderString -}}</h2>
+
+        {{- partial "hero/cover_image.html" . -}}
+      </a>
     {{- end -}}
-
-    {{- $coverImage -}}
 
   </section>
 
   {{- /* Get homepage content. */ -}}
-  {{- with (site.GetPage "section" "homepage" | default (site.Sites.Default.GetPage "section" "homepage")) -}}
+  {{- if .Content -}}
     {{- partial "main/content.html" . -}}
+  {{- else -}}
+    {{- partial "main/content.html" (site.Sites.Default.Home) -}}
   {{- end -}}
 
 {{- end -}}

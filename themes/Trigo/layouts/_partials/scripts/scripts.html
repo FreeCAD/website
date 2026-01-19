@@ -22,7 +22,7 @@
 </script>
 
 {{- /* Detect User Agent and provide corresponding download options. */ -}}
-{{- if and (in (slice "download" "releases") .Section) site.Params.enableJSua -}}
+{{- if and (in (slice "download") .Section) site.Params.enableJSua -}}
   {{- with resources.Get "js/ua-download.js" }}
     {{- $ua := . -}}
     {{- if hugo.IsProduction -}}

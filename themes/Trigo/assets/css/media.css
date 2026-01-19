@@ -62,13 +62,19 @@
   /* List and Single pages */
   .kind-home .hero {
     min-height: calc(100dvh - var(--header-height));
+    flex-direction: column;
   }
 
   .hero {
     min-height: 50dvh;
+    padding: calc(var(--gap) * 2) var(--gap);
   }
 
-  .buttons,
+  .hero-column {
+    max-width: var(--width);
+    flex: none;
+  }
+
   .metadata,
   .card {
     flex-direction: column;
@@ -207,7 +213,7 @@
 
 
 /* Small screen devices in landscape orientation (e.g. smartphones). */
-@media screen and (orientation: landscape) and (height <= 500px) {
+@media screen and (orientation: landscape) and (height <= 750px) {
 
   :root {
     --width: calc(100vw - (var(--gap) * 2));

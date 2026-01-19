@@ -46,16 +46,16 @@
   {{- partial "main/content.html" . -}}
 
   {{- /* For Releases, get Download release form. */ -}}
-  {{- if eq .Type "releases" -}}
+  {{- if .InSection (site.GetPage "download/releases") -}}
     <div class="download-release">
-      {{- partial "hero/download.html" . -}}
+      {{- partial "sections/download.html" . -}}
     </div>
   {{- end -}}
 
-  {{/* Dynamically include main partial. */}}
-  {{- $main := printf "main/%s.html" .File.ContentBaseName -}}
-  {{- if templates.Exists (printf "_partials/%s" $main) -}}
-    {{- partial $main . -}}
+  {{/* Dynamically include page partial. */}}
+  {{- $partial := printf "sections/%s.html" .File.ContentBaseName -}}
+  {{- if templates.Exists (printf "_partials/%s" $partial) -}}
+    {{- partial $partial . -}}
   {{- end -}}
 
   {{- /* Get pagination to previous and next pages. */ -}}

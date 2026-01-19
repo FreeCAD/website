@@ -11,7 +11,7 @@
 
   {{/* Hero cards on top-level sections. */}}
   {{- $heroCards := slice -}}
-  {{- if and .IsSection .Parent.IsHome -}}
+  {{- if and .IsSection .Parent.IsHome (not $default.RegularPages) -}}
     {{- range .Sections -}}
       {{- $heroCards = $heroCards | append . -}}
     {{- end -}}
@@ -70,10 +70,10 @@
       {{- end -}}
     {{- end -}}
 
-    {{/* Dynamically include hero partial. */}}
-    {{- $hero := printf "hero/%s.html" .File.ContentBaseName -}}
-    {{- if templates.Exists (printf "_partials/%s" $hero) -}}
-      {{- partial $hero . -}}
+    {{/* Dynamically include section partial. */}}
+    {{- $partial := printf "sections/%s.html" .File.ContentBaseName -}}
+    {{- if templates.Exists (printf "_partials/%s" $partial) -}}
+      {{- partial $partial . -}}
     {{- end -}}
 
     {{- with $heroCards -}}
@@ -96,18 +96,12 @@
 
   {{- /* For Donate, list Funded Grants and Sponsors. */ -}}
   {{- if eq .File.ContentBaseName "donate" -}}
-    {{- partial "main/grants.html" . -}}
-    {{- partial "main/sponsors.html" . -}}
+    {{- partial "sections/grants.html" . -}}
+    {{- partial "sections/sponsors.html" . -}}
   {{- end -}}
 
   {{- /* Get page content. */ -}}
   {{- partial "main/content.html" . -}}
-
-  {{/* Dynamically include main partial. */}}
-  {{- $main := printf "main/%s.html" .File.ContentBaseName -}}
-  {{- if templates.Exists (printf "_partials/%s" $main) -}}
-    {{- partial $main . -}}
-  {{- end -}}
 
   {{- /* List RegularPages, sub-Sections or custom pages. */ -}}
   {{- partial "main/paginator.html" (dict "pages" $pages "context" .) -}}

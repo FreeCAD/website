@@ -1,6 +1,7 @@
 ---
-title: Homepage
-description: FreeCAD highlights on the Homepage
+title: FreeCAD
+description: Votre propre modeleur 3D paramétrique libre et open source !
+paginate: 6
 menus:
   footer:
     weight: 1
@@ -9,8 +10,8 @@ params:
   buttons:
     - url: download
       style: "background: var(--secondary); color: var(--theme);"
-    - url: releases/1-0
-      label: "See what's new"
+    - url: download/releases/1-0
+      label: "Découvre les nouveautés"
 ---
 
 
@@ -21,28 +22,28 @@ params:
 
 {{< card icon="heart" >}}
 
-## Freedom by Design
+## Libre par nature
 
-FreeCAD is free and open-source licensed software.
-Local and private, no lock-in, no fees.
-Freedom to use for any project.
+FreeCAD est un logiciel à license libre et open-source.
+Local et privé, sans restriction ni frais.
+Libre d'utilisation pour tout projet.
 
 {{< /card >}}
 
 {{< card icon="time" >}}
 
-## Parametric Precision
+## Précision paramétrique
 
-Model, simulate and fabricate complex real-world objects.
-Modular workbenches and specialized tools allow for extensible designs and fast iterations.
+Modélisez, simulez et fabriquez des objets complexes.
+Ateliers modulaires et outils spécialisés de conception extensible et d'itérations rapides.
 
 {{< /card >}}
 
 {{< card icon="authors" >}}
 
-## Community Power
+## Puissance collective
 
-Multilingual, peer-reviewed and a rich open ecosystem make FreeCAD the safe choice for today and tomorrow.
+Multilingue, expertisé par la communauté et doté d'un riche écosystème ouvert, FreeCAD est le choix sûr pour aujourd'hui et demain.
 
 {{< /card >}}
 

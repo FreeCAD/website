@@ -36,18 +36,16 @@
           {{- end -}}
         {{- end -}}
 
-        {{- if and .Date .Params.categories -}}
+        {{- if not .Date.IsZero -}}
           <div class="card-metadata">
-            {{- if not .Date.IsZero -}}
-              <span class="meta">
-                {{- with (partial "utils/icon.html" "date") -}}
-                  <span class="icon">{{ . }}</span>
-                {{- end -}}
-                <time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z" }}">
-                  {{- .Date | time.Format ":date_long" -}}
-                </time>
-              </span>
-            {{- end -}}
+            <span class="meta">
+              {{- with (partial "utils/icon.html" "date") -}}
+                <span class="icon">{{ . }}</span>
+              {{- end -}}
+              <time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z" }}">
+                {{- .Date | time.Format ":date_long" -}}
+              </time>
+            </span>
 
             {{- with index (.GetTerms "categories") 0 -}}
               <span class="meta">

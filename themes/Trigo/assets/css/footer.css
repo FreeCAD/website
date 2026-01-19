@@ -115,9 +115,31 @@
   color: var(--link-hover-color);
 }
 
+.share-links {
+  max-width: var(--width);
+  margin: var(--gap) auto;
+  display: flex;
+  justify-content: center;
+  gap: var(--gap);
+}
+
+.share-links svg {
+  color: var(--tertiary);
+  width: var(--l);
+}
+
+.share-links svg:hover {
+  color: var(--link-hover-color);
+}
+
+.share-links svg:active {
+  transform: var(--transform-active);
+  transition: var(--link-transition);
+}
+
 .copyright {
   max-width: var(--width);
-  margin: auto;
+  margin: var(--gap) auto 0;
   padding-bottom: var(--gap);
   display: flex;
   flex-direction: row;

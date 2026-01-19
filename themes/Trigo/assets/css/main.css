@@ -16,10 +16,10 @@ main {
   overflow: visible;
   width: 100vw;
   margin: auto;
-  padding: calc(var(--gap) * 2) var(--gap);
+  padding: calc(var(--gap) * 2);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   gap: var(--gap);
   text-align: center;
@@ -33,6 +33,21 @@ main {
   transition: var(--link-transition);
 }
 
+.hero-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  flex: 1;
+  max-width: calc(var(--width) * 0.5);
+  color: var(--secondary);
+}
+
+a.hero-column:hover {
+  filter: var(--filter);
+  transform: var(--transform-hover);
+  color: var(--link-color);
+}
+
 .dark .hero {
   background: linear-gradient(
     135deg,
@@ -41,12 +56,13 @@ main {
   );
 }
 
-main > .hero:only-child {
-  min-height: calc(100vh - var(--header-height) - (var(--footer-height) * 5));
+main > :is(.hero:only-child, .not-found) {
+  min-height: calc(100vh - var(--header-height) - (var(--footer-height) * 4));
 }
 
 .kind-home .hero {
   min-height: calc(var(--width) * 0.5);
+  flex-direction: row;
 }
 
 .kind-page .hero {
@@ -59,7 +75,6 @@ main > .hero:only-child {
 .metadata {
   margin: 0 auto;
   display: inline-flex;
-  gap: calc(var(--gap) * 0.25);
   max-width: var(--width);
   z-index: 2;
 }
@@ -102,16 +117,8 @@ main > .hero:only-child {
   color: var(--link-hover-color);
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  gap: var(--gap);
-  margin-top: calc(var(--gap) * 2);
-  z-index: 3;
-}
-
 .hero-button {
-  margin-top: var(--gap);
+  margin: calc(var(--gap) * 0.5);
   padding: var(--padding);
   color: var(--entry);
   font-size: var(--m);
@@ -149,17 +156,14 @@ main > .hero:only-child {
   color: var(--link-hover-color);
 }
 
-.meta :is(a, span):not(:last-of-type):after {
+.meta :is(a, span):not(.icon, :last-of-type):after {
   content: " · ";
 }
 
 .hero .entry-cover img {
-  position: absolute;
-  left: 0;
-  top: 0;
   margin: auto;
   width: 100%;
-  height: calc(var(--width) * 0.5);
+  height: calc(var(--width) * 0.3);
   z-index: 1;
 }
 
@@ -170,6 +174,7 @@ main > .hero:only-child {
 .article-cover img {
   margin: auto;
   width: var(--content-width);
+  max-width: 100%;
   height: auto;
   max-height: calc(var(--width) * 0.5);
   z-index: 1;
@@ -655,6 +660,9 @@ sup:target {
 
 .content figure {
   position: relative;
+}
+
+.content figure:has(img) {
   text-align: center;
 }
 
@@ -851,28 +859,6 @@ figcaption svg {
 
 .single-footer {
   padding: 0;
-}
-
-.share-links {
-  max-width: var(--width);
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  gap: var(--gap);
-}
-
-.share-links svg {
-  color: var(--tertiary);
-  width: var(--l);
-}
-
-.share-links svg:hover {
-  color: var(--link-hover-color);
-}
-
-.share-links svg:active {
-  transform: var(--transform-active);
-  transition: var(--link-transition);
 }
 
 
@@ -1148,8 +1134,7 @@ figcaption svg {
   width: var(--width);
   margin: 0 auto;
   padding-bottom: calc(var(--gap) * 2);
-  display: flex;
-  flex-direction: column;
+  text-align: center;
 }
 
 

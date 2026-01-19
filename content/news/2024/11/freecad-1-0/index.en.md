@@ -9,7 +9,7 @@ tags:
   - release
 versions: "1.0"
 cover:
-  image: 8.webp
+  image: motor.webp
   caption: "a cover caption"
   alt: "a cover alternative title"
 params:
