@@ -43,19 +43,14 @@
           target="_blank"
           rel="noopener noreferrer">
       {{- end -}}
-      <span>
-        {{- with (partial "utils/icon.html" "words") -}}
-          <span class="icon">{{ . }}</span>
-        {{- end -}}
-      </span>
+
+      {{- partial "utils/icon.html" "words" -}}
       {{- . -}}
+
       {{- if $isExternal -}}
-        <span class="external">
-          {{- with (partial "utils/icon.html" "external") -}}
-            <span class="icon">{{ . }}</span>
-          {{- end -}}
-        </span>
+        {{- partial "utils/icon.html" "external" -}}
       {{- end -}}
+
       {{- if $isUrl -}}
         </a>
       {{- end -}}

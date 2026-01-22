@@ -26,6 +26,7 @@
 
 {{- $text := .Text -}}
 {{- $cite := .Attributes.cite -}}
+{{- $isExternal := strings.HasPrefix $cite "http" -}}
 {{- $caption := .Attributes.caption | markdownify -}}
 {{- $isAlert := eq .Type "alert" -}}
 {{- $type := cond $isAlert .AlertType "quote" -}}
@@ -33,17 +34,14 @@
 <figure>
   <blockquote class="{{ $type }}"
     {{ with $cite }}cite="{{ . | safeURL }}"{{ end }}>
-    {{- with (partial "utils/icon.html" $type) -}}
-      <span class="icon">{{ . }}</span>
-    {{- end -}}
-
+    {{- partial "utils/icon.html" $type -}}
     {{- i18n $type | default ($type | title) -}}
     {{- $text -}}
   </blockquote>
 
   {{- if $caption -}}
     <figcaption class="blockquote-caption">
-      {{- if strings.HasPrefix $cite "http"}}
+      {{- if $isExternal -}}
         <a href="{{ $cite }}"
           title="{{ $caption | plainify }}"
           target="_blank"
@@ -52,12 +50,8 @@
 
       {{ $caption }}
 
-      {{- if strings.HasPrefix $cite "http"}}
-        <span class="external">
-          {{- with (partial "utils/icon.html" "external") -}}
-            <span class="icon">{{ . }}</span>
-          {{- end -}}
-        </span>
+      {{- if $isExternal -}}
+        {{- partial "utils/icon.html" "external" -}}
         </a>
       {{- end -}}
     </figcaption>

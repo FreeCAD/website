@@ -2,9 +2,7 @@
 
   {{- if not .Date.IsZero -}}
     <span class="meta">
-      {{- with (partial "utils/icon.html" "date") -}}
-        <span class="icon">{{ . }}</span>
-      {{- end -}}
+      {{- partial "utils/icon.html" "date" -}}
       <time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z" }}">{{ .Date | time.Format ":date_long" }}</time>
     </span>
   {{- end -}}
@@ -17,9 +15,7 @@
 
       {{- if gt (len $terms) 0 -}}
         <span class="meta {{ $taxonomy }}">
-          {{- with (partial "utils/icon.html" $taxonomy) -}}
-            <span class="icon">{{ . }}</span>
-          {{- end -}}
+          {{- partial "utils/icon.html" $taxonomy -}}
 
           {{- range $terms -}}
             <a href="{{ .RelPermalink }}">{{ .LinkTitle }} ({{ len .Pages }})</a>
@@ -31,27 +27,21 @@
 
   {{- if site.Params.showWordCount -}}
     <span class="meta">
-      {{- with (partial "utils/icon.html" "words") -}}
-        <span class="icon">{{ . }}</span>
-      {{- end -}}
+      {{- partial "utils/icon.html" "words" -}}
       {{ i18n "words" .WordCount | default (printf "%d words" .WordCount) }}
     </span>
   {{- end -}}
 
   {{- if site.Params.showReadingTime -}}
     <span class="meta">
-      {{- with (partial "utils/icon.html" "time") -}}
-        <span class="icon">{{ . }}</span>
-      {{- end -}}
+      {{- partial "utils/icon.html" "time" -}}
       {{ i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime) }}
     </span>
   {{- end -}}
 
   {{- if .IsTranslated -}}
     <span class="meta">
-      {{- with (partial "utils/icon.html" "translations") -}}
-        <span class="icon">{{ . }}</span>
-      {{- end -}}
+      {{- partial "utils/icon.html" "translations" -}}
       {{- range .Translations -}}
         <a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a>
       {{- end -}}

@@ -9,9 +9,9 @@
         {{- /* Get article card cover image. */ -}}
         {{- with (partial "main/card_image.html" .) -}}
           {{- . -}}
-        {{- else with (partial "utils/icon.html" .Params.icon) -}}
+        {{- else with .Params.icon -}}
           <span class="card-icon">
-            <span class="icon">{{ . }}</span>
+            {{- partial "utils/icon.html" . -}}
           </span>
         {{- else -}}
           {{- $page := index (.GetTerms "categories") 0 | default . -}}
@@ -39,9 +39,7 @@
         {{- if not .Date.IsZero -}}
           <div class="card-metadata">
             <span class="meta">
-              {{- with (partial "utils/icon.html" "date") -}}
-                <span class="icon">{{ . }}</span>
-              {{- end -}}
+              {{- partial "utils/icon.html" "date" -}}
               <time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z" }}">
                 {{- .Date | time.Format ":date_long" -}}
               </time>
@@ -49,9 +47,7 @@
 
             {{- with index (.GetTerms "categories") 0 -}}
               <span class="meta">
-                {{- with (partial "utils/icon.html" "categories") -}}
-                  <span class="icon">{{ . }}</span>
-                {{- end -}}
+                {{- partial "utils/icon.html" "categories" -}}
                 {{ .LinkTitle }}
               </span>
             {{- end -}}

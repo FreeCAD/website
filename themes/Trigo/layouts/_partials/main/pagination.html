@@ -27,16 +27,14 @@
           href="{{ .RelPermalink -}}#top"
           alt="PREVIOUS ARTICLE"
           title="{{ i18n "previous_article" | default "Previous article" }}">
-          {{- with (partial "utils/icon.html" "arrow-left") -}}
-            <span class="icon">{{ . }}</span>
-          {{- end -}}
+          {{- partial "utils/icon.html" "arrow-left" -}}
           {{- .LinkTitle | .RenderString -}}
+
           {{- if not (eq .Lang $.Lang) -}}
-            {{- with (partial "utils/icon.html" "translations") -}}
-              <span class="icon">{{ . }}</span>
-            {{- end -}}
+            {{- partial "utils/icon.html" "translations" -}}
             {{ .Lang | upper -}}
           {{- end -}}
+
           {{- if not hugo.IsProduction -}}
             {{- with .Weight -}}
               <span style="color: crimson;">Weight: {{ . }}</span>
@@ -53,15 +51,14 @@
           alt="NEXT ARTICLE"
           title="{{ i18n "next_article" | default "Next article" }}">
           {{- .LinkTitle | .RenderString -}}
+
           {{- if not (eq .Lang $.Lang) -}}
-            {{- with (partial "utils/icon.html" "translations") -}}
-              <span class="icon">{{ . }}</span>
-            {{- end -}}
+            {{- partial "utils/icon.html" "translations" -}}
             {{ .Lang | upper -}}
           {{- end -}}
-          {{- with (partial "utils/icon.html" "arrow-right") -}}
-            <span class="icon">{{ . }}</span>
-          {{- end -}}
+
+          {{- partial "utils/icon.html" "arrow-right" -}}
+
           {{- if not hugo.IsProduction -}}
             {{- with .Weight -}}
               <span style="color: crimson;">Weight: {{ . }}</span>

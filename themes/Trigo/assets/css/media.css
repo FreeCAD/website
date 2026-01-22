@@ -41,7 +41,7 @@
     height: var(--xxl);
   }
 
-  :is(.lang-toggle, #chroma-toggle, .cross, .hamburger) svg {
+  :is(.lang-toggle, #chroma-toggle, .icon-cross, .icon-hamburger) svg {
     height: var(--xl);
   }
 

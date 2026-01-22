@@ -29,8 +29,6 @@
      href="#{{ $anchor }}"
      title="{{ $text }}"
      aria-label="{{ $text }}">
-    {{- with (partial "utils/icon.html" "anchor") -}}
-      <span class="icon">{{ . }}</span>
-    {{- end -}}
+    {{- partial "utils/icon.html" "anchor" -}}
   </a>
 </h{{ $level }}>

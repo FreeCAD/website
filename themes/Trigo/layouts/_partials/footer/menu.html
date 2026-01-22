@@ -45,11 +45,7 @@
       {{ if $isExternal }}target="_blank"{{ end }}>
       {{ $section.Title | $.CurrentPage.RenderString }}
       {{- if $isExternal -}}
-        <span class="external">
-          {{- with (partial "utils/icon.html" "external") -}}
-            <span class="icon">{{ . }}</span>
-          {{- end -}}
-        </span>
+        {{- partial "utils/icon.html" "external" -}}
       {{- end -}}
     </a>
   </h4>
@@ -97,25 +93,21 @@
     {{- /* Custom children. */ -}}
     {{- range $customLinks -}}
       {{- if eq .parent $sectionKey -}}
-        {{- $external := and
+        {{- $isExternal := and
           (strings.HasPrefix .url "http")
           (not (strings.HasPrefix .url site.BaseURL))
         -}}
         {{- $active := eq (urls.Parse .url).Path $currentUrl -}}
         <li>
-          <a href="{{ cond $external .url (.url | relURL) }}"
+          <a href="{{ cond $isExternal .url (.url | relURL) }}"
             title="{{ .title | plainify }}"
             class="{{ if $active }}menu-active{{ end }}"
-            {{ if $external }}target="_blank" rel="external noreferrer"{{ end }}>
+            {{ if $isExternal }}target="_blank" rel="external noreferrer"{{ end }}>
             <span>
               {{ .title }}
             </span>
-            {{- if $external -}}
-              <span class="external">
-                {{- with (partial "utils/icon.html" "external") -}}
-                  <span class="icon">{{ . }}</span>
-                {{- end -}}
-              </span>
+            {{- if $isExternal -}}
+              {{- partial "utils/icon.html" "external" -}}
             {{- end -}}
           </a>
         </li>

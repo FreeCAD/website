@@ -1,6 +1,10 @@
-{{- $icon_name := . -}}
+{{- /* SVG icon partial. */ -}}
 
-{{- with resources.Get (printf "svg/%s.svg" $icon_name) -}}
+{{- $name := lower . -}}
+
+{{- with resources.Get (printf "svg/%s.svg" $name) -}}
   {{- $icon := . | resources.Minify -}}
-  {{- $icon.Content | safeHTML -}}
+  <span class="icon-{{ $name }}">
+    {{- $icon.Content | safeHTML -}}
+  </span>
 {{- end -}}

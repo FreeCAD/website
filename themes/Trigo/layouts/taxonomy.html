@@ -35,9 +35,7 @@
     {{ if $sectionCode }}style="--section: {{ $sectionCode }};"{{ end }}>
 
     <h1 class="title">
-      {{- with (partial "utils/icon.html" (lower .Title)) -}}
-        <span class="icon">{{ . }}</span>
-      {{- end -}}
+      {{- partial "utils/icon.html" .Title -}}
       {{ .Title | .RenderString }} ({{ len $merged }})
     </h1>
 

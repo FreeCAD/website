@@ -17,7 +17,7 @@ The Association supporting the development of FreeCAD
 
 {{< /card >}}
 
-{{< card url="fpn" />}}
+{{< card url="fpn" icon="fpn.svg" />}}
 
 {{< /block >}}
 

@@ -83,11 +83,9 @@
       </span>
     </span>
   {{- else if not $disableIcon -}}
-    {{- with partial "utils/icon.html" $icon -}}
-      <span class="card-icon">
-        <span class="icon">{{ . }}</span>
-      </span>
-    {{- end -}}
+    <span class="card-icon">
+      {{- partial "utils/icon.html" $icon -}}
+    </span>
   {{- end -}}
 
   {{- if not $disableTitle -}}

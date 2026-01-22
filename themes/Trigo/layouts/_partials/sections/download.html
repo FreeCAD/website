@@ -15,9 +15,7 @@
         type="button"
         popovertarget="{{ $platform.id }}-arch"
         title="{{ $platform.label }}">
-        {{- with (partial "utils/icon.html" $platform.id) -}}
-          <span class="icon">{{ . }}</span>
-        {{- end -}}
+        {{- partial "utils/icon.html" $platform.id -}}
         <br>
         <span>{{- $platform.label -}}</span>
       </button>
@@ -32,9 +30,7 @@
             title="{{ $download.label }}"
             target="_blank"
             rel="noopener noreferrer">
-            {{- with (partial "utils/icon.html" $download.key) -}}
-              <span class="icon">{{ . }}</span>
-            {{- end -}}
+            {{- partial "utils/icon.html" $download.key -}}
             <br>
             <span>{{- $platform.label -}}</span>
           </a>

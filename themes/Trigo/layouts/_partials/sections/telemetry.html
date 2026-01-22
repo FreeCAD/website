@@ -126,7 +126,7 @@
           </g>
         </svg>
 
-        <ul class="donut-legend" aria-hidden="true" role="presentation" style="text-align: left;">
+        <ul class="donut-legend" aria-hidden="true" role="presentation">
           {{- range $i, $entry3 := $coloredEntries -}}
             <li class="legend-item segment-{{ $i }}">
               <span class="circle" style="background:{{ $entry3.color | safeCSS }}"></span>
@@ -157,7 +157,6 @@
           width="100%"
           height="100%"
           viewBox="0 0 160 {{ add 25 (mul 6 (cond (gt (len $slice) 21) 21 (len $slice))) }}"
-          style="background: var(--cover); border-radius: 1rem; overflow: hidden;"
           role="img" xmlns="http://www.w3.org/2000/svg">
           <title>
             {{- strings.Title $cleanKey -}}

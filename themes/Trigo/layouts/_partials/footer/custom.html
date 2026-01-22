@@ -20,11 +20,7 @@
         {{ if $isExternal }}target="_blank" rel="noopener noreferrer external"{{ end }}>
         {{ $title }}
         {{- if $isExternal -}}
-          <span class="external">
-            {{- with (partial "utils/icon.html" "external") -}}
-              <span class="icon">{{ . }}</span>
-            {{- end -}}
-          </span>
+          {{- partial "utils/icon.html" "external" -}}
         {{- end -}}
       </a>
     {{- end -}}

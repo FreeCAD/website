@@ -123,9 +123,7 @@
             popovertarget="{{ $id }}"
             popovertargetaction="hide"
             aria-label="{{ $close }}">
-            {{- with (partial "utils/icon.html" "cross") -}}
-              <span class="icon">{{ . }}</span>
-            {{- end -}}
+            {{- partial "utils/icon.html" "cross" -}}
           </button>
         </div>
       {{- end -}}

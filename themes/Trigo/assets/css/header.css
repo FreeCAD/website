@@ -54,19 +54,19 @@
   color: var(--tertiary);
 }
 
-:is(.menu-toggle, .lang-toggle, #chroma-toggle):hover  {
+:is(.menu-toggle, .lang-toggle, #chroma-toggle):hover {
   color: var(--link-hover-color);
 }
 
-:is(.lang-toggle, #chroma-toggle, .cross, .hamburger) svg {
+:is(.menu-toggle, .lang-toggle, #chroma-toggle) svg {
   height: var(--l);
 }
 
-html.dark #dark {
+html.dark .icon-dark {
   display: none;
 }
 
-html:not(.dark) #light {
+html:not(.dark) .icon-light {
   display: none;
 }
 
@@ -77,15 +77,12 @@ html:not(.dark) #light {
   display: block;
 }
 
-.menu:has(#menu-list:popover-open) .hamburger {
+.menu:has(#menu-list:popover-open) .icon-hamburger,
+.menu:has(:not(#menu-list:popover-open)) .icon-cross {
   display: none;
 }
 
-.cross {
-  display: none;
-}
-
-.menu:has(#menu-list:popover-open) .cross {
+.menu:has(#menu-list:popover-open) .icon-cross {
   display: block;
 }
 

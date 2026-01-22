@@ -51,16 +51,8 @@
         class="menu-toggle"
         title="{{ i18n "menu" | default "Menu" }}"
         aria-label="{{ i18n "menu" | default "Menu" }}">
-        <span class="hamburger">
-          {{- with (partial "utils/icon.html" "hamburger") -}}
-            <span class="icon">{{ . }}</span>
-          {{- end -}}
-        </span>
-        <span class="cross">
-          {{- with (partial "utils/icon.html" "cross") -}}
-            <span class="icon">{{ . }}</span>
-          {{- end -}}
-        </span>
+        {{- partial "utils/icon.html" "hamburger" -}}
+        {{- partial "utils/icon.html" "cross" -}}
       </button>
 
       <ul popover id="menu-list" class="menu-list">
@@ -136,9 +128,7 @@
           accesskey="l"
           title="{{ i18n "choose_language" | default "Choose language" }} (Alt + L)"
           aria-label="{{ i18n "choose_language" | default "Choose language" }} (Alt + L)">
-          {{- with (partial "utils/icon.html" "language") -}}
-            <span class="icon">{{ . }}</span>
-          {{- end -}}
+          {{- partial "utils/icon.html" "language" -}}
         </button>
 
         <ul popover id="lang-list" class="language-list">
@@ -173,16 +163,8 @@
         accesskey="t"
         title="{{ i18n "toggle_theme" | default "Switch theme chroma" }} (Alt + T)"
         aria-label="{{ i18n "toggle_theme" | default "Switch theme chroma" }}">
-        <span id="dark">
-          {{- with (partial "utils/icon.html" "moon") -}}
-            <span class="icon">{{ . }}</span>
-          {{- end -}}
-        </span>
-        <span id="light">
-          {{- with (partial "utils/icon.html" "sun") -}}
-            <span class="icon">{{ . }}</span>
-          {{- end -}}
-        </span>
+        {{- partial "utils/icon.html" "dark" -}}
+        {{- partial "utils/icon.html" "light" -}}
       </button>
     </div>
 

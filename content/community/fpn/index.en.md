@@ -2,7 +2,6 @@
 title: "FreeCAD Professional Network"
 description: "The community of professional users shaping the future of FreeCAD"
 date: 2024-05-22T08:04:23+12:00
-icon: fpn.svg
 ---
 
 

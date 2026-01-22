@@ -39,9 +39,7 @@
     {{- partial "hero/categories.html" . -}}
 
     <h1 class="title">
-      {{- with (partial "utils/icon.html" (lower .Data.Plural)) -}}
-        <span class="icon">{{ . }}</span>
-      {{- end -}}
+      {{- partial "utils/icon.html" .Data.Plural -}}
       {{ .Data.Singular | title }}: {{ .Title | .RenderString }} ({{ $count }})
     </h1>
 

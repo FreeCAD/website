@@ -73,27 +73,21 @@
       <div class="card-metadata">
         {{- with $meta.version -}}
           <span class="meta">
-            {{- with (partial "utils/icon.html" "tags") -}}
-              <span class="icon">{{ . }}</span>
-            {{- end -}}
+            {{- partial "utils/icon.html" "tags" -}}
             {{- . -}}
           </span>
         {{- end -}}
 
         {{- with $item.last_update_time -}}
           <span class="meta">
-            {{- with (partial "utils/icon.html" "date") -}}
-              <span class="icon">{{ . }}</span>
-            {{- end -}}
+            {{- partial "utils/icon.html" "date" -}}
             {{- time . | time.Format ":date_medium" -}}
           </span>
         {{- end -}}
 
         {{- with $meta.maintainer -}}
           <span class="meta">
-            {{- with (partial "utils/icon.html" "authors") -}}
-              <span class="icon">{{ . }}</span>
-            {{- end -}}
+            {{- partial "utils/icon.html" "authors" -}}
             {{- truncate 30 . -}}
           </span>
         {{- end -}}

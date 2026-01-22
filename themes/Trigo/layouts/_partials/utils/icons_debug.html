@@ -13,7 +13,7 @@
       </h3>
     </summary>
     {{- range sort (resources.Match "svg/*.svg") "Name" -}}
-      <span class="meta">
+      <span class="debug-icon">
         {{ (. | resources.Minify).Content | safeHTML }}
         {{ .Name | replaceRE ".svg$" "" }}
       </span>

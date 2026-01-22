@@ -28,10 +28,6 @@
 {{- end -}}
 
 <a class="merge" href="{{ $url }}" title="{{ $fallback }}">
-  <span>
-    {{- with (partial "utils/icon.html" "versions") -}}
-      <span class="icon">{{ . }}</span>
-    {{- end -}}
-  </span>
+  {{- partial "utils/icon.html" "versions" -}}
   {{ $text }}
 </a>

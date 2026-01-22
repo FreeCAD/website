@@ -9,6 +9,7 @@
 .donut-legend {
   flex: 1;
   align-self: center;
+  height: 100%;
 }
 
 .donut-segment {
@@ -51,4 +52,8 @@
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
+}
+
+.donut text {
+  fill: var(--secondary);
 }

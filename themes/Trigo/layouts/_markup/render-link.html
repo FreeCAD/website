@@ -58,11 +58,7 @@
   {{- end -}}>
 
   {{- if strings.HasPrefix $url "#" -}}
-    <span class="hash">
-      {{- with (partial "utils/icon.html" "hash") -}}
-        <span class="icon">{{ . }}</span>
-      {{- end -}}
-    </span>
+    {{- partial "utils/icon.html" "hash" -}}
   {{- end -}}
 
   {{- with $text -}}
@@ -70,11 +66,7 @@
   {{- end -}}
 
   {{- if $isExternal -}}
-    <span class="external">
-      {{- with (partial "utils/icon.html" "external") -}}
-        <span class="icon">{{ . }}</span>
-      {{- end -}}
-    </span>
+    {{- partial "utils/icon.html" "external" -}}
   {{- end -}}
 
   {{- if not $isExternal -}}

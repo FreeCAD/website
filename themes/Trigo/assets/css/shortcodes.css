@@ -67,7 +67,6 @@
 }
 
 .merge svg {
-  height: var(--m);
   vertical-align: -0.125rem;
 }
 
@@ -143,7 +142,6 @@ input:checked + .branch :is(+ ul, .branch-open) {
 }
 
 :is(.branch, .leaf) svg {
-  height: var(--m);
   vertical-align: -0.25rem;
 }
 
@@ -369,12 +367,11 @@ input:checked + .branch :is(+ ul, .branch-open) {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 4;
-  touch-action: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: var(--xl);
-  height: var(--xl);
+  color: var(--theme);
+  touch-action: none;
   pointer-events: none;
   transition: transform 0.2s ease;
 }
@@ -388,9 +385,7 @@ input:checked + .branch :is(+ ul, .branch-open) {
 }
 
 .compare .handle svg {
-  width: 100%;
-  height: 100%;
-  color: var(--theme);
+  height: var(--l);
   pointer-events: none;
 }
 
@@ -431,15 +426,16 @@ input:checked + .branch :is(+ ul, .branch-open) {
   transition: var(--link-transition);
 }
 
-.canvas .controls svg {
+.canvas .controls :is(.play, .pause) {
   color: var(--secondary);
-  height: var(--m);
-  display: inline-block;
-  vertical-align: calc(var(--gap) * -0.125);
 }
 
-.canvas .controls svg:hover {
+.canvas .controls :is(.play, .pause):hover {
   color: var(--link-hover-color);
+}
+
+.canvas .controls svg {
+  vertical-align: calc(var(--gap) * -0.125);
 }
 
 .canvas:hover .controls {

@@ -21,11 +21,7 @@ file, body, feature, sketch, item, element, leaf, commit. Default is file.
     class="leaf"
     tabindex="0"
     {{ with $style }}style="{{ . }}"{{ end }}>
-    <span>
-      {{- with (partial "utils/icon.html" $type) -}}
-        <span class="icon">{{ . }}</span>
-      {{- end -}}
-    </span>
+    {{- partial "utils/icon.html" $type -}}
     {{- $name | $.Page.RenderString -}}
   </span>
 </li>

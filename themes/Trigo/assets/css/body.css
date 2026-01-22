@@ -71,6 +71,13 @@ img {
   object-fit: cover;
 }
 
+svg {
+  height: var(--m);
+  margin-inline: calc(var(--gap) * 0.125);
+  color: inherit;
+  transition: var(--link-transition);
+}
+
 table {
   width: 100%;
   border-collapse: collapse;

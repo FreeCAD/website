@@ -35,14 +35,10 @@
     for="{{ $id }}"
     {{ with $style }}style="{{ . }}"{{ end }}>
     <span class="branch-open">
-      {{- with (partial "utils/icon.html" (printf "%s-open" $type)) -}}
-        <span class="icon">{{ . }}</span>
-      {{- end -}}
+      {{- partial "utils/icon.html" (printf "%s-open" $type) -}}
     </span>
     <span class="branch-closed">
-      {{- with (partial "utils/icon.html" (printf "%s" $type)) -}}
-        <span class="icon">{{ . }}</span>
-      {{- end -}}
+      {{- partial "utils/icon.html" (printf "%s" $type) -}}
     </span>
     {{- $name | $.Page.RenderString -}}
   </label>

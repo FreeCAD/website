@@ -51,14 +51,10 @@
 
   <div class="controls">
     <button class="play" aria-label="Play animation">
-      {{- with (partial "utils/icon.html" "arrow-right") -}}
-        <span class="icon">{{- . -}}</span>
-      {{- end -}}
+      {{- partial "utils/icon.html" "arrow-right" -}}
     </button>
     <button class="pause" aria-label="Pause animation">
-      {{- with (partial "utils/icon.html" "pause") -}}
-        <span class="icon">{{- . -}}</span>
-      {{- end -}}
+      {{- partial "utils/icon.html" "pause" -}}
     </button>
     <input class="slider" type="range" min="0" max="{{ sub (len $frames) 1 }}" value="0" aria-label="Animation frame">
   </div>

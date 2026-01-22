@@ -88,7 +88,6 @@ main > :is(.hero:only-child, .not-found) {
 }
 
 .title svg {
-  width: var(--xxl);
   height: var(--xxl);
 }
 
@@ -142,10 +141,7 @@ main > :is(.hero:only-child, .not-found) {
 }
 
 .meta svg {
-  height: var(--m);
-  display: inline-block;
   vertical-align: calc(var(--gap) * -0.25);
-  margin-inline-end: calc(var(--gap) * 0.25);
 }
 
 .meta a {
@@ -156,7 +152,7 @@ main > :is(.hero:only-child, .not-found) {
   color: var(--link-hover-color);
 }
 
-.meta :is(a, span):not(.icon, :last-of-type):after {
+.meta :is(a, span):not([class*="icon-"], :last-of-type):after {
   content: " · ";
 }
 
@@ -203,6 +199,7 @@ main > :is(.hero:only-child, .not-found) {
   display: flex;
   flex-direction: column;
   text-align: center;
+  color: var(--tertiary);
   background: var(--entry);
   border-radius: var(--radius);
   transition: var(--link-transition);
@@ -240,13 +237,11 @@ main > :is(.hero:only-child, .not-found) {
 }
 
 .card-icon svg {
-  color: var(--secondary);
   height: calc(var(--card-width) * 0.25);
-  transition: var(--link-transition);
 }
 
 .card-color {
-  --card-hue: calc(var(--card) * 3deg);
+  --card-hue: calc(var(--card) * 4deg);
   background: linear-gradient(
     135deg,
     hsl(var(--card-hue), 60%, 70%) 0%,
@@ -406,28 +401,21 @@ main > :is(.hero:only-child, .not-found) {
   text-align-last: auto;
 }
 
-.heading-anchor {
-  position: absolute;
-  margin: 0.25rem;
-  width: 0.75em; /* NOTE: use size relative to parent (instead of root html), so it also scales with headers. */
-  min-width: var(--s);
+.heading-anchor svg {
   opacity: 0;
+}
+
+:is(h1, h2, h3, h4, h5, h6):hover .heading-anchor svg {
+  opacity: 1;
 }
 
 .content :is(h1, h2):not(.block *, .card-shortcode *) {
   border-bottom: var(--border);
 }
 
-:is(h1, h2, h3, h4, h5, h6):hover .heading-anchor {
-  opacity: 1;
-}
-
-:is(.external, .hash) svg {
-  display: inline-block;
-  margin-inline-start: calc(var(--gap) * 0.125);
-  margin-inline-end: calc(var(--gap) * 0.125);
-  width: 0.75em; /* NOTE: use size relative to parent (instead of root html), so it also scales with headers. */
-  min-width: var(--s);
+:is(.icon-external, .icon-anchor, .icon-hash) svg {
+  height: 0.75em; /* NOTE: relative size, scales with parent headers. */
+  min-height: var(--s);
 }
 
 blockquote {
@@ -436,12 +424,6 @@ blockquote {
   border-inline-start: calc(var(--line) * 2) solid var(--tone);
   background: var(--entry);
   border-radius: 0 var(--radius) var(--radius) 0;
-}
-
-blockquote svg {
-  display: inline-block;
-  margin-inline-end: 0.25rem;
-  height: var(--m);
 }
 
 blockquote p {
@@ -683,11 +665,6 @@ figure .internal-tooltip {
   z-index: 1;
 }
 
-figcaption svg {
-  height: var(--m);
-  display: inline-block;
-}
-
 .content a img:not(blockquote img, .card-shortcode img, .card-cover img):hover {
   filter: var(--filter);
   transform: var(--transform-hover);
@@ -716,17 +693,13 @@ figcaption svg {
   right: var(--gap);
   width: 3rem;
   height: 3rem;
+  color: var(--secondary);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--link-color);
-  color: var(--cover);
+  background: var(--entry);
   cursor: zoom-out;
-}
-
-.close svg {
-  height: var(--l);
 }
 
 .close:hover {
@@ -802,6 +775,11 @@ figcaption svg {
 .download-box .card-icon {
   padding: var(--gap);
   color: var(--secondary);
+  flex: 1;
+}
+
+.download-box .card:hover button svg {
+  color: var(--link-hover-color);
 }
 
 .download-box .app-build svg {
@@ -811,12 +789,8 @@ figcaption svg {
   border-radius: calc(var(--radius) * 2);
 }
 
-.download-box .app-build:hover {
-  transform: var(--transform-hover);
-}
-
-.download-box svg:active {
-  transform: var(--transform-active);
+.download-box .app-build:hover svg {
+  background: var(--link-hover-color);
 }
 
 :is(#windows:has(#windows-arch:popover-open),
@@ -900,17 +874,7 @@ figcaption svg {
 }
 
 .pagination :is(.next, .prev) svg {
-  height: var(--m);
-  display: inline-block;
-  vertical-align: -.25rem;
-}
-
-.pagination .next svg {
-  margin-inline-start: calc(var(--gap) * 0.5);
-}
-
-.pagination .prev svg {
-  margin-inline-end: calc(var(--gap) * 0.5);
+  vertical-align: -0.25rem;
 }
 
 .pagination .page-number {
@@ -1478,10 +1442,7 @@ figcaption > .internal-tooltip .tooltip {
 }
 
 .codeblock-file svg {
-  display: inline-block;
-  margin-inline-end: 0.25rem;
   vertical-align: -0.125rem;
-  height: var(--m);
 }
 
 :is(details, blockquote, .tabs-content) :is(details, code, blockquote, .chroma, .codeblock) {
