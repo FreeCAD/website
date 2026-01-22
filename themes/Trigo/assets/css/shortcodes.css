@@ -25,6 +25,7 @@
 
 .block-content:has(.card-shortcode) {
   flex-direction: row;
+  justify-content: space-around;
 }
 
 .card-shortcode, .card-shortcode > a {
@@ -46,6 +47,7 @@
 
 .card-shortcode:has(> a) {
   background: var(--theme);
+  max-width: var(--card-width);
 }
 
 .card-shortcode:has(> a):hover {

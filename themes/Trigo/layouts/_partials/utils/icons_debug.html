@@ -14,8 +14,8 @@
     </summary>
     {{- range sort (resources.Match "svg/*.svg") "Name" -}}
       <span class="debug-icon">
-        {{ (. | resources.Minify).Content | safeHTML }}
-        {{ .Name | replaceRE ".svg$" "" }}
+        {{- (. | resources.Minify).Content | safeHTML -}}
+        {{- .Name | path.Base | strings.TrimSuffix ".svg" -}}
       </span>
     {{- end -}}
   </details>

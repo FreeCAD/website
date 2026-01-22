@@ -133,9 +133,8 @@
 }
 
 .debug-icon {
-  display: inline-block;
-  padding: calc(var(--gap) * 0.5);
-  font-size: var(--s);
+  display: inline-grid;
+  margin: calc(var(--gap) * 0.5);
 }
 
 .debug-icon svg {

@@ -19,7 +19,8 @@
     --m: 1rem;
     --l: 1.25rem;
     --xl: 1.5rem;
-    --xxl: 2rem;
+    --xxl: 2.25rem;
+    --xxxl: 3.5rem;
   }
 
   main {
@@ -137,10 +138,6 @@
 
   .download-box {
     flex-direction: column;
-  }
-
-  .card-icon svg {
-    height: calc(var(--card-width) * 0.2);
   }
 
   .chart {

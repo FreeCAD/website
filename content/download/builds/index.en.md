@@ -7,16 +7,8 @@ date: 2024-05-22T08:04:23+12:00
 
 {{< block >}}
 
-{{< card url="https://github.com/FreeCAD/FreeCAD/releases" icon="time" >}}
+{{< card url="https://github.com/FreeCAD/FreeCAD/releases" icon="time" title="Weekly development builds" />}}
 
-### Weekly development builds
-
-{{< /card >}}
-
-{{< card url="https://github.com/FreeCAD/FreeCAD/releases" icon="tip" >}}
-
-### Compile locally
-
-{{< /card >}}
+{{< card url="https://github.com/FreeCAD/FreeCAD/releases" icon="tip" title="Compile locally" />}}
 
 {{< /block >}}

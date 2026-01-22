@@ -237,7 +237,7 @@ main > :is(.hero:only-child, .not-found) {
 }
 
 .card-icon svg {
-  height: calc(var(--card-width) * 0.25);
+  height: var(--xxxl);
 }
 
 .card-color {
@@ -786,7 +786,7 @@ figure .internal-tooltip {
   padding: calc(var(--gap) * 0.75);
   background: var(--secondary);
   color: var(--entry);
-  border-radius: calc(var(--radius) * 2);
+  border-radius: var(--radius);
 }
 
 .download-box .app-build:hover svg {
