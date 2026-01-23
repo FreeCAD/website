@@ -1,0 +1,157 @@
+name: "PR Preview (Build, deploy and clean)"
+
+on:
+  issue_comment:
+    types: [created]
+  pull_request:
+    types: [closed]
+
+jobs:
+  pr-preview:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Determine action
+        id: action
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const isPRComment = !!context.payload.issue?.pull_request;
+            const isPRClose = context.eventName === 'pull_request';
+
+            let action = 'none';
+            let prNumber;
+
+            if (isPRComment) {
+              prNumber = context.payload.issue.number;
+              const body = context.payload.comment.body.trim();
+              if (body === '/update-preview') action = 'deploy';
+              if (body === '/clean-preview') action = 'clean';
+            }
+
+            if (isPRClose) {
+              prNumber = context.payload.pull_request.number;
+              action = 'clean';
+            }
+
+            core.setOutput('action', action);
+            core.setOutput('pr', prNumber ?? '');
+
+      - name: Fetch PR details
+        if: steps.action.outputs.action == 'deploy'
+        id: pr
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const pr = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: Number('${{ steps.action.outputs.pr }}')
+            });
+
+            core.setOutput('draft', pr.data.draft);
+            core.setOutput('sha', pr.data.head.sha);
+
+      - name: Abort if draft PR
+        if: |
+          steps.action.outputs.action == 'deploy' &&
+          steps.pr.outputs.draft == 'true'
+        run: |
+          echo "Draft PR — preview deployment skipped."
+          exit 0
+
+      - name: Checkout PR branch
+        if: steps.action.outputs.action == 'deploy'
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ steps.pr.outputs.sha }}
+
+      - name: Setup Hugo
+        if: steps.action.outputs.action == 'deploy'
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.148.2'
+          extended: true
+
+      - name: Cache Hugo modules and resources
+        if: steps.action.outputs.action == 'deploy'
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/hugo
+            resources/_gen
+          key: hugo-cache-${{ runner.os }}-${{ hashFiles('**/*.toml') }}-${{ hashFiles('**/*.yaml') }}
+          restore-keys: |
+            hugo-cache-${{ runner.os }}-
+
+      - name: Build Hugo site
+        if: steps.action.outputs.action == 'deploy'
+        run: |
+          hugo \
+            --baseURL "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/pr-${{ steps.action.outputs.pr }}/" \
+            --destination public/pr-${{ steps.action.outputs.pr }}
+
+      - name: Deploy to gh-pages branch
+        if: steps.action.outputs.action == 'deploy'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public/pr-${{ steps.action.outputs.pr }}
+          destination_dir: ./pr-${{ steps.action.outputs.pr }}
+          keep_files: true
+
+      - name: Comment preview URL
+        if: steps.action.outputs.action == 'deploy'
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const url = `https://${context.repo.owner}.github.io/${context.repo.repo}/pr-${{ steps.action.outputs.pr }}/`;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: Number('${{ steps.action.outputs.pr }}'),
+              body: `**PR Preview updated**\n\n${url}`
+            });
+
+      - name: Checkout gh-pages
+        if: steps.action.outputs.action == 'clean'
+        uses: actions/checkout@v6
+        with:
+          ref: gh-pages
+
+      - name: Remove preview directory
+        if: steps.action.outputs.action == 'clean'
+        run: |
+          PREVIEW_DIR="pr-${{ steps.action.outputs.pr }}"
+          if [ -d "$PREVIEW_DIR" ]; then
+            rm -rf "$PREVIEW_DIR"
+            echo "Removed $PREVIEW_DIR"
+          else
+            echo "No preview directory found"
+          fi
+
+      - name: Commit and push cleanup
+        if: steps.action.outputs.action == 'clean'
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git commit -m "Cleanup preview for PR #${{ steps.action.outputs.pr }}" || exit 0
+          git push
+
+      - name: Comment cleanup confirmation
+        if: |
+          steps.action.outputs.action == 'clean' &&
+          github.event_name == 'issue_comment'
+        uses: actions/github-script@v8
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: Number('${{ steps.action.outputs.pr }}'),
+              body: `**PR preview cleaned up**.`
+            });
