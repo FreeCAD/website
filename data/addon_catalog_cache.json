@@ -3,7 +3,7 @@
     {
       "repository": "https://github.com/mark1791/3D_Printing_Tools",
       "git_ref": "master",
-      "total_downloads": 204,
+      "total_downloads": 201,
       "last_update_time": "2019-06-30T23:01:34+01:00",
       "metadata": {}
     }
@@ -12,7 +12,7 @@
     {
       "repository": "https://github.com/cadenasgmbh/3dfindit-freecad-integration",
       "git_ref": "master",
-      "total_downloads": 330,
+      "total_downloads": 332,
       "last_update_time": "2025-11-10T14:04:56+01:00",
       "metadata": {
         "name": "3DfindIT for FreeCAD",
@@ -28,7 +28,7 @@
     {
       "repository": "https://github.com/kbwbe/A2plus",
       "git_ref": "master",
-      "total_downloads": 1009,
+      "total_downloads": 1167,
       "last_update_time": "2026-01-19T17:45:08+01:00",
       "metadata": {
         "name": "A2plus",
@@ -44,7 +44,7 @@
     {
       "repository": "https://github.com/GS90/addFC",
       "git_ref": "main",
-      "total_downloads": 264,
+      "total_downloads": 310,
       "last_update_time": "2026-01-21T00:10:45+03:00",
       "metadata": {
         "name": "AddFC Workbench",
@@ -60,8 +60,8 @@
     {
       "repository": "https://github.com/FreeCAD/AddonManager",
       "git_ref": "main",
-      "total_downloads": 2070,
-      "last_update_time": "2026-01-20T08:07:48-06:00",
+      "total_downloads": 2236,
+      "last_update_time": "2026-01-22T13:57:44-06:00",
       "metadata": {
         "name": "Addon Manager",
         "description": "Tool to install workbenches, macros, themes, etc.",
@@ -74,8 +74,8 @@
     {
       "repository": "https://github.com/FreeCAD/AddonManager",
       "git_ref": "dev",
-      "total_downloads": 2070,
-      "last_update_time": "2026-01-20T09:32:43-06:00",
+      "total_downloads": 2236,
+      "last_update_time": "2026-01-22T13:49:21-06:00",
       "metadata": {
         "name": "Addon Manager",
         "description": "Development branch of a tool to install workbenches, macros, themes, etc.",
@@ -90,7 +90,7 @@
     {
       "repository": "https://github.com/FredsFactory/FreeCAD_AirPlaneDesign",
       "git_ref": "master",
-      "total_downloads": 200,
+      "total_downloads": 211,
       "last_update_time": "2025-11-30T16:38:53+01:00",
       "metadata": {
         "name": "AirplaneDesign",
@@ -106,7 +106,7 @@
     {
       "repository": "https://github.com/KeithSloan/OpenSCAD_Alt_Import",
       "git_ref": "master",
-      "total_downloads": 234,
+      "total_downloads": 232,
       "last_update_time": "2025-12-21T15:09:30+00:00",
       "metadata": {
         "name": "OpenSCAD Alternate Importer",
@@ -131,7 +131,7 @@
     {
       "repository": "https://github.com/QuentinTournier40/AnimationFreeCAD",
       "git_ref": "main",
-      "total_downloads": 93,
+      "total_downloads": 98,
       "last_update_time": "2025-03-03T12:00:37+01:00",
       "metadata": {
         "name": "Animation FreeCAD",
@@ -147,7 +147,7 @@
     {
       "repository": "https://github.com/furti/FreeCAD-ArchTextures",
       "git_ref": "master",
-      "total_downloads": 71,
+      "total_downloads": 70,
       "last_update_time": "2022-02-01T16:11:07+01:00",
       "metadata": {}
     }
@@ -181,7 +181,7 @@
     {
       "repository": "https://github.com/realthunder/FreeCAD_assembly3",
       "git_ref": "master",
-      "total_downloads": 169,
+      "total_downloads": 165,
       "last_update_time": "2025-11-08T16:57:56+08:00",
       "metadata": {
         "name": "Assembly3",
@@ -197,7 +197,7 @@
     {
       "repository": "https://codeberg.org/Zolko/Assembly4",
       "git_ref": "main",
-      "total_downloads": 1240,
+      "total_downloads": 1224,
       "last_update_time": "2026-01-11T16:54:54+01:00",
       "metadata": {
         "name": "Assembly4",
@@ -213,7 +213,7 @@
     {
       "repository": "https://github.com/leoheck/FreeCAD_Assembly4.1",
       "git_ref": "main",
-      "total_downloads": 316,
+      "total_downloads": 320,
       "last_update_time": "2025-10-14T09:53:05-03:00",
       "metadata": {
         "name": "Assembly4.1",
@@ -254,7 +254,7 @@
     {
       "repository": "https://github.com/Chrismettal/FreeCAD-Behave-Dark-Preference-Pack",
       "git_ref": "main",
-      "total_downloads": 162,
+      "total_downloads": 171,
       "last_update_time": "2024-07-22T08:52:20+02:00",
       "metadata": {
         "name": "Behave-Dark Colors",
@@ -270,7 +270,7 @@
     {
       "repository": "https://github.com/Simturb/Beltrami",
       "git_ref": "main",
-      "total_downloads": 275,
+      "total_downloads": 283,
       "last_update_time": "2026-01-16T10:41:45-05:00",
       "metadata": {
         "name": "Beltrami",
@@ -286,7 +286,7 @@
     {
       "repository": "https://github.com/APEbbers/BillOfMaterials-WB",
       "git_ref": "main",
-      "total_downloads": 216,
+      "total_downloads": 217,
       "last_update_time": "2025-11-25T18:50:16+01:00",
       "metadata": {
         "name": "Bill of Materials Workbench",
@@ -300,7 +300,7 @@
     {
       "repository": "https://github.com/APEbbers/BillOfMaterials-WB",
       "git_ref": "Develop",
-      "total_downloads": 216,
+      "total_downloads": 217,
       "last_update_time": "2025-11-25T19:02:00+01:00",
       "metadata": {
         "name": "Bill of Materials Workbench",
@@ -357,7 +357,7 @@
     {
       "repository": "https://github.com/boltsparts/boltsfc",
       "git_ref": "main",
-      "total_downloads": 208,
+      "total_downloads": 215,
       "last_update_time": "2022-11-08T15:30:21+01:00",
       "metadata": {
         "name": "boltsfc",
@@ -373,7 +373,7 @@
     {
       "repository": "https://github.com/sargo-devel/Cables",
       "git_ref": "master",
-      "total_downloads": 524,
+      "total_downloads": 573,
       "last_update_time": "2026-01-19T22:01:55+01:00",
       "metadata": {
         "name": "Cables Workbench",
@@ -389,7 +389,7 @@
     {
       "repository": "https://github.com/mnnxp/cadbaselibrary-freecad",
       "git_ref": "master",
-      "total_downloads": 71,
+      "total_downloads": 74,
       "last_update_time": "2025-09-15T12:46:07+03:00",
       "metadata": {
         "name": "CADBase Library",
@@ -405,7 +405,7 @@
     {
       "repository": "https://github.com/yorikvanhavre/CADExchanger",
       "git_ref": "master",
-      "total_downloads": 70,
+      "total_downloads": 75,
       "last_update_time": "2024-09-17T09:45:43+02:00",
       "metadata": {}
     }
@@ -430,7 +430,7 @@
     {
       "repository": "https://github.com/spanner888/CamScripts",
       "git_ref": "main",
-      "total_downloads": 24,
+      "total_downloads": 34,
       "last_update_time": "2024-09-25T09:12:52+10:00",
       "metadata": {
         "name": "CamScripts",
@@ -446,7 +446,7 @@
     {
       "repository": "https://github.com/jaheyns/CfdOF",
       "git_ref": "master",
-      "total_downloads": 363,
+      "total_downloads": 420,
       "last_update_time": "2026-01-21T21:10:53+02:00",
       "metadata": {
         "name": "CfdOF",
@@ -496,7 +496,7 @@
     {
       "repository": "https://github.com/drwho495/ConstraintDesign-wb",
       "git_ref": "main",
-      "total_downloads": 117,
+      "total_downloads": 111,
       "last_update_time": "2025-11-17T20:53:07-06:00",
       "metadata": {
         "name": "Constraint Design",
@@ -512,7 +512,7 @@
     {
       "repository": "https://github.com/altangarts/FreeCAD-Themes-ColorPalette",
       "git_ref": "main",
-      "total_downloads": 459,
+      "total_downloads": 486,
       "last_update_time": "2026-01-21T15:32:28+03:00",
       "metadata": {
         "name": "ColorPaletteTheme",
@@ -546,7 +546,7 @@
     {
       "repository": "https://github.com/chbergmann/CurvedShapesWorkbench",
       "git_ref": "master",
-      "total_downloads": 774,
+      "total_downloads": 779,
       "last_update_time": "2025-10-26T16:01:58+01:00",
       "metadata": {
         "name": "Curved Shapes",
@@ -562,7 +562,7 @@
     {
       "repository": "https://github.com/tomate44/CurvesWB",
       "git_ref": "main",
-      "total_downloads": 3480,
+      "total_downloads": 3469,
       "last_update_time": "2026-01-06T22:44:50+01:00",
       "metadata": {
         "name": "Curves workbench",
@@ -578,7 +578,7 @@
     {
       "repository": "https://github.com/easyw/Defeaturing_WB",
       "git_ref": "master",
-      "total_downloads": 186,
+      "total_downloads": 188,
       "last_update_time": "2025-09-09T21:51:02+02:00",
       "metadata": {
         "name": "Defeaturing Workbench",
@@ -594,7 +594,7 @@
     {
       "repository": "https://github.com/MariwanJ/Design456",
       "git_ref": "main",
-      "total_downloads": 177,
+      "total_downloads": 187,
       "last_update_time": "2025-12-31T22:19:50+01:00",
       "metadata": {
         "name": "Design456 workbench",
@@ -610,7 +610,7 @@
     {
       "repository": "https://github.com/DualSPHysics/DesignSPHysics",
       "git_ref": "master",
-      "total_downloads": 49,
+      "total_downloads": 56,
       "last_update_time": "2026-01-18T17:28:50+01:00",
       "metadata": {
         "name": "DesignSPHysics",
@@ -626,7 +626,7 @@
     {
       "repository": "https://github.com/oddtopus/dodo",
       "git_ref": "master",
-      "total_downloads": 111,
+      "total_downloads": 122,
       "last_update_time": "2024-05-25T13:08:02+02:00",
       "metadata": {
         "name": "Dodo",
@@ -642,7 +642,7 @@
     {
       "repository": "https://github.com/dracula/freecad",
       "git_ref": "master",
-      "total_downloads": 172,
+      "total_downloads": 173,
       "last_update_time": "2025-07-23T12:46:39-05:00",
       "metadata": {
         "name": "Dracula",
@@ -667,7 +667,7 @@
     {
       "repository": "https://github.com/yorikvanhavre/Draft-dxf-importer",
       "git_ref": "master",
-      "total_downloads": 58,
+      "total_downloads": 66,
       "last_update_time": "2023-12-11T10:30:08+01:00",
       "metadata": {}
     }
@@ -676,7 +676,7 @@
     {
       "repository": "https://github.com/mwganson/DynamicData",
       "git_ref": "master",
-      "total_downloads": 144,
+      "total_downloads": 137,
       "last_update_time": "2025-11-26T12:46:36-06:00",
       "metadata": {
         "name": "DynamicData",
@@ -692,7 +692,7 @@
     {
       "repository": "https://github.com/ovo-Tim/EasyProfileFrame",
       "git_ref": "main",
-      "total_downloads": 197,
+      "total_downloads": 195,
       "last_update_time": "2025-04-11T07:11:40+08:00",
       "metadata": {
         "name": "EasyProfileFrame",
@@ -708,7 +708,7 @@
     {
       "repository": "https://github.com/ediloren/EM-Workbench-for-FreeCAD",
       "git_ref": "master",
-      "total_downloads": 41,
+      "total_downloads": 37,
       "last_update_time": "2024-04-12T12:32:19+02:00",
       "metadata": {
         "name": "ElectroMagnetic Workbench",
@@ -724,8 +724,8 @@
     {
       "repository": "https://github.com/erroronline1/estimateWB",
       "git_ref": "master",
-      "total_downloads": 140,
-      "last_update_time": "2025-12-04T22:10:18+01:00",
+      "total_downloads": 171,
+      "last_update_time": "2026-01-23T22:13:38+01:00",
       "metadata": {
         "name": "estimateWB",
         "description": "A FreeCAD workbench to estimate material quantity by volume or weight for selected parts",
@@ -740,7 +740,7 @@
     {
       "repository": "https://github.com/JMG1/ExplodedAssembly",
       "git_ref": "master",
-      "total_downloads": 112,
+      "total_downloads": 115,
       "last_update_time": "2024-02-24T13:34:46+01:00",
       "metadata": {}
     }
@@ -758,7 +758,7 @@
     {
       "repository": "https://github.com/shaise/FreeCAD_FastenersWB",
       "git_ref": "master",
-      "total_downloads": 3139,
+      "total_downloads": 3073,
       "last_update_time": "2025-11-24T21:56:04+02:00",
       "metadata": {
         "name": "Fasteners Workbench",
@@ -806,7 +806,7 @@
     {
       "repository": "https://github.com/mnesarco/FileExplorerExt",
       "git_ref": "main",
-      "total_downloads": 100,
+      "total_downloads": 93,
       "last_update_time": "2026-01-02T12:43:48-05:00",
       "metadata": {
         "name": "File Explorer",
@@ -838,7 +838,7 @@
     {
       "repository": "https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant",
       "git_ref": "main",
-      "total_downloads": null,
+      "total_downloads": 31,
       "last_update_time": "2024-12-29T17:00:13+01:00",
       "metadata": {
         "name": "FreeCAD-Beginner-Assistant",
@@ -854,7 +854,7 @@
     {
       "repository": "https://github.com/looooo/freecad.gears",
       "git_ref": "master",
-      "total_downloads": 1668,
+      "total_downloads": 1650,
       "last_update_time": "2025-11-24T22:05:21+01:00",
       "metadata": {
         "name": "freecad.gears workbench",
@@ -895,7 +895,7 @@
     {
       "repository": "https://github.com/MisterMakerNL/Freecad-Built-in-themes-beta",
       "git_ref": "main",
-      "total_downloads": 110,
+      "total_downloads": 112,
       "last_update_time": "2024-05-21T22:36:04+02:00",
       "metadata": {
         "name": "Built-In Preference Packs beta",
@@ -911,7 +911,7 @@
     {
       "repository": "https://github.com/zaphB/freecad.optics_design_workbench",
       "git_ref": "master",
-      "total_downloads": 90,
+      "total_downloads": 79,
       "last_update_time": "2025-12-10T21:33:57+01:00",
       "metadata": {
         "name": "Optics Design Workbench",
@@ -927,7 +927,7 @@
     {
       "repository": "https://github.com/APEbbers/FreeCAD-Ribbon",
       "git_ref": "main",
-      "total_downloads": 230,
+      "total_downloads": 260,
       "last_update_time": "2026-01-18T16:58:43+01:00",
       "metadata": {
         "name": "FreeCAD Ribbon",
@@ -941,8 +941,8 @@
     {
       "repository": "https://github.com/APEbbers/FreeCAD-Ribbon",
       "git_ref": "Develop",
-      "total_downloads": 230,
-      "last_update_time": "2026-01-21T21:22:30+01:00",
+      "total_downloads": 260,
+      "last_update_time": "2026-01-23T17:23:51+01:00",
       "metadata": {
         "name": "FreeCAD Ribbon",
         "description": "A Ribbon interface for FreeCAD",
@@ -957,7 +957,7 @@
     {
       "repository": "https://github.com/FreeCAD/FreeCAD-themes",
       "git_ref": "main",
-      "total_downloads": 344,
+      "total_downloads": 355,
       "last_update_time": "2025-08-11T17:44:54-05:00",
       "metadata": {
         "name": "FreeCAD-themes",
@@ -973,7 +973,7 @@
     {
       "repository": "https://github.com/kwahoo2/freecad-xr-workbench",
       "git_ref": "main",
-      "total_downloads": 58,
+      "total_downloads": 57,
       "last_update_time": "2026-01-13T16:40:13+01:00",
       "metadata": {
         "name": "Virtual Reality",
@@ -1005,7 +1005,7 @@
     {
       "repository": "https://github.com/dubstar-04/FeedsAndSpeeds",
       "git_ref": "master",
-      "total_downloads": 282,
+      "total_downloads": 257,
       "last_update_time": "2025-12-22T09:24:59+00:00",
       "metadata": {
         "name": "Feeds & Speeds",
@@ -1037,7 +1037,7 @@
     {
       "repository": "https://github.com/Serince/FEMbyGEN",
       "git_ref": "master",
-      "total_downloads": 108,
+      "total_downloads": 79,
       "last_update_time": "2025-12-17T15:31:17+03:00",
       "metadata": {
         "name": "FEMbyGEN",
@@ -1062,7 +1062,7 @@
     {
       "repository": "https://github.com/looooo/freecad_frame",
       "git_ref": "master",
-      "total_downloads": 81,
+      "total_downloads": 80,
       "last_update_time": "2024-02-09T21:51:52+00:00",
       "metadata": {
         "name": "Frame and beams workbench",
@@ -1078,7 +1078,7 @@
     {
       "repository": "https://github.com/lukh/frameforge",
       "git_ref": "main",
-      "total_downloads": 601,
+      "total_downloads": 629,
       "last_update_time": "2026-01-16T14:29:34+01:00",
       "metadata": {
         "name": "FrameForge",
@@ -1094,7 +1094,7 @@
     {
       "repository": "https://github.com/30350n/free2ki",
       "git_ref": "freecad-addons",
-      "total_downloads": 97,
+      "total_downloads": 108,
       "last_update_time": "2025-12-27T14:58:20+01:00",
       "metadata": {
         "name": "free2ki",
@@ -1110,7 +1110,7 @@
     {
       "repository": "https://github.com/instancezero/in3dca-freegrid.git",
       "git_ref": "main",
-      "total_downloads": 93,
+      "total_downloads": 84,
       "last_update_time": "2025-01-28T13:42:45-06:00",
       "metadata": {
         "name": "FreeGrid Workbench",
@@ -1126,7 +1126,7 @@
     {
       "repository": "https://github.com/rahix/FusedFilamentDesign.git",
       "git_ref": "release",
-      "total_downloads": 816,
+      "total_downloads": 775,
       "last_update_time": "2025-12-19T12:15:28+01:00",
       "metadata": {
         "name": "FusedFilamentDesign",
@@ -1143,7 +1143,7 @@
       "repository": "https://github.com/KeithSloan/GDML",
       "git_ref": "Main",
       "total_downloads": null,
-      "last_update_time": "2026-01-21T10:50:05+00:00",
+      "last_update_time": "2026-01-22T11:42:37+00:00",
       "metadata": {
         "name": "GDML workbench",
         "description": "An external workbench for creating GDML models for Geant4 and Root",
@@ -1167,7 +1167,7 @@
     {
       "repository": "https://github.com/triplus/Glass",
       "git_ref": "master",
-      "total_downloads": 107,
+      "total_downloads": 105,
       "last_update_time": "2020-04-26T21:27:01+02:00",
       "metadata": {}
     }
@@ -1176,7 +1176,7 @@
     {
       "repository": "https://github.com/Stu142/FreeCAD-Gridfinity-Workbench",
       "git_ref": "master",
-      "total_downloads": 408,
+      "total_downloads": 524,
       "last_update_time": "2026-01-21T21:18:49-04:00",
       "metadata": {
         "name": "Gridfinity Workbench",
@@ -1208,7 +1208,7 @@
     {
       "repository": "https://github.com/triplus/IconThemes",
       "git_ref": "master",
-      "total_downloads": 56,
+      "total_downloads": 53,
       "last_update_time": "2020-05-27T00:09:46+02:00",
       "metadata": {}
     }
@@ -1233,7 +1233,7 @@
     {
       "repository": "https://github.com/jmplonka/InventorLoader",
       "git_ref": "master",
-      "total_downloads": 140,
+      "total_downloads": 145,
       "last_update_time": "2024-12-17T16:15:05+01:00",
       "metadata": {
         "name": "InventorLoader",
@@ -1258,7 +1258,7 @@
     {
       "repository": "https://github.com/easyw/kicadStepUpMod",
       "git_ref": "master",
-      "total_downloads": 600,
+      "total_downloads": 579,
       "last_update_time": "2025-12-14T16:30:15+01:00",
       "metadata": {
         "name": "KicadStepUp Workbench",
@@ -1274,7 +1274,7 @@
     {
       "repository": "https://github.com/DeepSOIC/Lattice2",
       "git_ref": "master",
-      "total_downloads": 835,
+      "total_downloads": 761,
       "last_update_time": "2025-12-26T16:26:19+01:00",
       "metadata": {
         "name": "Lattice2 Workbench",
@@ -1299,7 +1299,7 @@
     {
       "repository": "https://github.com/execuc/LCInterlocking",
       "git_ref": "master",
-      "total_downloads": 181,
+      "total_downloads": 179,
       "last_update_time": "2025-11-29T21:25:51+01:00",
       "metadata": {
         "name": "LCInterlocking",
@@ -1333,7 +1333,7 @@
     {
       "repository": "https://github.com/URJCMakerGroup/MakerWorkbench",
       "git_ref": "master",
-      "total_downloads": 136,
+      "total_downloads": 133,
       "last_update_time": "2024-12-10T13:36:23+01:00",
       "metadata": {
         "name": "Maker Workbench",
@@ -1349,7 +1349,7 @@
     {
       "repository": "https://github.com/easyw/Manipulator",
       "git_ref": "master",
-      "total_downloads": 447,
+      "total_downloads": 451,
       "last_update_time": "2025-09-29T22:20:40+02:00",
       "metadata": {
         "name": "Manipulator Workbench",
@@ -1365,7 +1365,7 @@
     {
       "repository": "https://github.com/mnesarco/MarzWorkbench",
       "git_ref": "master",
-      "total_downloads": 169,
+      "total_downloads": 182,
       "last_update_time": "2026-01-18T15:06:33-05:00",
       "metadata": {
         "name": "Marz Workbench",
@@ -1381,7 +1381,7 @@
     {
       "repository": "https://github.com/mwganson/MeshRemodel",
       "git_ref": "master",
-      "total_downloads": 173,
+      "total_downloads": 177,
       "last_update_time": "2025-07-30T21:04:52-05:00",
       "metadata": {
         "name": "MeshRemodel",
@@ -1413,7 +1413,7 @@
     {
       "repository": "https://github.com/HakanSeven12/Modern-UI",
       "git_ref": "master",
-      "total_downloads": 122,
+      "total_downloads": 113,
       "last_update_time": "2021-05-15T11:52:59+03:00",
       "metadata": {}
     }
@@ -1479,7 +1479,7 @@
     {
       "repository": "https://github.com/j8sr0230/Nodes",
       "git_ref": "main",
-      "total_downloads": 29,
+      "total_downloads": 27,
       "last_update_time": "2024-10-04T06:38:40+02:00",
       "metadata": {
         "name": "Nodes",
@@ -1529,7 +1529,7 @@
     {
       "repository": "https://github.com/obelisk79/OpenTheme",
       "git_ref": "main",
-      "total_downloads": 1852,
+      "total_downloads": 1960,
       "last_update_time": "2026-01-14T10:12:59-05:00",
       "metadata": {
         "name": "OpenTheme",
@@ -1545,7 +1545,7 @@
     {
       "repository": "https://github.com/chbergmann/OpticsWorkbench",
       "git_ref": "main",
-      "total_downloads": 56,
+      "total_downloads": 57,
       "last_update_time": "2025-06-01T10:17:43+02:00",
       "metadata": {
         "name": "Optics",
@@ -1619,7 +1619,7 @@
       "repository": "https://github.com/DeepSOIC/Part-o-magic",
       "git_ref": "master",
       "total_downloads": null,
-      "last_update_time": "2025-12-10T22:32:15+01:00",
+      "last_update_time": "2026-01-22T15:37:54+01:00",
       "metadata": {
         "name": "Part-o-magic Workbench",
         "description": "Experiment on FreeCAD-wide automation of Part container management",
@@ -1634,7 +1634,7 @@
     {
       "repository": "https://github.com/marmni/FreeCAD-PCB",
       "git_ref": "master",
-      "total_downloads": 104,
+      "total_downloads": 110,
       "last_update_time": "2024-11-03T15:48:15+01:00",
       "metadata": {
         "name": "FreeCAD-PCB",
@@ -1659,12 +1659,12 @@
     {
       "repository": "https://github.com/Grubuntu/PieMenu",
       "git_ref": "master",
-      "total_downloads": 311,
-      "last_update_time": "2025-09-16T10:45:42+02:00",
+      "total_downloads": 335,
+      "last_update_time": "2026-01-25T15:15:50+01:00",
       "metadata": {
         "name": "PieMenu",
         "description": "The PieMenu module is a tool to accelerate and simplify your workflow in usage of FreeCAD.",
-        "version": "1.12.1",
+        "version": "1.12.2",
         "maintainer": "Grubuntu",
         "license": "LGPL-2.1-or-later",
         "icon": "Resources/icons/PieMenu_Logo.svg"
@@ -1684,7 +1684,7 @@
     {
       "repository": "https://github.com/FreeCAD/Plot",
       "git_ref": "2024.11.26",
-      "total_downloads": 222,
+      "total_downloads": 249,
       "last_update_time": "2024-11-26T20:43:53-05:00",
       "metadata": {
         "name": "Plot Workbench",
@@ -1698,7 +1698,7 @@
     {
       "repository": "https://github.com/FreeCAD/Plot",
       "git_ref": "Latest",
-      "total_downloads": 222,
+      "total_downloads": 249,
       "last_update_time": "2026-01-20T19:32:00-05:00",
       "metadata": {
         "name": "Plot",
@@ -1714,7 +1714,7 @@
     {
       "repository": "https://github.com/TheRaytracers/freecad-povray-render",
       "git_ref": "master",
-      "total_downloads": 29,
+      "total_downloads": 31,
       "last_update_time": "2023-08-17T18:47:08+02:00",
       "metadata": {}
     }
@@ -1723,7 +1723,7 @@
     {
       "repository": "https://github.com/turn211/ProDarkThemePreferencePack",
       "git_ref": "main",
-      "total_downloads": 201,
+      "total_downloads": 210,
       "last_update_time": "2024-02-09T18:03:38-08:00",
       "metadata": {
         "name": "ProDarkThemePack",
@@ -1739,7 +1739,7 @@
     {
       "repository": "https://github.com/Addon-Shelter/Polyhedra",
       "git_ref": "Latest",
-      "total_downloads": 232,
+      "total_downloads": 245,
       "last_update_time": "2026-01-05T23:34:44-05:00",
       "metadata": {
         "name": "Polyhedra",
@@ -1780,7 +1780,7 @@
     {
       "repository": "https://github.com/EdgarJRobles/quetzal",
       "git_ref": "master",
-      "total_downloads": 242,
+      "total_downloads": 235,
       "last_update_time": "2025-12-13T00:32:37-06:00",
       "metadata": {
         "name": "Quetzal",
@@ -1796,7 +1796,7 @@
     {
       "repository": "https://github.com/DanMiel/QuickMeasure",
       "git_ref": "main",
-      "total_downloads": 306,
+      "total_downloads": 309,
       "last_update_time": "2025-08-06T22:54:43-07:00",
       "metadata": {
         "name": "Quick Measure",
@@ -1821,7 +1821,7 @@
     {
       "repository": "https://github.com/amrit3701/FreeCAD-Reinforcement",
       "git_ref": "master",
-      "total_downloads": 75,
+      "total_downloads": 80,
       "last_update_time": "2025-04-26T12:20:59+05:30",
       "metadata": {
         "name": "Reinforcement",
@@ -1846,7 +1846,7 @@
     {
       "repository": "https://github.com/FreeCAD/FreeCAD-render",
       "git_ref": "master",
-      "total_downloads": 449,
+      "total_downloads": 456,
       "last_update_time": "2025-11-12T15:06:42+01:00",
       "metadata": {
         "name": "Render",
@@ -1880,8 +1880,8 @@
     {
       "repository": "https://github.com/HakanSeven12/Road",
       "git_ref": "main",
-      "total_downloads": 177,
-      "last_update_time": "2026-01-22T14:13:55+03:00",
+      "total_downloads": 198,
+      "last_update_time": "2026-01-23T15:46:57+03:00",
       "metadata": {
         "name": "Road",
         "description": "Road is the Transportation and Geomatics Engineering workbench for FreeCAD.",
@@ -1926,7 +1926,7 @@
     {
       "repository": "https://github.com/APEbbers/SaveAndRestore",
       "git_ref": "main",
-      "total_downloads": 239,
+      "total_downloads": 248,
       "last_update_time": "2025-12-07T17:31:20+01:00",
       "metadata": {
         "name": "SaveAndRestore",
@@ -1940,7 +1940,7 @@
     {
       "repository": "https://github.com/APEbbers/SaveAndRestore",
       "git_ref": "Develop",
-      "total_downloads": 239,
+      "total_downloads": 248,
       "last_update_time": "2025-05-19T21:44:37+00:00",
       "metadata": {
         "name": "SaveAndRestore",
@@ -1956,7 +1956,7 @@
     {
       "repository": "https://github.com/APEbbers/SearchBar",
       "git_ref": "main",
-      "total_downloads": 93,
+      "total_downloads": 99,
       "last_update_time": "2025-10-11T23:06:09+02:00",
       "metadata": {
         "name": "SearchBar",
@@ -1970,7 +1970,7 @@
     {
       "repository": "https://github.com/APEbbers/SearchBar",
       "git_ref": "Develop",
-      "total_downloads": 93,
+      "total_downloads": 99,
       "last_update_time": "2025-10-05T21:35:53+02:00",
       "metadata": {
         "name": "SearchBar",
@@ -1995,7 +1995,7 @@
     {
       "repository": "https://github.com/robertmassaioli/shapestrings",
       "git_ref": "main",
-      "total_downloads": 50,
+      "total_downloads": 45,
       "last_update_time": "2025-12-29T20:37:06+11:00",
       "metadata": {
         "name": "ShapeStrings",
@@ -2011,12 +2011,12 @@
     {
       "repository": "https://github.com/shaise/FreeCAD_SheetMetal",
       "git_ref": "master",
-      "total_downloads": 3302,
-      "last_update_time": "2026-01-04T19:09:31+02:00",
+      "total_downloads": 3282,
+      "last_update_time": "2026-01-25T08:41:31+02:00",
       "metadata": {
         "name": "SheetMetal Workbench",
         "description": "A simple sheet metal tools workbench for FreeCAD.",
-        "version": "0.7.60",
+        "version": "0.7.61",
         "maintainer": "Shai Seger",
         "license": "LGPL-2.1-or-later",
         "icon": "Resources/icons/SMLogo.svg"
@@ -2027,7 +2027,7 @@
     {
       "repository": "https://github.com/FreeCAD/freecad.ship",
       "git_ref": "master",
-      "total_downloads": 36,
+      "total_downloads": null,
       "last_update_time": "2025-07-04T10:30:35+02:00",
       "metadata": {
         "name": "Ship Workbench",
@@ -2052,7 +2052,7 @@
     {
       "repository": "https://github.com/edwardvmills/Silk",
       "git_ref": "master",
-      "total_downloads": 193,
+      "total_downloads": 180,
       "last_update_time": "2025-11-13T06:20:20-08:00",
       "metadata": {
         "name": "Silk workbench",
@@ -2114,6 +2114,22 @@
       }
     }
   ],
+  "StandardBeams": [
+    {
+      "repository": "https://github.com/MortenVajhoj/StandardBeams",
+      "git_ref": "main",
+      "total_downloads": null,
+      "last_update_time": "2026-01-23T22:59:20+01:00",
+      "metadata": {
+        "name": "Standard Beams",
+        "description": "Workbench to create standard beam profiles of varying shapes.",
+        "version": "1.0.0",
+        "maintainer": "Morten Vajh\u00f8j",
+        "license": "LGPL-2.1-or-later",
+        "icon": "freecad/StandardBeams/Resources/Icons/I-Beam.svg"
+      }
+    }
+  ],
   "SteelColumn": [
     {
       "repository": "https://github.com/ebrahimraeyat/momen",
@@ -2127,7 +2143,7 @@
     {
       "repository": "https://github.com/bilbaomakers/StemfieWB",
       "git_ref": "main",
-      "total_downloads": 30,
+      "total_downloads": null,
       "last_update_time": "2025-01-15T16:28:44+00:00",
       "metadata": {
         "name": "STEMFIE Workbench",
@@ -2143,12 +2159,12 @@
     {
       "repository": "https://github.com/mnesarco/SvgWorkbench",
       "git_ref": "main",
-      "total_downloads": null,
-      "last_update_time": "2026-01-22T00:11:36-05:00",
+      "total_downloads": 71,
+      "last_update_time": "2026-01-22T21:10:59-05:00",
       "metadata": {
         "name": "SvgWorkbench",
         "description": "FreeCAD Svg Workbench",
-        "version": "1.0.0.dev7",
+        "version": "1.0.0.dev8",
         "maintainer": "Frank David Mart\u00ednez Mu\u00f1oz",
         "license": "LGPL-3.0-or-later",
         "icon": "freecad/svgwb/resources/icons/svgwb.svg"
@@ -2177,7 +2193,7 @@
     {
       "repository": "https://github.com/FreeCAD/FreeCAD-Telemetry",
       "git_ref": "main",
-      "total_downloads": 224,
+      "total_downloads": 243,
       "last_update_time": "2026-01-21T13:51:09-06:00",
       "metadata": {
         "name": "Telemetry",
@@ -2209,7 +2225,7 @@
     {
       "repository": "https://github.com/mwganson/ThreadProfile",
       "git_ref": "master",
-      "total_downloads": 778,
+      "total_downloads": 787,
       "last_update_time": "2026-01-02T12:16:08-06:00",
       "metadata": {
         "name": "ThreadProfile",
@@ -2250,7 +2266,7 @@
     {
       "repository": "https://github.com/KeithSloan/toSketch",
       "git_ref": "main",
-      "total_downloads": 334,
+      "total_downloads": 347,
       "last_update_time": "2026-01-04T14:52:35+00:00",
       "metadata": {
         "name": "toSketch",
@@ -2339,7 +2355,7 @@
     {
       "repository": "https://github.com/Palmstroemen/WB_Organizer",
       "git_ref": "main",
-      "total_downloads": 99,
+      "total_downloads": 107,
       "last_update_time": "2024-03-25T11:53:08+01:00",
       "metadata": {
         "name": "A Workbench Organizer",
@@ -2355,7 +2371,7 @@
     {
       "repository": "https://github.com/davesrocketshop/Woods",
       "git_ref": "master",
-      "total_downloads": 362,
+      "total_downloads": 370,
       "last_update_time": "2026-01-06T06:39:46-05:00",
       "metadata": {
         "name": "Woods",
@@ -2371,7 +2387,7 @@
     {
       "repository": "https://github.com/dprojects/Woodworking",
       "git_ref": "master",
-      "total_downloads": 1627,
+      "total_downloads": 1548,
       "last_update_time": "2026-01-17T19:00:06+01:00",
       "metadata": {
         "name": "Woodworking",
