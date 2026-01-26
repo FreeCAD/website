@@ -179,13 +179,13 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git pull --rebase origin gh-pages
+
           if git diff --quiet; then
             echo "Nothing to commit for cleanup."
           else
             git add -A
             git commit -m "Cleanup preview for PR #${{ steps.action.outputs.pr }}"
-            git push
+            git push origin gh-pages
           fi
 
       - name: Comment cleanup confirmation
