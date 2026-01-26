@@ -11,8 +11,6 @@ versions: "1.0"
 cover:
   image: motor.webp
   caption: "a cover caption"
-params:
-  hero: true
 ---
 
 # This is the first heading

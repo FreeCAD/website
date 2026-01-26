@@ -9,29 +9,28 @@ menus:
       style: button
   footer:
     weight: 7
-params:
-  grantsTitle: Funded Grants Projects
-  donate:
-    once:
-      label: "One-time"
-      messages:
-        default: "Choose the one-time donation amount"
-        choice: "Make a one-time donation now"
-        error: "Please choose a natural number of at least 5"
-    monthly:
-      label: "Monthly sponsor"
-      tiers:
-        - type: normal
-          message: Become a sponsor
-        - type: bronze
-          message: Become a Bronze sponsor
-        - type: silver
-          message: Become a Silver sponsor
-        - type: gold
-          message: Become a Gold sponsor
-      messages:
-        default: "Choose the monthly sponsorship level"
-    corporateLabel: "Corporate"
+grantsTitle: Funded Grants Projects
+donate:
+  once:
+    label: "One-time"
+    messages:
+      default: "Choose the one-time donation amount"
+      choice: "Make a one-time donation now"
+      error: "Please choose a natural number of at least 5"
+  monthly:
+    label: "Monthly sponsor"
+    tiers:
+      - type: normal
+        message: Become a sponsor
+      - type: bronze
+        message: Become a Bronze sponsor
+      - type: silver
+        message: Become a Silver sponsor
+      - type: gold
+        message: Become a Gold sponsor
+    messages:
+      default: "Choose the monthly sponsorship level"
+  corporateLabel: "Corporate"
 ---
 
 

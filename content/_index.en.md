@@ -6,12 +6,17 @@ menus:
   footer:
     weight: 1
 date: 2024-05-22T08:04:23+12:00
-params:
-  buttons:
-    - url: download
-      style: "background: var(--secondary); color: var(--theme);"
-    - url: download/releases/1-0
-      label: "See what's new"
+buttons:
+  - url: download
+    style: "background: var(--secondary); color: var(--theme);"
+  - url: download/releases/1-0
+    label: "See what's new"
+hero:
+  link: "news/2024/11/freecad-1-0"
+  title: ""
+cover:
+  image: "assembly2.webp"
+  caption: "a cover caption"
 ---
 
 

@@ -6,12 +6,11 @@ menus:
   footer:
     weight: 1
 date: 2024-05-22T08:04:23+12:00
-params:
-  buttons:
-    - url: download
-      style: "background: var(--secondary); color: var(--theme);"
-    - url: download/releases/1-0
-      label: "Découvre les nouveautés"
+buttons:
+  - url: download
+    style: "background: var(--secondary); color: var(--theme);"
+  - url: download/releases/1-0
+    label: "Découvre les nouveautés"
 ---
 
 

@@ -1,20 +1,15 @@
 {{- /* Homepage:
 
-  - Get latest hero article and render its title and cover.
-  - Render custom buttons from homepage front matter.
+  - Render title, description and custom buttons from homepage front matter.
+  - Render hero article with its title and cover (fall back to homepage cover).
+  - Render homepage content.
 */ -}}
 
 {{- define "main" -}}
 
-  {{- $buttons := .Params.buttons | default site.Sites.Default.Home.Params.buttons -}}
-
-  {{- /* Get the latest article with the "hero" parameters in front matter. */ -}}
-  {{- $heroes := where (site.RegularPages | lang.Merge site.Sites.Default.RegularPages) "Params.hero" "!=" nil -}}
-  {{- $hero := cond (gt (len $heroes) 0) (index $heroes 0) nil -}}
-
-  {{- /* Get cover image. */ -}}
-  {{- $coverImage := partial "hero/cover_image.html" . -}}
-
+  {{- $default := site.Sites.Default -}}
+  {{- $buttons := .Params.buttons | default $default.Home.Params.buttons -}}
+  {{- $hero := .Params.hero | default $default.Home.Params.hero -}}
   {{- $sectionCode := partial "utils/index_code.html" . -}}
 
   <section class="hero"
@@ -23,7 +18,7 @@
     <div class="hero-column">
       <h1 class="title">{{- .Title | .RenderString -}}</h1>
 
-      {{- with (.Description | default site.Sites.Default.Home.Description) -}}
+      {{- with (.Description | default $default.Home.Description) -}}
         <h3 class="description">{{- . | $.RenderString -}}</h3>
       {{- end -}}
 
@@ -34,7 +29,7 @@
             {{- $label := .label -}}
 
             {{- if and $href (not (hasPrefix $href "http")) -}}
-              {{- with (site.GetPage $href | default (site.Sites.Default.GetPage $href)) -}}
+              {{- with (site.GetPage $href | default ($default.GetPage $href)) -}}
                 {{- $href = .RelPermalink -}}
                 {{- if not $label -}}
                   {{- $label = .LinkTitle -}}
@@ -57,12 +52,30 @@
       {{- end -}}
     </div>
 
-    {{- with $hero -}}
-      <a class="hero-column"
-        href="{{ .RelPermalink }}">
-        <h2 class="title">{{- .LinkTitle | .RenderString -}}</h2>
+    {{- if $hero -}}
 
-        {{- partial "hero/cover_image.html" . -}}
+      {{- $heroLink := $hero.link -}}
+      {{- $heroPage := site.GetPage $heroLink | default ($default.GetPage $heroLink) -}}
+      {{- $isExternal := not $heroPage -}}
+      {{- $heroCover := . -}}
+
+      {{- if $heroPage -}}
+        {{- $heroLink = $heroPage.RelPermalink -}}
+        {{- $heroCover = $heroPage -}}
+      {{- end -}}
+
+      {{- $heroTitle := $hero.title -}}
+      {{- if and $heroPage (not $heroTitle) -}}
+        {{- $heroTitle = $heroPage.LinkTitle -}}
+      {{- end -}}
+
+      <a class="hero-column"
+        href="{{ $heroLink }}"
+        {{ if $isExternal }}rel="noopener noreferrer"{{ end }}>
+
+        <h2 class="title">{{- $heroTitle | .RenderString -}}</h2>
+
+        {{- partial "hero/cover_image.html" $heroCover -}}
       </a>
     {{- end -}}
 
@@ -72,7 +85,7 @@
   {{- if .Content -}}
     {{- partial "main/content.html" . -}}
   {{- else -}}
-    {{- partial "main/content.html" (site.Sites.Default.Home) -}}
+    {{- partial "main/content.html" $default.Home -}}
   {{- end -}}
 
 {{- end -}}
