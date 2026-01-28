@@ -62,12 +62,12 @@
 
   /* List and Single pages */
   .kind-home .hero {
-    min-height: calc(100dvh - var(--header-height));
+    min-height: calc(100vh - var(--header-height));
     flex-direction: column;
   }
 
   .hero {
-    min-height: 50dvh;
+    min-height: 50vh;
     padding: calc(var(--gap) * 2) var(--gap);
   }
 
@@ -86,7 +86,7 @@
   }
 
   .hero .entry-cover img {
-    height: calc(100dvh - var(--header-height));
+    height: calc(100vh - var(--header-height));
   }
 
   .hero .article-cover img {
@@ -176,7 +176,7 @@
   }
 
   .calendar {
-    height: calc(var(--width) * 1.8);
+    height: calc(var(--width) * 1.5);
   }
 
   #donation-form {
