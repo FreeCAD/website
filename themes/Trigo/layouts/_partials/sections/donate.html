@@ -111,6 +111,7 @@
       {{- if .url -}}
         <button type="submit"
           id="payment-{{ lower .platform }}"
+          class="platform"
           formaction="{{ .url }}"
           formmethod="get">
           {{ .platform }}
@@ -157,3 +158,19 @@
     }
   {{- end -}}
 </style>
+
+{{- $thanks := site.GetPage "thanks" | default (site.Sites.Default.GetPage "thanks") -}}
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.platform').forEach(function(link) {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const thanksUrl = "{{ $thanks.RelPermalink }}";
+        setTimeout(function() {
+          window.location.href = thanksUrl;
+        }, 1000);
+      });
+    });
+  });
+</script>

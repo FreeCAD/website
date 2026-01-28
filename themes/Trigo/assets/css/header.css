@@ -62,11 +62,11 @@
   height: var(--l);
 }
 
-html.dark .icon-dark {
+html.dark .site-nav .icon-dark {
   display: none;
 }
 
-html:not(.dark) .icon-light {
+html:not(.dark) .site-nav .icon-light {
   display: none;
 }
 

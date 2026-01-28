@@ -6,7 +6,7 @@ description: "Thanks for using and supporting FreeCAD!"
 
 {{< block >}}
 
-{{< card url="Community" icon="sun" >}}
+{{< card url="community" icon="light" >}}
 
 Have fun with FreeCAD, design great projects and share them with the world!
 

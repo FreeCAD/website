@@ -1,6 +1,7 @@
 ---
 title: "♥︎ Donate"
 description: "Sustain FreeCAD"
+disableCards: true
 menus:
   main:
     weight: 7

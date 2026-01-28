@@ -1,6 +1,7 @@
 ---
 title: "♥ Faire un don"
 description: "Participer à la pérennisation de FreeCAD"
+disableCards: true
 menus:
   main:
     weight: 7

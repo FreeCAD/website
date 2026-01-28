@@ -11,7 +11,7 @@
 
   {{/* Hero cards on top-level sections. */}}
   {{- $heroCards := slice -}}
-  {{- if and .IsSection .Parent.IsHome (not $default.RegularPages) -}}
+  {{- if and .IsSection .Parent.IsHome (not $default.RegularPages) (not .Params.disableCards) -}}
     {{- range .Sections -}}
       {{- $heroCards = $heroCards | append . -}}
     {{- end -}}
