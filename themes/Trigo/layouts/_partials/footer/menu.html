@@ -1,7 +1,6 @@
 {{- /* Footer Menu by section:
 
   - Render parent section and children links.
-  - Add custom links from 'data/footer_links.yaml'.
   - Set active class for current page.
   - Handle external links.
 */ -}}
@@ -9,7 +8,6 @@
 {{- $section := .Section -}}
 {{- $currentPage := .CurrentPage -}}
 {{- $currentUrl := $currentPage.RelPermalink -}}
-{{- $customLinks := .CustomLinks -}}
 {{- $linksMax := .MaxLinks -}}
 
 {{- $isExternal := and
@@ -87,30 +85,6 @@
             </li>
           {{- end -}}
         {{- end -}}
-      {{- end -}}
-    {{- end -}}
-
-    {{- /* Custom children. */ -}}
-    {{- range $customLinks -}}
-      {{- if eq .parent $sectionKey -}}
-        {{- $isExternal := and
-          (strings.HasPrefix .url "http")
-          (not (strings.HasPrefix .url site.BaseURL))
-        -}}
-        {{- $active := eq (urls.Parse .url).Path $currentUrl -}}
-        <li>
-          <a href="{{ cond $isExternal .url (.url | relURL) }}"
-            title="{{ .title | plainify }}"
-            class="{{ if $active }}menu-active{{ end }}"
-            {{ if $isExternal }}target="_blank" rel="external noreferrer"{{ end }}>
-            <span>
-              {{ .title }}
-            </span>
-            {{- if $isExternal -}}
-              {{- partial "utils/icon.html" "external" -}}
-            {{- end -}}
-          </a>
-        </li>
       {{- end -}}
     {{- end -}}
   </ul>
