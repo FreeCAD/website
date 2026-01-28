@@ -2,7 +2,7 @@
 
 
 /* Small screen devices in portrait orientation (e.g. smartphones). */
-@media screen and (orientation: portrait) and (width <= 500px) {
+@media screen and (max-width: 500px) {
 
   /* For fluid typography and layout */
   html {
@@ -218,7 +218,7 @@
 
 
 /* Small screen devices in landscape orientation (e.g. smartphones). */
-@media screen and (orientation: landscape) and (height <= 750px) {
+@media screen and (orientation: landscape) and (min-width: 500px) and (max-height: 750px) {
 
   :root {
     --width: calc(100vw - (var(--gap) * 2));
@@ -230,7 +230,7 @@
 
 /* Medium screen devices (e.g. tablets and old desktops). */
 /* NOTE: horizontal navigation menu is hidden, vertical popover menu is displayed instead. */
-@media screen and (width <= 999px) {
+@media screen and (max-width: 999px) {
 
   .menu-list {
     display: none;
@@ -251,7 +251,7 @@
 
 
 /* Bigger screen devices (e.g. desktops, laptops, high-end tablets). */
-@media screen and (width >= 1000px) {
+@media screen and (min-width: 1000px) {
 
   .menu-toggle {
     display: none;
