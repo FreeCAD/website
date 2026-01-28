@@ -8,7 +8,7 @@ versions: "0.21.2"
 cover:
   image: 8.webp
   caption: "a cover caption"
-params:
+builds:
   windows_msi: https://github.com/FreeCAD/FreeCAD/releases/
   windows_zip: https://github.com/FreeCAD/FreeCAD/releases/
   mac_x86: https://github.com/FreeCAD/FreeCAD/releases/

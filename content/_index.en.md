@@ -1,15 +1,13 @@
 ---
 title: FreeCAD
 description: Your own free and open-source 3D parametric modeler!
-paginate: 6
 menus:
   footer:
     weight: 1
-date: 2024-05-22T08:04:23+12:00
 buttons:
-  - url: download
+  - link: download
     style: "background: var(--secondary); color: var(--theme);"
-  - url: download/releases/1-0
+  - link: download/releases/1-0
     label: "See what's new"
 hero:
   link: "news/2024/11/freecad-1-0"

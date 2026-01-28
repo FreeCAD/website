@@ -6,7 +6,7 @@
   - Theme chroma toggle.
 */ -}}
 
-{{- $logo := resources.Get site.Params.logo -}}
+{{- $logo := resources.Get site.Params.siteLogo -}}
 {{- $logoType := $logo.MediaType.SubType -}}
 {{- $processableFormats := site.Params.processableFormats | default (slice "jpeg" "jpg" "png" "webp" "gif") -}}
 {{- $logoText := site.Title | .RenderString -}}

@@ -1,26 +1,23 @@
 {{- /* CMS config setup.
-  - Get CMS config data file.
-  - Merge some default site params.
+
+  - Get CMS params from config/params.yaml.
+  - Merge some site config defaults.
   - Output CMS config setup to be used by CMS Admin page.
 */ -}}
 
 {{- if site.Params.enableCMS -}}
 
-  {{- $defaults := dict "site_url" site.BaseURL "locale" site.Language.LanguageCode -}}
-  {{- $excluded := slice "cms" "cms_url" "site_url" -}}
-  {{- $params := site.Data.cms_config | default dict -}}
-
-  {{- /* Get config from cms_config.yaml but skip excluded. */ -}}
   {{- $config := dict -}}
+  {{- $params := site.Params.cms | default dict -}}
+
   {{- range $key, $val := $params -}}
-    {{- if not (in $excluded $key) -}}
-      {{- $config = merge $config (dict $key $val) -}}
-    {{- end -}}
+    {{- $config = merge $config (dict $key $val) -}}
   {{- end -}}
 
+  {{- $defaults := dict "site_url" site.BaseURL "locale" site.Language.LanguageCode -}}
   {{- $config = merge $defaults $config -}}
 
-  {{- /* Output config. */ -}}
+  {{- /* Output final CMS config as YAML. */ -}}
   {{- transform.Remarshal "yaml" $config | safeHTML -}}
 
 {{- end -}}

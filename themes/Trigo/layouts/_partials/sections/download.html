@@ -3,7 +3,7 @@
 
 {{- $page := cond ($releases.InSection .) . (index ($releases.RegularPages | default $default.RegularPages) 0) -}}
 
-{{- $release := $page.Params -}}
+{{- $release := $page.Params.builds -}}
 {{- $platforms := site.Params.platforms -}}
 
 <div class="download-box">

@@ -4,7 +4,7 @@ description: Your own free and open-source parametric modeler
 keywords: [CAD, parametric, model, 3D, BIM, CAM, FEM, free, open-source]
 authors: FreeCAD
 
-logo: FreeCAD-wordmark.svg
+siteLogo: FreeCAD-wordmark.svg
 defaultIcon: FreeCAD-symbol-mono.svg
 
 defaultChroma: auto # dark or light
@@ -23,8 +23,6 @@ imagePopover: true
 footerSectionLinksMax: 5
 telemetryMaxEntries: 20
 
-# Enable CMS for Theme. For CMS see data/cms_config.yaml in Theme dir.
-enableCMS: true
 
 # Image processing
 processableFormats: [jpg, jpeg, png, webp, gif]
@@ -168,3 +166,627 @@ calendar:
   skin: terrace
   menu: false
   target: _blank
+
+
+# Content Management System
+enableCMS: true
+
+# CMS parameters
+cms_name: "sveltia"
+cms_url: "https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"
+
+cms:
+  logo:
+    src: "https://marcuspollio.github.io/FreeCAD-website/FreeCAD-symbol.svg"
+
+  backend:
+    name: "github"
+    repo: "marcuspollio/FreeCAD-website"
+    branch: testing
+    base_url: https://sveltia-github-auth.marcus-pollio.workers.dev/
+    commit_messages:
+      create: "{{collection}}: Create {{slug}}"
+      update: "{{collection}}: Update {{slug}}"
+      delete: "{{collection}}: Delete {{slug}}"
+      uploadMedia: "Media: Upload {{path}}"
+      deleteMedia: "Media: Delete {{path}}"
+      openAuthoring: "{{message}}"
+
+  # publish_mode: editorial_workflow # NOTE: not supported yet, see
+  # https://github.com/sveltia/sveltia-cms?tab=readme-ov-file#current-limitations
+  # https://decapcms.org/docs/editorial-workflows/
+
+  i18n:
+    structure: multiple_files
+    locales: [en, fr, tr]
+    default_locale: en
+    initial_locales: default
+
+  slug:
+    encoding: ascii
+    clean_accents: true
+    sanitize_replacement: "-"
+    trim: true
+    lowercase: true
+
+  media_folder: "static"
+  public_folder: "/"
+  media_libraries:
+    default:
+      config:
+        max_file_size: 2048000 # in bytes
+        slugify_filename: true
+        transformations:
+          raster_image: # original format
+            format: webp # new format, only `webp` is supported with sveltia v0.68
+            quality: 90
+            width: 2000
+            height: 2000
+          svg:
+            optimize: true
+
+  collections:
+    - label: News
+      name: news
+      description: This is the News blog collection with FreeCAD articles
+      icon: brand_awareness
+      create: true
+      folder: content/news
+      path: "{{year}}/{{month}}/{{slug}}/index"
+      slug: "{{slug}}"
+      media_folder: ""
+      public_folder: ""
+      format: frontmatter
+      i18n: true
+      preview_path: "FreeCAD-website/news/{{slug}}"
+      summary: "**{{title}}** · {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+      thumbnail: cover.image
+      sortable_fields:
+        fields: [title, date, authors]
+        default:
+          field: date
+          direction: descending
+      view_groups:
+        groups:
+          - name: year
+            label: Year
+            field: date
+            pattern: '\d{4}'
+          - name: category
+            label: Categories
+            field: categories
+        default: year
+      view_filters:
+        filters:
+          - name: drafts
+            label: Drafts
+            field: draft
+            pattern: true
+          - name: posts_2023
+            label: Posted in 2023
+            field: date
+            pattern: '^2023'
+          - name: posts_2024
+            label: Posted in 2024
+            field: date
+            pattern: '^2024'
+          - name: posts_2025
+            label: Posted in 2025
+            field: date
+            pattern: '^2025'
+          - name: posts_2026
+            label: Posted in 2026
+            field: date
+            pattern: '^2026'
+          - name: announcement
+            label: Announcement
+            field: categories
+            pattern: announcement
+          - name: event
+            label: Event
+            field: categories
+            pattern: event
+          - name: feature
+            label: Feature
+            field: categories
+            pattern: feature
+          - name: showcase
+            label: Showcase
+            field: categories
+            pattern: showcase
+          - name: tutorial
+            label: Tutorial
+            field: categories
+            pattern: tutorial
+          - name: update
+            label: Update
+            field: categories
+            pattern: update
+      fields:
+        - {label: "Title", name: "title", widget: "string", i18n: true, required: [en], hint: "Use similar title as existing articles for coherence"}
+        - {label: "Description", name: "description", widget: "string", i18n: true, required: false}
+        - {label: "Date", name: "date", widget: "datetime", i18n: duplicate}
+        - {label: "Authors", name: "authors", widget: "string", default: "FreeCAD", i18n: duplicate, hint: "Use similar author name as existing ones for coherence", pattern: ['.{3,}', "At least 3 characters"]}
+        - {label: "Draft", name: "draft", widget: "boolean", default: true, i18n: duplicate, required: false}
+        - {label: "Category", name: "categories", widget: "select", options: ["announcement", "event", "feature", "showcase", "tutorial", "update"], i18n: duplicate}
+        - label: "Cover image"
+          name: "cover"
+          widget: "object"
+          i18n: true
+          required: false
+          fields:
+            - {label: "Image source", name: "image", widget: "image", i18n: duplicate}
+            - {label: "Image caption", name: "caption", widget: "string", i18n: true}
+        - {label: "Content", name: "body", widget: "markdown", i18n: true, required: [en], pattern: ['.{3,}', "At least 3 characters"], linked_images: false}
+      index_file:
+        label: News Section index
+        name: _index
+        icon: brand_awareness
+        editor:
+          preview: true
+        fields:
+          - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "At least 3 characters"]}
+          - {label: "Description", name: "description", widget: "string", i18n: true}
+          - label: "Cover image"
+            name: "cover"
+            widget: "object"
+            i18n: true
+            required: false
+            fields:
+              - {label: "Image source", name: "image", widget: "image", i18n: duplicate}
+              - {label: "Image caption", name: "caption", widget: "string", i18n: true}
+
+    - divider: true
+
+    - label: Homepage
+      name: homepage
+      description: This is site Homepage
+      icon: home
+      format: frontmatter
+      i18n: true
+      files:
+        - label: Homepage
+          name: homepage
+          file: content/_index.{{locale}}.md
+          icon: home
+          media_folder: ""
+          public_folder: ""
+          i18n: true
+          fields:
+            - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "At least 3 characters"]}
+            - {label: "Description", name: "description", widget: "string", i18n: true}
+            - label: "Buttons"
+              name: "buttons"
+              widget: "list"
+              i18n: true
+              required: false
+              fields:
+                - {label: "Link path or URL", name: "link", widget: "string", i18n: duplicate}
+                - {label: "Label", name: "label", widget: "string", i18n: true, required: false}
+                - {label: "CSS style", name: "style", widget: "string", i18n: duplicate, required: false}
+            - label: "Cover image"
+              name: "cover"
+              widget: "object"
+              i18n: true
+              required: false
+              fields:
+                - {label: "Image source", name: "image", widget: "image", i18n: duplicate}
+                - {label: "Image caption", name: "caption", widget: "string", i18n: true}
+            - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "At least 3 characters"], linked_images: false}
+
+    - label: Features
+      name: features
+      icon: bolt
+      format: frontmatter
+      i18n: true
+      files:
+        - label: Features
+          name: features
+          file: content/features/_index.{{locale}}.md
+          icon: bolt
+          media_folder: ""
+          public_folder: ""
+          i18n: true
+          fields:
+            - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "At least 3 characters"]}
+            - {label: "Description", name: "description", widget: "string", i18n: true}
+            - label: "Cover image"
+              name: "cover"
+              widget: "object"
+              i18n: true
+              required: false
+              fields:
+                - {label: "Image source", name: "image", widget: "image", i18n: duplicate}
+                - {label: "Image caption", name: "caption", widget: "string", i18n: true}
+            - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "At least 3 characters"], linked_images: false}
+
+    - divider: true
+
+    - label: Download
+      name: download
+      icon: downloading
+      create: true
+      folder: content/download
+      path: "{{slug}}/index"
+      slug: "{{slug}}"
+      media_folder: ""
+      public_folder: ""
+      format: frontmatter
+      i18n: true
+      preview_path: "FreeCAD-website/download/{{slug}}"
+      summary: "**{{title}}** · {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+      thumbnail: cover.image
+      sortable_fields:
+        fields: [title, date, authors]
+        default:
+          field: date
+          direction: descending
+      fields:
+        - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "At least 3 characters"]}
+        - {label: "Description", name: "description", widget: "string", i18n: true}
+        - label: "Cover image"
+          name: "cover"
+          widget: "object"
+          i18n: true
+          required: false
+          fields:
+            - {label: "Image source", name: "image", widget: "image", i18n: duplicate}
+            - {label: "Image caption", name: "caption", widget: "string", i18n: true}
+        - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "At least 3 characters"], linked_images: false}
+      index_file:
+        label: Download Section index
+        name: _index
+        icon: downloading
+        editor:
+          preview: true
+        fields:
+          - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "At least 3 characters"]}
+          - {label: "Description", name: "description", widget: "string", i18n: true}
+          - label: "Cover image"
+            name: "cover"
+            widget: "object"
+            i18n: true
+            required: false
+            fields:
+              - {label: "Image source", name: "image", widget: "image", i18n: duplicate}
+              - {label: "Image caption", name: "caption", widget: "string", i18n: true}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "At least 3 characters"], linked_images: false}
+
+    - label: Releases
+      name: releases
+      icon: celebration
+      create: true
+      folder: content/download/releases
+      path: "{{slug}}/index"
+      slug: "{{slug}}"
+      media_folder: ""
+      public_folder: ""
+      format: frontmatter
+      i18n: true
+      preview_path: "FreeCAD-website/download/releases/{{slug}}"
+      summary: "**{{title}}** · {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+      thumbnail: cover.image
+      sortable_fields:
+        fields: [title, date, lastmod, authors]
+        default:
+          field: date
+          direction: descending
+      fields:
+        - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "At least 3 characters"]}
+        - {label: "Description", name: "description", widget: "string", i18n: true}
+        - {label: "Release Date", name: "date", widget: "datetime", i18n: duplicate}
+        - {label: "Last Modification", name: "lastmod", widget: "datetime", i18n: duplicate, required: false, hint: "Indicate the latest modification date matching the builds below (update for each bug-fix release)."}
+        - {label: "Version", name: "versions", widget: "string", i18n: duplicate, hint: "Indicate the latest version matching the builds below (update for each bug-fix release)."}
+        - label: "Release builds links"
+          name: "builds"
+          widget: "object"
+          i18n: duplicate
+          fields:
+            - {label: "Windows installer link", name: "windows_msi", widget: "string"}
+            - {label: "Windows zip link", name: "windows_zip", widget: "string"}
+            - {label: "macOs x86 link", name: "mac_x86", widget: "string"}
+            - {label: "macOs arm link", name: "mac_arm", widget: "string"}
+            - {label: "Linux x86 link", name: "linux_x86", widget: "string"}
+            - {label: "Linux arm link", name: "linux_arm", widget: "string"}
+        - label: "Cover image"
+          name: "cover"
+          widget: "object"
+          i18n: true
+          required: false
+          fields:
+            - {label: "Image source", name: "image", widget: "image", i18n: duplicate}
+            - {label: "Image caption", name: "caption", widget: "string", i18n: true}
+        - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "At least 3 characters"], linked_images: false}
+      index_file:
+        label: Releases Section index
+        name: _index
+        icon: celebration
+        editor:
+          preview: true
+        fields:
+          - {label: "Title", name: "title", widget: "string", i18n: true, required: [en], pattern: ['.{3,}', "At least 3 characters"]}
+          - {label: "Description", name: "description", widget: "string", i18n: true}
+          - label: "Cover image"
+            name: "cover"
+            widget: "object"
+            i18n: true
+            required: false
+            fields:
+              - {label: "Image source", name: "image", widget: "image", i18n: duplicate}
+              - {label: "Image caption", name: "caption", widget: "string", i18n: true}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "At least 3 characters"], linked_images: false}
+
+    - divider: true
+
+    - label: Community
+      name: community
+      icon: groups
+      create: true
+      folder: content/community
+      path: "{{slug}}/index"
+      slug: "{{slug}}"
+      media_folder: ""
+      public_folder: ""
+      format: frontmatter
+      i18n: true
+      preview_path: "FreeCAD-website/community/{{slug}}"
+      summary: "**{{title}}** · {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+      thumbnail: cover.image
+      sortable_fields:
+        fields: [title, date, authors]
+        default:
+          field: date
+          direction: descending
+      fields:
+        - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "At least 3 characters"]}
+        - {label: "Description", name: "description", widget: "string", i18n: true}
+        - label: "Cover image"
+          name: "cover"
+          widget: "object"
+          i18n: true
+          required: false
+          fields:
+            - {label: "Image source", name: "image", widget: "image", i18n: duplicate}
+            - {label: "Image caption", name: "caption", widget: "string", i18n: true}
+        - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "At least 3 characters"], linked_images: false}
+      index_file:
+        label: Community Section index
+        name: _index
+        icon: groups
+        editor:
+          preview: true
+        fields:
+          - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "At least 3 characters"]}
+          - {label: "Description", name: "description", widget: "string", i18n: true}
+          - label: "Cover image"
+            name: "cover"
+            widget: "object"
+            i18n: true
+            required: false
+            fields:
+              - {label: "Image source", name: "image", widget: "image", i18n: duplicate}
+              - {label: "Image caption", name: "caption", widget: "string", i18n: true}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "At least 3 characters"], linked_images: false}
+
+    - divider: true
+
+    - label: Documentation Section index
+      name: documentation
+      icon: docs
+      format: frontmatter
+      i18n: true
+      files:
+        - label: Documentation
+          name: documentation
+          file: content/docs/_index.{{locale}}.md
+          icon: docs
+          media_folder: ""
+          public_folder: ""
+          i18n: true
+          fields:
+            - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "At least 3 characters"]}
+            - {label: "Description", name: "description", widget: "string", i18n: true}
+            - label: "Cover image"
+              name: "cover"
+              widget: "object"
+              i18n: true
+              required: false
+              fields:
+                - {label: "Image source", name: "image", widget: "image", i18n: duplicate}
+                - {label: "Image caption", name: "caption", widget: "string", i18n: true}
+            - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "At least 3 characters"], linked_images: false}
+
+    - label: User Documentation
+      name: user
+      icon: article_person
+      create: true
+      folder: content/docs/user
+      path: "{{slug}}/index"
+      slug: "{{slug}}"
+      media_folder: ""
+      public_folder: ""
+      format: frontmatter
+      i18n: true
+      preview_path: "FreeCAD-website/user/{{slug}}"
+      summary: "**{{title}}** · {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+      thumbnail: cover.image
+      sortable_fields:
+        fields: [title, date, authors]
+        default:
+          field: date
+          direction: descending
+      fields:
+        - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "At least 3 characters"]}
+        - {label: "Description", name: "description", widget: "string", i18n: true}
+        - label: "Cover image"
+          name: "cover"
+          widget: "object"
+          i18n: true
+          required: false
+          fields:
+            - {label: "Image source", name: "image", widget: "image", i18n: duplicate}
+            - {label: "Image caption", name: "caption", widget: "string", i18n: true}
+        - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "At least 3 characters"], linked_images: false}
+      index_file:
+        label: User Documentation Section index
+        name: _index
+        icon: article_person
+        editor:
+          preview: true
+        fields:
+          - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "At least 3 characters"]}
+          - {label: "Description", name: "description", widget: "string", i18n: true}
+          - label: "Cover image"
+            name: "cover"
+            widget: "object"
+            i18n: true
+            required: false
+            fields:
+              - {label: "Image source", name: "image", widget: "image", i18n: duplicate}
+              - {label: "Image caption", name: "caption", widget: "string", i18n: true}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "At least 3 characters"], linked_images: false}
+
+    - label: Developers Handbook
+      name: dev
+      icon: logo_dev
+      create: true
+      folder: content/docs/dev
+      path: "{{slug}}/index"
+      slug: "{{slug}}"
+      media_folder: ""
+      public_folder: ""
+      format: frontmatter
+      i18n: true
+      preview_path: "FreeCAD-website/dev/{{slug}}"
+      summary: "**{{title}}** · {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+      thumbnail: cover.image
+      sortable_fields:
+        fields: [title, date, authors]
+        default:
+          field: date
+          direction: descending
+      fields:
+        - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "At least 3 characters"]}
+        - {label: "Description", name: "description", widget: "string", i18n: true}
+        - label: "Cover image"
+          name: "cover"
+          widget: "object"
+          i18n: true
+          required: false
+          fields:
+            - {label: "Image source", name: "image", widget: "image", i18n: duplicate}
+            - {label: "Image caption", name: "caption", widget: "string", i18n: true}
+        - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "At least 3 characters"], linked_images: false}
+      index_file:
+        label: Developers Handbook Section index
+        name: _index
+        icon: logo_dev
+        editor:
+          preview: true
+        fields:
+          - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "At least 3 characters"]}
+          - {label: "Description", name: "description", widget: "string", i18n: true}
+          - label: "Cover image"
+            name: "cover"
+            widget: "object"
+            i18n: true
+            required: false
+            fields:
+              - {label: "Image source", name: "image", widget: "image", i18n: duplicate}
+              - {label: "Image caption", name: "caption", widget: "string", i18n: true}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "At least 3 characters"], linked_images: false}
+
+    - label: API Documentation
+      name: api
+      icon: terminal
+      create: true
+      folder: content/docs/api
+      path: "{{slug}}/index"
+      slug: "{{slug}}"
+      media_folder: ""
+      public_folder: ""
+      format: frontmatter
+      i18n: true
+      preview_path: "FreeCAD-website/api/{{slug}}"
+      summary: "**{{title}}** · {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+      thumbnail: cover.image
+      sortable_fields:
+        fields: [title, date, authors]
+        default:
+          field: date
+          direction: descending
+      fields:
+        - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "At least 3 characters"]}
+        - {label: "Description", name: "description", widget: "string", i18n: true}
+        - label: "Cover image"
+          name: "cover"
+          widget: "object"
+          i18n: true
+          required: false
+          fields:
+            - {label: "Image source", name: "image", widget: "image", i18n: duplicate}
+            - {label: "Image caption", name: "caption", widget: "string", i18n: true}
+        - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "At least 3 characters"], linked_images: false}
+      index_file:
+        label: API Documentation Section index
+        name: _index
+        icon: terminal
+        editor:
+          preview: true
+        fields:
+          - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "At least 3 characters"]}
+          - {label: "Description", name: "description", widget: "string", i18n: true}
+          - label: "Cover image"
+            name: "cover"
+            widget: "object"
+            i18n: true
+            required: false
+            fields:
+              - {label: "Image source", name: "image", widget: "image", i18n: duplicate}
+              - {label: "Image caption", name: "caption", widget: "string", i18n: true}
+          - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "At least 3 characters"], linked_images: false}
+
+    - divider: true
+
+    - label: Donate
+      name: donate
+      icon: favorite
+      format: frontmatter
+      i18n: true
+      files:
+        - label: Donate
+          name: donate
+          file: content/donate/_index.{{locale}}.md
+          icon: favorite
+          media_folder: ""
+          public_folder: ""
+          i18n: true
+          fields:
+            - {label: "Title", name: "title", widget: "string", i18n: true, pattern: ['.{3,}', "At least 3 characters"]}
+            - {label: "Description", name: "description", widget: "string", i18n: true}
+            - label: "Cover image"
+              name: "cover"
+              widget: "object"
+              i18n: true
+              required: false
+              fields:
+                - {label: "Image source", name: "image", widget: "image", i18n: duplicate}
+                - {label: "Image caption", name: "caption", widget: "string", i18n: true}
+            - {label: "Content", name: "body", widget: "markdown", i18n: true, pattern: ['.{3,}', "At least 3 characters"], linked_images: false}
+
+  singletons:
+      - name: theme
+        label: Theme strings translations
+        file: themes/Trigo/i18n/{{locale}}.yaml
+        icon: translate
+        i18n: true
+        fields:
+          - name: i18n
+            label: Theme i18n strings
+            widget: list
+            root: true
+            i18n: true
+            allow_add: false
+            fields:
+              - {label: "String ID", name: "id", widget: "string", i18n: duplicate}
+              - {label: "Translation", name: "translation", widget: "string", i18n: true, required: false}

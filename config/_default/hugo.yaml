@@ -1,4 +1,4 @@
-# General Hugo config. For Theme see params.yaml. For CMS see data/cms_config.yaml in Theme dir.
+# General Hugo config. For Theme and CMS see params.yaml.
 
 baseURL: https://marcuspollio.github.io/FreeCAD-website/
 title: FreeCAD

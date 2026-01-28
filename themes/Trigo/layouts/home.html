@@ -25,7 +25,7 @@
       {{- with $buttons -}}
         <div class="buttons">
           {{- range . -}}
-            {{- $href := .url -}}
+            {{- $href := .link -}}
             {{- $label := .label -}}
 
             {{- if and $href (not (hasPrefix $href "http")) -}}
