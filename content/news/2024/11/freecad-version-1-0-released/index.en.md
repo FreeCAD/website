@@ -6,9 +6,10 @@ draft: false
 categories: announcement
 tags:
 - release
+versions: "1.0"
 cover:
-  image:
-  caption:
+  image: motor.webp
+  caption: a cover caption
 ---
 
 After more than twenty years of intense and sustained development, the FreeCAD community is proud to announce the release of version 1.0. FreeCAD 1.0 is now [available for download on all platforms](https://www.freecad.org/downloads.php).
@@ -36,6 +37,8 @@ Highlights:
 - A new logo was chosen by the community members, from community contributed proposals.
 
 - The user interface has received huge improvements.These include rotational centre indicators, selection item filters, on-model task panel and combo view modes, universal measuring tools, brand-new dark and light themes and much more.
+
+![Image alternative text](part.webp "This is an image title")
 
 Other key improvements:
 

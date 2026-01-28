@@ -143,22 +143,22 @@ Second Term
 ## Images
 
 ```text {file=Markdown}
-![](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
+![](FreeCAD-symbol.png)
 ```
 
 <u>How it renders:</u>
 
-![](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
+![](FreeCAD-symbol.png)
 
 With caption:
 
 ```text {file=Markdown}
-![landscape](https://fastly.picsum.photos/id/1044/800/600.jpg?hmac=aNJNCvHzwwgQQWDUJPUFUAyd5LYhh8cAPIawaBtti3c "Lorem Picsum")
+![Alternative text](PartDesign.png "Caption text")
 ```
 
 <u>How it renders:</u>
 
-![Alternative text](https://fastly.picsum.photos/id/1044/800/600.jpg?hmac=aNJNCvHzwwgQQWDUJPUFUAyd5LYhh8cAPIawaBtti3c "Image description")
+![Alternative text](PartDesign.png "Caption text")
 
 For more advanced functionality, use Hugo's built-in [Figure shortcode](https://gohugo.io/shortcodes/figure/).
 

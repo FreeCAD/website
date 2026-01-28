@@ -10,7 +10,7 @@ buttons:
   - link: download/releases/1-0
     label: "See what's new"
 hero:
-  link: "news/2024/11/freecad-1-0"
+  link: "news/2024/11/freecad-version-1-0-released"
   title: ""
 cover:
   image: "assembly2.webp"
